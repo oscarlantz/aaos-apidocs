@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema version="1.0" targetNamespace="http://cliq.shared.assaabloy.com/ws/import/v2/"
+  xmlns:data_v2="http://cliq.shared.assaabloy.com/ws/data/v2/"
+  xmlns:dataExtra_r9_0_v2="http://cliq.shared.assaabloy.com/ws/data/extra_r9_0/v2/"
+  xmlns:dataExtra_v2="http://cliq.shared.assaabloy.com/ws/data/extra/v2/"
+  xmlns:importService_v2="http://cliq.shared.assaabloy.com/ws/import/v2/"
+  
+  xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://cliq.shared.assaabloy.com/ws/data/v2/" schemaLocation="data_v2.xsd"/>
+  <xs:import namespace="http://cliq.shared.assaabloy.com/ws/data/extra_r9_0/v2/" schemaLocation="dataExtra_r9_0_v2.xsd"/>
+  <xs:import namespace="http://cliq.shared.assaabloy.com/ws/data/extra/v2/" schemaLocation="dataExtra_v2.xsd"/>
+
+<xs:element name="savePersons" type="importService_v2:savePersons"/>
+<xs:complexType name="savePersons">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit request wrapper for operation "savePersons". (Saves the given list of new person(s), all basic attributes of persons can be saved.
+<p/>
+Any ASCII control chars in person fields eg in firstName will be removed.
+<p/>
+<p/>Note:
+<ul>
+<li>if type is not defined, persons are defined as employees by default</li>
+<li>if domain is not defined then person is assigned to the initial domain configured in system settings</li>
+</ul>)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="person" type="data_v2:personDetails" minOccurs="0" maxOccurs="unbounded">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[Persons to save. Id must be unique and must not exist.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="savePersonsResponse" type="importService_v2:savePersonsResponse"/>
+<xs:complexType name="savePersonsResponse">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit response wrapper for operation "savePersons". (Saves the given list of new person(s), all basic attributes of persons can be saved.
+<p/>
+Any ASCII control chars in person fields eg in firstName will be removed.
+<p/>
+<p/>Note:
+<ul>
+<li>if type is not defined, persons are defined as employees by default</li>
+<li>if domain is not defined then person is assigned to the initial domain configured in system settings</li>
+</ul>)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="batchResult" type="data_v2:batchResult" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="updatePersons" type="importService_v2:updatePersons"/>
+<xs:complexType name="updatePersons">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit request wrapper for operation "updatePersons". (Updates the given list of persons in CWM, all basic attributes of persons can be updated.
+<p/>
+If the person exists, the existing person instance will be overwritten with new information.
+If the person does not exists, a new person will be created in CWM.
+<p/>
+Note:
+<ul>
+<li>a failure will be added to the result if trying to delete a person who has a key</li>
+<li>a failure will be added to the result if trying to update a person imported from LDAP</li>
+<li>if domain is not defined then person is re-assigned to the initial domain configured in system settings</li>
+</ul>)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="person" type="data_v2:personDetails" minOccurs="0" maxOccurs="unbounded">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[Persons to update.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="updatePersonsResponse" type="importService_v2:updatePersonsResponse"/>
+<xs:complexType name="updatePersonsResponse">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit response wrapper for operation "updatePersons". (Updates the given list of persons in CWM, all basic attributes of persons can be updated.
+<p/>
+If the person exists, the existing person instance will be overwritten with new information.
+If the person does not exists, a new person will be created in CWM.
+<p/>
+Note:
+<ul>
+<li>a failure will be added to the result if trying to delete a person who has a key</li>
+<li>a failure will be added to the result if trying to update a person imported from LDAP</li>
+<li>if domain is not defined then person is re-assigned to the initial domain configured in system settings</li>
+</ul>)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="batchResult" type="data_v2:batchResult" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+</xs:schema>

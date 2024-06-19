@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema version="1.0" targetNamespace="http://cliq.shared.assaabloy.com/ws/data/extra_r6_1/v2/"
+  xmlns:dataExtra_r6_1_v2="http://cliq.shared.assaabloy.com/ws/data/extra_r6_1/v2/"
+  
+  xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="customField" type="dataExtra_r6_1_v2:customField"/>
+  <xs:element name="customFields" type="dataExtra_r6_1_v2:customFields"/>
+<xs:complexType name="customField">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[Represents a custom field.]]>
+    </xs:documentation>
+  </xs:annotation>
+       <xs:sequence>
+              <xs:element name="identity" type="xs:string" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Custom field identity.
+<p/>]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="name" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Custom field name. That value is ignored during update operation.
+<p/>
+Max length: 100]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="value" type="xs:string" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Custom field value.
+<p/>
+Max length: 255]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+        <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="customFields">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[Represents a set of custom fields applied on an element.]]>
+    </xs:documentation>
+  </xs:annotation>
+       <xs:sequence>
+              <xs:element name="customField" type="dataExtra_r6_1_v2:customField" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+        <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+</xs:complexType>
+
+</xs:schema>

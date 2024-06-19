@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema version="1.0" targetNamespace="http://cliq.shared.assaabloy.com/ws/data/extra_r9_2/v2/"
+  xmlns:dataExtra_r9_2_v2="http://cliq.shared.assaabloy.com/ws/data/extra_r9_2/v2/"
+  
+  xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<xs:element name="partiallyProcessed" type="xs:boolean">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[Specifies if the audit trail data was fully processed or only partially,
+returned only if the requests specified the include partially processed option.]]>
+    </xs:documentation>
+  </xs:annotation>
+</xs:element>
+</xs:schema>

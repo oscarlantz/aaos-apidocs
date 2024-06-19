@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema version="1.0" targetNamespace="http://cliq.shared.assaabloy.com/ws/data/extra_r9_0/v2/"
+  xmlns:data_v2="http://cliq.shared.assaabloy.com/ws/data/v2/"
+  xmlns:dataExtra_r9_0_v2="http://cliq.shared.assaabloy.com/ws/data/extra_r9_0/v2/"
+  
+  xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://cliq.shared.assaabloy.com/ws/data/v2/" schemaLocation="data_v2.xsd"/>
+
+<xs:element name="concurrentDataModificationException" type="dataExtra_r9_0_v2:concurrentDataModificationException"/>
+<xs:complexType name="concurrentDataModificationException">
+  <xs:sequence>
+    <xs:element name="errorCode" type="data_v2:errorCode" minOccurs="0">
+    </xs:element>
+    <xs:element name="failures" type="data_v2:failureDescription" minOccurs="0" maxOccurs="unbounded">
+    </xs:element>
+    <xs:element name="message" type="xs:string" minOccurs="0">
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="domainIdentity" type="xs:string">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[Identity of domain to which the element was assigned out while audit trail event happened.]]>
+    </xs:documentation>
+  </xs:annotation>
+</xs:element>
+<xs:element name="eventByDomainIdentity" type="xs:string">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[The domain of the by element at the time of audit trail event.
+If the historical domain information is unavailable then no value is returned
+(for instance for events which happened before the system saved
+historical domain information during processing audit trails processing).]]>
+    </xs:documentation>
+  </xs:annotation>
+</xs:element>
+<xs:element name="eventFromDomainIdentity" type="xs:string">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[The domain of the from element at the time of audit trail event.
+If the historical domain information is unavailable then no value is returned
+(for instance for events which happened before the system saved
+historical domain information during audit trails processing).]]>
+    </xs:documentation>
+  </xs:annotation>
+</xs:element>
+<xs:element name="identityDeactivatedException" type="dataExtra_r9_0_v2:identityDeactivatedException"/>
+<xs:complexType name="identityDeactivatedException">
+  <xs:sequence>
+    <xs:element name="errorCode" type="data_v2:errorCode" minOccurs="0">
+    </xs:element>
+    <xs:element name="failures" type="data_v2:failureDescription" minOccurs="0" maxOccurs="unbounded">
+    </xs:element>
+    <xs:element name="message" type="xs:string" minOccurs="0">
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="immutableIdentity" type="xs:string">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[KeyHolder' UUID]]>
+    </xs:documentation>
+  </xs:annotation>
+</xs:element>
+</xs:schema>

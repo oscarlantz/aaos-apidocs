@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema version="1.0" targetNamespace="http://cliq.shared.assaabloy.com/ws/data/extra_r7_0/v2/"
+  xmlns:data_v2="http://cliq.shared.assaabloy.com/ws/data/v2/"
+  xmlns:dataExtra_r7_0_v2="http://cliq.shared.assaabloy.com/ws/data/extra_r7_0/v2/"
+  
+  xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://cliq.shared.assaabloy.com/ws/data/v2/" schemaLocation="data_v2.xsd"/>
+
+<xs:element name="bluetoothSupport" type="data_v2:bluetoothSupport">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[Indicates if key does support bluetooth communication.]]>
+    </xs:documentation>
+  </xs:annotation>
+</xs:element>
+<xs:element name="pinValidationIntervalInMinutes" type="xs:int">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[PIN Validation interval in minutes.
+<p/>
+The maximum value of PIN Validation interval is 45 days (64800 in minutes). 0 means PIN Validation is disabled for this key.]]>
+    </xs:documentation>
+  </xs:annotation>
+</xs:element>
+</xs:schema>

@@ -1,0 +1,2065 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema version="1.0" targetNamespace="http://cliq.shared.assaabloy.com/ws/query/v2/"
+  xmlns:dataExtra_r6_v2="http://cliq.shared.assaabloy.com/ws/data/extra_r6/v2/"
+  xmlns:dataExtra_r9_2_v2="http://cliq.shared.assaabloy.com/ws/data/extra_r9_2/v2/"
+  xmlns:dataExtra_r11_0_v2="http://cliq.shared.assaabloy.com/ws/data/extra_r11_0/v2/"
+  xmlns:dataExtra_r6_1_v2="http://cliq.shared.assaabloy.com/ws/data/extra_r6_1/v2/"
+  xmlns:data_v2="http://cliq.shared.assaabloy.com/ws/data/v2/"
+  xmlns:dataExtra_r9_0_v2="http://cliq.shared.assaabloy.com/ws/data/extra_r9_0/v2/"
+  xmlns:dataExtra_v2="http://cliq.shared.assaabloy.com/ws/data/extra/v2/"
+  xmlns:dataExtra_r7_0_v2="http://cliq.shared.assaabloy.com/ws/data/extra_r7_0/v2/"
+  xmlns:queryService_v2="http://cliq.shared.assaabloy.com/ws/query/v2/"
+  
+  xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://cliq.shared.assaabloy.com/ws/data/extra_r6/v2/" schemaLocation="dataExtra_r6_v2.xsd"/>
+  <xs:import namespace="http://cliq.shared.assaabloy.com/ws/data/extra_r9_2/v2/" schemaLocation="dataExtra_r9_2_v2.xsd"/>
+  <xs:import namespace="http://cliq.shared.assaabloy.com/ws/data/extra_r11_0/v2/" schemaLocation="dataExtra_r11_0_v2.xsd"/>
+  <xs:import namespace="http://cliq.shared.assaabloy.com/ws/data/extra_r6_1/v2/" schemaLocation="dataExtra_r6_1_v2.xsd"/>
+  <xs:import namespace="http://cliq.shared.assaabloy.com/ws/data/v2/" schemaLocation="data_v2.xsd"/>
+  <xs:import namespace="http://cliq.shared.assaabloy.com/ws/data/extra_r9_0/v2/" schemaLocation="dataExtra_r9_0_v2.xsd"/>
+  <xs:import namespace="http://cliq.shared.assaabloy.com/ws/data/extra/v2/" schemaLocation="dataExtra_v2.xsd"/>
+  <xs:import namespace="http://cliq.shared.assaabloy.com/ws/data/extra_r7_0/v2/" schemaLocation="dataExtra_r7_0_v2.xsd"/>
+
+<xs:element name="getAccessListForAccessProfile" type="queryService_v2:getAccessListForAccessProfile"/>
+<xs:complexType name="getAccessListForAccessProfile">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit request wrapper for operation "getAccessListForAccessProfile". (Get <i>Cylinders</i> and <i>Cylinder Groups</i> linked to <i>Access Profile</i>)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="accessProfileIdentity" type="xs:string" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[<i>Access Profile</i> UUID attribute]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="getAccessListForAccessProfileResponse" type="queryService_v2:getAccessListForAccessProfileResponse"/>
+<xs:complexType name="getAccessListForAccessProfileResponse">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit response wrapper for operation "getAccessListForAccessProfile". (Get <i>Cylinders</i> and <i>Cylinder Groups</i> linked to <i>Access Profile</i>)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="accessList" type="data_v2:accessProfileBasic" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="getAccessProfileDetails" type="queryService_v2:getAccessProfileDetails"/>
+<xs:complexType name="getAccessProfileDetails">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit request wrapper for operation "getAccessProfileDetails". (Gets the detailed information about a specific access profile.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="accessProfileIdentity" type="xs:string" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="getAccessProfileDetailsResponse" type="queryService_v2:getAccessProfileDetailsResponse"/>
+<xs:complexType name="getAccessProfileDetailsResponse">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit response wrapper for operation "getAccessProfileDetails". (Gets the detailed information about a specific access profile.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="accessProfile" type="data_v2:accessProfileProperties" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="getAccessProfiles" type="queryService_v2:getAccessProfiles"/>
+<xs:complexType name="getAccessProfiles">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit request wrapper for operation "getAccessProfiles". (Query for all access profiles in the key system except deleted.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="getAccessProfilesContainingCylinderGroup" type="queryService_v2:getAccessProfilesContainingCylinderGroup"/>
+<xs:complexType name="getAccessProfilesContainingCylinderGroup">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit request wrapper for operation "getAccessProfilesContainingCylinderGroup". (Query for all access profiles that contain the cylinder group.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="cylinderGroupIdentity" type="xs:string" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[Identity of the cylinder group for which access profiles are retrieved.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="getAccessProfilesContainingCylinderGroupResponse" type="queryService_v2:getAccessProfilesContainingCylinderGroupResponse"/>
+<xs:complexType name="getAccessProfilesContainingCylinderGroupResponse">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit response wrapper for operation "getAccessProfilesContainingCylinderGroup". (Query for all access profiles that contain the cylinder group.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="accessProfile" type="data_v2:accessProfile" minOccurs="0" maxOccurs="unbounded">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="getAccessProfilesContainingCylinderPlug" type="queryService_v2:getAccessProfilesContainingCylinderPlug"/>
+<xs:complexType name="getAccessProfilesContainingCylinderPlug">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit request wrapper for operation "getAccessProfilesContainingCylinderPlug". (Query for all access profiles that contain the cylinder plug.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="cylinderPlugIdentity" type="xs:string" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[Identity of the cylinder plug for which access profiles are retrieved.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="getAccessProfilesContainingCylinderPlugResponse" type="queryService_v2:getAccessProfilesContainingCylinderPlugResponse"/>
+<xs:complexType name="getAccessProfilesContainingCylinderPlugResponse">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit response wrapper for operation "getAccessProfilesContainingCylinderPlug". (Query for all access profiles that contain the cylinder plug.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="accessProfile" type="data_v2:accessProfile" minOccurs="0" maxOccurs="unbounded">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="getAccessProfilesForKey" type="queryService_v2:getAccessProfilesForKey"/>
+<xs:complexType name="getAccessProfilesForKey">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit request wrapper for operation "getAccessProfilesForKey". (A query for all access profiles associated with a specific key.
+A key can be associated with an access profile directly (hasPermanentAssignment = true).
+'Directly' means that there is an explicit association between an access profile and a key
+for an indefinite period of time. 'Indefinite' means until an access profile is unassociated from a key by a user.
+A key can be associated with an access profile indirectly via a temporary access group (hasPermanentAssignment = false).
+A temporary access group is a set of multiple keys and multiple access profiles associated together
+for a period of time (accessTimeInterval in the response)
+A key or an access profile can be included in multiple temporary access groups.
+If a key is associated to an access profile both directly and indirectly
+then it manifests as (hasPermanentAssignment = true).)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="keyIdentity" type="xs:string" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[unique identity (uuid) of a key.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="getAccessProfilesForKeyResponse" type="queryService_v2:getAccessProfilesForKeyResponse"/>
+<xs:complexType name="getAccessProfilesForKeyResponse">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit response wrapper for operation "getAccessProfilesForKey". (A query for all access profiles associated with a specific key.
+A key can be associated with an access profile directly (hasPermanentAssignment = true).
+'Directly' means that there is an explicit association between an access profile and a key
+for an indefinite period of time. 'Indefinite' means until an access profile is unassociated from a key by a user.
+A key can be associated with an access profile indirectly via a temporary access group (hasPermanentAssignment = false).
+A temporary access group is a set of multiple keys and multiple access profiles associated together
+for a period of time (accessTimeInterval in the response)
+A key or an access profile can be included in multiple temporary access groups.
+If a key is associated to an access profile both directly and indirectly
+then it manifests as (hasPermanentAssignment = true).)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="assignedAccessProfile" type="data_v2:assignedAccessProfile" minOccurs="0" maxOccurs="unbounded">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="getAccessProfilesForPerson" type="queryService_v2:getAccessProfilesForPerson"/>
+<xs:complexType name="getAccessProfilesForPerson">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit request wrapper for operation "getAccessProfilesForPerson". (Query for all access profiles that belong to a person.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="personIdentity" type="xs:string" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[Identity of the person for which we should get the access profiles.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="getAccessProfilesForPersonResponse" type="queryService_v2:getAccessProfilesForPersonResponse"/>
+<xs:complexType name="getAccessProfilesForPersonResponse">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit response wrapper for operation "getAccessProfilesForPerson". (Query for all access profiles that belong to a person.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="accessProfile" type="data_v2:accessProfile" minOccurs="0" maxOccurs="unbounded">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="getAccessProfilesResponse" type="queryService_v2:getAccessProfilesResponse"/>
+<xs:complexType name="getAccessProfilesResponse">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit response wrapper for operation "getAccessProfiles". (Query for all access profiles in the key system except deleted.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="accessProfile" type="data_v2:accessProfile" minOccurs="0" maxOccurs="unbounded">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="getAccessibleCylinders" type="queryService_v2:getAccessibleCylinders"/>
+<xs:complexType name="getAccessibleCylinders">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit request wrapper for operation "getAccessibleCylinders". (Find the currently accessible cylinders for a key, based on key cuttings, explicit authorisations, cylinder groups and access profiles.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="keyIdentity" type="xs:string" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[the identity of the key.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+    <xs:element name="pagination" type="data_v2:pagination" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[used to specify the starting row and maximum amount of rows to return, allowing for iteration through large result sets.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="getAccessibleCylindersResponse" type="queryService_v2:getAccessibleCylindersResponse"/>
+<xs:complexType name="getAccessibleCylindersResponse">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit response wrapper for operation "getAccessibleCylinders". (Find the currently accessible cylinders for a key, based on key cuttings, explicit authorisations, cylinder groups and access profiles.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="keyAccess" type="data_v2:keyAccess" minOccurs="0" maxOccurs="unbounded">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="getAuditTrails" type="queryService_v2:getAuditTrails"/>
+<xs:complexType name="getAuditTrails">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit request wrapper for operation "getAuditTrails". (<p>
+Query for all audit trails entries (key and cylinder) that were imported within the given date interval. The date
+interval is exclusive for the 'from' date and inclusive for the 'to' date. If the 'to' date is omitted, the current
+date and time in the system-specific timezone will be used.
+<p/>
+An example of usage would be to query for all events between 2001-01-01T00:01 and 2001-06-01T00:01. This will
+return all events that were imported after the 'from' date and before or on the 'to' date. If the pagination maximum is set to 1000 and
+more than 1000 events are found, only the first 1000 events will be returned.
+<p>
+The import date is defined as the date when the audit trails were collected (imported) into the system in CWM server time zone, as opposed to the creation date which specifies when they were originally created in MKS time zone.
+</p>)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="importDateInterval" type="data_v2:dateIntervalWithTimeZone" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[Audit trail import date interval. The date interval is exclusive for the 'from' date and inclusive for the  'to' date. If the 'to' date is omitted, the current date and time in the system-specific timezone will be used.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+    <xs:element name="includePartiallyProcessed" type="xs:boolean" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+    <xs:element name="excludeEntriesFromKeysWithoutTimeSupport" type="xs:boolean" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[If specified as true, then only entries where key supports time are returned.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+    <xs:element name="pagination" type="data_v2:pagination" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[used to specify the starting row and maximum amount of rows to return, allowing for iteration through large result sets. The maximum allowed value is 10000.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="getAuditTrailsResponse" type="queryService_v2:getAuditTrailsResponse"/>
+<xs:complexType name="getAuditTrailsResponse">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit response wrapper for operation "getAuditTrails". (<p>
+Query for all audit trails entries (key and cylinder) that were imported within the given date interval. The date
+interval is exclusive for the 'from' date and inclusive for the 'to' date. If the 'to' date is omitted, the current
+date and time in the system-specific timezone will be used.
+<p/>
+An example of usage would be to query for all events between 2001-01-01T00:01 and 2001-06-01T00:01. This will
+return all events that were imported after the 'from' date and before or on the 'to' date. If the pagination maximum is set to 1000 and
+more than 1000 events are found, only the first 1000 events will be returned.
+<p>
+The import date is defined as the date when the audit trails were collected (imported) into the system in CWM server time zone, as opposed to the creation date which specifies when they were originally created in MKS time zone.
+</p>)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="auditTrails" type="data_v2:auditTrailDetails" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="getCylinderDetails" type="queryService_v2:getCylinderDetails"/>
+<xs:complexType name="getCylinderDetails">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit request wrapper for operation "getCylinderDetails". (Gets the detailed information about a specific cylinder.
+The information will include both static and dynamic data.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="cylinderIdentity" type="xs:string" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[Identity of cylinder to retrieve detailed information from.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="getCylinderDetailsResponse" type="queryService_v2:getCylinderDetailsResponse"/>
+<xs:complexType name="getCylinderDetailsResponse">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit response wrapper for operation "getCylinderDetails". (Gets the detailed information about a specific cylinder.
+The information will include both static and dynamic data.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="cylinderDetails" type="data_v2:cylinderDetails" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="getCylinderPlugAuditTrail" type="queryService_v2:getCylinderPlugAuditTrail"/>
+<xs:complexType name="getCylinderPlugAuditTrail">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit request wrapper for operation "getCylinderPlugAuditTrail". (Query for audit trail entries.
+The dates in a query are creation dates that are assumed to be in MKS time zone.
+<p>
+See the explanations of creation dates usage at the documentation of getKeyAuditTrail.
+</p>)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="cylinderPlugIdentity" type="xs:string" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[Identity of cylinder plug to retrieve audit trial from.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+    <xs:element name="includePartiallyProcessed" type="xs:boolean" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+    <xs:element name="excludeEntriesFromKeysWithoutTimeSupport" type="xs:boolean" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[If specified as true, then only entries where key supports time are returned.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+    <xs:element name="dateInterval" type="data_v2:dateInterval" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[Audit trail entry date interval (find audit trails within this interval).  The date interval is exclusive for the 'from' date and inclusive for the 'to' date.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="getCylinderPlugAuditTrailResponse" type="queryService_v2:getCylinderPlugAuditTrailResponse"/>
+<xs:complexType name="getCylinderPlugAuditTrailResponse">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit response wrapper for operation "getCylinderPlugAuditTrail". (Query for audit trail entries.
+The dates in a query are creation dates that are assumed to be in MKS time zone.
+<p>
+See the explanations of creation dates usage at the documentation of getKeyAuditTrail.
+</p>)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="auditTrail" type="data_v2:auditTrail" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="getCylinders" type="queryService_v2:getCylinders"/>
+<xs:complexType name="getCylinders">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit request wrapper for operation "getCylinders". (Query for all available cylinders in the key system.
+Each cylinder will be returned as a separate entry.
+E.g for double-sided cylinders two cylinder plug items will be returned.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="getCylindersResponse" type="queryService_v2:getCylindersResponse"/>
+<xs:complexType name="getCylindersResponse">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit response wrapper for operation "getCylinders". (Query for all available cylinders in the key system.
+Each cylinder will be returned as a separate entry.
+E.g for double-sided cylinders two cylinder plug items will be returned.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="cylinder" type="data_v2:cylinder" minOccurs="0" maxOccurs="unbounded">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="getDomains" type="queryService_v2:getDomains"/>
+<xs:complexType name="getDomains">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit request wrapper for operation "getDomains". (Query for all domains in the key system.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="getDomainsResponse" type="queryService_v2:getDomainsResponse"/>
+<xs:complexType name="getDomainsResponse">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit response wrapper for operation "getDomains". (Query for all domains in the key system.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="domain" type="data_v2:domain" minOccurs="0" maxOccurs="unbounded">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="getExplicitCylinderAuthorisationsForKey" type="queryService_v2:getExplicitCylinderAuthorisationsForKey"/>
+<xs:complexType name="getExplicitCylinderAuthorisationsForKey">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit request wrapper for operation "getExplicitCylinderAuthorisationsForKey". (Find the cylinders that the specified dynamic key has explicit access to.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="keyIdentity" type="xs:string" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[The identity of the key for which to retrieve accessible cylinders.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+    <xs:element name="pagination" type="data_v2:pagination" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[used to specify the starting row and maximum amount of rows to return, allowing for iteration through large result sets.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="getExplicitCylinderAuthorisationsForKeyResponse" type="queryService_v2:getExplicitCylinderAuthorisationsForKeyResponse"/>
+<xs:complexType name="getExplicitCylinderAuthorisationsForKeyResponse">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit response wrapper for operation "getExplicitCylinderAuthorisationsForKey". (Find the cylinders that the specified dynamic key has explicit access to.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="plugWithCylinder" type="data_v2:plugWithCylinder" minOccurs="0" maxOccurs="unbounded">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="getExplicitCylinderGroupAuthorisationsForKey" type="queryService_v2:getExplicitCylinderGroupAuthorisationsForKey"/>
+<xs:complexType name="getExplicitCylinderGroupAuthorisationsForKey">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit request wrapper for operation "getExplicitCylinderGroupAuthorisationsForKey". (Find the cylinder groups that the specified dynamic key has explicit access to.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="keyIdentity" type="xs:string" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[The identity of the key for which to retrieve accessible cylinder groups.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+    <xs:element name="pagination" type="data_v2:pagination" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[used to specify the starting row and maximum amount of rows to return, allowing for iteration through large result sets.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="getExplicitCylinderGroupAuthorisationsForKeyResponse" type="queryService_v2:getExplicitCylinderGroupAuthorisationsForKeyResponse"/>
+<xs:complexType name="getExplicitCylinderGroupAuthorisationsForKeyResponse">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit response wrapper for operation "getExplicitCylinderGroupAuthorisationsForKey". (Find the cylinder groups that the specified dynamic key has explicit access to.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="cylinderGroup" type="data_v2:cylinderGroup" minOccurs="0" maxOccurs="unbounded">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="getKeyActiveSchedule" type="queryService_v2:getKeyActiveSchedule"/>
+<xs:complexType name="getKeyActiveSchedule">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit request wrapper for operation "getKeyActiveSchedule". (Gets active schedule for a specific key.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="keyIdentity" type="xs:string" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[Identity of key to retrieve active schedule information from.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="getKeyActiveScheduleResponse" type="queryService_v2:getKeyActiveScheduleResponse"/>
+<xs:complexType name="getKeyActiveScheduleResponse">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit response wrapper for operation "getKeyActiveSchedule". (Gets active schedule for a specific key.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="schedule" type="data_v2:schedule" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="getKeyAuditTrail" type="queryService_v2:getKeyAuditTrail"/>
+<xs:complexType name="getKeyAuditTrail">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit request wrapper for operation "getKeyAuditTrail". (<p>
+Query for audit trail entries.
+The dates in a query are creation dates that are assumed to be in MKS time zone.
+</p>
+
+<p>
+getKeyAuditTrail method returns correct creation dates provided that CWM server time zone (Windows time zone) was the same at the audit trail import time and the time when the web service is used.
+</p>
+
+<p>
+If CWM server time zones are different then there will be several hours discrepancies.
+We have decided that the discrepancies will remain due to the fact that fixing it will require running a sql script on all production databases.
+Otherwise the web service won't be consistent for all users.
+</p>
+
+<p>
+The following table shows an example of discrepancies.
+</p>
+
+<p>
+<b>CWM import 1st time zone</b> - CWM server time zone during the first import of audit trail and save to the database
+</p>
+
+<p>
+<b>CWM read 2nd time zone</b> - after restarting CWM server with a different time zone
+</p>
+
+<p>
+The event happened at 23:02 Asia/Shanghai (MKS local time)
+</p>
+
+<table>
+
+<tr>
+<th><b>MKS time zone</b></th>
+<th><b>MKS local time</b></th>
+<th><b>CWM import 1st time zone</b></th>
+<th><b>DB record time = MKS + (CWM import 1st time zone - UTC)</b></th>
+<th><b>CWM import 1st time</b></th>
+<th><b>CWM read 2nd time zone</b></th>
+<th><b>CWM read 2nd time = DB record time - (CWM read 2nd time zone - UTC)</b></th>
+</tr>
+
+<tr>
+<td>Asia/Shanghai</td>
+<td>23:02 28 Feb</td>
+<td>Europe/Kaliningrad UTC+02</td>
+<td>01:02 1st March</td>
+<td>23:02 28 Feb</td>
+<td>Asia/Baku UTC+04</td>
+<td>21:02 28 Feb</td>
+</tr>
+
+<tr>
+<td>Asia/Shanghai</td>
+<td>23:02 28 Feb</td>
+<td>Europe/Kaliningrad UTC+02</td>
+<td>01:02 1st March</td>
+<td>23:02 28 Feb</td>
+<td>America/Los Angeles UTC-08</td>
+<td>09:02 1st March</td>
+</tr>
+
+</table>)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="keyIdentity" type="xs:string" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[Identity of key to retrieve audit trail from.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+    <xs:element name="includePartiallyProcessed" type="xs:boolean" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+    <xs:element name="excludeEntriesFromKeysWithoutTimeSupport" type="xs:boolean" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[If specified as true, then only entries where key supports time are returned.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+    <xs:element name="dateInterval" type="data_v2:dateInterval" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[Audit trail entry date interval in MKS time zone (find audit trails within this interval). The entry date is a creation date.  The date interval is exclusive for the 'from' date and inclusive for the 'to' date.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="getKeyAuditTrailResponse" type="queryService_v2:getKeyAuditTrailResponse"/>
+<xs:complexType name="getKeyAuditTrailResponse">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit response wrapper for operation "getKeyAuditTrail". (<p>
+Query for audit trail entries.
+The dates in a query are creation dates that are assumed to be in MKS time zone.
+</p>
+
+<p>
+getKeyAuditTrail method returns correct creation dates provided that CWM server time zone (Windows time zone) was the same at the audit trail import time and the time when the web service is used.
+</p>
+
+<p>
+If CWM server time zones are different then there will be several hours discrepancies.
+We have decided that the discrepancies will remain due to the fact that fixing it will require running a sql script on all production databases.
+Otherwise the web service won't be consistent for all users.
+</p>
+
+<p>
+The following table shows an example of discrepancies.
+</p>
+
+<p>
+<b>CWM import 1st time zone</b> - CWM server time zone during the first import of audit trail and save to the database
+</p>
+
+<p>
+<b>CWM read 2nd time zone</b> - after restarting CWM server with a different time zone
+</p>
+
+<p>
+The event happened at 23:02 Asia/Shanghai (MKS local time)
+</p>
+
+<table>
+
+<tr>
+<th><b>MKS time zone</b></th>
+<th><b>MKS local time</b></th>
+<th><b>CWM import 1st time zone</b></th>
+<th><b>DB record time = MKS + (CWM import 1st time zone - UTC)</b></th>
+<th><b>CWM import 1st time</b></th>
+<th><b>CWM read 2nd time zone</b></th>
+<th><b>CWM read 2nd time = DB record time - (CWM read 2nd time zone - UTC)</b></th>
+</tr>
+
+<tr>
+<td>Asia/Shanghai</td>
+<td>23:02 28 Feb</td>
+<td>Europe/Kaliningrad UTC+02</td>
+<td>01:02 1st March</td>
+<td>23:02 28 Feb</td>
+<td>Asia/Baku UTC+04</td>
+<td>21:02 28 Feb</td>
+</tr>
+
+<tr>
+<td>Asia/Shanghai</td>
+<td>23:02 28 Feb</td>
+<td>Europe/Kaliningrad UTC+02</td>
+<td>01:02 1st March</td>
+<td>23:02 28 Feb</td>
+<td>America/Los Angeles UTC-08</td>
+<td>09:02 1st March</td>
+</tr>
+
+</table>)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="auditTrail" type="data_v2:auditTrail" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="getKeyDetails" type="queryService_v2:getKeyDetails"/>
+<xs:complexType name="getKeyDetails">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit request wrapper for operation "getKeyDetails". (Gets the detailed information about a specific key.
+The information will include both static and dynamic data.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="keyIdentity" type="xs:string" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[Identity of key to retrieve detailed information from.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="getKeyDetailsResponse" type="queryService_v2:getKeyDetailsResponse"/>
+<xs:complexType name="getKeyDetailsResponse">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit response wrapper for operation "getKeyDetails". (Gets the detailed information about a specific key.
+The information will include both static and dynamic data.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="keyDetails" type="data_v2:keyDetails" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="getKeyPendingSchedule" type="queryService_v2:getKeyPendingSchedule"/>
+<xs:complexType name="getKeyPendingSchedule">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit request wrapper for operation "getKeyPendingSchedule". (Gets pending schedule for a specific key)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="keyIdentity" type="xs:string" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[Identity of key to retrieve pending schedule information from.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="getKeyPendingScheduleResponse" type="queryService_v2:getKeyPendingScheduleResponse"/>
+<xs:complexType name="getKeyPendingScheduleResponse">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit response wrapper for operation "getKeyPendingSchedule". (Gets pending schedule for a specific key)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="schedule" type="data_v2:schedule" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="getKeyPendingValidity" type="queryService_v2:getKeyPendingValidity"/>
+<xs:complexType name="getKeyPendingValidity">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit request wrapper for operation "getKeyPendingValidity". (Gets pending validity for a specific key)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="keyIdentity" type="xs:string" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[Identity of key to retrieve pending validity information from.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="getKeyPendingValidityResponse" type="queryService_v2:getKeyPendingValidityResponse"/>
+<xs:complexType name="getKeyPendingValidityResponse">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit response wrapper for operation "getKeyPendingValidity". (Gets pending validity for a specific key)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="validity" type="data_v2:validity" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="getKeys" type="queryService_v2:getKeys"/>
+<xs:complexType name="getKeys">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit request wrapper for operation "getKeys". (Query for all available keys in the key system.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="getKeysForPerson" type="queryService_v2:getKeysForPerson"/>
+<xs:complexType name="getKeysForPerson">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit request wrapper for operation "getKeysForPerson". (Query for all keys that belong to a person.
+<p>
+Only user keys will be returned.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="personIdentity" type="xs:string" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[Unique identity of the person for which we should get the keys.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="getKeysForPersonResponse" type="queryService_v2:getKeysForPersonResponse"/>
+<xs:complexType name="getKeysForPersonResponse">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit response wrapper for operation "getKeysForPerson". (Query for all keys that belong to a person.
+<p>
+Only user keys will be returned.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="key" type="data_v2:key" minOccurs="0" maxOccurs="unbounded">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="getKeysResponse" type="queryService_v2:getKeysResponse"/>
+<xs:complexType name="getKeysResponse">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit response wrapper for operation "getKeys". (Query for all available keys in the key system.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="key" type="data_v2:key" minOccurs="0" maxOccurs="unbounded">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="getKeysWithAccessToCylinderPlug" type="queryService_v2:getKeysWithAccessToCylinderPlug"/>
+<xs:complexType name="getKeysWithAccessToCylinderPlug">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit request wrapper for operation "getKeysWithAccessToCylinderPlug". (Find the keys that currently have access to a cylinder, based on key cuttings, explicit authorisations, key groups, cylinder groups and access profiles.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="cylinderPlugIdentity" type="xs:string" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[The identity of the cylinder plug.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+    <xs:element name="pagination" type="data_v2:pagination" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[used to specify the starting row and maximum amount of rows to return, allowing for iteration through large result sets.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="getKeysWithAccessToCylinderPlugResponse" type="queryService_v2:getKeysWithAccessToCylinderPlugResponse"/>
+<xs:complexType name="getKeysWithAccessToCylinderPlugResponse">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit response wrapper for operation "getKeysWithAccessToCylinderPlug". (Find the keys that currently have access to a cylinder, based on key cuttings, explicit authorisations, key groups, cylinder groups and access profiles.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="keyAndKeyHolder" type="data_v2:keyAndKeyHolder" minOccurs="0" maxOccurs="unbounded">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="getKeysWithPendingAccessToCylinderPlug" type="queryService_v2:getKeysWithPendingAccessToCylinderPlug"/>
+<xs:complexType name="getKeysWithPendingAccessToCylinderPlug">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit request wrapper for operation "getKeysWithPendingAccessToCylinderPlug". (Find the keys that will have access to a cylinder after they have been updated with all pending authorisations, based on key cuttings, explicit authorisations, key groups, cylinder groups and access profiles.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="cylinderPlugIdentity" type="xs:string" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[The identity of the cylinder plug.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+    <xs:element name="pagination" type="data_v2:pagination" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[used to specify the starting row and maximum amount of rows to return, allowing for iteration through large result sets.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="getKeysWithPendingAccessToCylinderPlugResponse" type="queryService_v2:getKeysWithPendingAccessToCylinderPlugResponse"/>
+<xs:complexType name="getKeysWithPendingAccessToCylinderPlugResponse">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit response wrapper for operation "getKeysWithPendingAccessToCylinderPlug". (Find the keys that will have access to a cylinder after they have been updated with all pending authorisations, based on key cuttings, explicit authorisations, key groups, cylinder groups and access profiles.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="keyAndKeyHolder" type="data_v2:keyAndKeyHolder" minOccurs="0" maxOccurs="unbounded">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="getModifiedCylinders" type="queryService_v2:getModifiedCylinders"/>
+<xs:complexType name="getModifiedCylinders">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit request wrapper for operation "getModifiedCylinders". (Search for cylinders that have been created, deleted or have data updated within given period)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="dateInterval" type="data_v2:dateIntervalWithTimeZone" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[date interval for which cylinders' data change or creating new cylinder events should be searched  for returning affected cylinders' identifier (find events within this interval).  The date interval is exclusive for the 'from' date and inclusive for the 'to' date.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="getModifiedCylindersResponse" type="queryService_v2:getModifiedCylindersResponse"/>
+<xs:complexType name="getModifiedCylindersResponse">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit response wrapper for operation "getModifiedCylinders". (Search for cylinders that have been created, deleted or have data updated within given period)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="cylinderIdentity" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="getModifiedKeys" type="queryService_v2:getModifiedKeys"/>
+<xs:complexType name="getModifiedKeys">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit request wrapper for operation "getModifiedKeys". (Find new or updated keys.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="dateInterval" type="data_v2:dateIntervalWithTimeZone" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[The date time interval in which key changes will be searched for. The date interval is exclusive for the 'from' date and inclusive for the  'to' date. If the 'to' date is omitted, the current date and time in the system-specific timezone will be used.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="getModifiedKeysResponse" type="queryService_v2:getModifiedKeysResponse"/>
+<xs:complexType name="getModifiedKeysResponse">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit response wrapper for operation "getModifiedKeys". (Find new or updated keys.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="keyIdentity" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="getModifiedPersons" type="queryService_v2:getModifiedPersons"/>
+<xs:complexType name="getModifiedPersons">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit request wrapper for operation "getModifiedPersons". (Search for persons that have been created, deleted or have data updated within given period)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="dateInterval" type="data_v2:dateIntervalWithTimeZone" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[date interval for which person' data change or creating new person events should be searched  for returning affected person' identifier (find events within this interval).  The date interval is exclusive for the 'from' date and inclusive for the 'to' date.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="getModifiedPersonsResponse" type="queryService_v2:getModifiedPersonsResponse"/>
+<xs:complexType name="getModifiedPersonsResponse">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit response wrapper for operation "getModifiedPersons". (Search for persons that have been created, deleted or have data updated within given period)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="personIdentity" type="data_v2:identifierDTO" minOccurs="0" maxOccurs="unbounded">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="getModifiedRemotePDs" type="queryService_v2:getModifiedRemotePDs"/>
+<xs:complexType name="getModifiedRemotePDs">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit request wrapper for operation "getModifiedRemotePDs". (Find new or updated PDs.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="dateInterval" type="data_v2:dateIntervalWithTimeZone" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[The date time interval in which PD changes will be searched for. The date interval is exclusive for the 'from' date and inclusive for the  'to' date. If the 'to' date is omitted, the current date and time in the system-specific timezone will be used.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="getModifiedRemotePDsResponse" type="queryService_v2:getModifiedRemotePDsResponse"/>
+<xs:complexType name="getModifiedRemotePDsResponse">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit response wrapper for operation "getModifiedRemotePDs". (Find new or updated PDs.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="remotePdIdentity" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="getPendingAccessibleCylinders" type="queryService_v2:getPendingAccessibleCylinders"/>
+<xs:complexType name="getPendingAccessibleCylinders">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit request wrapper for operation "getPendingAccessibleCylinders". (Find the cylinders for a key that will be accessible after the key has been updated with all pending authorisations, based on key cuttings, explicit authorisations, cylinder groups and access profiles.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="keyIdentity" type="xs:string" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[the identity (UUID) of the key.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+    <xs:element name="pagination" type="data_v2:pagination" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[used to specify the starting row and maximum amount of rows to return, allowing for iteration through large result sets.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="getPendingAccessibleCylindersResponse" type="queryService_v2:getPendingAccessibleCylindersResponse"/>
+<xs:complexType name="getPendingAccessibleCylindersResponse">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit response wrapper for operation "getPendingAccessibleCylinders". (Find the cylinders for a key that will be accessible after the key has been updated with all pending authorisations, based on key cuttings, explicit authorisations, cylinder groups and access profiles.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="keyAccess" type="data_v2:keyAccess" minOccurs="0" maxOccurs="unbounded">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="getPersonDetails" type="queryService_v2:getPersonDetails"/>
+<xs:complexType name="getPersonDetails">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit request wrapper for operation "getPersonDetails". (Gets the detailed information about a specific person.
+The information will include both static and dynamic data.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="personIdentity" type="xs:string" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[Identity of person to retrieve detailed information from.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="getPersonDetailsByImmutableIdentity" type="queryService_v2:getPersonDetailsByImmutableIdentity"/>
+<xs:complexType name="getPersonDetailsByImmutableIdentity">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit request wrapper for operation "getPersonDetailsByImmutableIdentity". (Gets the detailed information about a specific person.
+The information is retrieved by immutable identity of the person.
+The information will include both static and dynamic data.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="personIdentity" type="xs:string" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[immutable Identity of person to retrieve detailed information from.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="getPersonDetailsByImmutableIdentityResponse" type="queryService_v2:getPersonDetailsByImmutableIdentityResponse"/>
+<xs:complexType name="getPersonDetailsByImmutableIdentityResponse">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit response wrapper for operation "getPersonDetailsByImmutableIdentity". (Gets the detailed information about a specific person.
+The information is retrieved by immutable identity of the person.
+The information will include both static and dynamic data.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="personDetails" type="data_v2:personDetails" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="getPersonDetailsResponse" type="queryService_v2:getPersonDetailsResponse"/>
+<xs:complexType name="getPersonDetailsResponse">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit response wrapper for operation "getPersonDetails". (Gets the detailed information about a specific person.
+The information will include both static and dynamic data.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="personDetails" type="data_v2:personDetails" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="getPersons" type="queryService_v2:getPersons"/>
+<xs:complexType name="getPersons">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit request wrapper for operation "getPersons". (Query for all persons in the key system.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="getPersonsResponse" type="queryService_v2:getPersonsResponse"/>
+<xs:complexType name="getPersonsResponse">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit response wrapper for operation "getPersons". (Query for all persons in the key system.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="person" type="data_v2:person" minOccurs="0" maxOccurs="unbounded">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="getPersonsWithModifiedListOfAccessProfiles" type="queryService_v2:getPersonsWithModifiedListOfAccessProfiles"/>
+<xs:complexType name="getPersonsWithModifiedListOfAccessProfiles">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit request wrapper for operation "getPersonsWithModifiedListOfAccessProfiles". (Search for persons with modified list of access profiles.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="dateInterval" type="data_v2:dateIntervalWithTimeZone" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[The date interval within which to search for persons with modified access profiles.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+    <xs:element name="pagination" type="data_v2:pagination" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[Used to specify the starting person and maximum amount of persons to return,  allowing for iteration through large result sets.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="getPersonsWithModifiedListOfAccessProfilesResponse" type="queryService_v2:getPersonsWithModifiedListOfAccessProfilesResponse"/>
+<xs:complexType name="getPersonsWithModifiedListOfAccessProfilesResponse">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit response wrapper for operation "getPersonsWithModifiedListOfAccessProfiles". (Search for persons with modified list of access profiles.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="personWithAccessProfiles" type="data_v2:personWithAccessProfiles" minOccurs="0" maxOccurs="unbounded">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="getRemotePDs" type="queryService_v2:getRemotePDs"/>
+<xs:complexType name="getRemotePDs">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit request wrapper for operation "getRemotePDs". (Query for all available Remote Programming Devices in the key system.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="getRemotePDsResponse" type="queryService_v2:getRemotePDsResponse"/>
+<xs:complexType name="getRemotePDsResponse">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit response wrapper for operation "getRemotePDs". (Query for all available Remote Programming Devices in the key system.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="remotePD" type="data_v2:remotePD" minOccurs="0" maxOccurs="unbounded">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="getRemotePdDetails" type="queryService_v2:getRemotePdDetails"/>
+<xs:complexType name="getRemotePdDetails">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit request wrapper for operation "getRemotePdDetails". (Gets the detailed information about a specific remote PD.
+The information will include both static and dynamic data.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="remotePdIdentity" type="xs:string" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[Identity of remote PD to retrieve detailed information from.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="getRemotePdDetailsResponse" type="queryService_v2:getRemotePdDetailsResponse"/>
+<xs:complexType name="getRemotePdDetailsResponse">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit response wrapper for operation "getRemotePdDetails". (Gets the detailed information about a specific remote PD.
+The information will include both static and dynamic data.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="remotePdDetails" type="data_v2:remotePdDetails" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="searchAccessProfileDomainChanges" type="queryService_v2:searchAccessProfileDomainChanges"/>
+<xs:complexType name="searchAccessProfileDomainChanges">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit request wrapper for operation "searchAccessProfileDomainChanges". (Find which access profiles have entered or left the domain.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="domainName" type="xs:string" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[The name of the domain the profile was moved into or out of. Value is case in-sensitive and wildcard is not accepted.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+    <xs:element name="dateInterval" type="data_v2:dateIntervalWithTimeZone" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[The date interval within which to search for access profile domain changes. The date interval is exclusive for the 'from' date and inclusive for the  'to' date. If the 'to' date is omitted, the current date and time in the system-specific timezone will be used.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+    <xs:element name="pagination" type="data_v2:pagination" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[Used to specify the starting row and maximum amount of rows to return, allowing for iteration through large result sets.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="searchAccessProfileDomainChangesResponse" type="queryService_v2:searchAccessProfileDomainChangesResponse"/>
+<xs:complexType name="searchAccessProfileDomainChangesResponse">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit response wrapper for operation "searchAccessProfileDomainChanges". (Find which access profiles have entered or left the domain.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="accessProfileDomainChange" type="data_v2:accessProfileDomainChange" minOccurs="0" maxOccurs="unbounded">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="searchAccessProfileUpdates" type="queryService_v2:searchAccessProfileUpdates"/>
+<xs:complexType name="searchAccessProfileUpdates">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit request wrapper for operation "searchAccessProfileUpdates". (Find which access profiles updates have been made in the domain.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="domainName" type="xs:string" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[The domain name of the access profiles that will be searched. Value is case in-sensitive and wildcard is not accepted.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+    <xs:element name="dateInterval" type="data_v2:dateIntervalWithTimeZone" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[The date interval within which to search for access profile updates. The date interval is exclusive for the 'from' date and inclusive for the  'to' date. If the 'to' date is omitted, the current date and time in the system-specific timezone will be used.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+    <xs:element name="pagination" type="data_v2:pagination" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[Used to specify the starting row and maximum amount of rows to return, allowing for iteration through large result sets. The maximum allowed value is 1000.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="searchAccessProfileUpdatesResponse" type="queryService_v2:searchAccessProfileUpdatesResponse"/>
+<xs:complexType name="searchAccessProfileUpdatesResponse">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit response wrapper for operation "searchAccessProfileUpdates". (Find which access profiles updates have been made in the domain.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="accessProfileUpdate" type="data_v2:accessProfileUpdate" minOccurs="0" maxOccurs="unbounded">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="searchAccessProfiles" type="queryService_v2:searchAccessProfiles"/>
+<xs:complexType name="searchAccessProfiles">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit request wrapper for operation "searchAccessProfiles". (Search for access profiles with search arguments.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="accessProfileSearchArguments" type="data_v2:accessProfileSearchArguments" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[access profile search arguments.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+    <xs:element name="pagination" type="data_v2:pagination" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[used to specify the starting row and maximum amount of rows to return, allowing for iteration through large result sets.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="searchAccessProfilesResponse" type="queryService_v2:searchAccessProfilesResponse"/>
+<xs:complexType name="searchAccessProfilesResponse">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit response wrapper for operation "searchAccessProfiles". (Search for access profiles with search arguments.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="accessProfile" type="data_v2:accessProfile" minOccurs="0" maxOccurs="unbounded">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="searchCylinderDomainChanges" type="queryService_v2:searchCylinderDomainChanges"/>
+<xs:complexType name="searchCylinderDomainChanges">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit request wrapper for operation "searchCylinderDomainChanges". (Find all cylinders or cylinder groups that have changed domains to or from the specified domain.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="domainName" type="xs:string" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[The old or new domain name of the cylinders or cylinder groups that have changed domains.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+    <xs:element name="dateInterval" type="data_v2:dateIntervalWithTimeZone" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[The date interval within which to search for cylinders or cylinder groups that have changed domain. The date interval is exclusive for the 'from' date and inclusive for the  'to' date. If the 'to' date is omitted, the current date and time in the system-specific timezone will be used.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+    <xs:element name="pagination" type="data_v2:pagination" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[Used to specify the starting row and maximum amount of rows to return, allowing for iteration through large result sets.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="searchCylinderDomainChangesResponse" type="queryService_v2:searchCylinderDomainChangesResponse"/>
+<xs:complexType name="searchCylinderDomainChangesResponse">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit response wrapper for operation "searchCylinderDomainChanges". (Find all cylinders or cylinder groups that have changed domains to or from the specified domain.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="cylinderDomainChange" type="data_v2:cylinderDomainChange" minOccurs="0" maxOccurs="unbounded">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="searchCylinderGroups" type="queryService_v2:searchCylinderGroups"/>
+<xs:complexType name="searchCylinderGroups">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit request wrapper for operation "searchCylinderGroups". (Search for cylinder groups with search arguments.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="cylinderGroupSearchArguments" type="data_v2:cylinderGroupSearchArguments" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[Cylinder group search arguments.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+    <xs:element name="pagination" type="data_v2:pagination" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[used to specify the starting row and maximum amount of rows to return, allowing for iteration through large result sets.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="searchCylinderGroupsResponse" type="queryService_v2:searchCylinderGroupsResponse"/>
+<xs:complexType name="searchCylinderGroupsResponse">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit response wrapper for operation "searchCylinderGroups". (Search for cylinder groups with search arguments.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="cylinderGroup" type="data_v2:cylinderGroup" minOccurs="0" maxOccurs="unbounded">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="searchCylinders" type="queryService_v2:searchCylinders"/>
+<xs:complexType name="searchCylinders">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit request wrapper for operation "searchCylinders". (Search for cylinders with search arguments.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="cylinderSearchArguments" type="data_v2:cylinderSearchArguments" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[Cylinder search arguments.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+    <xs:element name="pagination" type="data_v2:pagination" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[used to specify the starting row and maximum amount of rows to return, allowing for iteration through large result sets.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="searchCylindersImported" type="queryService_v2:searchCylindersImported"/>
+<xs:complexType name="searchCylindersImported">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit request wrapper for operation "searchCylindersImported". (Find all cylinders that have been imported into the domain during the specified time interval.
+<p/>
+NOTE: This search will only find cylinders that were imported using the .CWS file format. Cylinders that were imported without an import date will not be found.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="domainName" type="xs:string" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[The name of the domain in which to search for imported cylinders.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+    <xs:element name="dateInterval" type="data_v2:dateIntervalWithTimeZone" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[The date interval within which to search for imported cylinders.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+    <xs:element name="pagination" type="data_v2:pagination" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[Used to specify the starting row and maximum amount of rows to return, allowing for iteration through large result sets.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="searchCylindersImportedResponse" type="queryService_v2:searchCylindersImportedResponse"/>
+<xs:complexType name="searchCylindersImportedResponse">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit response wrapper for operation "searchCylindersImported". (Find all cylinders that have been imported into the domain during the specified time interval.
+<p/>
+NOTE: This search will only find cylinders that were imported using the .CWS file format. Cylinders that were imported without an import date will not be found.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="cylinder" type="data_v2:cylinder" minOccurs="0" maxOccurs="unbounded">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="searchCylindersResponse" type="queryService_v2:searchCylindersResponse"/>
+<xs:complexType name="searchCylindersResponse">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit response wrapper for operation "searchCylinders". (Search for cylinders with search arguments.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="cylinder" type="data_v2:cylinder" minOccurs="0" maxOccurs="unbounded">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="searchExplicitKeyAuthorisationChanges" type="queryService_v2:searchExplicitKeyAuthorisationChanges"/>
+<xs:complexType name="searchExplicitKeyAuthorisationChanges">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit request wrapper for operation "searchExplicitKeyAuthorisationChanges". (Find all explicit key authorisation changes involving cylinders and cylinder groups in the specified domain and during the specified time interval.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="domainName" type="xs:string" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[The domain name of cylinders and cylinder groups involved in explicit key authorisation changes.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+    <xs:element name="dateInterval" type="data_v2:dateIntervalWithTimeZone" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[The date time interval in which explicit key authorisation changes will be searched for. The date interval is exclusive for the 'from' date and inclusive for the  'to' date. If the 'to' date is omitted, the current date and time in the system-specific timezone will be used.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+    <xs:element name="pagination" type="data_v2:pagination" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[Used to specify the starting row and maximum amount of rows to return, allowing for iteration through large result sets. The maximum allowed value is 1000.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="searchExplicitKeyAuthorisationChangesResponse" type="queryService_v2:searchExplicitKeyAuthorisationChangesResponse"/>
+<xs:complexType name="searchExplicitKeyAuthorisationChangesResponse">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit response wrapper for operation "searchExplicitKeyAuthorisationChanges". (Find all explicit key authorisation changes involving cylinders and cylinder groups in the specified domain and during the specified time interval.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="keyAccessChange" type="data_v2:keyAccessChange" minOccurs="0" maxOccurs="unbounded">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="searchKeyAccessProfileChange" type="queryService_v2:searchKeyAccessProfileChange"/>
+<xs:complexType name="searchKeyAccessProfileChange">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit request wrapper for operation "searchKeyAccessProfileChange". (Find changes in direct associations between keys and access profiles in the domain within the specified time interval.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="domainName" type="xs:string" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[The domain name of the access profiles that will be searched. Value is case insensitive and wildcard is not accepted.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+    <xs:element name="dateInterval" type="data_v2:dateIntervalWithTimeZone" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[The date interval within which to search for access profile changes for keys. The date interval is exclusive for the 'from' date and inclusive for the  'to' date. If the 'to' date is omitted, the current date and time in the system-specific timezone will be used.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+    <xs:element name="pagination" type="data_v2:pagination" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[Used to specify the starting row and maximum amount of rows to return, allowing for iteration through large result sets.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="searchKeyAccessProfileChangeResponse" type="queryService_v2:searchKeyAccessProfileChangeResponse"/>
+<xs:complexType name="searchKeyAccessProfileChangeResponse">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit response wrapper for operation "searchKeyAccessProfileChange". (Find changes in direct associations between keys and access profiles in the domain within the specified time interval.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="keyAccessProfileChange" type="data_v2:keyAccessProfileChange" minOccurs="0" maxOccurs="unbounded">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="searchKeys" type="queryService_v2:searchKeys"/>
+<xs:complexType name="searchKeys">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit request wrapper for operation "searchKeys". (Query for all keys that match the search arguments.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="keySearchArguments" type="data_v2:keySearchArguments" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[Key search arguments.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+    <xs:element name="pagination" type="data_v2:pagination" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[used to specify the starting row and maximum amount of rows to return, allowing for iteration through large result sets.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="searchKeysResponse" type="queryService_v2:searchKeysResponse"/>
+<xs:complexType name="searchKeysResponse">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit response wrapper for operation "searchKeys". (Query for all keys that match the search arguments.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="key" type="data_v2:key" minOccurs="0" maxOccurs="unbounded">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="searchPersons" type="queryService_v2:searchPersons"/>
+<xs:complexType name="searchPersons">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit request wrapper for operation "searchPersons". (Search for persons with search arguments.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="personSearchArguments" type="data_v2:personSearchArguments" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[Person search arguments.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+    <xs:element name="pagination" type="data_v2:pagination" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[used to specify the starting row and maximum amount of rows to return, allowing for iteration through large result sets.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="searchPersonsResponse" type="queryService_v2:searchPersonsResponse"/>
+<xs:complexType name="searchPersonsResponse">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit response wrapper for operation "searchPersons". (Search for persons with search arguments.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="person" type="data_v2:person" minOccurs="0" maxOccurs="unbounded">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="searchPersonsWithKeys" type="queryService_v2:searchPersonsWithKeys"/>
+<xs:complexType name="searchPersonsWithKeys">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit request wrapper for operation "searchPersonsWithKeys". (Search for persons with handed out user keys using search arguments.
+Only persons with user keys are considered.
+C-Keys will not be returned if person has any, also persons with only C-Keys will not be returned.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="personSearchArguments" type="data_v2:personSearchArguments" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[Person search arguments.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+    <xs:element name="pagination" type="data_v2:pagination" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[used to specify the starting row and maximum amount of rows to return, allowing for iteration through large result sets.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="searchPersonsWithKeysResponse" type="queryService_v2:searchPersonsWithKeysResponse"/>
+<xs:complexType name="searchPersonsWithKeysResponse">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit response wrapper for operation "searchPersonsWithKeys". (Search for persons with handed out user keys using search arguments.
+Only persons with user keys are considered.
+C-Keys will not be returned if person has any, also persons with only C-Keys will not be returned.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="person" type="data_v2:personWithKeys" minOccurs="0" maxOccurs="unbounded">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="searchTemporaryAccessGroupChanges" type="queryService_v2:searchTemporaryAccessGroupChanges"/>
+<xs:complexType name="searchTemporaryAccessGroupChanges">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit request wrapper for operation "searchTemporaryAccessGroupChanges". (Find all temporary access group changes in the specified domain and during the specified time interval.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="domainName" type="xs:string" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[The domain name of temporary access groups that will be searched for changes.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+    <xs:element name="dateInterval" type="data_v2:dateIntervalWithTimeZone" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[The date time interval in which temporary access group changes will be searched for. The date interval is exclusive for the 'from' date and inclusive for the  'to' date. If the 'to' date is omitted, the current date and time in the system-specific timezone will be used.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+    <xs:element name="pagination" type="data_v2:pagination" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[Used to specify the starting row and maximum amount of rows to return, allowing for iteration through large result sets. The maximum allowed value is 1000.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="searchTemporaryAccessGroupChangesResponse" type="queryService_v2:searchTemporaryAccessGroupChangesResponse"/>
+<xs:complexType name="searchTemporaryAccessGroupChangesResponse">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit response wrapper for operation "searchTemporaryAccessGroupChanges". (Find all temporary access group changes in the specified domain and during the specified time interval.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="temporaryAccessGroupChange" type="data_v2:temporaryAccessGroupChange" minOccurs="0" maxOccurs="unbounded">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+</xs:schema>

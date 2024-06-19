@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?enunciate-assumed-base-uri http://localhost:8080/?>
+<wsdl:definitions targetNamespace="http://cliq.shared.assaabloy.com/ws/import/v2/"
+   xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+   xmlns:data_v2="http://cliq.shared.assaabloy.com/ws/data/v2/"
+   xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+   xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/"
+   xmlns:xs="http://www.w3.org/2001/XMLSchema"
+   xmlns:http="http://schemas.xmlsoap.org/wsdl/http/"
+   xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+   xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+   xmlns:importService_v2="http://cliq.shared.assaabloy.com/ws/import/v2/"
+   >
+
+  <wsdl:types>
+  <xs:schema targetNamespace="http://cliq.shared.assaabloy.com/ws/import/v2/">
+    <xs:import namespace="http://cliq.shared.assaabloy.com/ws/data/v2/" schemaLocation="data_v2.xsd"/>
+      <xs:include schemaLocation="importService_v2.xsd"/>
+  </xs:schema>
+  </wsdl:types>
+
+  <wsdl:message name="ImportService.savePersons">
+    <wsdl:documentation>
+      <![CDATA[request message for operation "savePersons". (Saves the given list of new person(s), all basic attributes of persons can be saved.
+<p/>
+Any ASCII control chars in person fields eg in firstName will be removed.
+<p/>
+<p/>Note:
+<ul>
+<li>if type is not defined, persons are defined as employees by default</li>
+<li>if domain is not defined then person is assigned to the initial domain configured in system settings</li>
+</ul>)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="importService_v2:savePersons">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ImportService.savePersonsResponse">
+    <wsdl:documentation>
+      <![CDATA[response message for operation "savePersons". (Saves the given list of new person(s), all basic attributes of persons can be saved.
+<p/>
+Any ASCII control chars in person fields eg in firstName will be removed.
+<p/>
+<p/>Note:
+<ul>
+<li>if type is not defined, persons are defined as employees by default</li>
+<li>if domain is not defined then person is assigned to the initial domain configured in system settings</li>
+</ul>)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="importService_v2:savePersonsResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="SystemException">
+    <wsdl:documentation>
+      <![CDATA[Thrown if an unrecoverable error occurs. Error log should be available on server.]]>
+    </wsdl:documentation>
+    <wsdl:part name="SystemException" element="data_v2:systemException">
+      <wsdl:documentation>
+        <![CDATA[Thrown if an unrecoverable error occurs. Error log should be available on server.]]>
+      </wsdl:documentation>
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ImportService.updatePersons">
+    <wsdl:documentation>
+      <![CDATA[request message for operation "updatePersons". (Updates the given list of persons in CWM, all basic attributes of persons can be updated.
+<p/>
+If the person exists, the existing person instance will be overwritten with new information.
+If the person does not exists, a new person will be created in CWM.
+<p/>
+Note:
+<ul>
+<li>a failure will be added to the result if trying to delete a person who has a key</li>
+<li>a failure will be added to the result if trying to update a person imported from LDAP</li>
+<li>if domain is not defined then person is re-assigned to the initial domain configured in system settings</li>
+</ul>)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="importService_v2:updatePersons">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ImportService.updatePersonsResponse">
+    <wsdl:documentation>
+      <![CDATA[response message for operation "updatePersons". (Updates the given list of persons in CWM, all basic attributes of persons can be updated.
+<p/>
+If the person exists, the existing person instance will be overwritten with new information.
+If the person does not exists, a new person will be created in CWM.
+<p/>
+Note:
+<ul>
+<li>a failure will be added to the result if trying to delete a person who has a key</li>
+<li>a failure will be added to the result if trying to update a person imported from LDAP</li>
+<li>if domain is not defined then person is re-assigned to the initial domain configured in system settings</li>
+</ul>)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="importService_v2:updatePersonsResponse">
+    </wsdl:part>
+  </wsdl:message>
+
+  <wsdl:portType name="ImportService">
+    <wsdl:documentation>
+      <![CDATA[Service for importing data into CLIQ Web Manager.
+Typically used to import data stored in other systems, eg. importing person data from a local AD into Web Manager.]]>
+    </wsdl:documentation>
+  <wsdl:operation name="savePersons">
+    <wsdl:documentation>
+      <![CDATA[Saves the given list of new person(s), all basic attributes of persons can be saved.
+<p/>
+Any ASCII control chars in person fields eg in firstName will be removed.
+<p/>
+<p/>Note:
+<ul>
+<li>if type is not defined, persons are defined as employees by default</li>
+<li>if domain is not defined then person is assigned to the initial domain configured in system settings</li>
+</ul>]]>
+    </wsdl:documentation>
+    <wsdl:input message="importService_v2:ImportService.savePersons"/>
+    <wsdl:output message="importService_v2:ImportService.savePersonsResponse"/>
+    <wsdl:fault name="SystemException" message="importService_v2:SystemException"/>
+  </wsdl:operation>
+  <wsdl:operation name="updatePersons">
+    <wsdl:documentation>
+      <![CDATA[Updates the given list of persons in CWM, all basic attributes of persons can be updated.
+<p/>
+If the person exists, the existing person instance will be overwritten with new information.
+If the person does not exists, a new person will be created in CWM.
+<p/>
+Note:
+<ul>
+<li>a failure will be added to the result if trying to delete a person who has a key</li>
+<li>a failure will be added to the result if trying to update a person imported from LDAP</li>
+<li>if domain is not defined then person is re-assigned to the initial domain configured in system settings</li>
+</ul>]]>
+    </wsdl:documentation>
+    <wsdl:input message="importService_v2:ImportService.updatePersons"/>
+    <wsdl:output message="importService_v2:ImportService.updatePersonsResponse"/>
+    <wsdl:fault name="SystemException" message="importService_v2:SystemException"/>
+  </wsdl:operation>
+  </wsdl:portType>
+
+
+  <wsdl:binding name="ImportServicePortBinding" type="importService_v2:ImportService">
+    <wsdl:documentation>
+      <![CDATA[SOAP Binding for ImportService]]>
+    </wsdl:documentation>
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="savePersons">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SystemException">
+        <soap:fault name="SystemException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="updatePersons">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SystemException">
+        <soap:fault name="SystemException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+
+  <wsdl:service name="ImportServiceV2">
+    <wsdl:port name="ImportServicePort" binding="importService_v2:ImportServicePortBinding">
+      <soap:address location="http://localhost:8080/ImportServiceV2"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
+

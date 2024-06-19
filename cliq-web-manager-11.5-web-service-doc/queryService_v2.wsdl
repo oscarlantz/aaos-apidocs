@@ -1,0 +1,2318 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?enunciate-assumed-base-uri http://localhost:8080/?>
+<wsdl:definitions targetNamespace="http://cliq.shared.assaabloy.com/ws/query/v2/"
+   xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+   xmlns:data_v2="http://cliq.shared.assaabloy.com/ws/data/v2/"
+   xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+   xmlns:dataExtra_r9_0_v2="http://cliq.shared.assaabloy.com/ws/data/extra_r9_0/v2/"
+   xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/"
+   xmlns:xs="http://www.w3.org/2001/XMLSchema"
+   xmlns:http="http://schemas.xmlsoap.org/wsdl/http/"
+   xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+   xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+   xmlns:queryService_v2="http://cliq.shared.assaabloy.com/ws/query/v2/"
+   >
+
+  <wsdl:types>
+  <xs:schema targetNamespace="http://cliq.shared.assaabloy.com/ws/query/v2/">
+    <xs:import namespace="http://cliq.shared.assaabloy.com/ws/data/v2/" schemaLocation="data_v2.xsd"/>
+    <xs:import namespace="http://cliq.shared.assaabloy.com/ws/data/extra_r9_0/v2/" schemaLocation="dataExtra_r9_0_v2.xsd"/>
+      <xs:include schemaLocation="queryService_v2.xsd"/>
+  </xs:schema>
+  </wsdl:types>
+
+  <wsdl:message name="QueryService.getPersons">
+    <wsdl:documentation>
+      <![CDATA[request message for operation "getPersons". (Query for all persons in the key system.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="queryService_v2:getPersons">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="QueryService.getPersonsResponse">
+    <wsdl:documentation>
+      <![CDATA[response message for operation "getPersons". (Query for all persons in the key system.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="queryService_v2:getPersonsResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="SystemException">
+    <wsdl:documentation>
+      <![CDATA[Thrown if an unrecoverable error occurs. Error log should be available on server.]]>
+    </wsdl:documentation>
+    <wsdl:part name="SystemException" element="data_v2:systemException">
+      <wsdl:documentation>
+        <![CDATA[Thrown if an unrecoverable error occurs.]]>
+      </wsdl:documentation>
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="QueryService.getDomains">
+    <wsdl:documentation>
+      <![CDATA[request message for operation "getDomains". (Query for all domains in the key system.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="queryService_v2:getDomains">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="QueryService.getDomainsResponse">
+    <wsdl:documentation>
+      <![CDATA[response message for operation "getDomains". (Query for all domains in the key system.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="queryService_v2:getDomainsResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="QueryService.getModifiedPersons">
+    <wsdl:documentation>
+      <![CDATA[request message for operation "getModifiedPersons". (Search for persons that have been created, deleted or have data updated within given period)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="queryService_v2:getModifiedPersons">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="QueryService.getModifiedPersonsResponse">
+    <wsdl:documentation>
+      <![CDATA[response message for operation "getModifiedPersons". (Search for persons that have been created, deleted or have data updated within given period)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="queryService_v2:getModifiedPersonsResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="InvalidDataException">
+    <wsdl:documentation>
+      <![CDATA[Thrown if input data is invalid. See message and failure description for details.]]>
+    </wsdl:documentation>
+    <wsdl:part name="InvalidDataException" element="data_v2:invalidDataException">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="QueryService.getPersonDetails">
+    <wsdl:documentation>
+      <![CDATA[request message for operation "getPersonDetails". (Gets the detailed information about a specific person.
+The information will include both static and dynamic data.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="queryService_v2:getPersonDetails">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="QueryService.getPersonDetailsResponse">
+    <wsdl:documentation>
+      <![CDATA[response message for operation "getPersonDetails". (Gets the detailed information about a specific person.
+The information will include both static and dynamic data.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="queryService_v2:getPersonDetailsResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="IdentityNotFoundException">
+    <wsdl:documentation>
+      <![CDATA[Thrown if the submitted identity could not be matched in CLIQ Web Manager.]]>
+    </wsdl:documentation>
+    <wsdl:part name="IdentityNotFoundException" element="data_v2:identityNotFoundException">
+      <wsdl:documentation>
+        <![CDATA[Thrown if no person exists with the given identity.]]>
+      </wsdl:documentation>
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="QueryService.getPersonDetailsByImmutableIdentity">
+    <wsdl:documentation>
+      <![CDATA[request message for operation "getPersonDetailsByImmutableIdentity". (Gets the detailed information about a specific person.
+The information is retrieved by immutable identity of the person.
+The information will include both static and dynamic data.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="queryService_v2:getPersonDetailsByImmutableIdentity">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="QueryService.getPersonDetailsByImmutableIdentityResponse">
+    <wsdl:documentation>
+      <![CDATA[response message for operation "getPersonDetailsByImmutableIdentity". (Gets the detailed information about a specific person.
+The information is retrieved by immutable identity of the person.
+The information will include both static and dynamic data.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="queryService_v2:getPersonDetailsByImmutableIdentityResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="IdentityDeactivatedException">
+    <wsdl:part name="IdentityDeactivatedException" element="dataExtra_r9_0_v2:identityDeactivatedException">
+      <wsdl:documentation>
+        <![CDATA[Thrown if a person with the given identity is deactivated.]]>
+      </wsdl:documentation>
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="QueryService.getCylinders">
+    <wsdl:documentation>
+      <![CDATA[request message for operation "getCylinders". (Query for all available cylinders in the key system.
+Each cylinder will be returned as a separate entry.
+E.g for double-sided cylinders two cylinder plug items will be returned.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="queryService_v2:getCylinders">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="QueryService.getCylindersResponse">
+    <wsdl:documentation>
+      <![CDATA[response message for operation "getCylinders". (Query for all available cylinders in the key system.
+Each cylinder will be returned as a separate entry.
+E.g for double-sided cylinders two cylinder plug items will be returned.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="queryService_v2:getCylindersResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="QueryService.getModifiedCylinders">
+    <wsdl:documentation>
+      <![CDATA[request message for operation "getModifiedCylinders". (Search for cylinders that have been created, deleted or have data updated within given period)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="queryService_v2:getModifiedCylinders">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="QueryService.getModifiedCylindersResponse">
+    <wsdl:documentation>
+      <![CDATA[response message for operation "getModifiedCylinders". (Search for cylinders that have been created, deleted or have data updated within given period)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="queryService_v2:getModifiedCylindersResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="QueryService.searchCylinders">
+    <wsdl:documentation>
+      <![CDATA[request message for operation "searchCylinders". (Search for cylinders with search arguments.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="queryService_v2:searchCylinders">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="QueryService.searchCylindersResponse">
+    <wsdl:documentation>
+      <![CDATA[response message for operation "searchCylinders". (Search for cylinders with search arguments.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="queryService_v2:searchCylindersResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="QueryService.getCylinderDetails">
+    <wsdl:documentation>
+      <![CDATA[request message for operation "getCylinderDetails". (Gets the detailed information about a specific cylinder.
+The information will include both static and dynamic data.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="queryService_v2:getCylinderDetails">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="QueryService.getCylinderDetailsResponse">
+    <wsdl:documentation>
+      <![CDATA[response message for operation "getCylinderDetails". (Gets the detailed information about a specific cylinder.
+The information will include both static and dynamic data.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="queryService_v2:getCylinderDetailsResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="QueryService.getRemotePDs">
+    <wsdl:documentation>
+      <![CDATA[request message for operation "getRemotePDs". (Query for all available Remote Programming Devices in the key system.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="queryService_v2:getRemotePDs">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="QueryService.getRemotePDsResponse">
+    <wsdl:documentation>
+      <![CDATA[response message for operation "getRemotePDs". (Query for all available Remote Programming Devices in the key system.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="queryService_v2:getRemotePDsResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="QueryService.getRemotePdDetails">
+    <wsdl:documentation>
+      <![CDATA[request message for operation "getRemotePdDetails". (Gets the detailed information about a specific remote PD.
+The information will include both static and dynamic data.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="queryService_v2:getRemotePdDetails">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="QueryService.getRemotePdDetailsResponse">
+    <wsdl:documentation>
+      <![CDATA[response message for operation "getRemotePdDetails". (Gets the detailed information about a specific remote PD.
+The information will include both static and dynamic data.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="queryService_v2:getRemotePdDetailsResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="QueryService.getKeys">
+    <wsdl:documentation>
+      <![CDATA[request message for operation "getKeys". (Query for all available keys in the key system.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="queryService_v2:getKeys">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="QueryService.getKeysResponse">
+    <wsdl:documentation>
+      <![CDATA[response message for operation "getKeys". (Query for all available keys in the key system.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="queryService_v2:getKeysResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="QueryService.searchKeys">
+    <wsdl:documentation>
+      <![CDATA[request message for operation "searchKeys". (Query for all keys that match the search arguments.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="queryService_v2:searchKeys">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="QueryService.searchKeysResponse">
+    <wsdl:documentation>
+      <![CDATA[response message for operation "searchKeys". (Query for all keys that match the search arguments.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="queryService_v2:searchKeysResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="QueryService.getKeysForPerson">
+    <wsdl:documentation>
+      <![CDATA[request message for operation "getKeysForPerson". (Query for all keys that belong to a person.
+<p>
+Only user keys will be returned.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="queryService_v2:getKeysForPerson">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="QueryService.getKeysForPersonResponse">
+    <wsdl:documentation>
+      <![CDATA[response message for operation "getKeysForPerson". (Query for all keys that belong to a person.
+<p>
+Only user keys will be returned.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="queryService_v2:getKeysForPersonResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="QueryService.getKeyDetails">
+    <wsdl:documentation>
+      <![CDATA[request message for operation "getKeyDetails". (Gets the detailed information about a specific key.
+The information will include both static and dynamic data.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="queryService_v2:getKeyDetails">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="QueryService.getKeyDetailsResponse">
+    <wsdl:documentation>
+      <![CDATA[response message for operation "getKeyDetails". (Gets the detailed information about a specific key.
+The information will include both static and dynamic data.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="queryService_v2:getKeyDetailsResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="QueryService.getKeyActiveSchedule">
+    <wsdl:documentation>
+      <![CDATA[request message for operation "getKeyActiveSchedule". (Gets active schedule for a specific key.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="queryService_v2:getKeyActiveSchedule">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="QueryService.getKeyActiveScheduleResponse">
+    <wsdl:documentation>
+      <![CDATA[response message for operation "getKeyActiveSchedule". (Gets active schedule for a specific key.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="queryService_v2:getKeyActiveScheduleResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="QueryService.getKeyPendingSchedule">
+    <wsdl:documentation>
+      <![CDATA[request message for operation "getKeyPendingSchedule". (Gets pending schedule for a specific key)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="queryService_v2:getKeyPendingSchedule">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="QueryService.getKeyPendingScheduleResponse">
+    <wsdl:documentation>
+      <![CDATA[response message for operation "getKeyPendingSchedule". (Gets pending schedule for a specific key)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="queryService_v2:getKeyPendingScheduleResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="QueryService.getKeyPendingValidity">
+    <wsdl:documentation>
+      <![CDATA[request message for operation "getKeyPendingValidity". (Gets pending validity for a specific key)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="queryService_v2:getKeyPendingValidity">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="QueryService.getKeyPendingValidityResponse">
+    <wsdl:documentation>
+      <![CDATA[response message for operation "getKeyPendingValidity". (Gets pending validity for a specific key)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="queryService_v2:getKeyPendingValidityResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="QueryService.getCylinderPlugAuditTrail">
+    <wsdl:documentation>
+      <![CDATA[request message for operation "getCylinderPlugAuditTrail". (Query for audit trail entries.
+The dates in a query are creation dates that are assumed to be in MKS time zone.
+<p>
+See the explanations of creation dates usage at the documentation of getKeyAuditTrail.
+</p>)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="queryService_v2:getCylinderPlugAuditTrail">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="QueryService.getCylinderPlugAuditTrailResponse">
+    <wsdl:documentation>
+      <![CDATA[response message for operation "getCylinderPlugAuditTrail". (Query for audit trail entries.
+The dates in a query are creation dates that are assumed to be in MKS time zone.
+<p>
+See the explanations of creation dates usage at the documentation of getKeyAuditTrail.
+</p>)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="queryService_v2:getCylinderPlugAuditTrailResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="QueryService.getKeyAuditTrail">
+    <wsdl:documentation>
+      <![CDATA[request message for operation "getKeyAuditTrail". (<p>
+Query for audit trail entries.
+The dates in a query are creation dates that are assumed to be in MKS time zone.
+</p>
+
+<p>
+getKeyAuditTrail method returns correct creation dates provided that CWM server time zone (Windows time zone) was the same at the audit trail import time and the time when the web service is used.
+</p>
+
+<p>
+If CWM server time zones are different then there will be several hours discrepancies.
+We have decided that the discrepancies will remain due to the fact that fixing it will require running a sql script on all production databases.
+Otherwise the web service won't be consistent for all users.
+</p>
+
+<p>
+The following table shows an example of discrepancies.
+</p>
+
+<p>
+<b>CWM import 1st time zone</b> - CWM server time zone during the first import of audit trail and save to the database
+</p>
+
+<p>
+<b>CWM read 2nd time zone</b> - after restarting CWM server with a different time zone
+</p>
+
+<p>
+The event happened at 23:02 Asia/Shanghai (MKS local time)
+</p>
+
+<table>
+
+<tr>
+<th><b>MKS time zone</b></th>
+<th><b>MKS local time</b></th>
+<th><b>CWM import 1st time zone</b></th>
+<th><b>DB record time = MKS + (CWM import 1st time zone - UTC)</b></th>
+<th><b>CWM import 1st time</b></th>
+<th><b>CWM read 2nd time zone</b></th>
+<th><b>CWM read 2nd time = DB record time - (CWM read 2nd time zone - UTC)</b></th>
+</tr>
+
+<tr>
+<td>Asia/Shanghai</td>
+<td>23:02 28 Feb</td>
+<td>Europe/Kaliningrad UTC+02</td>
+<td>01:02 1st March</td>
+<td>23:02 28 Feb</td>
+<td>Asia/Baku UTC+04</td>
+<td>21:02 28 Feb</td>
+</tr>
+
+<tr>
+<td>Asia/Shanghai</td>
+<td>23:02 28 Feb</td>
+<td>Europe/Kaliningrad UTC+02</td>
+<td>01:02 1st March</td>
+<td>23:02 28 Feb</td>
+<td>America/Los Angeles UTC-08</td>
+<td>09:02 1st March</td>
+</tr>
+
+</table>)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="queryService_v2:getKeyAuditTrail">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="QueryService.getKeyAuditTrailResponse">
+    <wsdl:documentation>
+      <![CDATA[response message for operation "getKeyAuditTrail". (<p>
+Query for audit trail entries.
+The dates in a query are creation dates that are assumed to be in MKS time zone.
+</p>
+
+<p>
+getKeyAuditTrail method returns correct creation dates provided that CWM server time zone (Windows time zone) was the same at the audit trail import time and the time when the web service is used.
+</p>
+
+<p>
+If CWM server time zones are different then there will be several hours discrepancies.
+We have decided that the discrepancies will remain due to the fact that fixing it will require running a sql script on all production databases.
+Otherwise the web service won't be consistent for all users.
+</p>
+
+<p>
+The following table shows an example of discrepancies.
+</p>
+
+<p>
+<b>CWM import 1st time zone</b> - CWM server time zone during the first import of audit trail and save to the database
+</p>
+
+<p>
+<b>CWM read 2nd time zone</b> - after restarting CWM server with a different time zone
+</p>
+
+<p>
+The event happened at 23:02 Asia/Shanghai (MKS local time)
+</p>
+
+<table>
+
+<tr>
+<th><b>MKS time zone</b></th>
+<th><b>MKS local time</b></th>
+<th><b>CWM import 1st time zone</b></th>
+<th><b>DB record time = MKS + (CWM import 1st time zone - UTC)</b></th>
+<th><b>CWM import 1st time</b></th>
+<th><b>CWM read 2nd time zone</b></th>
+<th><b>CWM read 2nd time = DB record time - (CWM read 2nd time zone - UTC)</b></th>
+</tr>
+
+<tr>
+<td>Asia/Shanghai</td>
+<td>23:02 28 Feb</td>
+<td>Europe/Kaliningrad UTC+02</td>
+<td>01:02 1st March</td>
+<td>23:02 28 Feb</td>
+<td>Asia/Baku UTC+04</td>
+<td>21:02 28 Feb</td>
+</tr>
+
+<tr>
+<td>Asia/Shanghai</td>
+<td>23:02 28 Feb</td>
+<td>Europe/Kaliningrad UTC+02</td>
+<td>01:02 1st March</td>
+<td>23:02 28 Feb</td>
+<td>America/Los Angeles UTC-08</td>
+<td>09:02 1st March</td>
+</tr>
+
+</table>)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="queryService_v2:getKeyAuditTrailResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="QueryService.getAuditTrails">
+    <wsdl:documentation>
+      <![CDATA[request message for operation "getAuditTrails". (<p>
+Query for all audit trails entries (key and cylinder) that were imported within the given date interval. The date
+interval is exclusive for the 'from' date and inclusive for the 'to' date. If the 'to' date is omitted, the current
+date and time in the system-specific timezone will be used.
+<p/>
+An example of usage would be to query for all events between 2001-01-01T00:01 and 2001-06-01T00:01. This will
+return all events that were imported after the 'from' date and before or on the 'to' date. If the pagination maximum is set to 1000 and
+more than 1000 events are found, only the first 1000 events will be returned.
+<p>
+The import date is defined as the date when the audit trails were collected (imported) into the system in CWM server time zone, as opposed to the creation date which specifies when they were originally created in MKS time zone.
+</p>)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="queryService_v2:getAuditTrails">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="QueryService.getAuditTrailsResponse">
+    <wsdl:documentation>
+      <![CDATA[response message for operation "getAuditTrails". (<p>
+Query for all audit trails entries (key and cylinder) that were imported within the given date interval. The date
+interval is exclusive for the 'from' date and inclusive for the 'to' date. If the 'to' date is omitted, the current
+date and time in the system-specific timezone will be used.
+<p/>
+An example of usage would be to query for all events between 2001-01-01T00:01 and 2001-06-01T00:01. This will
+return all events that were imported after the 'from' date and before or on the 'to' date. If the pagination maximum is set to 1000 and
+more than 1000 events are found, only the first 1000 events will be returned.
+<p>
+The import date is defined as the date when the audit trails were collected (imported) into the system in CWM server time zone, as opposed to the creation date which specifies when they were originally created in MKS time zone.
+</p>)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="queryService_v2:getAuditTrailsResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="QueryService.getAccessProfiles">
+    <wsdl:documentation>
+      <![CDATA[request message for operation "getAccessProfiles". (Query for all access profiles in the key system except deleted.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="queryService_v2:getAccessProfiles">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="QueryService.getAccessProfilesResponse">
+    <wsdl:documentation>
+      <![CDATA[response message for operation "getAccessProfiles". (Query for all access profiles in the key system except deleted.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="queryService_v2:getAccessProfilesResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="QueryService.getAccessProfileDetails">
+    <wsdl:documentation>
+      <![CDATA[request message for operation "getAccessProfileDetails". (Gets the detailed information about a specific access profile.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="queryService_v2:getAccessProfileDetails">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="QueryService.getAccessProfileDetailsResponse">
+    <wsdl:documentation>
+      <![CDATA[response message for operation "getAccessProfileDetails". (Gets the detailed information about a specific access profile.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="queryService_v2:getAccessProfileDetailsResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="QueryService.getAccessProfilesForPerson">
+    <wsdl:documentation>
+      <![CDATA[request message for operation "getAccessProfilesForPerson". (Query for all access profiles that belong to a person.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="queryService_v2:getAccessProfilesForPerson">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="QueryService.getAccessProfilesForPersonResponse">
+    <wsdl:documentation>
+      <![CDATA[response message for operation "getAccessProfilesForPerson". (Query for all access profiles that belong to a person.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="queryService_v2:getAccessProfilesForPersonResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="QueryService.getAccessProfilesForKey">
+    <wsdl:documentation>
+      <![CDATA[request message for operation "getAccessProfilesForKey". (A query for all access profiles associated with a specific key.
+A key can be associated with an access profile directly (hasPermanentAssignment = true).
+'Directly' means that there is an explicit association between an access profile and a key
+for an indefinite period of time. 'Indefinite' means until an access profile is unassociated from a key by a user.
+A key can be associated with an access profile indirectly via a temporary access group (hasPermanentAssignment = false).
+A temporary access group is a set of multiple keys and multiple access profiles associated together
+for a period of time (accessTimeInterval in the response)
+A key or an access profile can be included in multiple temporary access groups.
+If a key is associated to an access profile both directly and indirectly
+then it manifests as (hasPermanentAssignment = true).)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="queryService_v2:getAccessProfilesForKey">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="QueryService.getAccessProfilesForKeyResponse">
+    <wsdl:documentation>
+      <![CDATA[response message for operation "getAccessProfilesForKey". (A query for all access profiles associated with a specific key.
+A key can be associated with an access profile directly (hasPermanentAssignment = true).
+'Directly' means that there is an explicit association between an access profile and a key
+for an indefinite period of time. 'Indefinite' means until an access profile is unassociated from a key by a user.
+A key can be associated with an access profile indirectly via a temporary access group (hasPermanentAssignment = false).
+A temporary access group is a set of multiple keys and multiple access profiles associated together
+for a period of time (accessTimeInterval in the response)
+A key or an access profile can be included in multiple temporary access groups.
+If a key is associated to an access profile both directly and indirectly
+then it manifests as (hasPermanentAssignment = true).)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="queryService_v2:getAccessProfilesForKeyResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="QueryService.getAccessProfilesContainingCylinderPlug">
+    <wsdl:documentation>
+      <![CDATA[request message for operation "getAccessProfilesContainingCylinderPlug". (Query for all access profiles that contain the cylinder plug.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="queryService_v2:getAccessProfilesContainingCylinderPlug">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="QueryService.getAccessProfilesContainingCylinderPlugResponse">
+    <wsdl:documentation>
+      <![CDATA[response message for operation "getAccessProfilesContainingCylinderPlug". (Query for all access profiles that contain the cylinder plug.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="queryService_v2:getAccessProfilesContainingCylinderPlugResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="InvalidStateException">
+    <wsdl:documentation>
+      <![CDATA[InvalidStateException.]]>
+    </wsdl:documentation>
+    <wsdl:part name="InvalidStateException" element="data_v2:invalidStateException">
+      <wsdl:documentation>
+        <![CDATA[Thrown if the cylinder plug or it's cylinder is deleted.]]>
+      </wsdl:documentation>
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="QueryService.getAccessProfilesContainingCylinderGroup">
+    <wsdl:documentation>
+      <![CDATA[request message for operation "getAccessProfilesContainingCylinderGroup". (Query for all access profiles that contain the cylinder group.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="queryService_v2:getAccessProfilesContainingCylinderGroup">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="QueryService.getAccessProfilesContainingCylinderGroupResponse">
+    <wsdl:documentation>
+      <![CDATA[response message for operation "getAccessProfilesContainingCylinderGroup". (Query for all access profiles that contain the cylinder group.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="queryService_v2:getAccessProfilesContainingCylinderGroupResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="QueryService.searchAccessProfiles">
+    <wsdl:documentation>
+      <![CDATA[request message for operation "searchAccessProfiles". (Search for access profiles with search arguments.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="queryService_v2:searchAccessProfiles">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="QueryService.searchAccessProfilesResponse">
+    <wsdl:documentation>
+      <![CDATA[response message for operation "searchAccessProfiles". (Search for access profiles with search arguments.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="queryService_v2:searchAccessProfilesResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="QueryService.searchAccessProfileUpdates">
+    <wsdl:documentation>
+      <![CDATA[request message for operation "searchAccessProfileUpdates". (Find which access profiles updates have been made in the domain.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="queryService_v2:searchAccessProfileUpdates">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="QueryService.searchAccessProfileUpdatesResponse">
+    <wsdl:documentation>
+      <![CDATA[response message for operation "searchAccessProfileUpdates". (Find which access profiles updates have been made in the domain.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="queryService_v2:searchAccessProfileUpdatesResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="QueryService.searchAccessProfileDomainChanges">
+    <wsdl:documentation>
+      <![CDATA[request message for operation "searchAccessProfileDomainChanges". (Find which access profiles have entered or left the domain.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="queryService_v2:searchAccessProfileDomainChanges">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="QueryService.searchAccessProfileDomainChangesResponse">
+    <wsdl:documentation>
+      <![CDATA[response message for operation "searchAccessProfileDomainChanges". (Find which access profiles have entered or left the domain.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="queryService_v2:searchAccessProfileDomainChangesResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="QueryService.searchKeyAccessProfileChange">
+    <wsdl:documentation>
+      <![CDATA[request message for operation "searchKeyAccessProfileChange". (Find changes in direct associations between keys and access profiles in the domain within the specified time interval.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="queryService_v2:searchKeyAccessProfileChange">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="QueryService.searchKeyAccessProfileChangeResponse">
+    <wsdl:documentation>
+      <![CDATA[response message for operation "searchKeyAccessProfileChange". (Find changes in direct associations between keys and access profiles in the domain within the specified time interval.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="queryService_v2:searchKeyAccessProfileChangeResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="QueryService.searchExplicitKeyAuthorisationChanges">
+    <wsdl:documentation>
+      <![CDATA[request message for operation "searchExplicitKeyAuthorisationChanges". (Find all explicit key authorisation changes involving cylinders and cylinder groups in the specified domain and during the specified time interval.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="queryService_v2:searchExplicitKeyAuthorisationChanges">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="QueryService.searchExplicitKeyAuthorisationChangesResponse">
+    <wsdl:documentation>
+      <![CDATA[response message for operation "searchExplicitKeyAuthorisationChanges". (Find all explicit key authorisation changes involving cylinders and cylinder groups in the specified domain and during the specified time interval.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="queryService_v2:searchExplicitKeyAuthorisationChangesResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="QueryService.searchTemporaryAccessGroupChanges">
+    <wsdl:documentation>
+      <![CDATA[request message for operation "searchTemporaryAccessGroupChanges". (Find all temporary access group changes in the specified domain and during the specified time interval.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="queryService_v2:searchTemporaryAccessGroupChanges">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="QueryService.searchTemporaryAccessGroupChangesResponse">
+    <wsdl:documentation>
+      <![CDATA[response message for operation "searchTemporaryAccessGroupChanges". (Find all temporary access group changes in the specified domain and during the specified time interval.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="queryService_v2:searchTemporaryAccessGroupChangesResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="QueryService.searchCylinderDomainChanges">
+    <wsdl:documentation>
+      <![CDATA[request message for operation "searchCylinderDomainChanges". (Find all cylinders or cylinder groups that have changed domains to or from the specified domain.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="queryService_v2:searchCylinderDomainChanges">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="QueryService.searchCylinderDomainChangesResponse">
+    <wsdl:documentation>
+      <![CDATA[response message for operation "searchCylinderDomainChanges". (Find all cylinders or cylinder groups that have changed domains to or from the specified domain.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="queryService_v2:searchCylinderDomainChangesResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="QueryService.searchCylindersImported">
+    <wsdl:documentation>
+      <![CDATA[request message for operation "searchCylindersImported". (Find all cylinders that have been imported into the domain during the specified time interval.
+<p/>
+NOTE: This search will only find cylinders that were imported using the .CWS file format. Cylinders that were imported without an import date will not be found.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="queryService_v2:searchCylindersImported">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="QueryService.searchCylindersImportedResponse">
+    <wsdl:documentation>
+      <![CDATA[response message for operation "searchCylindersImported". (Find all cylinders that have been imported into the domain during the specified time interval.
+<p/>
+NOTE: This search will only find cylinders that were imported using the .CWS file format. Cylinders that were imported without an import date will not be found.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="queryService_v2:searchCylindersImportedResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="QueryService.searchPersons">
+    <wsdl:documentation>
+      <![CDATA[request message for operation "searchPersons". (Search for persons with search arguments.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="queryService_v2:searchPersons">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="QueryService.searchPersonsResponse">
+    <wsdl:documentation>
+      <![CDATA[response message for operation "searchPersons". (Search for persons with search arguments.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="queryService_v2:searchPersonsResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="QueryService.getAccessibleCylinders">
+    <wsdl:documentation>
+      <![CDATA[request message for operation "getAccessibleCylinders". (Find the currently accessible cylinders for a key, based on key cuttings, explicit authorisations, cylinder groups and access profiles.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="queryService_v2:getAccessibleCylinders">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="QueryService.getAccessibleCylindersResponse">
+    <wsdl:documentation>
+      <![CDATA[response message for operation "getAccessibleCylinders". (Find the currently accessible cylinders for a key, based on key cuttings, explicit authorisations, cylinder groups and access profiles.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="queryService_v2:getAccessibleCylindersResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="QueryService.getPendingAccessibleCylinders">
+    <wsdl:documentation>
+      <![CDATA[request message for operation "getPendingAccessibleCylinders". (Find the cylinders for a key that will be accessible after the key has been updated with all pending authorisations, based on key cuttings, explicit authorisations, cylinder groups and access profiles.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="queryService_v2:getPendingAccessibleCylinders">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="QueryService.getPendingAccessibleCylindersResponse">
+    <wsdl:documentation>
+      <![CDATA[response message for operation "getPendingAccessibleCylinders". (Find the cylinders for a key that will be accessible after the key has been updated with all pending authorisations, based on key cuttings, explicit authorisations, cylinder groups and access profiles.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="queryService_v2:getPendingAccessibleCylindersResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="QueryService.searchCylinderGroups">
+    <wsdl:documentation>
+      <![CDATA[request message for operation "searchCylinderGroups". (Search for cylinder groups with search arguments.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="queryService_v2:searchCylinderGroups">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="QueryService.searchCylinderGroupsResponse">
+    <wsdl:documentation>
+      <![CDATA[response message for operation "searchCylinderGroups". (Search for cylinder groups with search arguments.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="queryService_v2:searchCylinderGroupsResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="QueryService.searchPersonsWithKeys">
+    <wsdl:documentation>
+      <![CDATA[request message for operation "searchPersonsWithKeys". (Search for persons with handed out user keys using search arguments.
+Only persons with user keys are considered.
+C-Keys will not be returned if person has any, also persons with only C-Keys will not be returned.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="queryService_v2:searchPersonsWithKeys">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="QueryService.searchPersonsWithKeysResponse">
+    <wsdl:documentation>
+      <![CDATA[response message for operation "searchPersonsWithKeys". (Search for persons with handed out user keys using search arguments.
+Only persons with user keys are considered.
+C-Keys will not be returned if person has any, also persons with only C-Keys will not be returned.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="queryService_v2:searchPersonsWithKeysResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="QueryService.getKeysWithAccessToCylinderPlug">
+    <wsdl:documentation>
+      <![CDATA[request message for operation "getKeysWithAccessToCylinderPlug". (Find the keys that currently have access to a cylinder, based on key cuttings, explicit authorisations, key groups, cylinder groups and access profiles.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="queryService_v2:getKeysWithAccessToCylinderPlug">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="QueryService.getKeysWithAccessToCylinderPlugResponse">
+    <wsdl:documentation>
+      <![CDATA[response message for operation "getKeysWithAccessToCylinderPlug". (Find the keys that currently have access to a cylinder, based on key cuttings, explicit authorisations, key groups, cylinder groups and access profiles.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="queryService_v2:getKeysWithAccessToCylinderPlugResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="QueryService.getKeysWithPendingAccessToCylinderPlug">
+    <wsdl:documentation>
+      <![CDATA[request message for operation "getKeysWithPendingAccessToCylinderPlug". (Find the keys that will have access to a cylinder after they have been updated with all pending authorisations, based on key cuttings, explicit authorisations, key groups, cylinder groups and access profiles.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="queryService_v2:getKeysWithPendingAccessToCylinderPlug">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="QueryService.getKeysWithPendingAccessToCylinderPlugResponse">
+    <wsdl:documentation>
+      <![CDATA[response message for operation "getKeysWithPendingAccessToCylinderPlug". (Find the keys that will have access to a cylinder after they have been updated with all pending authorisations, based on key cuttings, explicit authorisations, key groups, cylinder groups and access profiles.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="queryService_v2:getKeysWithPendingAccessToCylinderPlugResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="QueryService.getExplicitCylinderAuthorisationsForKey">
+    <wsdl:documentation>
+      <![CDATA[request message for operation "getExplicitCylinderAuthorisationsForKey". (Find the cylinders that the specified dynamic key has explicit access to.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="queryService_v2:getExplicitCylinderAuthorisationsForKey">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="QueryService.getExplicitCylinderAuthorisationsForKeyResponse">
+    <wsdl:documentation>
+      <![CDATA[response message for operation "getExplicitCylinderAuthorisationsForKey". (Find the cylinders that the specified dynamic key has explicit access to.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="queryService_v2:getExplicitCylinderAuthorisationsForKeyResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="QueryService.getExplicitCylinderGroupAuthorisationsForKey">
+    <wsdl:documentation>
+      <![CDATA[request message for operation "getExplicitCylinderGroupAuthorisationsForKey". (Find the cylinder groups that the specified dynamic key has explicit access to.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="queryService_v2:getExplicitCylinderGroupAuthorisationsForKey">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="QueryService.getExplicitCylinderGroupAuthorisationsForKeyResponse">
+    <wsdl:documentation>
+      <![CDATA[response message for operation "getExplicitCylinderGroupAuthorisationsForKey". (Find the cylinder groups that the specified dynamic key has explicit access to.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="queryService_v2:getExplicitCylinderGroupAuthorisationsForKeyResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="QueryService.getModifiedKeys">
+    <wsdl:documentation>
+      <![CDATA[request message for operation "getModifiedKeys". (Find new or updated keys.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="queryService_v2:getModifiedKeys">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="QueryService.getModifiedKeysResponse">
+    <wsdl:documentation>
+      <![CDATA[response message for operation "getModifiedKeys". (Find new or updated keys.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="queryService_v2:getModifiedKeysResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="QueryService.getAccessListForAccessProfile">
+    <wsdl:documentation>
+      <![CDATA[request message for operation "getAccessListForAccessProfile". (Get <i>Cylinders</i> and <i>Cylinder Groups</i> linked to <i>Access Profile</i>)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="queryService_v2:getAccessListForAccessProfile">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="QueryService.getAccessListForAccessProfileResponse">
+    <wsdl:documentation>
+      <![CDATA[response message for operation "getAccessListForAccessProfile". (Get <i>Cylinders</i> and <i>Cylinder Groups</i> linked to <i>Access Profile</i>)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="queryService_v2:getAccessListForAccessProfileResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="QueryService.getModifiedRemotePDs">
+    <wsdl:documentation>
+      <![CDATA[request message for operation "getModifiedRemotePDs". (Find new or updated PDs.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="queryService_v2:getModifiedRemotePDs">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="QueryService.getModifiedRemotePDsResponse">
+    <wsdl:documentation>
+      <![CDATA[response message for operation "getModifiedRemotePDs". (Find new or updated PDs.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="queryService_v2:getModifiedRemotePDsResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="QueryService.getPersonsWithModifiedListOfAccessProfiles">
+    <wsdl:documentation>
+      <![CDATA[request message for operation "getPersonsWithModifiedListOfAccessProfiles". (Search for persons with modified list of access profiles.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="queryService_v2:getPersonsWithModifiedListOfAccessProfiles">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="QueryService.getPersonsWithModifiedListOfAccessProfilesResponse">
+    <wsdl:documentation>
+      <![CDATA[response message for operation "getPersonsWithModifiedListOfAccessProfiles". (Search for persons with modified list of access profiles.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="queryService_v2:getPersonsWithModifiedListOfAccessProfilesResponse">
+    </wsdl:part>
+  </wsdl:message>
+
+  <wsdl:portType name="QueryService">
+    <wsdl:documentation>
+      <![CDATA[Query service for finding information about CLIQ key system elements, including cylinders, keys and
+remote programming devices.]]>
+    </wsdl:documentation>
+  <wsdl:operation name="getPersons">
+    <wsdl:documentation>
+      <![CDATA[Query for all persons in the key system.]]>
+    </wsdl:documentation>
+    <wsdl:input message="queryService_v2:QueryService.getPersons"/>
+    <wsdl:output message="queryService_v2:QueryService.getPersonsResponse"/>
+    <wsdl:fault name="SystemException" message="queryService_v2:SystemException"/>
+  </wsdl:operation>
+  <wsdl:operation name="getDomains">
+    <wsdl:documentation>
+      <![CDATA[Query for all domains in the key system.]]>
+    </wsdl:documentation>
+    <wsdl:input message="queryService_v2:QueryService.getDomains"/>
+    <wsdl:output message="queryService_v2:QueryService.getDomainsResponse"/>
+    <wsdl:fault name="SystemException" message="queryService_v2:SystemException"/>
+  </wsdl:operation>
+  <wsdl:operation name="getModifiedPersons">
+    <wsdl:documentation>
+      <![CDATA[Search for persons that have been created, deleted or have data updated within given period]]>
+    </wsdl:documentation>
+    <wsdl:input message="queryService_v2:QueryService.getModifiedPersons"/>
+    <wsdl:output message="queryService_v2:QueryService.getModifiedPersonsResponse"/>
+    <wsdl:fault name="SystemException" message="queryService_v2:SystemException"/>
+    <wsdl:fault name="InvalidDataException" message="queryService_v2:InvalidDataException"/>
+  </wsdl:operation>
+  <wsdl:operation name="getPersonDetails">
+    <wsdl:documentation>
+      <![CDATA[Gets the detailed information about a specific person.
+The information will include both static and dynamic data.]]>
+    </wsdl:documentation>
+    <wsdl:input message="queryService_v2:QueryService.getPersonDetails"/>
+    <wsdl:output message="queryService_v2:QueryService.getPersonDetailsResponse"/>
+    <wsdl:fault name="SystemException" message="queryService_v2:SystemException"/>
+    <wsdl:fault name="IdentityNotFoundException" message="queryService_v2:IdentityNotFoundException"/>
+  </wsdl:operation>
+  <wsdl:operation name="getPersonDetailsByImmutableIdentity">
+    <wsdl:documentation>
+      <![CDATA[Gets the detailed information about a specific person.
+The information is retrieved by immutable identity of the person.
+The information will include both static and dynamic data.]]>
+    </wsdl:documentation>
+    <wsdl:input message="queryService_v2:QueryService.getPersonDetailsByImmutableIdentity"/>
+    <wsdl:output message="queryService_v2:QueryService.getPersonDetailsByImmutableIdentityResponse"/>
+    <wsdl:fault name="IdentityNotFoundException" message="queryService_v2:IdentityNotFoundException"/>
+    <wsdl:fault name="IdentityDeactivatedException" message="queryService_v2:IdentityDeactivatedException"/>
+    <wsdl:fault name="SystemException" message="queryService_v2:SystemException"/>
+  </wsdl:operation>
+  <wsdl:operation name="getCylinders">
+    <wsdl:documentation>
+      <![CDATA[Query for all available cylinders in the key system.
+Each cylinder will be returned as a separate entry.
+E.g for double-sided cylinders two cylinder plug items will be returned.]]>
+    </wsdl:documentation>
+    <wsdl:input message="queryService_v2:QueryService.getCylinders"/>
+    <wsdl:output message="queryService_v2:QueryService.getCylindersResponse"/>
+    <wsdl:fault name="SystemException" message="queryService_v2:SystemException"/>
+  </wsdl:operation>
+  <wsdl:operation name="getModifiedCylinders">
+    <wsdl:documentation>
+      <![CDATA[Search for cylinders that have been created, deleted or have data updated within given period]]>
+    </wsdl:documentation>
+    <wsdl:input message="queryService_v2:QueryService.getModifiedCylinders"/>
+    <wsdl:output message="queryService_v2:QueryService.getModifiedCylindersResponse"/>
+    <wsdl:fault name="SystemException" message="queryService_v2:SystemException"/>
+    <wsdl:fault name="InvalidDataException" message="queryService_v2:InvalidDataException"/>
+  </wsdl:operation>
+  <wsdl:operation name="searchCylinders">
+    <wsdl:documentation>
+      <![CDATA[Search for cylinders with search arguments.]]>
+    </wsdl:documentation>
+    <wsdl:input message="queryService_v2:QueryService.searchCylinders"/>
+    <wsdl:output message="queryService_v2:QueryService.searchCylindersResponse"/>
+    <wsdl:fault name="SystemException" message="queryService_v2:SystemException"/>
+    <wsdl:fault name="InvalidDataException" message="queryService_v2:InvalidDataException"/>
+  </wsdl:operation>
+  <wsdl:operation name="getCylinderDetails">
+    <wsdl:documentation>
+      <![CDATA[Gets the detailed information about a specific cylinder.
+The information will include both static and dynamic data.]]>
+    </wsdl:documentation>
+    <wsdl:input message="queryService_v2:QueryService.getCylinderDetails"/>
+    <wsdl:output message="queryService_v2:QueryService.getCylinderDetailsResponse"/>
+    <wsdl:fault name="SystemException" message="queryService_v2:SystemException"/>
+    <wsdl:fault name="IdentityNotFoundException" message="queryService_v2:IdentityNotFoundException"/>
+    <wsdl:fault name="InvalidDataException" message="queryService_v2:InvalidDataException"/>
+  </wsdl:operation>
+  <wsdl:operation name="getRemotePDs">
+    <wsdl:documentation>
+      <![CDATA[Query for all available Remote Programming Devices in the key system.]]>
+    </wsdl:documentation>
+    <wsdl:input message="queryService_v2:QueryService.getRemotePDs"/>
+    <wsdl:output message="queryService_v2:QueryService.getRemotePDsResponse"/>
+    <wsdl:fault name="SystemException" message="queryService_v2:SystemException"/>
+  </wsdl:operation>
+  <wsdl:operation name="getRemotePdDetails">
+    <wsdl:documentation>
+      <![CDATA[Gets the detailed information about a specific remote PD.
+The information will include both static and dynamic data.]]>
+    </wsdl:documentation>
+    <wsdl:input message="queryService_v2:QueryService.getRemotePdDetails"/>
+    <wsdl:output message="queryService_v2:QueryService.getRemotePdDetailsResponse"/>
+    <wsdl:fault name="SystemException" message="queryService_v2:SystemException"/>
+    <wsdl:fault name="IdentityNotFoundException" message="queryService_v2:IdentityNotFoundException"/>
+  </wsdl:operation>
+  <wsdl:operation name="getKeys">
+    <wsdl:documentation>
+      <![CDATA[Query for all available keys in the key system.]]>
+    </wsdl:documentation>
+    <wsdl:input message="queryService_v2:QueryService.getKeys"/>
+    <wsdl:output message="queryService_v2:QueryService.getKeysResponse"/>
+    <wsdl:fault name="SystemException" message="queryService_v2:SystemException"/>
+  </wsdl:operation>
+  <wsdl:operation name="searchKeys">
+    <wsdl:documentation>
+      <![CDATA[Query for all keys that match the search arguments.]]>
+    </wsdl:documentation>
+    <wsdl:input message="queryService_v2:QueryService.searchKeys"/>
+    <wsdl:output message="queryService_v2:QueryService.searchKeysResponse"/>
+    <wsdl:fault name="SystemException" message="queryService_v2:SystemException"/>
+    <wsdl:fault name="InvalidDataException" message="queryService_v2:InvalidDataException"/>
+  </wsdl:operation>
+  <wsdl:operation name="getKeysForPerson">
+    <wsdl:documentation>
+      <![CDATA[Query for all keys that belong to a person.
+<p>
+Only user keys will be returned.]]>
+    </wsdl:documentation>
+    <wsdl:input message="queryService_v2:QueryService.getKeysForPerson"/>
+    <wsdl:output message="queryService_v2:QueryService.getKeysForPersonResponse"/>
+    <wsdl:fault name="SystemException" message="queryService_v2:SystemException"/>
+    <wsdl:fault name="IdentityNotFoundException" message="queryService_v2:IdentityNotFoundException"/>
+  </wsdl:operation>
+  <wsdl:operation name="getKeyDetails">
+    <wsdl:documentation>
+      <![CDATA[Gets the detailed information about a specific key.
+The information will include both static and dynamic data.]]>
+    </wsdl:documentation>
+    <wsdl:input message="queryService_v2:QueryService.getKeyDetails"/>
+    <wsdl:output message="queryService_v2:QueryService.getKeyDetailsResponse"/>
+    <wsdl:fault name="SystemException" message="queryService_v2:SystemException"/>
+    <wsdl:fault name="IdentityNotFoundException" message="queryService_v2:IdentityNotFoundException"/>
+  </wsdl:operation>
+  <wsdl:operation name="getKeyActiveSchedule">
+    <wsdl:documentation>
+      <![CDATA[Gets active schedule for a specific key.]]>
+    </wsdl:documentation>
+    <wsdl:input message="queryService_v2:QueryService.getKeyActiveSchedule"/>
+    <wsdl:output message="queryService_v2:QueryService.getKeyActiveScheduleResponse"/>
+    <wsdl:fault name="SystemException" message="queryService_v2:SystemException"/>
+    <wsdl:fault name="IdentityNotFoundException" message="queryService_v2:IdentityNotFoundException"/>
+    <wsdl:fault name="InvalidDataException" message="queryService_v2:InvalidDataException"/>
+  </wsdl:operation>
+  <wsdl:operation name="getKeyPendingSchedule">
+    <wsdl:documentation>
+      <![CDATA[Gets pending schedule for a specific key]]>
+    </wsdl:documentation>
+    <wsdl:input message="queryService_v2:QueryService.getKeyPendingSchedule"/>
+    <wsdl:output message="queryService_v2:QueryService.getKeyPendingScheduleResponse"/>
+    <wsdl:fault name="SystemException" message="queryService_v2:SystemException"/>
+    <wsdl:fault name="IdentityNotFoundException" message="queryService_v2:IdentityNotFoundException"/>
+    <wsdl:fault name="InvalidDataException" message="queryService_v2:InvalidDataException"/>
+  </wsdl:operation>
+  <wsdl:operation name="getKeyPendingValidity">
+    <wsdl:documentation>
+      <![CDATA[Gets pending validity for a specific key]]>
+    </wsdl:documentation>
+    <wsdl:input message="queryService_v2:QueryService.getKeyPendingValidity"/>
+    <wsdl:output message="queryService_v2:QueryService.getKeyPendingValidityResponse"/>
+    <wsdl:fault name="SystemException" message="queryService_v2:SystemException"/>
+    <wsdl:fault name="IdentityNotFoundException" message="queryService_v2:IdentityNotFoundException"/>
+  </wsdl:operation>
+  <wsdl:operation name="getCylinderPlugAuditTrail">
+    <wsdl:documentation>
+      <![CDATA[Query for audit trail entries.
+The dates in a query are creation dates that are assumed to be in MKS time zone.
+<p>
+See the explanations of creation dates usage at the documentation of getKeyAuditTrail.
+</p>]]>
+    </wsdl:documentation>
+    <wsdl:input message="queryService_v2:QueryService.getCylinderPlugAuditTrail"/>
+    <wsdl:output message="queryService_v2:QueryService.getCylinderPlugAuditTrailResponse"/>
+    <wsdl:fault name="SystemException" message="queryService_v2:SystemException"/>
+    <wsdl:fault name="IdentityNotFoundException" message="queryService_v2:IdentityNotFoundException"/>
+    <wsdl:fault name="InvalidDataException" message="queryService_v2:InvalidDataException"/>
+  </wsdl:operation>
+  <wsdl:operation name="getKeyAuditTrail">
+    <wsdl:documentation>
+      <![CDATA[<p>
+Query for audit trail entries.
+The dates in a query are creation dates that are assumed to be in MKS time zone.
+</p>
+
+<p>
+getKeyAuditTrail method returns correct creation dates provided that CWM server time zone (Windows time zone) was the same at the audit trail import time and the time when the web service is used.
+</p>
+
+<p>
+If CWM server time zones are different then there will be several hours discrepancies.
+We have decided that the discrepancies will remain due to the fact that fixing it will require running a sql script on all production databases.
+Otherwise the web service won't be consistent for all users.
+</p>
+
+<p>
+The following table shows an example of discrepancies.
+</p>
+
+<p>
+<b>CWM import 1st time zone</b> - CWM server time zone during the first import of audit trail and save to the database
+</p>
+
+<p>
+<b>CWM read 2nd time zone</b> - after restarting CWM server with a different time zone
+</p>
+
+<p>
+The event happened at 23:02 Asia/Shanghai (MKS local time)
+</p>
+
+<table>
+
+<tr>
+<th><b>MKS time zone</b></th>
+<th><b>MKS local time</b></th>
+<th><b>CWM import 1st time zone</b></th>
+<th><b>DB record time = MKS + (CWM import 1st time zone - UTC)</b></th>
+<th><b>CWM import 1st time</b></th>
+<th><b>CWM read 2nd time zone</b></th>
+<th><b>CWM read 2nd time = DB record time - (CWM read 2nd time zone - UTC)</b></th>
+</tr>
+
+<tr>
+<td>Asia/Shanghai</td>
+<td>23:02 28 Feb</td>
+<td>Europe/Kaliningrad UTC+02</td>
+<td>01:02 1st March</td>
+<td>23:02 28 Feb</td>
+<td>Asia/Baku UTC+04</td>
+<td>21:02 28 Feb</td>
+</tr>
+
+<tr>
+<td>Asia/Shanghai</td>
+<td>23:02 28 Feb</td>
+<td>Europe/Kaliningrad UTC+02</td>
+<td>01:02 1st March</td>
+<td>23:02 28 Feb</td>
+<td>America/Los Angeles UTC-08</td>
+<td>09:02 1st March</td>
+</tr>
+
+</table>]]>
+    </wsdl:documentation>
+    <wsdl:input message="queryService_v2:QueryService.getKeyAuditTrail"/>
+    <wsdl:output message="queryService_v2:QueryService.getKeyAuditTrailResponse"/>
+    <wsdl:fault name="SystemException" message="queryService_v2:SystemException"/>
+    <wsdl:fault name="IdentityNotFoundException" message="queryService_v2:IdentityNotFoundException"/>
+    <wsdl:fault name="InvalidDataException" message="queryService_v2:InvalidDataException"/>
+  </wsdl:operation>
+  <wsdl:operation name="getAuditTrails">
+    <wsdl:documentation>
+      <![CDATA[<p>
+Query for all audit trails entries (key and cylinder) that were imported within the given date interval. The date
+interval is exclusive for the 'from' date and inclusive for the 'to' date. If the 'to' date is omitted, the current
+date and time in the system-specific timezone will be used.
+<p/>
+An example of usage would be to query for all events between 2001-01-01T00:01 and 2001-06-01T00:01. This will
+return all events that were imported after the 'from' date and before or on the 'to' date. If the pagination maximum is set to 1000 and
+more than 1000 events are found, only the first 1000 events will be returned.
+<p>
+The import date is defined as the date when the audit trails were collected (imported) into the system in CWM server time zone, as opposed to the creation date which specifies when they were originally created in MKS time zone.
+</p>]]>
+    </wsdl:documentation>
+    <wsdl:input message="queryService_v2:QueryService.getAuditTrails"/>
+    <wsdl:output message="queryService_v2:QueryService.getAuditTrailsResponse"/>
+    <wsdl:fault name="SystemException" message="queryService_v2:SystemException"/>
+    <wsdl:fault name="InvalidDataException" message="queryService_v2:InvalidDataException"/>
+  </wsdl:operation>
+  <wsdl:operation name="getAccessProfiles">
+    <wsdl:documentation>
+      <![CDATA[Query for all access profiles in the key system except deleted.]]>
+    </wsdl:documentation>
+    <wsdl:input message="queryService_v2:QueryService.getAccessProfiles"/>
+    <wsdl:output message="queryService_v2:QueryService.getAccessProfilesResponse"/>
+    <wsdl:fault name="SystemException" message="queryService_v2:SystemException"/>
+  </wsdl:operation>
+  <wsdl:operation name="getAccessProfileDetails">
+    <wsdl:documentation>
+      <![CDATA[Gets the detailed information about a specific access profile.]]>
+    </wsdl:documentation>
+    <wsdl:input message="queryService_v2:QueryService.getAccessProfileDetails"/>
+    <wsdl:output message="queryService_v2:QueryService.getAccessProfileDetailsResponse"/>
+    <wsdl:fault name="SystemException" message="queryService_v2:SystemException"/>
+    <wsdl:fault name="InvalidDataException" message="queryService_v2:InvalidDataException"/>
+    <wsdl:fault name="IdentityNotFoundException" message="queryService_v2:IdentityNotFoundException"/>
+  </wsdl:operation>
+  <wsdl:operation name="getAccessProfilesForPerson">
+    <wsdl:documentation>
+      <![CDATA[Query for all access profiles that belong to a person.]]>
+    </wsdl:documentation>
+    <wsdl:input message="queryService_v2:QueryService.getAccessProfilesForPerson"/>
+    <wsdl:output message="queryService_v2:QueryService.getAccessProfilesForPersonResponse"/>
+    <wsdl:fault name="SystemException" message="queryService_v2:SystemException"/>
+    <wsdl:fault name="IdentityNotFoundException" message="queryService_v2:IdentityNotFoundException"/>
+  </wsdl:operation>
+  <wsdl:operation name="getAccessProfilesForKey">
+    <wsdl:documentation>
+      <![CDATA[A query for all access profiles associated with a specific key.
+A key can be associated with an access profile directly (hasPermanentAssignment = true).
+'Directly' means that there is an explicit association between an access profile and a key
+for an indefinite period of time. 'Indefinite' means until an access profile is unassociated from a key by a user.
+A key can be associated with an access profile indirectly via a temporary access group (hasPermanentAssignment = false).
+A temporary access group is a set of multiple keys and multiple access profiles associated together
+for a period of time (accessTimeInterval in the response)
+A key or an access profile can be included in multiple temporary access groups.
+If a key is associated to an access profile both directly and indirectly
+then it manifests as (hasPermanentAssignment = true).]]>
+    </wsdl:documentation>
+    <wsdl:input message="queryService_v2:QueryService.getAccessProfilesForKey"/>
+    <wsdl:output message="queryService_v2:QueryService.getAccessProfilesForKeyResponse"/>
+    <wsdl:fault name="SystemException" message="queryService_v2:SystemException"/>
+    <wsdl:fault name="IdentityNotFoundException" message="queryService_v2:IdentityNotFoundException"/>
+    <wsdl:fault name="InvalidDataException" message="queryService_v2:InvalidDataException"/>
+  </wsdl:operation>
+  <wsdl:operation name="getAccessProfilesContainingCylinderPlug">
+    <wsdl:documentation>
+      <![CDATA[Query for all access profiles that contain the cylinder plug.]]>
+    </wsdl:documentation>
+    <wsdl:input message="queryService_v2:QueryService.getAccessProfilesContainingCylinderPlug"/>
+    <wsdl:output message="queryService_v2:QueryService.getAccessProfilesContainingCylinderPlugResponse"/>
+    <wsdl:fault name="SystemException" message="queryService_v2:SystemException"/>
+    <wsdl:fault name="IdentityNotFoundException" message="queryService_v2:IdentityNotFoundException"/>
+    <wsdl:fault name="InvalidDataException" message="queryService_v2:InvalidDataException"/>
+    <wsdl:fault name="InvalidStateException" message="queryService_v2:InvalidStateException"/>
+  </wsdl:operation>
+  <wsdl:operation name="getAccessProfilesContainingCylinderGroup">
+    <wsdl:documentation>
+      <![CDATA[Query for all access profiles that contain the cylinder group.]]>
+    </wsdl:documentation>
+    <wsdl:input message="queryService_v2:QueryService.getAccessProfilesContainingCylinderGroup"/>
+    <wsdl:output message="queryService_v2:QueryService.getAccessProfilesContainingCylinderGroupResponse"/>
+    <wsdl:fault name="SystemException" message="queryService_v2:SystemException"/>
+    <wsdl:fault name="IdentityNotFoundException" message="queryService_v2:IdentityNotFoundException"/>
+    <wsdl:fault name="InvalidDataException" message="queryService_v2:InvalidDataException"/>
+    <wsdl:fault name="InvalidStateException" message="queryService_v2:InvalidStateException"/>
+  </wsdl:operation>
+  <wsdl:operation name="searchAccessProfiles">
+    <wsdl:documentation>
+      <![CDATA[Search for access profiles with search arguments.]]>
+    </wsdl:documentation>
+    <wsdl:input message="queryService_v2:QueryService.searchAccessProfiles"/>
+    <wsdl:output message="queryService_v2:QueryService.searchAccessProfilesResponse"/>
+    <wsdl:fault name="SystemException" message="queryService_v2:SystemException"/>
+    <wsdl:fault name="InvalidDataException" message="queryService_v2:InvalidDataException"/>
+  </wsdl:operation>
+  <wsdl:operation name="searchAccessProfileUpdates">
+    <wsdl:documentation>
+      <![CDATA[Find which access profiles updates have been made in the domain.]]>
+    </wsdl:documentation>
+    <wsdl:input message="queryService_v2:QueryService.searchAccessProfileUpdates"/>
+    <wsdl:output message="queryService_v2:QueryService.searchAccessProfileUpdatesResponse"/>
+    <wsdl:fault name="SystemException" message="queryService_v2:SystemException"/>
+    <wsdl:fault name="InvalidDataException" message="queryService_v2:InvalidDataException"/>
+    <wsdl:fault name="IdentityNotFoundException" message="queryService_v2:IdentityNotFoundException"/>
+  </wsdl:operation>
+  <wsdl:operation name="searchAccessProfileDomainChanges">
+    <wsdl:documentation>
+      <![CDATA[Find which access profiles have entered or left the domain.]]>
+    </wsdl:documentation>
+    <wsdl:input message="queryService_v2:QueryService.searchAccessProfileDomainChanges"/>
+    <wsdl:output message="queryService_v2:QueryService.searchAccessProfileDomainChangesResponse"/>
+    <wsdl:fault name="SystemException" message="queryService_v2:SystemException"/>
+    <wsdl:fault name="InvalidDataException" message="queryService_v2:InvalidDataException"/>
+  </wsdl:operation>
+  <wsdl:operation name="searchKeyAccessProfileChange">
+    <wsdl:documentation>
+      <![CDATA[Find changes in direct associations between keys and access profiles in the domain within the specified time interval.]]>
+    </wsdl:documentation>
+    <wsdl:input message="queryService_v2:QueryService.searchKeyAccessProfileChange"/>
+    <wsdl:output message="queryService_v2:QueryService.searchKeyAccessProfileChangeResponse"/>
+    <wsdl:fault name="SystemException" message="queryService_v2:SystemException"/>
+    <wsdl:fault name="InvalidDataException" message="queryService_v2:InvalidDataException"/>
+    <wsdl:fault name="IdentityNotFoundException" message="queryService_v2:IdentityNotFoundException"/>
+  </wsdl:operation>
+  <wsdl:operation name="searchExplicitKeyAuthorisationChanges">
+    <wsdl:documentation>
+      <![CDATA[Find all explicit key authorisation changes involving cylinders and cylinder groups in the specified domain and during the specified time interval.]]>
+    </wsdl:documentation>
+    <wsdl:input message="queryService_v2:QueryService.searchExplicitKeyAuthorisationChanges"/>
+    <wsdl:output message="queryService_v2:QueryService.searchExplicitKeyAuthorisationChangesResponse"/>
+    <wsdl:fault name="SystemException" message="queryService_v2:SystemException"/>
+    <wsdl:fault name="InvalidDataException" message="queryService_v2:InvalidDataException"/>
+    <wsdl:fault name="IdentityNotFoundException" message="queryService_v2:IdentityNotFoundException"/>
+  </wsdl:operation>
+  <wsdl:operation name="searchTemporaryAccessGroupChanges">
+    <wsdl:documentation>
+      <![CDATA[Find all temporary access group changes in the specified domain and during the specified time interval.]]>
+    </wsdl:documentation>
+    <wsdl:input message="queryService_v2:QueryService.searchTemporaryAccessGroupChanges"/>
+    <wsdl:output message="queryService_v2:QueryService.searchTemporaryAccessGroupChangesResponse"/>
+    <wsdl:fault name="SystemException" message="queryService_v2:SystemException"/>
+    <wsdl:fault name="InvalidDataException" message="queryService_v2:InvalidDataException"/>
+    <wsdl:fault name="IdentityNotFoundException" message="queryService_v2:IdentityNotFoundException"/>
+  </wsdl:operation>
+  <wsdl:operation name="searchCylinderDomainChanges">
+    <wsdl:documentation>
+      <![CDATA[Find all cylinders or cylinder groups that have changed domains to or from the specified domain.]]>
+    </wsdl:documentation>
+    <wsdl:input message="queryService_v2:QueryService.searchCylinderDomainChanges"/>
+    <wsdl:output message="queryService_v2:QueryService.searchCylinderDomainChangesResponse"/>
+    <wsdl:fault name="SystemException" message="queryService_v2:SystemException"/>
+    <wsdl:fault name="InvalidDataException" message="queryService_v2:InvalidDataException"/>
+    <wsdl:fault name="IdentityNotFoundException" message="queryService_v2:IdentityNotFoundException"/>
+  </wsdl:operation>
+  <wsdl:operation name="searchCylindersImported">
+    <wsdl:documentation>
+      <![CDATA[Find all cylinders that have been imported into the domain during the specified time interval.
+<p/>
+NOTE: This search will only find cylinders that were imported using the .CWS file format. Cylinders that were imported without an import date will not be found.]]>
+    </wsdl:documentation>
+    <wsdl:input message="queryService_v2:QueryService.searchCylindersImported"/>
+    <wsdl:output message="queryService_v2:QueryService.searchCylindersImportedResponse"/>
+    <wsdl:fault name="SystemException" message="queryService_v2:SystemException"/>
+    <wsdl:fault name="InvalidDataException" message="queryService_v2:InvalidDataException"/>
+    <wsdl:fault name="IdentityNotFoundException" message="queryService_v2:IdentityNotFoundException"/>
+  </wsdl:operation>
+  <wsdl:operation name="searchPersons">
+    <wsdl:documentation>
+      <![CDATA[Search for persons with search arguments.]]>
+    </wsdl:documentation>
+    <wsdl:input message="queryService_v2:QueryService.searchPersons"/>
+    <wsdl:output message="queryService_v2:QueryService.searchPersonsResponse"/>
+    <wsdl:fault name="SystemException" message="queryService_v2:SystemException"/>
+    <wsdl:fault name="InvalidDataException" message="queryService_v2:InvalidDataException"/>
+  </wsdl:operation>
+  <wsdl:operation name="getAccessibleCylinders">
+    <wsdl:documentation>
+      <![CDATA[Find the currently accessible cylinders for a key, based on key cuttings, explicit authorisations, cylinder groups and access profiles.]]>
+    </wsdl:documentation>
+    <wsdl:input message="queryService_v2:QueryService.getAccessibleCylinders"/>
+    <wsdl:output message="queryService_v2:QueryService.getAccessibleCylindersResponse"/>
+    <wsdl:fault name="SystemException" message="queryService_v2:SystemException"/>
+    <wsdl:fault name="InvalidDataException" message="queryService_v2:InvalidDataException"/>
+    <wsdl:fault name="InvalidStateException" message="queryService_v2:InvalidStateException"/>
+    <wsdl:fault name="IdentityNotFoundException" message="queryService_v2:IdentityNotFoundException"/>
+  </wsdl:operation>
+  <wsdl:operation name="getPendingAccessibleCylinders">
+    <wsdl:documentation>
+      <![CDATA[Find the cylinders for a key that will be accessible after the key has been updated with all pending authorisations, based on key cuttings, explicit authorisations, cylinder groups and access profiles.]]>
+    </wsdl:documentation>
+    <wsdl:input message="queryService_v2:QueryService.getPendingAccessibleCylinders"/>
+    <wsdl:output message="queryService_v2:QueryService.getPendingAccessibleCylindersResponse"/>
+    <wsdl:fault name="SystemException" message="queryService_v2:SystemException"/>
+    <wsdl:fault name="InvalidDataException" message="queryService_v2:InvalidDataException"/>
+    <wsdl:fault name="InvalidStateException" message="queryService_v2:InvalidStateException"/>
+    <wsdl:fault name="IdentityNotFoundException" message="queryService_v2:IdentityNotFoundException"/>
+  </wsdl:operation>
+  <wsdl:operation name="searchCylinderGroups">
+    <wsdl:documentation>
+      <![CDATA[Search for cylinder groups with search arguments.]]>
+    </wsdl:documentation>
+    <wsdl:input message="queryService_v2:QueryService.searchCylinderGroups"/>
+    <wsdl:output message="queryService_v2:QueryService.searchCylinderGroupsResponse"/>
+    <wsdl:fault name="SystemException" message="queryService_v2:SystemException"/>
+    <wsdl:fault name="InvalidDataException" message="queryService_v2:InvalidDataException"/>
+    <wsdl:fault name="InvalidStateException" message="queryService_v2:InvalidStateException"/>
+  </wsdl:operation>
+  <wsdl:operation name="searchPersonsWithKeys">
+    <wsdl:documentation>
+      <![CDATA[Search for persons with handed out user keys using search arguments.
+Only persons with user keys are considered.
+C-Keys will not be returned if person has any, also persons with only C-Keys will not be returned.]]>
+    </wsdl:documentation>
+    <wsdl:input message="queryService_v2:QueryService.searchPersonsWithKeys"/>
+    <wsdl:output message="queryService_v2:QueryService.searchPersonsWithKeysResponse"/>
+    <wsdl:fault name="SystemException" message="queryService_v2:SystemException"/>
+    <wsdl:fault name="InvalidDataException" message="queryService_v2:InvalidDataException"/>
+  </wsdl:operation>
+  <wsdl:operation name="getKeysWithAccessToCylinderPlug">
+    <wsdl:documentation>
+      <![CDATA[Find the keys that currently have access to a cylinder, based on key cuttings, explicit authorisations, key groups, cylinder groups and access profiles.]]>
+    </wsdl:documentation>
+    <wsdl:input message="queryService_v2:QueryService.getKeysWithAccessToCylinderPlug"/>
+    <wsdl:output message="queryService_v2:QueryService.getKeysWithAccessToCylinderPlugResponse"/>
+    <wsdl:fault name="SystemException" message="queryService_v2:SystemException"/>
+    <wsdl:fault name="InvalidDataException" message="queryService_v2:InvalidDataException"/>
+    <wsdl:fault name="InvalidStateException" message="queryService_v2:InvalidStateException"/>
+    <wsdl:fault name="IdentityNotFoundException" message="queryService_v2:IdentityNotFoundException"/>
+  </wsdl:operation>
+  <wsdl:operation name="getKeysWithPendingAccessToCylinderPlug">
+    <wsdl:documentation>
+      <![CDATA[Find the keys that will have access to a cylinder after they have been updated with all pending authorisations, based on key cuttings, explicit authorisations, key groups, cylinder groups and access profiles.]]>
+    </wsdl:documentation>
+    <wsdl:input message="queryService_v2:QueryService.getKeysWithPendingAccessToCylinderPlug"/>
+    <wsdl:output message="queryService_v2:QueryService.getKeysWithPendingAccessToCylinderPlugResponse"/>
+    <wsdl:fault name="SystemException" message="queryService_v2:SystemException"/>
+    <wsdl:fault name="InvalidDataException" message="queryService_v2:InvalidDataException"/>
+    <wsdl:fault name="InvalidStateException" message="queryService_v2:InvalidStateException"/>
+    <wsdl:fault name="IdentityNotFoundException" message="queryService_v2:IdentityNotFoundException"/>
+  </wsdl:operation>
+  <wsdl:operation name="getExplicitCylinderAuthorisationsForKey">
+    <wsdl:documentation>
+      <![CDATA[Find the cylinders that the specified dynamic key has explicit access to.]]>
+    </wsdl:documentation>
+    <wsdl:input message="queryService_v2:QueryService.getExplicitCylinderAuthorisationsForKey"/>
+    <wsdl:output message="queryService_v2:QueryService.getExplicitCylinderAuthorisationsForKeyResponse"/>
+    <wsdl:fault name="SystemException" message="queryService_v2:SystemException"/>
+    <wsdl:fault name="IdentityNotFoundException" message="queryService_v2:IdentityNotFoundException"/>
+    <wsdl:fault name="InvalidDataException" message="queryService_v2:InvalidDataException"/>
+    <wsdl:fault name="InvalidStateException" message="queryService_v2:InvalidStateException"/>
+  </wsdl:operation>
+  <wsdl:operation name="getExplicitCylinderGroupAuthorisationsForKey">
+    <wsdl:documentation>
+      <![CDATA[Find the cylinder groups that the specified dynamic key has explicit access to.]]>
+    </wsdl:documentation>
+    <wsdl:input message="queryService_v2:QueryService.getExplicitCylinderGroupAuthorisationsForKey"/>
+    <wsdl:output message="queryService_v2:QueryService.getExplicitCylinderGroupAuthorisationsForKeyResponse"/>
+    <wsdl:fault name="SystemException" message="queryService_v2:SystemException"/>
+    <wsdl:fault name="IdentityNotFoundException" message="queryService_v2:IdentityNotFoundException"/>
+    <wsdl:fault name="InvalidDataException" message="queryService_v2:InvalidDataException"/>
+    <wsdl:fault name="InvalidStateException" message="queryService_v2:InvalidStateException"/>
+  </wsdl:operation>
+  <wsdl:operation name="getModifiedKeys">
+    <wsdl:documentation>
+      <![CDATA[Find new or updated keys.]]>
+    </wsdl:documentation>
+    <wsdl:input message="queryService_v2:QueryService.getModifiedKeys"/>
+    <wsdl:output message="queryService_v2:QueryService.getModifiedKeysResponse"/>
+    <wsdl:fault name="SystemException" message="queryService_v2:SystemException"/>
+    <wsdl:fault name="InvalidDataException" message="queryService_v2:InvalidDataException"/>
+  </wsdl:operation>
+  <wsdl:operation name="getAccessListForAccessProfile">
+    <wsdl:documentation>
+      <![CDATA[Get <i>Cylinders</i> and <i>Cylinder Groups</i> linked to <i>Access Profile</i>]]>
+    </wsdl:documentation>
+    <wsdl:input message="queryService_v2:QueryService.getAccessListForAccessProfile"/>
+    <wsdl:output message="queryService_v2:QueryService.getAccessListForAccessProfileResponse"/>
+    <wsdl:fault name="SystemException" message="queryService_v2:SystemException"/>
+    <wsdl:fault name="InvalidDataException" message="queryService_v2:InvalidDataException"/>
+    <wsdl:fault name="IdentityNotFoundException" message="queryService_v2:IdentityNotFoundException"/>
+  </wsdl:operation>
+  <wsdl:operation name="getModifiedRemotePDs">
+    <wsdl:documentation>
+      <![CDATA[Find new or updated PDs.]]>
+    </wsdl:documentation>
+    <wsdl:input message="queryService_v2:QueryService.getModifiedRemotePDs"/>
+    <wsdl:output message="queryService_v2:QueryService.getModifiedRemotePDsResponse"/>
+    <wsdl:fault name="SystemException" message="queryService_v2:SystemException"/>
+    <wsdl:fault name="InvalidDataException" message="queryService_v2:InvalidDataException"/>
+  </wsdl:operation>
+  <wsdl:operation name="getPersonsWithModifiedListOfAccessProfiles">
+    <wsdl:documentation>
+      <![CDATA[Search for persons with modified list of access profiles.]]>
+    </wsdl:documentation>
+    <wsdl:input message="queryService_v2:QueryService.getPersonsWithModifiedListOfAccessProfiles"/>
+    <wsdl:output message="queryService_v2:QueryService.getPersonsWithModifiedListOfAccessProfilesResponse"/>
+    <wsdl:fault name="SystemException" message="queryService_v2:SystemException"/>
+    <wsdl:fault name="InvalidDataException" message="queryService_v2:InvalidDataException"/>
+  </wsdl:operation>
+  </wsdl:portType>
+
+
+  <wsdl:binding name="QueryServicePortBinding" type="queryService_v2:QueryService">
+    <wsdl:documentation>
+      <![CDATA[SOAP Binding for QueryService]]>
+    </wsdl:documentation>
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="getPersons">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SystemException">
+        <soap:fault name="SystemException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getDomains">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SystemException">
+        <soap:fault name="SystemException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getModifiedPersons">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SystemException">
+        <soap:fault name="SystemException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="InvalidDataException">
+        <soap:fault name="InvalidDataException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getPersonDetails">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SystemException">
+        <soap:fault name="SystemException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IdentityNotFoundException">
+        <soap:fault name="IdentityNotFoundException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getPersonDetailsByImmutableIdentity">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="IdentityNotFoundException">
+        <soap:fault name="IdentityNotFoundException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IdentityDeactivatedException">
+        <soap:fault name="IdentityDeactivatedException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="SystemException">
+        <soap:fault name="SystemException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getCylinders">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SystemException">
+        <soap:fault name="SystemException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getModifiedCylinders">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SystemException">
+        <soap:fault name="SystemException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="InvalidDataException">
+        <soap:fault name="InvalidDataException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="searchCylinders">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SystemException">
+        <soap:fault name="SystemException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="InvalidDataException">
+        <soap:fault name="InvalidDataException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getCylinderDetails">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SystemException">
+        <soap:fault name="SystemException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IdentityNotFoundException">
+        <soap:fault name="IdentityNotFoundException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="InvalidDataException">
+        <soap:fault name="InvalidDataException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getRemotePDs">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SystemException">
+        <soap:fault name="SystemException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getRemotePdDetails">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SystemException">
+        <soap:fault name="SystemException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IdentityNotFoundException">
+        <soap:fault name="IdentityNotFoundException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getKeys">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SystemException">
+        <soap:fault name="SystemException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="searchKeys">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SystemException">
+        <soap:fault name="SystemException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="InvalidDataException">
+        <soap:fault name="InvalidDataException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getKeysForPerson">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SystemException">
+        <soap:fault name="SystemException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IdentityNotFoundException">
+        <soap:fault name="IdentityNotFoundException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getKeyDetails">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SystemException">
+        <soap:fault name="SystemException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IdentityNotFoundException">
+        <soap:fault name="IdentityNotFoundException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getKeyActiveSchedule">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SystemException">
+        <soap:fault name="SystemException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IdentityNotFoundException">
+        <soap:fault name="IdentityNotFoundException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="InvalidDataException">
+        <soap:fault name="InvalidDataException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getKeyPendingSchedule">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SystemException">
+        <soap:fault name="SystemException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IdentityNotFoundException">
+        <soap:fault name="IdentityNotFoundException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="InvalidDataException">
+        <soap:fault name="InvalidDataException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getKeyPendingValidity">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SystemException">
+        <soap:fault name="SystemException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IdentityNotFoundException">
+        <soap:fault name="IdentityNotFoundException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getCylinderPlugAuditTrail">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SystemException">
+        <soap:fault name="SystemException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IdentityNotFoundException">
+        <soap:fault name="IdentityNotFoundException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="InvalidDataException">
+        <soap:fault name="InvalidDataException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getKeyAuditTrail">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SystemException">
+        <soap:fault name="SystemException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IdentityNotFoundException">
+        <soap:fault name="IdentityNotFoundException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="InvalidDataException">
+        <soap:fault name="InvalidDataException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getAuditTrails">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SystemException">
+        <soap:fault name="SystemException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="InvalidDataException">
+        <soap:fault name="InvalidDataException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getAccessProfiles">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SystemException">
+        <soap:fault name="SystemException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getAccessProfileDetails">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SystemException">
+        <soap:fault name="SystemException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="InvalidDataException">
+        <soap:fault name="InvalidDataException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IdentityNotFoundException">
+        <soap:fault name="IdentityNotFoundException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getAccessProfilesForPerson">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SystemException">
+        <soap:fault name="SystemException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IdentityNotFoundException">
+        <soap:fault name="IdentityNotFoundException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getAccessProfilesForKey">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SystemException">
+        <soap:fault name="SystemException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IdentityNotFoundException">
+        <soap:fault name="IdentityNotFoundException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="InvalidDataException">
+        <soap:fault name="InvalidDataException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getAccessProfilesContainingCylinderPlug">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SystemException">
+        <soap:fault name="SystemException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IdentityNotFoundException">
+        <soap:fault name="IdentityNotFoundException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="InvalidDataException">
+        <soap:fault name="InvalidDataException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="InvalidStateException">
+        <soap:fault name="InvalidStateException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getAccessProfilesContainingCylinderGroup">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SystemException">
+        <soap:fault name="SystemException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IdentityNotFoundException">
+        <soap:fault name="IdentityNotFoundException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="InvalidDataException">
+        <soap:fault name="InvalidDataException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="InvalidStateException">
+        <soap:fault name="InvalidStateException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="searchAccessProfiles">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SystemException">
+        <soap:fault name="SystemException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="InvalidDataException">
+        <soap:fault name="InvalidDataException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="searchAccessProfileUpdates">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SystemException">
+        <soap:fault name="SystemException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="InvalidDataException">
+        <soap:fault name="InvalidDataException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IdentityNotFoundException">
+        <soap:fault name="IdentityNotFoundException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="searchAccessProfileDomainChanges">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SystemException">
+        <soap:fault name="SystemException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="InvalidDataException">
+        <soap:fault name="InvalidDataException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="searchKeyAccessProfileChange">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SystemException">
+        <soap:fault name="SystemException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="InvalidDataException">
+        <soap:fault name="InvalidDataException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IdentityNotFoundException">
+        <soap:fault name="IdentityNotFoundException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="searchExplicitKeyAuthorisationChanges">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SystemException">
+        <soap:fault name="SystemException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="InvalidDataException">
+        <soap:fault name="InvalidDataException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IdentityNotFoundException">
+        <soap:fault name="IdentityNotFoundException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="searchTemporaryAccessGroupChanges">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SystemException">
+        <soap:fault name="SystemException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="InvalidDataException">
+        <soap:fault name="InvalidDataException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IdentityNotFoundException">
+        <soap:fault name="IdentityNotFoundException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="searchCylinderDomainChanges">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SystemException">
+        <soap:fault name="SystemException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="InvalidDataException">
+        <soap:fault name="InvalidDataException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IdentityNotFoundException">
+        <soap:fault name="IdentityNotFoundException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="searchCylindersImported">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SystemException">
+        <soap:fault name="SystemException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="InvalidDataException">
+        <soap:fault name="InvalidDataException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IdentityNotFoundException">
+        <soap:fault name="IdentityNotFoundException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="searchPersons">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SystemException">
+        <soap:fault name="SystemException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="InvalidDataException">
+        <soap:fault name="InvalidDataException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getAccessibleCylinders">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SystemException">
+        <soap:fault name="SystemException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="InvalidDataException">
+        <soap:fault name="InvalidDataException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="InvalidStateException">
+        <soap:fault name="InvalidStateException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IdentityNotFoundException">
+        <soap:fault name="IdentityNotFoundException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getPendingAccessibleCylinders">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SystemException">
+        <soap:fault name="SystemException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="InvalidDataException">
+        <soap:fault name="InvalidDataException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="InvalidStateException">
+        <soap:fault name="InvalidStateException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IdentityNotFoundException">
+        <soap:fault name="IdentityNotFoundException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="searchCylinderGroups">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SystemException">
+        <soap:fault name="SystemException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="InvalidDataException">
+        <soap:fault name="InvalidDataException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="InvalidStateException">
+        <soap:fault name="InvalidStateException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="searchPersonsWithKeys">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SystemException">
+        <soap:fault name="SystemException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="InvalidDataException">
+        <soap:fault name="InvalidDataException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getKeysWithAccessToCylinderPlug">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SystemException">
+        <soap:fault name="SystemException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="InvalidDataException">
+        <soap:fault name="InvalidDataException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="InvalidStateException">
+        <soap:fault name="InvalidStateException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IdentityNotFoundException">
+        <soap:fault name="IdentityNotFoundException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getKeysWithPendingAccessToCylinderPlug">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SystemException">
+        <soap:fault name="SystemException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="InvalidDataException">
+        <soap:fault name="InvalidDataException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="InvalidStateException">
+        <soap:fault name="InvalidStateException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IdentityNotFoundException">
+        <soap:fault name="IdentityNotFoundException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getExplicitCylinderAuthorisationsForKey">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SystemException">
+        <soap:fault name="SystemException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IdentityNotFoundException">
+        <soap:fault name="IdentityNotFoundException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="InvalidDataException">
+        <soap:fault name="InvalidDataException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="InvalidStateException">
+        <soap:fault name="InvalidStateException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getExplicitCylinderGroupAuthorisationsForKey">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SystemException">
+        <soap:fault name="SystemException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IdentityNotFoundException">
+        <soap:fault name="IdentityNotFoundException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="InvalidDataException">
+        <soap:fault name="InvalidDataException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="InvalidStateException">
+        <soap:fault name="InvalidStateException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getModifiedKeys">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SystemException">
+        <soap:fault name="SystemException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="InvalidDataException">
+        <soap:fault name="InvalidDataException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getAccessListForAccessProfile">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SystemException">
+        <soap:fault name="SystemException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="InvalidDataException">
+        <soap:fault name="InvalidDataException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IdentityNotFoundException">
+        <soap:fault name="IdentityNotFoundException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getModifiedRemotePDs">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SystemException">
+        <soap:fault name="SystemException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="InvalidDataException">
+        <soap:fault name="InvalidDataException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getPersonsWithModifiedListOfAccessProfiles">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SystemException">
+        <soap:fault name="SystemException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="InvalidDataException">
+        <soap:fault name="InvalidDataException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+
+  <wsdl:service name="QueryServiceV2">
+    <wsdl:port name="QueryServicePort" binding="queryService_v2:QueryServicePortBinding">
+      <soap:address location="http://localhost:8080/QueryServiceV2"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
+

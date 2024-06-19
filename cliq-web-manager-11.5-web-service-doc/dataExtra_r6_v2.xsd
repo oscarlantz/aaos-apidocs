@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema version="1.0" targetNamespace="http://cliq.shared.assaabloy.com/ws/data/extra_r6/v2/"
+  xmlns:dataExtra_r6_v2="http://cliq.shared.assaabloy.com/ws/data/extra_r6/v2/"
+  
+  xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="operationalStatus" type="dataExtra_r6_v2:remotePdOperationalStatus"/>
+  <xs:element name="whereAt" type="dataExtra_r6_v2:remotePdWhereAt"/>
+<xs:simpleType name="remotePdOperationalStatus">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[Represents the possible statuses for a remote PD.]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:restriction base="xs:string">
+     
+    <xs:enumeration value="OPERATIONAL"/>
+ 
+    <xs:enumeration value="BROKEN"/>
+  </xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="remotePdWhereAt">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[Represents the possible statuses for a remote PD.]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:restriction base="xs:string">
+     
+    <xs:enumeration value="IN_STOCK"/>
+ 
+    <xs:enumeration value="HANDED_OUT"/>
+ 
+    <xs:enumeration value="LOST"/>
+ 
+    <xs:enumeration value="INSTALLED"/>
+  </xs:restriction>
+</xs:simpleType>
+
+<xs:element name="keyHolderIdentity" type="xs:string">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[Identity of historical key holder to who the key was handed out while audit trail event happened.
+If historical key holder data is unavailable (because of, for example, deactivation),
+'N/A' string will be returned]]>
+    </xs:documentation>
+  </xs:annotation>
+</xs:element>
+</xs:schema>

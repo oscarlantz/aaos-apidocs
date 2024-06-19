@@ -1,0 +1,4079 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema version="1.0" targetNamespace="http://cliq.shared.assaabloy.com/ws/data/v2/"
+  xmlns:dataExtra_r6_v2="http://cliq.shared.assaabloy.com/ws/data/extra_r6/v2/"
+  xmlns:dataExtra_r9_2_v2="http://cliq.shared.assaabloy.com/ws/data/extra_r9_2/v2/"
+  xmlns:dataExtra_r11_0_v2="http://cliq.shared.assaabloy.com/ws/data/extra_r11_0/v2/"
+  xmlns:dataExtra_r6_1_v2="http://cliq.shared.assaabloy.com/ws/data/extra_r6_1/v2/"
+  xmlns:data_v2="http://cliq.shared.assaabloy.com/ws/data/v2/"
+  xmlns:dataExtra_r9_0_v2="http://cliq.shared.assaabloy.com/ws/data/extra_r9_0/v2/"
+  xmlns:dataExtra_v2="http://cliq.shared.assaabloy.com/ws/data/extra/v2/"
+  xmlns:dataExtra_r7_0_v2="http://cliq.shared.assaabloy.com/ws/data/extra_r7_0/v2/"
+  
+  xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://cliq.shared.assaabloy.com/ws/data/extra_r6/v2/" schemaLocation="dataExtra_r6_v2.xsd"/>
+  <xs:import namespace="http://cliq.shared.assaabloy.com/ws/data/extra_r9_2/v2/" schemaLocation="dataExtra_r9_2_v2.xsd"/>
+  <xs:import namespace="http://cliq.shared.assaabloy.com/ws/data/extra_r11_0/v2/" schemaLocation="dataExtra_r11_0_v2.xsd"/>
+  <xs:import namespace="http://cliq.shared.assaabloy.com/ws/data/extra_r6_1/v2/" schemaLocation="dataExtra_r6_1_v2.xsd"/>
+  <xs:import namespace="http://cliq.shared.assaabloy.com/ws/data/extra_r9_0/v2/" schemaLocation="dataExtra_r9_0_v2.xsd"/>
+  <xs:import namespace="http://cliq.shared.assaabloy.com/ws/data/extra/v2/" schemaLocation="dataExtra_v2.xsd"/>
+  <xs:import namespace="http://cliq.shared.assaabloy.com/ws/data/extra_r7_0/v2/" schemaLocation="dataExtra_r7_0_v2.xsd"/>
+
+  <xs:element name="accessProfileAccessUpdate" type="data_v2:accessProfileAccessUpdate"/>
+  <xs:element name="accessProfileCreate" type="data_v2:accessProfileCreate"/>
+  <xs:element name="accessProfile" type="data_v2:accessProfile"/>
+  <xs:element name="accessProfileDomainChangeDTO" type="data_v2:accessProfileDomainChange"/>
+  <xs:element name="accessProfileProperties" type="data_v2:accessProfileProperties"/>
+  <xs:element name="accessProfileRevalidationUpdateDTO" type="data_v2:accessProfileRevalidationUpdate"/>
+  <xs:element name="accessProfileSearchArguments" type="data_v2:accessProfileSearchArguments"/>
+  <xs:element name="accessProfileUpdate" type="data_v2:accessProfileUpdate"/>
+  <xs:element name="accessProfileBasic" type="data_v2:accessProfileBasic"/>
+  <xs:element name="accessProfiles" type="data_v2:accessProfiles"/>
+  <xs:element name="administrator" type="data_v2:administrator"/>
+  <xs:element name="assignedAccessProfile" type="data_v2:assignedAccessProfile"/>
+  <xs:element name="auditTrail" type="data_v2:auditTrail"/>
+  <xs:element name="auditTrailDetails" type="data_v2:auditTrailDetails"/>
+  <xs:element name="auditTrailEntry" type="data_v2:auditTrailEntry"/>
+  <xs:element name="auditTrailEntryDetails" type="data_v2:auditTrailEntryDetails"/>
+  <xs:element name="authorisationCylinderGroupUpdate" type="data_v2:authorisationCylinderGroupUpdate"/>
+  <xs:element name="authorisationUpdate" type="data_v2:authorisationUpdate"/>
+  <xs:element name="batchResult" type="data_v2:batchResult"/>
+  <xs:element name="cylinder" type="data_v2:cylinder"/>
+  <xs:element name="cylinderDetails" type="data_v2:cylinderDetails"/>
+  <xs:element name="cylinderDomainChange" type="data_v2:cylinderDomainChange"/>
+  <xs:element name="cylinderGroupChangeDTO" type="data_v2:cylinderGroupChange"/>
+  <xs:element name="cylinderGroup" type="data_v2:cylinderGroup"/>
+  <xs:element name="cylinderGroupSearchArguments" type="data_v2:cylinderGroupSearchArguments"/>
+  <xs:element name="cylinderPlugBasic" type="data_v2:cylinderPlugBasic"/>
+  <xs:element name="cylinderPlug" type="data_v2:cylinderPlug"/>
+  <xs:element name="cylinderPlugDetails" type="data_v2:cylinderPlugDetails"/>
+  <xs:element name="cylinderSearchArguments" type="data_v2:cylinderSearchArguments"/>
+  <xs:element name="cylinderUpdate" type="data_v2:cylinderUpdate"/>
+  <xs:element name="dateInterval" type="data_v2:dateInterval"/>
+  <xs:element name="dateIntervalWithTimeZone" type="data_v2:dateIntervalWithTimeZone"/>
+  <xs:element name="domains" type="data_v2:domain"/>
+  <xs:element name="externalLink" type="data_v2:externalLink"/>
+  <xs:element name="failureDescription" type="data_v2:failureDescription"/>
+  <xs:element name="foreignAuditTrailEntry" type="data_v2:foreignAuditTrailEntry"/>
+  <xs:element name="foreignAuditTrailEntryDetails" type="data_v2:foreignAuditTrailEntryDetails"/>
+  <xs:element name="personIdentity" type="data_v2:identifierDTO"/>
+  <xs:element name="keyAccessChange" type="data_v2:keyAccessChange"/>
+  <xs:element name="keyAccess" type="data_v2:keyAccess"/>
+  <xs:element name="keyAccessProfileChange" type="data_v2:keyAccessProfileChange"/>
+  <xs:element name="keyAndKeyHolders" type="data_v2:keyAndKeyHolder"/>
+  <xs:element name="key" type="data_v2:key"/>
+  <xs:element name="keyDetails" type="data_v2:keyDetails"/>
+  <xs:element name="keySearchArguments" type="data_v2:keySearchArguments"/>
+  <xs:element name="normalAuditTrailEntry" type="data_v2:normalAuditTrailEntry"/>
+  <xs:element name="normalAuditTrailEntryDetails" type="data_v2:normalAuditTrailEntryDetails"/>
+  <xs:element name="pagination" type="data_v2:pagination"/>
+  <xs:element name="pendingUpdates" type="data_v2:pendingUpdates"/>
+  <xs:element name="person" type="data_v2:person"/>
+  <xs:element name="personDetails" type="data_v2:personDetails"/>
+  <xs:element name="personSearchArguments" type="data_v2:personSearchArguments"/>
+  <xs:element name="personWithAccessProfiles" type="data_v2:personWithAccessProfiles"/>
+  <xs:element name="personWithKeys" type="data_v2:personWithKeys"/>
+  <xs:element name="plugWithCylinder" type="data_v2:plugWithCylinder"/>
+  <xs:element name="remotePD" type="data_v2:remotePD"/>
+  <xs:element name="remotePdDetails" type="data_v2:remotePdDetails"/>
+  <xs:element name="revalidation" type="data_v2:revalidation"/>
+  <xs:element name="schedule" type="data_v2:schedule"/>
+  <xs:element name="tags" type="data_v2:tags"/>
+  <xs:element name="temporaryAccessGroupChange" type="data_v2:temporaryAccessGroupChange"/>
+<xs:complexType name="accessProfileAccessUpdate">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[Represents the content of an access profile update.]]>
+    </xs:documentation>
+  </xs:annotation>
+   <xs:complexContent>
+    <xs:extension base="data_v2:accessProfileUpdateContent">
+      <xs:sequence>
+              <xs:element name="cylinderAccessChanges" type="data_v2:cylinderChange" minOccurs="0" maxOccurs="unbounded">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Cylinders that was added or removed from the access profile.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="cylinderGroupAccessChanges" type="data_v2:cylinderGroupChange" minOccurs="0" maxOccurs="unbounded">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Cylinder groups that was added or removed from the access profile.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+        <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:extension>
+  </xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="accessProfileAuthorisationChange">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[Represents the addition or removal of an access profile to a temporary access group.]]>
+    </xs:documentation>
+  </xs:annotation>
+       <xs:sequence>
+              <xs:element name="accessProfile" type="data_v2:accessProfile" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The access profile that was added or removed.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="added" type="xs:boolean" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Tell if the access profile was added or removed from the temporary access group.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+        <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="accessProfileCreate">
+       <xs:sequence>
+              <xs:element name="name" type="xs:string" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Access profile name
+<p/>
+Min length: 1<br/>
+Max length: 100]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="domainName" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The domain name that this access profile belongs to.
+Domain name is unique within a MKS system.
+If you do not provide a domain name then a default one is used.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="description" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Access profile description
+<p/>
+Min length: 0<br/>
+Max length: 300]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="revalidationInterval" type="xs:int" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Revalidation interval in minutes
+<p/>
+Min length: 5 <br/>
+Max length: 367 200]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="tags" type="data_v2:tags" minOccurs="0">
+              </xs:element>
+        <xs:element name="externalLinks" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="externalLink" type="data_v2:externalLink" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="accessProfile">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[Represents an access profile.]]>
+    </xs:documentation>
+  </xs:annotation>
+       <xs:sequence>
+              <xs:element name="identity" type="xs:string" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Access profile identity.
+<p/>
+Min length: 1<br/>
+Max length: 36]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="name" type="xs:string" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Access profile name.
+<p/>
+Min length: 1<br/>
+Max length: 100]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="description" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Access profile description.
+<p/>
+Min length: 0<br/>
+Max length: 300]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element ref="dataExtra_v2:domain" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The domain name that this access profile belongs to.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element ref="dataExtra_v2:deleted" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[A deleted access profile is still in the system for reference, but can not be used.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+        <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="accessProfileDomainChange">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[Represents a domain change for an access profile.]]>
+    </xs:documentation>
+  </xs:annotation>
+       <xs:sequence>
+              <xs:element name="accessProfile" type="data_v2:accessProfile" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The access profile that changed.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="oldDomainName" type="xs:string" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The domain previously assigned to the access profile.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="newDomainName" type="xs:string" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The domain that has now been assigned to the access profile.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="updatedBy" type="data_v2:administrator" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Who made the changes.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="updateTime" type="xs:dateTime" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[When the change was made, ISO 8601 format for example 2014-09-05T16:15:30+02:00.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+        <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="accessProfileProperties">
+       <xs:sequence>
+              <xs:element name="identity" type="xs:string" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The identity of the access profile to be affected by the update.
+<p/>
+Min length: 1<br/>
+Max length: 36]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="name" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Access profile name.
+<p/>
+Min length: 1<br/>
+Max length: 100]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="domainName" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The domain name that this access profile belongs to.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="description" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Access profile description.
+<p/>
+Min length: 0<br/>
+Max length: 300]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="revalidationInterval" type="xs:int" minOccurs="0">
+              </xs:element>
+              <xs:element name="tags" type="data_v2:tags" minOccurs="0">
+              </xs:element>
+        <xs:element name="externalLinks" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="externalLink" type="data_v2:externalLink" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="accessProfileRevalidationUpdate">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[Represents a access profile revalidation update event]]>
+    </xs:documentation>
+  </xs:annotation>
+   <xs:complexContent>
+    <xs:extension base="data_v2:accessProfileUpdateContent">
+      <xs:sequence>
+              <xs:element name="revalidationIntervalMinutes" type="xs:int" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[New revalidation interval for access profile in minutes.
+<p>
+The value 0 means that revalidation is not specified for the access profile.
+For systems with cylinder groups this means that the revalidation is taken from the cylinder
+groups, for systems without cylinder groups the value 0 means that the revalidation interval is taken from the keys.
+</p>]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+        <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:extension>
+  </xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="accessProfileSearchArguments">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[Represents a set of search arguments for access profiles.]]>
+    </xs:documentation>
+  </xs:annotation>
+       <xs:sequence>
+              <xs:element name="identity" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Access profile identity. Used for exact matching.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="name" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The string used for matching access profile names. The name string can use asterisks (*) as wildcards.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="description" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The string used for matching access profile descriptions. The description string can use asterisks (*) as wildcards.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="domain" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The string used for matching the access profile domain name. The domain name string can use asterisks (*) as wildcards.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="tags" type="data_v2:tags" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The tags used for matching access profile tags. Access profiles will be matched only if they have all the specified tags.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+        <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="accessProfileUpdateContent" abstract="true">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[Represents a the content of an temporary access update]]>
+    </xs:documentation>
+  </xs:annotation>
+       <xs:sequence>
+              <xs:element name="updateType" type="data_v2:accessProfileUpdateType" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The type of changed that was made in a access profile]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="accessProfileUpdate">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[Represents an access profile update.]]>
+    </xs:documentation>
+  </xs:annotation>
+       <xs:sequence>
+              <xs:element name="accessProfile" type="data_v2:accessProfile" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The access profile that changed.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="updatedBy" type="data_v2:administrator" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Who made the changes.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="updateTime" type="xs:dateTime" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[When the change was made, ISO 8601 format for example 2014-09-05T16:15:30+02:00.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:choice minOccurs="0" maxOccurs="unbounded">
+                <xs:element name="accessProfileAccessUpdate" type="data_v2:accessProfileAccessUpdate"/>
+                <xs:element name="accessProfileRevalidationUpdate" type="data_v2:accessProfileRevalidationUpdate"/>
+              </xs:choice>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:simpleType name="accessProfileUpdateType">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[Represents what type of update was done to a access profile]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:restriction base="xs:string">
+     
+    <xs:enumeration value="ACCESS_UPDATE"/>
+ 
+    <xs:enumeration value="REVALIDATION_UPDATE"/>
+ 
+    <xs:enumeration value="CYLINDER_GROUP_REVALIDATION_UPDATE"/>
+ 
+    <xs:enumeration value="CYLINDER_PLUG_CHANGED_GROUP"/>
+  </xs:restriction>
+</xs:simpleType>
+
+<xs:complexType name="accessProfileBasic">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[Represents an access profile.]]>
+    </xs:documentation>
+  </xs:annotation>
+       <xs:sequence>
+        <xs:element name="cylinderPlugs" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="cylinderPlug" type="data_v2:cylinderPlugBasic" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="cylinderGroups" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="cylinderGroupIdentity" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="accessProfiles">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[Represents a set of access profile.]]>
+    </xs:documentation>
+  </xs:annotation>
+       <xs:sequence>
+              <xs:element name="accessProfileIdentity" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+        <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="administrator">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[Represents a system administrator]]>
+    </xs:documentation>
+  </xs:annotation>
+       <xs:sequence>
+              <xs:element name="name" type="xs:string" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[If the user is a system account that has a CKey the CKeys name will be used else the accounts display name will be used]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="ckeyIdentity" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[If the user is a system account that has a CKey the CKeys identity will be used in other cases it will not be present]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+        <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="assignedAccessProfile">
+       <xs:sequence>
+              <xs:element name="identity" type="xs:string" minOccurs="1">
+              </xs:element>
+              <xs:element name="hasPermanentAssignment" type="xs:boolean" minOccurs="1">
+              </xs:element>
+        <xs:element name="temporaryAccessGroups" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="temporaryAccessGroup" type="data_v2:temporaryAccessGroupKeyAssignment" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="auditTrail">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[Represents an audit trail fetched from a CLIQ key or cylinder.
+A audit trail consists of zero or more entries.]]>
+    </xs:documentation>
+  </xs:annotation>
+       <xs:sequence>
+              <xs:choice minOccurs="0" maxOccurs="unbounded">
+                <xs:element name="normal" type="data_v2:normalAuditTrailEntry"/>
+                <xs:element name="foreign" type="data_v2:foreignAuditTrailEntry"/>
+              </xs:choice>
+        <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="auditTrailDetails">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[Represents a set of normal and foreign audit trail entries with additional details.]]>
+    </xs:documentation>
+  </xs:annotation>
+       <xs:sequence>
+              <xs:choice minOccurs="0" maxOccurs="unbounded">
+                <xs:element name="normal" type="data_v2:normalAuditTrailEntryDetails"/>
+                <xs:element name="foreign" type="data_v2:foreignAuditTrailEntryDetails"/>
+              </xs:choice>
+        <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="auditTrailEntry" abstract="true">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[An AuditTrailEntry represents one audit trail entry collected from a CLIQ element (key or cylinder). The entry has
+a unique identity that can be used for separating two entries from each other. The entry contains information about
+the element's interaction with another CLIQ element.
+<p/>
+E.g. If an audit trail entry is read from a CLIQ key, it may contain entries created from interaction with Cylinders
+(access), C-keys (programming), or Remote Programming Devices (programming). If an audit trail
+is collected from a cylinder, it may contain entries created from interaction with Keys (access), C-keys
+(programming), or Local Programming Devices (programming). Other element interactions may also occur.
+<p/>
+Audit trails come in two flavours:
+<ul>
+<li>NormalAuditTrailEntry - For interaction with elements in same MKS</li>
+<li>ForeignAuditTrailEntry - For interaction with elements in foreign MKS</li>
+</ul>
+Normal entries contain information about the other element, while foreign audit trail entries only contain limited
+information needed to identify the element in the foreign system.]]>
+    </xs:documentation>
+  </xs:annotation>
+       <xs:sequence>
+              <xs:element name="entryIdentity" type="xs:string" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Audit Trail Entry Identity.
+<p/>
+Min length: 1<br/>
+Max length: 36]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="creationDate" type="xs:string" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Creation entry creation date.
+If creation date was not defined then this field is set to the start of the epoch: 1970-01-01
+<p/>
+Format: [YYYY]-[MM]-[DD]T[hh]:[mm]+01:00, e.g. 2011-06-16T18:25+01:00]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="auditTrailEntryDetails">
+       <xs:sequence>
+              <xs:element name="entryIdentity" type="xs:string" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Audit Trail Entry Identity.
+<p/>
+Min length: 1<br/>
+Max length: 36]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="creationDate" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Audit trail entry creation date.
+<p/>
+Format: [YYYY]-[MM]-[DD]T[hh]:[mm]+01:00, e.g. 2011-06-16T18:25+01:00]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="importDate" type="xs:string" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Audit trail entry's date of import into the system.
+<p/>
+Format: [YYYY]-[MM]-[DD]T[hh]:[mm]+01:00, e.g. 2011-06-16T18:25+01:00]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="orderOfAppearance" type="xs:long" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The natural order of audit trail entries from the audited device.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="authorisationCylinderGroupUpdate">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[Authorisation update for cylinder groups for a programmable key.]]>
+    </xs:documentation>
+  </xs:annotation>
+       <xs:sequence>
+              <xs:element name="cylinderGroupIdentity" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The identities of the cylinder groups the key should have access to.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+        <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="authorisationUpdate">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[Authorisation update for a programmable key.]]>
+    </xs:documentation>
+  </xs:annotation>
+       <xs:sequence>
+              <xs:element name="cylinderPlugIdentity" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+        <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="batchResult">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[Represents the result after a completed save or update operation.]]>
+    </xs:documentation>
+  </xs:annotation>
+       <xs:sequence>
+              <xs:element name="failures" type="data_v2:failureDescription" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:simpleType name="bluetoothSupport">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[Represents the possible bluetooth support for a key]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:restriction base="xs:string">
+     
+    <xs:enumeration value="SUPPORTED"/>
+ 
+    <xs:enumeration value="NOT_SUPPORTED"/>
+  </xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="commandCode">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[CommandCode represents the different commands in use for communication between CLIQ elements.]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:restriction base="xs:string">
+     
+    <xs:enumeration value="NO_COMMAND"/>
+ 
+    <xs:enumeration value="PROGRAMMING"/>
+ 
+    <xs:enumeration value="WRITE_TIME"/>
+ 
+    <xs:enumeration value="ACCESS"/>
+ 
+    <xs:enumeration value="RESET"/>
+ 
+    <xs:enumeration value="UNSPECIFIED"/>
+  </xs:restriction>
+</xs:simpleType>
+
+<xs:complexType name="cylinderChange">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[Represents a cylinder plug that has been added or removed from the parent entity.]]>
+    </xs:documentation>
+  </xs:annotation>
+       <xs:sequence>
+              <xs:element name="plugWithCylinder" type="data_v2:plugWithCylinder" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The cylinder plug that was added or removed.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="added" type="xs:boolean" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[True if the cylinder plug was added, false if it was removed.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+        <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="cylinder">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[Represents a cylinder. A cylinder has one or two plugs, called side A and side B.
+A cylinder plug can be programmed individually, but is always attached to a cylinder.]]>
+    </xs:documentation>
+  </xs:annotation>
+       <xs:sequence>
+              <xs:element name="identity" type="xs:string" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Cylinder Identity.
+<p/>
+Min length: 1<br/>
+Max length: 36]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="name" type="xs:string" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Plug name.
+<p/>
+Max length: 100]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="marking" type="xs:string" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Marking.
+<p/>
+Max length: 255]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="plannedLocation" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Planned location of the cylinder.
+Note: this field is called location in the CLIQ Web Manager application.
+<p/>
+Max length: 255]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="model" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Model of the cylinder.
+<p/>
+Max length: 255]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="cylinderPlugA" type="data_v2:cylinderPlug" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Plug A (required).]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="cylinderPlugB" type="data_v2:cylinderPlug" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Plug B (double cylinders only).]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="deleted" type="xs:boolean" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Mark cylinder as deleted. A deleted cylinder is still in the system for reference, but can not be used.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element ref="dataExtra_v2:importDate" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Date and time when the cylinder data was imported using the CWX import format with CWM 5.0 or later, NULL for cylinders imported using other file formats or with CWM versions prior to 5.0.
+<p>CWX import format is an import format for supporting background import of extension files, supported since CWM 4.0</p>]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+        <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="cylinderDetails">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[Represents the detailed view of a <a href="xml_data_v2_cylinder.html">cylinder</a>. A cylinder has one or two plugs, called side A and side B.
+A cylinder plug can be programmed individually, but is always attached to a cylinder.]]>
+    </xs:documentation>
+  </xs:annotation>
+       <xs:sequence>
+              <xs:element name="identity" type="xs:string" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Cylinder Identity.
+<p/>
+Min length: 1<br/>
+Max length: 36]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="cylinderGroupIdentity" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Cylinder group identity.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="domainIdentity" type="xs:string" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Domain identity.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="name" type="xs:string" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Plug name.
+<p/>
+Max length: 100]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="marking" type="xs:string" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Marking.
+<p/>
+Max length: 255]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="secondMarking" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="plannedLocation" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Planned location of the cylinder.
+Note: this field is called location in the CLIQ Web Manager application.
+<p/>
+Max length: 255]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="model" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Model of the cylinder.
+<p/>
+Max length: 255]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="installationStatus" type="data_v2:installationStatus" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Declares the installation status of the cylinder, i.e. installed or in stock.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="cylinderPlugA" type="data_v2:cylinderPlugDetails" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Plug A (required)]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="cylinderPlugB" type="data_v2:cylinderPlugDetails" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Plug B (double cylinders only)]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="deleted" type="xs:boolean" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Mark cylinder as deleted. A deleted cylinder is still in the system for reference, but can not be used.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="tags" type="data_v2:tags" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Represents the set of tags applied to this cylinder.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="secondName" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Cylinder secondary name.
+<p/>
+Max length: 255]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="externalLinks" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Represents the set of external links applied to this cylinder.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="lengthSideA" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The length of the cylinder's A side.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="lengthSideB" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The length of the cylinder's B side.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element ref="dataExtra_v2:domainName" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Domain name.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element ref="dataExtra_v2:importDate" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Date and time when the cylinder data was imported using the CWX import format with CWM 5.0 or later, NULL for cylinders imported using other file formats or with CWM versions prior to 5.0.
+<p>CWX import format is a import format for supporting background import of extension files, supported since CWM 4.0</p>]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element ref="dataExtra_r6_1_v2:customFields" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Represents the set of custom fields applied to this cylinder.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+        <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="cylinderDomainChange">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[Represents a cylinder or cylinder group transfer event from one domain to another]]>
+    </xs:documentation>
+  </xs:annotation>
+       <xs:sequence>
+              <xs:element name="affectedCylinder" type="data_v2:cylinder" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The cylinder that was moved]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="affectedGroup" type="data_v2:cylinderGroup" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The cylinder group that was moved]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="oldDomainName" type="xs:string" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The old domain name]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="newDomainName" type="xs:string" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The new domain name]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="updatedBy" type="data_v2:administrator" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Who made the changes]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="updateTime" type="xs:dateTime" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[When the change was made, ISO 8601 format for example 2014-09-05T16:15:30+02:00]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+        <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="cylinderGroupChange">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[Represents one cylinder group that has been added or removed from the parent object]]>
+    </xs:documentation>
+  </xs:annotation>
+       <xs:sequence>
+              <xs:element name="groupIdentity" type="xs:string" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The identity of the cylinder group]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="groupName" type="xs:string" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The nam of the cylinder group]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="domainName" type="xs:string" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The domain name that the cylinder group belong to]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="added" type="xs:boolean" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[True if cylinder group was added]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+        <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="cylinderGroup">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[Represents a cylinder group.]]>
+    </xs:documentation>
+  </xs:annotation>
+       <xs:sequence>
+              <xs:element name="identity" type="xs:string" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Cylinder group identity.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="gr" type="xs:int" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The group id of this group.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="name" type="xs:string" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The name of the group.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="domainName" type="xs:string" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The name of the domain that this group belongs to.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="tags" type="data_v2:tags" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Represents the set of tags applied to this cylinder group.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+        <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="cylinderGroupSearchArguments">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[Represents search arguments used to search for cylinder plug groups.]]>
+    </xs:documentation>
+  </xs:annotation>
+       <xs:sequence>
+              <xs:element name="identity" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Cylinder group identity. This will be used for exact matching.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="gr" type="xs:int" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The group identity of this cylinder group. This will be used for exact matching.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="name" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The name of the group. This will look for cylinder group names starting with the specified name.
+The name string can use asterisks (*) as wildcards.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="domain" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The name of the domain that this group belongs to. This will look for domain names starting with the specified name.
+The domain name string can use asterisks (*) as wildcards.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="tags" type="data_v2:tags" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The set of tags applied to this cylinder group. Cylinder groups will be matched only if they have all the specified tags.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+        <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="cylinderPlugBasic">
+       <xs:sequence>
+              <xs:element name="cylinderPlugIdentity" type="xs:string" minOccurs="1">
+              </xs:element>
+              <xs:element name="cylinderIdentity" type="xs:string" minOccurs="1">
+              </xs:element>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="cylinderPlug">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[CylinderPlug represents a cylinder plug (mechanical or CLIQ).
+<p/>
+A cylinder plug can be programmed individually, but is always attached to a cylinder.]]>
+    </xs:documentation>
+  </xs:annotation>
+       <xs:sequence>
+              <xs:element name="identity" type="xs:string" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Cylinder plug Identity.
+<p/>
+Min length: 1<br/>
+Max length: 36]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="type" type="data_v2:elementType" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Plug type, mechanical or CLIQ.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+        <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="cylinderPlugDetails">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[Represents the detailed view of a cylinder plug, including the plug's operational status.]]>
+    </xs:documentation>
+  </xs:annotation>
+       <xs:sequence>
+              <xs:element name="identity" type="xs:string" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Cylinder plug Identity.
+<p/>
+Min length: 1<br/>
+Max length: 36]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="type" type="data_v2:elementType" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Plug type, mechanical or CLIQ.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="operationalStatus" type="data_v2:operationalStatus" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Describes the key's current operational status.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+        <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="cylinderSearchArguments">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[Represents arguments used for searching for cylinders. If an individual argument is left empty, it will match any value. If all arguments are left empty, any cylinder will be matched.]]>
+    </xs:documentation>
+  </xs:annotation>
+       <xs:sequence>
+              <xs:element name="domain" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The name of the cylinder's domain.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="name" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The name of the cylinder.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="marking" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The marking of the cylinder.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="location" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The location of the cylinder.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="secondName" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The second name of the cylinder.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="secondMarking" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The second marking of the cylinder.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="model" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The model name of the cylinder.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="group" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The cylinder group name of the plugs in the cylinder.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="tags" type="data_v2:tags" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The set of tags applied to the cylinder. Cylinders will be matched only if they have all the specified tags.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="whereAt" type="data_v2:installationStatus" minOccurs="0" maxOccurs="unbounded">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The installation status of the cylinders to search for. The default is both in-stock cylinders and installed cylinders.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="operationalStatus" type="data_v2:operationalStatus" minOccurs="0" maxOccurs="unbounded">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The operational status of the cylinders to search for. The default is both operational cylinders and broken cylinders.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="type" type="data_v2:elementType" minOccurs="0" maxOccurs="unbounded">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The type of cylinder to search for. The default is both electronic cylinders and mechanical cylinders.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+        <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:simpleType name="cylinderSide">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[Represents the side of the cylinder. Different sides are placed opposite from one another on each side of a door.
+A single sided cylinder will only have an A-side, while a double cylinder will have an A-side and a B-side.]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:restriction base="xs:string">
+     
+    <xs:enumeration value="A"/>
+ 
+    <xs:enumeration value="B"/>
+  </xs:restriction>
+</xs:simpleType>
+
+<xs:complexType name="cylinderUpdate">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[Represents a change of information for one cylinder. If a field is filled in (even with an empty string), it will
+replace the current value of that field in the cylinder. If a field is omitted, the current value for that field is kept.]]>
+    </xs:documentation>
+  </xs:annotation>
+       <xs:sequence>
+              <xs:element name="identity" type="xs:string" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The identity of the cylinder to be affected by the update.
+<p/>
+Min length: 1<br/>
+Max length: 36]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="name" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The new cylinder name.
+<p/>
+Max length: 100]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="secondName" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The new cylinder secondary name.
+<p/>
+Max length: 255]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="plannedLocation" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The new planned location of the cylinder.
+Note: this field is called location in the CLIQ Web Manager application.
+<p/>
+Max length: 255]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="installationStatus" type="data_v2:installationStatus" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The new installations status, e.g. installed or in stock.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="lengthA" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The new length of cylinder plug side A.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="lengthB" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The new length of cylinder plug side B.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="tags" type="data_v2:tags" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Represents the set of tags applied to this cylinder. These tags will replace the current tags on the cylinder.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="externalLinks" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[A string of comma-separated external links related to this cylinder. These external links will replace the current external links on the cylinder.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element ref="dataExtra_r6_1_v2:customFields" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Represents the set of updated custom fields to be applied for this cylinder. Each custom field will be replaced by a custom field with the corresponding identity.
+Cylinder custom fields which are not present in the set will remain unchanged.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+        <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="dateInterval">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[Represents an interval of dates.]]>
+    </xs:documentation>
+  </xs:annotation>
+       <xs:sequence>
+              <xs:element name="from" type="xs:string" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Start date and time, exclusive. Format: [YYYY]-[MM]-[DD]T[hh]:[mm], e.g. 2011-06-16T18:25]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="to" type="xs:string" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[End date and time, inclusive. Minute precision. Format: [YYYY]-[MM]-[DD]T[hh]:[mm], e.g. 2011-06-16T18:25]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+        <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="dateIntervalWithTimeZone">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[Represents a possibly open-ended interval.]]>
+    </xs:documentation>
+  </xs:annotation>
+       <xs:sequence>
+              <xs:element name="from" type="xs:string" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Start date and time as time with a time zone offset. Minute precision.
+Format: [YYYY]-[MM]-[DD]T[hh]:[mm][+/-][ZZ:ZZ], e.g. 2011-06-16T18:25+01:00]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="to" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[End date and time as time with a time zone offset. Minute precision.
+Format: [YYYY]-[MM]-[DD]T[hh]:[mm][+/-][ZZ:ZZ], e.g. 2011-06-16T18:25+01:00
+NOTE: if value is NULL, current time + 1 minute will be used instead.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+        <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:simpleType name="day">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[Day represents a Week day. A CLIQ Week starts on Sunday and ends on Saturdays.]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:restriction base="xs:string">
+     
+    <xs:enumeration value="SUNDAY"/>
+ 
+    <xs:enumeration value="MONDAY"/>
+ 
+    <xs:enumeration value="TUESDAY"/>
+ 
+    <xs:enumeration value="WEDNESDAY"/>
+ 
+    <xs:enumeration value="THURSDAY"/>
+ 
+    <xs:enumeration value="FRIDAY"/>
+ 
+    <xs:enumeration value="SATURDAY"/>
+  </xs:restriction>
+</xs:simpleType>
+
+<xs:complexType name="domain">
+       <xs:sequence>
+              <xs:element name="identity" type="xs:string" minOccurs="1">
+              </xs:element>
+              <xs:element name="name" type="xs:string" minOccurs="1">
+              </xs:element>
+              <xs:element name="description" type="xs:string" minOccurs="0">
+              </xs:element>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:simpleType name="elementType">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[ElementType represents the major key system element types.]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:restriction base="xs:string">
+     
+    <xs:enumeration value="C_KEY"/>
+ 
+    <xs:enumeration value="NORMAL_KEY"/>
+ 
+    <xs:enumeration value="TEMPORARY_KEY"/>
+ 
+    <xs:enumeration value="OTHER_KEY"/>
+ 
+    <xs:enumeration value="MECHANICAL_KEY"/>
+ 
+    <xs:enumeration value="CLIQ_CYLINDER_PLUG"/>
+ 
+    <xs:enumeration value="MECHANICAL_CYLINDER_PLUG"/>
+ 
+    <xs:enumeration value="SOFTWARE"/>
+ 
+    <xs:enumeration value="LOCAL_PD"/>
+ 
+    <xs:enumeration value="REMOTE_PD"/>
+ 
+    <xs:enumeration value="UNKNOWN"/>
+ 
+    <xs:enumeration value="UNSPECIFIED"/>
+  </xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="errorCode">
+  <xs:restriction base="xs:string">
+     
+    <xs:enumeration value="IDENTITY_NOT_UNIQUE"/>
+ 
+    <xs:enumeration value="IDENTITY_NOT_FOUND"/>
+ 
+    <xs:enumeration value="IDENTITY_DEACTIVATED"/>
+ 
+    <xs:enumeration value="INVALID_DATA"/>
+ 
+    <xs:enumeration value="INVALID_STATE"/>
+ 
+    <xs:enumeration value="INTERNAL_ERROR"/>
+ 
+    <xs:enumeration value="UNEXPECTED_FAILURE"/>
+  </xs:restriction>
+</xs:simpleType>
+
+<xs:complexType name="externalLink">
+       <xs:sequence>
+              <xs:element name="name" type="xs:string" minOccurs="1">
+              </xs:element>
+              <xs:element name="url" type="xs:string" minOccurs="1">
+              </xs:element>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:simpleType name="failureCode">
+  <xs:restriction base="xs:string">
+     
+    <xs:enumeration value="HAS_STARTED_CHANGE_GROUP_JOB"/>
+ 
+    <xs:enumeration value="CKEY_REQUIRED"/>
+ 
+    <xs:enumeration value="CKEY_BROKEN"/>
+ 
+    <xs:enumeration value="CKEY_LOST"/>
+ 
+    <xs:enumeration value="CKEY_BLOCKED"/>
+ 
+    <xs:enumeration value="CKEY_PROGRAMMING_NOT_ALLOWED"/>
+ 
+    <xs:enumeration value="CKEY_HAS_AUTO_AUDIT_TRAIL"/>
+ 
+    <xs:enumeration value="CYLINDER_PLUG_LOCKED"/>
+ 
+    <xs:enumeration value="CYLINDER_BROKEN"/>
+ 
+    <xs:enumeration value="CYLINDER_DELETED"/>
+ 
+    <xs:enumeration value="CYLINDER_JOB_ALREADY_ON_CKEY"/>
+ 
+    <xs:enumeration value="NO_CYLINDER_JOBS_TO_ASSIGN"/>
+ 
+    <xs:enumeration value="CYLINDER_IS_NOT_GROUP_ENABLED"/>
+ 
+    <xs:enumeration value="NOT_COMPATIBLE_KEY_CUTTINGS"/>
+ 
+    <xs:enumeration value="PIN_VALIDATION_INVALID_ARGUMENTS"/>
+ 
+    <xs:enumeration value="PIN_VALIDATION_NOT_QUARTZ_KEY"/>
+ 
+    <xs:enumeration value="PIN_VALIDATION_NOT_SUPPORTED"/>
+ 
+    <xs:enumeration value="PIN_VALIDATION_KEY_VALIDITY_NEVER"/>
+ 
+    <xs:enumeration value="PIN_VALIDATION_KEY_LOST"/>
+ 
+    <xs:enumeration value="PIN_VALIDATION_KEY_BROKEN"/>
+ 
+    <xs:enumeration value="PIN_VALIDATION_DISABLING_KEY_VALIDITY_SCHEDULED"/>
+ 
+    <xs:enumeration value="KEYHOLDER_CONNECT_PLUS_CANNOT_BE_DELETED"/>
+ 
+    <xs:enumeration value="KEYHOLDER_CONNECT_PLUS_DUPLICATED_EMAIL"/>
+ 
+    <xs:enumeration value="KEYHOLDER_CONNECT_PLUS_REMOVE_EMAIL_NOT_ALLOWED"/>
+ 
+    <xs:enumeration value="INTERNAL_ERROR"/>
+  </xs:restriction>
+</xs:simpleType>
+
+<xs:complexType name="failureDescription">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[Failure description is used to describe the error of an operation that has failed.]]>
+    </xs:documentation>
+  </xs:annotation>
+       <xs:sequence>
+              <xs:element name="identity" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The id of the person involved]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="description" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Optional additional error description]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="failureCode" type="data_v2:failureCode" minOccurs="0">
+              </xs:element>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="foreignAuditTrailEntry">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[ForeignAuditTrailEntry is an audit trail entry that is the result of interacting with another CLIQ element in a
+different MKS. Since no information exist for the foreign MKS, only limited information used to identify the
+element can be provided.]]>
+    </xs:documentation>
+  </xs:annotation>
+   <xs:complexContent>
+    <xs:extension base="data_v2:auditTrailEntry">
+      <xs:sequence>
+              <xs:element name="company" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Company name.
+<p/>
+Max length: 100]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="mks" type="xs:string" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Foreign element MKS number.
+<p/>
+Max length: 15.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="fCode" type="xs:int" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Foreign element code (F-code).]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="group" type="xs:int" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Foreign element group.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="uid" type="xs:int" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Foreign element uid.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element ref="dataExtra_v2:orderOfAppearance" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The natural order of audit trail entries from the audited device.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element ref="dataExtra_r9_2_v2:partiallyProcessed" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Specifies if the audit trail data was fully processed or only partially,
+returned only if the requests specified the include partially processed option.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+        <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:extension>
+  </xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="foreignAuditTrailEntryDetails">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[ForeignAuditTrailEntryDetails is a detailed audit trail entry that is the result of interacting with another CLIQ element in a
+different MKS. Since no information exist for the foreign MKS, only limited information used to identify the
+element can be provided.]]>
+    </xs:documentation>
+  </xs:annotation>
+   <xs:complexContent>
+    <xs:extension base="data_v2:auditTrailEntryDetails">
+      <xs:sequence>
+              <xs:element name="eventFromName" type="xs:string" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Name of affected element.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="eventFromMarking" type="xs:string" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Marking of affected element.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="eventFromElementType" type="data_v2:elementType" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Element type of affected element.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="eventByCompany" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Foreign company name.
+<p/>
+Max length: 100]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="eventByMks" type="xs:string" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Foreign element MKS number.
+<p/>
+Max length: 15.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="eventByFCode" type="xs:int" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Foreign element code (F-code).]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="eventByGroup" type="xs:int" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Foreign element group.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="eventByUid" type="xs:int" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Foreign element uid.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element ref="dataExtra_r9_0_v2:eventFromDomainIdentity" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The domain of the from element at the time of audit trail event.
+If the historical domain information is unavailable then no value is returned
+(for instance for events which happened before the system saved
+historical domain information during audit trails processing).]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element ref="dataExtra_r9_0_v2:eventByDomainIdentity" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The domain of the by element at the time of audit trail event.
+If the historical domain information is unavailable then no value is returned
+(for instance for events which happened before the system saved
+historical domain information during processing audit trails processing).]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element ref="dataExtra_r9_2_v2:partiallyProcessed" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Specifies if the audit trail data was fully processed or only partially,
+returned only if the requests specified the include partially processed option.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+        <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:extension>
+  </xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="identifierDTO">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[Representation of unique identification of an entity within CLIQ Web Manager]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:simpleContent>
+    <xs:extension base="xs:string">
+      <xs:attribute name="deleted" type="xs:boolean">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[If 'true' it indicates that the entry with given identity has been deleted.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:attribute>
+    </xs:extension>
+  </xs:simpleContent>
+</xs:complexType>
+
+<xs:simpleType name="installationStatus">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[Represents the possible statuses for a cylinder.]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:restriction base="xs:string">
+     
+    <xs:enumeration value="IN_STOCK"/>
+ 
+    <xs:enumeration value="INSTALLED"/>
+  </xs:restriction>
+</xs:simpleType>
+
+<xs:complexType name="keyAccessChange">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[Represents a change of cylinder and cylinder group accesses of a key.]]>
+    </xs:documentation>
+  </xs:annotation>
+       <xs:sequence>
+              <xs:element name="updatedBy" type="data_v2:administrator" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The user who caused the access change.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="updateTime" type="xs:dateTime" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The creation time of the access change, ISO 8601 format for example 2014-09-05T16:15:30+02:00]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="keyIdentity" type="xs:string" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The key affected by the access changes.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="cylinderAccessUpdates" type="data_v2:cylinderChange" minOccurs="0" maxOccurs="unbounded">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The cylinders whose accesses where added to or removed from the key.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="cylinderGroupAccessUpdates" type="data_v2:cylinderGroupChange" minOccurs="0" maxOccurs="unbounded">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The cylinder groups whose accesses where added to or removed from the key.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+        <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="keyAccess">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[Represents a cylinder accessible by a key, along with the cylinder's origin (for example cylinder group, access profile or explicit access.)]]>
+    </xs:documentation>
+  </xs:annotation>
+       <xs:sequence>
+              <xs:element name="plugIdentity" type="xs:string" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Plug Identity.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="plugType" type="data_v2:elementType" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Plug type, mechanical or CLIQ.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="cylinderIdentity" type="xs:string" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Cylinder Identity.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="cylinderName" type="xs:string" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Cylinder name.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="cylinderMarking" type="xs:string" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Cylinder marking.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="cylinderSide" type="data_v2:cylinderSide" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Cylinder side.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="domainName" type="xs:string" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Name of the domain the cylinder is part of.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="cylinderGroupIdentity" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Cylinder group identity. if applicable.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="cylinderGroupName" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Cylinder group name. if applicable.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="origin" type="data_v2:origin" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Origin of the cylinder access, specifying if the access was set explicitly, by a cylinder group or by an access profile.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+        <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="keyAccessProfileChange">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[Represents an association or disassociation of an access profile to a key.]]>
+    </xs:documentation>
+  </xs:annotation>
+       <xs:sequence>
+              <xs:element name="affectedKey" type="data_v2:key" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The key that an access profile was associated or disassociated with.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="affectedAccessProfile" type="data_v2:accessProfile" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The access profile that was associated or disassociated with the key.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="added" type="xs:boolean" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Specifies if the access profile was added or removed from the key. If true, it was added, if false, it was removed.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="updatedBy" type="data_v2:administrator" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The administrator that did the change.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="updateTime" type="xs:dateTime" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[When the change was done, ISO 8601 format for example 2014-09-05T16:15:30+02:00.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+        <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="keyAndKeyHolder">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[Represents a key and its key holder that is authorized in the given cylinder.]]>
+    </xs:documentation>
+  </xs:annotation>
+       <xs:sequence>
+              <xs:element name="key" type="data_v2:key" minOccurs="1">
+              </xs:element>
+              <xs:element name="keyHolder" type="data_v2:person" minOccurs="0">
+              </xs:element>
+        <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="keyChange">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[Represents a key that was added or removed from a temporary access group.]]>
+    </xs:documentation>
+  </xs:annotation>
+       <xs:sequence>
+              <xs:element name="key" type="data_v2:key" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The key that was added or removed to the temporary access group.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="added" type="xs:boolean" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[True if added, false if removed.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+        <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="key">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[Key represents a key individual, CLIQ or mechanical.]]>
+    </xs:documentation>
+  </xs:annotation>
+       <xs:sequence>
+              <xs:element name="identity" type="xs:string" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Key Identity.
+<p/>
+Min length: 1<br/>
+Max length: 36]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="type" type="data_v2:elementType" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[CLIQ key type.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="name" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[CLIQ key name.
+<p/>
+Max length: 100]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="marking" type="xs:string" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[CLIQ key marking.
+<p/>
+Max length: 100]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="deleted" type="xs:boolean" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Set to false to mark a key as deleted. A deleted key is still in the system for reference, but can not be used.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+        <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="keyDetails">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[Represents a detailed representation of a CLIQ or mechanical key, including static and dynamic info.]]>
+    </xs:documentation>
+  </xs:annotation>
+       <xs:sequence>
+              <xs:element name="identity" type="xs:string" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Key Identity.
+<p/>
+Min length: 1<br/>
+Max length: 36]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="type" type="data_v2:elementType" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[CLIQ key type.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="name" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Key name.
+<p/>
+Max length: 100]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="marking" type="xs:string" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Key marking.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="secondMarking" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Second marking.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="deleted" type="xs:boolean" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Set to true to mark a key as deleted. A deleted key is still in the system for reference, but can not be used.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="keyHolderIdentity" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Unique identification of the key holder. Will be null if key is not handed out.
+<p/>
+Min length: 1<br/>
+Max length: 256]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="lastRemoteUpdate" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Timestamp when the key was last updated in a remote PD.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="whereAt" type="data_v2:whereAt" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Describes where the key currently is.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="operationalStatus" type="data_v2:operationalStatus" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Describes the key's current operational status.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="pendingUpdates" type="data_v2:pendingUpdates" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Represents the current pending updates for this key.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="handoutDate" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Handout date.
+<p/>
+Format: [YYYY]-[MM]-[DD]T[hh]:[mm]+01:00, e.g. 2011-06-16T18:25+01:00]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="handinDate" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Handin date.
+<p/>
+Format: [YYYY]-[MM]-[DD]T[hh]:[mm]+01:00, e.g. 2011-06-16T18:25+01:00]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="tags" type="data_v2:tags" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Represents the set of tags applied to this key.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="validity" type="data_v2:validity" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Represents the validity of this key.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="remoteEnabled" type="xs:boolean" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Indicates if the key is remote enabled.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element ref="dataExtra_v2:domainName" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Key domain.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element ref="dataExtra_r7_0_v2:bluetoothSupport" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Indicates if key does support bluetooth communication.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element ref="dataExtra_r7_0_v2:pinValidationIntervalInMinutes" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[PIN Validation interval in minutes.
+<p/>
+The maximum value of PIN Validation interval is 45 days (64800 in minutes). 0 means PIN Validation is disabled for this key.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+        <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="keySearchArguments">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[Represents arguments used for searching for keys. If an individual argument is left empty, it will match any value. If all arguments are left empty, any key will be matched.]]>
+    </xs:documentation>
+  </xs:annotation>
+       <xs:sequence>
+              <xs:element name="domain" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The name of the cylinder's domain.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="name" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The name of the key.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="marking" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The marking of the key.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="keyHolderFirstName" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The first name of the key's keyholder.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="keyHolderSurname" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The last name of the key's keyholder.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="keyGroupName" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The name of the key's group.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="keyCutting" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The name of the key's cutting.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="secondMarking" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The second marking of the key.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="accessProfileName" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The name of the access profile(s) applied to the key. This will match the names of any of the access profiles applied to a key.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="tags" type="data_v2:tags" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The set of tags applied to the key. Keys will be matched only if they have all the specified tags.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="lineNumber" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The line number of the key.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="type" type="data_v2:elementType" minOccurs="0" maxOccurs="unbounded">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The type of key to search for. The default is any type.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="whereAt" type="data_v2:whereAt" minOccurs="0" maxOccurs="unbounded">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The installation status of the keys to search for. The default is handed-in, handed-out or lost.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="operationalStatus" type="data_v2:operationalStatus" minOccurs="0" maxOccurs="unbounded">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The operational status of the keys to search for. The default is operational or broken.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="keyHolderIdentity" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The identity of the key's keyholder]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="bluetoothSupport" type="data_v2:bluetoothSupport" minOccurs="0" maxOccurs="unbounded">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Bluetooth communication support by the key. The default is supported or not supported.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+        <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="keyUpdate">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[Represents if a key has been added or removed]]>
+    </xs:documentation>
+  </xs:annotation>
+       <xs:sequence>
+              <xs:element name="keyUpdateType" type="data_v2:keyUpdateType" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Represents the category of this update.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="overflowed" type="xs:boolean" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Represents an authorisation update whose access list exceeds the maximum memory size of the key and thus is not available for download.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+        <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:simpleType name="keyUpdateType">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[Represents the different type of remote key updates.]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:restriction base="xs:string">
+     
+    <xs:enumeration value="VALIDITY"/>
+ 
+    <xs:enumeration value="SCHEDULE"/>
+ 
+    <xs:enumeration value="AUTHORISATION"/>
+ 
+    <xs:enumeration value="AUDIT_TRAIL"/>
+ 
+    <xs:enumeration value="PIN_VALIDATION"/>
+  </xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="keyValidityType">
+  <xs:restriction base="xs:string">
+     
+    <xs:enumeration value="ALWAYS"/>
+ 
+    <xs:enumeration value="NEVER"/>
+ 
+    <xs:enumeration value="DATES"/>
+  </xs:restriction>
+</xs:simpleType>
+
+<xs:complexType name="normalAuditTrailEntry">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[NormalAuditTrailEntry is an audit trail entry that is the result of interacting with another CLIQ element in the same
+MKS.
+<p/>
+Note that fields such as name, cylinder planned location etc are set at the time when the audit trail is imported to
+CLIQ Web Manager. Since some of these fields can be changed in CLIQ Web Manager, this data may have changed from the
+time the audit trail entry was created in the element till it was imported into CLIQ Web Manager.]]>
+    </xs:documentation>
+  </xs:annotation>
+   <xs:complexContent>
+    <xs:extension base="data_v2:auditTrailEntry">
+      <xs:sequence>
+              <xs:element name="elementType" type="data_v2:elementType" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Element type.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="name" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Element name.
+<p/>
+Max length: 255]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="marking" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Marking.
+<p/>
+Max length: 255]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="commandCode" type="data_v2:commandCode" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Code of command performed.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="resultCode" type="data_v2:resultCode" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Result code of command performed.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element ref="dataExtra_v2:orderOfAppearance" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The natural order of audit trail entries from the audited device.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element ref="dataExtra_r6_v2:keyHolderIdentity" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Identity of historical key holder to who the key was handed out while audit trail event happened.
+If historical key holder data is unavailable (because of, for example, deactivation),
+'N/A' string will be returned]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element ref="dataExtra_r9_0_v2:domainIdentity" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Identity of domain to which the element was assigned out while audit trail event happened.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element ref="dataExtra_r9_2_v2:partiallyProcessed" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Specifies if the audit trail data was fully processed or only partially,
+returned only if the requests specified the include partially processed option.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+        <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:extension>
+  </xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="normalAuditTrailEntryDetails">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[NormalAuditTrailEntryDetails is a detailed audit trail entry that is the result of interacting with another CLIQ element in the same
+MKS.
+<p/>
+Note that fields such as name, cylinder planned location etc are set at the time when the audit trail is imported to
+CLIQ Web Manager. Since some of these fields can be changed in CLIQ Web Manager, this data may have changed from the
+time the audit trail entry was created in the element till it was imported into CLIQ Web Manager.]]>
+    </xs:documentation>
+  </xs:annotation>
+   <xs:complexContent>
+    <xs:extension base="data_v2:auditTrailEntryDetails">
+      <xs:sequence>
+              <xs:element name="eventFromName" type="xs:string" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Name of affected element.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="eventFromMarking" type="xs:string" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Marking of affected element.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="eventFromElementType" type="data_v2:elementType" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Element type of affected element.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="eventByName" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Name of affecter element.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="eventByMarking" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Marking of affecter element.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="eventByElementType" type="data_v2:elementType" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Element type of affecter element.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="commandCode" type="data_v2:commandCode" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Code of command performed.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="resultCode" type="data_v2:resultCode" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Result code of command performed.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element ref="dataExtra_r6_v2:keyHolderIdentity" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Identity of historical key holder to who the key was handed out while audit trail event happened.
+If historical key holder data is unavailable (because of, for example, deactivation),
+'N/A' string will be returned]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element ref="dataExtra_r9_0_v2:eventFromDomainIdentity" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The domain of the from element at the time of audit trail event.
+If the historical domain information is unavailable then no value is returned
+(for instance for events which happened before the system saved
+historical domain information during audit trails processing).]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element ref="dataExtra_r9_0_v2:eventByDomainIdentity" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The domain of the by element at the time of audit trail event.
+If the historical domain information is unavailable then no value is returned
+(for instance for events which happened before the system saved
+historical domain information during processing audit trails processing).]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element ref="dataExtra_r9_2_v2:partiallyProcessed" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Specifies if the audit trail data was fully processed or only partially,
+returned only if the requests specified the include partially processed option.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+        <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:extension>
+  </xs:complexContent>
+</xs:complexType>
+
+<xs:simpleType name="operationalStatus">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[Represents the possible statuses for a key or cylinder.]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:restriction base="xs:string">
+     
+    <xs:enumeration value="OPERATIONAL"/>
+ 
+    <xs:enumeration value="BROKEN"/>
+  </xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="origin">
+  <xs:restriction base="xs:string">
+     
+    <xs:enumeration value="ACCESS_PROFILE"/>
+ 
+    <xs:enumeration value="CYLINDER_GROUP"/>
+ 
+    <xs:enumeration value="EXPLICIT_ACCESS"/>
+  </xs:restriction>
+</xs:simpleType>
+
+<xs:complexType name="pagination">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[Used to specify how much data is to be returned by the web service call. The first result parameter combined with
+the max results parameter allows splitting up a large number of results for iteration. This is done by asking for
+the first row and a max number of results (e.g. 10) and in the subsequent call asking for the 11th row and the same
+max amount of results and so on.
+<p>
+For example: pagination.firstResult=0 and pagination.maxResults=10 will give you the first 10 rows, 1-10
+and pagination.firstResult=10 and pagination.maxResults=10 will give you the next coming 10 rows , 11-20
+</p>]]>
+    </xs:documentation>
+  </xs:annotation>
+       <xs:sequence>
+              <xs:element name="firstResult" type="xs:int" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The desired first row number of the results. The value is zero based i.e. to get the first row of the result set, set the first result value to 0.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="maxResults" type="xs:int" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The maximum number of results to return. <br/>
+Negative maxResults is illegal and will cause an exception.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+        <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:simpleType name="PdType">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[PdType represents the two currently existing Remote Programming Device types.]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:restriction base="xs:string">
+     
+    <xs:enumeration value="WALL_PD"/>
+ 
+    <xs:enumeration value="MOBILE_PD"/>
+  </xs:restriction>
+</xs:simpleType>
+
+<xs:complexType name="pendingUpdates">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[Represents the list of pending updates available for a certain key.
+Will contain zero or more update entries.]]>
+    </xs:documentation>
+  </xs:annotation>
+       <xs:sequence>
+              <xs:element name="update" type="data_v2:keyUpdate" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+        <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="person">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[person_ is the less detailed representation of employees within CLIQ Web Manager.]]>
+    </xs:documentation>
+  </xs:annotation>
+       <xs:sequence>
+              <xs:element name="identity" type="xs:string" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Unique identification of the person.
+<p/>
+Min length: 1<br/>
+Max length: 256]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="firstName" type="xs:string" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Min length: 1<br/>
+Max length: 49]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="surname" type="xs:string" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Min length: 1<br/>
+Max length: 49]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="deleted" type="xs:boolean" minOccurs="1">
+              </xs:element>
+              <xs:element ref="dataExtra_v2:department" minOccurs="0">
+              </xs:element>
+              <xs:element ref="dataExtra_v2:company" minOccurs="0">
+              </xs:element>
+              <xs:element ref="dataExtra_r9_0_v2:immutableIdentity" minOccurs="0">
+              </xs:element>
+        <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="personDetails">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[Person is the representation of employees within CLIQ Web Manager, all basic attributes of a person is available.]]>
+    </xs:documentation>
+  </xs:annotation>
+       <xs:sequence>
+              <xs:element name="identity" type="xs:string" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Unique identification of the person.
+<p/>
+Min length: 1<br/>
+Max length: 256]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="type" type="data_v2:personType" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The type of a person. By default employee.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="firstName" type="xs:string" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Min length: 1<br/>
+Max length: 49]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="surname" type="xs:string" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Min length: 1<br/>
+Max length: 49]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="title" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Max length: 100]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="email" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Max length: 100]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="phone" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Max length: 100]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="company" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Max length: 100]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="department" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Max length: 100]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="street" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Max length: 100]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="zipCode" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Max length: 100]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="language" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Max length: 100]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="region" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Max length: 100]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="job" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Max length: 100]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="city" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Max length: 100]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="state" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Max length: 100]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="country" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Max length: 100]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="companyMail" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The company mail address
+<p/>
+Max length: 100]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="location" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Max length: 100]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="mobilePhone" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Max length: 100]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="deleted" type="xs:boolean" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Flag to indicate that a person should not be available.
+Depending on system settings, "Deleted" persons will remain in the system for traceability reasons and may also
+be restored by modifying the flag, or will be permanently removed from the database.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="tags" type="data_v2:tags" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Represents the set of tags applied to this person.
+If tags are not defined then existing tags are removed.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element ref="dataExtra_v2:domainName" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The domain this person belongs to.
+If domain is not defined it remains unchanged, unless person does not have domain assigned then the initial domain configured in system settings is assigned.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element ref="dataExtra_r9_0_v2:immutableIdentity" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[KeyHolder' UUID]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+        <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="personSearchArguments">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[Represents arguments used for searching for persons. If an individual argument is left empty, it will match any value. If all arguments are left empty, any person will be matched.]]>
+    </xs:documentation>
+  </xs:annotation>
+       <xs:sequence>
+              <xs:element name="keyHolderType" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The type of person. Can be set to EMPLOYEE or VISITOR.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="showActive" type="xs:boolean" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Show non-deleted persons. The default value for the field is true.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="showDeleted" type="xs:boolean" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Show only deleted persons. The default value for the field is false.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="identifier" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The unique identifier of the person.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="title" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The title of the person.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="firstName" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The first name of the person.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="surname" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The last name (or surname) of the person.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="email" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The email address of the person.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="phone" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The phone number of the person.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="company" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The company of the person.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="department" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The department of the person.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="street" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The street address of the person.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="zipCode" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The zip code of the person.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="language" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The language of the person.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="job" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The job title of the person.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="city" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The city the person is located in.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="state" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The state the person is located in.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="mobilePhone" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The mobile phone number of the person.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="accessProfileName" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The access profile name of one of the access profiles applied to the person.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="companyAddress" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The address of the company of the person.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="region" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The region the person is located in.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="location" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The location the person is located in.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="country" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The country the person is located in.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="tags" type="data_v2:tags" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The set of tags applied to the person. Persons will be matched only if they have all the specified tags.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="domain" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The domain name that this person belongs to.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+        <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:simpleType name="personType">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[personType represents the two currently existing key holder types.]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:restriction base="xs:string">
+     
+    <xs:enumeration value="EMPLOYEE"/>
+ 
+    <xs:enumeration value="VISITOR"/>
+  </xs:restriction>
+</xs:simpleType>
+
+<xs:complexType name="personWithAccessProfiles">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[Represents a person and the access profiles currently assigned to that person.]]>
+    </xs:documentation>
+  </xs:annotation>
+       <xs:sequence>
+              <xs:element name="personIdentity" type="xs:string" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Unique identification of the person.
+<p/>
+Min length: 1<br/>
+Max length: 256]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="accessProfiles" type="data_v2:accessProfiles" minOccurs="0">
+              </xs:element>
+        <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="personWithKeys">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[Represents a person and the user keys currently handed out to that person.]]>
+    </xs:documentation>
+  </xs:annotation>
+       <xs:sequence>
+              <xs:element name="identity" type="xs:string" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Unique identification of the person.
+<p/>
+Min length: 1<br/>
+Max length: 256]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="firstName" type="xs:string" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Min length: 1<br/>
+Max length: 49]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="surname" type="xs:string" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Min length: 1<br/>
+Max length: 49]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="isEmployee" type="xs:boolean" minOccurs="1">
+              </xs:element>
+              <xs:element name="department" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="company" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="deleted" type="xs:boolean" minOccurs="1">
+              </xs:element>
+              <xs:element name="key" type="data_v2:key" minOccurs="1" maxOccurs="unbounded">
+              </xs:element>
+        <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="pinValidation">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[Class representing a CLIQ Connect key PIN validation configuration.
+<p/>
+Key PIN validation can be defined as:
+<ul>
+<li><a href="xml_data_v2_pinValidationStateType.html#ENABLED">ENABLED</a></li>
+<li><a href="xml_data_v2_pinValidationStateType.html#DISABLED">DISABLED</a></li>
+</ul>
+If defined as ENABLED, at least one of 'intervalInMinutes' and 'initialPin' must be supplied.]]>
+    </xs:documentation>
+  </xs:annotation>
+       <xs:sequence>
+              <xs:element name="state" type="data_v2:pinValidationStateType" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[PIN validation state defines operation type to be performed. If this is set to ENABLED then 'intervalInMinutes (number)' and/or 'initialPin (sting)' must be supplied.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="intervalInMinutes" type="xs:int" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[PIN validation interval in minutes specifies the validity extension issued to the key each time PIN is entered in CLIQ Connect app.
+The interval must be at least 1 minute and shorter than 45 days (64800 in minutes).
+<p/>
+Note: This field is omitted if PIN validation state set to DISABLED.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="initialPin" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Initial PIN set to the key, which needs to be changed in CLIQ Connect app upon the first use.
+<p/>
+Note: This field is omitted if PIN validation state set to DISABLED.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+        <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:simpleType name="pinValidationStateType">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[Represents 'wanted' state of PIN validation configuration update.]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:restriction base="xs:string">
+     
+    <xs:enumeration value="ENABLED"/>
+ 
+    <xs:enumeration value="DISABLED"/>
+  </xs:restriction>
+</xs:simpleType>
+
+<xs:complexType name="plugWithCylinder">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[Represent a cylinder plug and it's cylinder.]]>
+    </xs:documentation>
+  </xs:annotation>
+       <xs:sequence>
+              <xs:element name="plugIdentity" type="xs:string" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The identity of a cylinder plug.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="domainName" type="xs:string" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The name of the cylinder plug's domain.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="cylinderIdentity" type="xs:string" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The identity of the cylinder plug's cylinder.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="cylinderName" type="xs:string" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The name of the cylinder.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="cylinderMarking" type="xs:string" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The marking of the cylinder.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="cylinderSide" type="data_v2:cylinderSide" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The side of the cylinder the plug is placed on. For a single-sided cylinder, this will always be set to A,
+while for a double-sided cylinder it can be set to A or B.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+        <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="remotePD">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[RemotePD represents a CLIQ Remote Programming Device.]]>
+    </xs:documentation>
+  </xs:annotation>
+       <xs:sequence>
+              <xs:element name="identity" type="xs:string" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Remote Programming Device Identity.
+<p/>
+Min length: 36<br/>
+Max length: 1]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="name" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Remote PD name.
+<p/>
+Min length: 1<br/>
+Max length: 256]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="marking" type="xs:string" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Remote PD marking.
+<p/>
+Max length: 255]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="type" type="data_v2:PdType" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Remote PD type.
+<p/>]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element ref="dataExtra_r11_0_v2:generation" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Device generation for Wall PD]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+        <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="remotePdDetails">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[RemotePdDetails represents a CLIQ Remote Programming Device.]]>
+    </xs:documentation>
+  </xs:annotation>
+       <xs:sequence>
+              <xs:element name="identity" type="xs:string" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Remote Programming Device Identity.
+<p/>
+Min length: 36<br/>
+Max length: 1]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="name" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Remote Pd name.
+<p/>
+Min length: 1<br/>
+Max length: 256]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="marking" type="xs:string" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Remote Pd marking.
+<p/>
+Max length: 255]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="type" type="data_v2:PdType" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Remote Pd type.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="tags" type="data_v2:tags" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Represents the set of tags applied to this remote Pd.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="firmwareIdentity" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Unique identification of firmware.
+<p/>
+Min length: 1<br/>
+Max length: 256]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="firmwareVersion" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Firmware version]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="bootLoaderVersion" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Boot-loader version]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="online" type="xs:boolean" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Indicates if a wall pd is connected to CLIQ remote server.
+Only applicable for wall pds]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="updaterMode" type="xs:boolean" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Indicates if the wall PD is in key updater mode
+Only applicable for wall pds]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="macAddress" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The MAC address.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="lastConnection" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Timestamp when the remote PD was last connected.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="lastKnownIpAddress" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Timestamp when the remote PD was last connected.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element ref="dataExtra_r6_v2:operationalStatus" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Describes the remote PD's current operational status.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element ref="dataExtra_r6_v2:whereAt" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Describes the remote PD's current inventory status.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element ref="dataExtra_r11_0_v2:generation" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Device generation for Wall PD]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+        <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:simpleType name="resultCode">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[ResultCode represents the different results that can follow CLIQ element interaction.]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:restriction base="xs:string">
+     
+    <xs:enumeration value="SUCCESS"/>
+ 
+    <xs:enumeration value="KEY_LEFT_IN_LOCK"/>
+ 
+    <xs:enumeration value="KEY_REMOVED"/>
+ 
+    <xs:enumeration value="FAILURE"/>
+ 
+    <xs:enumeration value="NOT_IN_SCHEDULE"/>
+ 
+    <xs:enumeration value="TIME_NOT_SET"/>
+ 
+    <xs:enumeration value="UNKNOWN"/>
+ 
+    <xs:enumeration value="ACCESS_GRANTED"/>
+ 
+    <xs:enumeration value="ACCESS_DENIED"/>
+  </xs:restriction>
+</xs:simpleType>
+
+<xs:complexType name="revalidation">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[Represents a revalidation configuration for a CLIQ key.
+<p/>
+Only keys of type 'dynamic' and 'quartz' are applicable and valid.
+<p/>
+A revalidation configuration consists of two parts:
+- one time update
+- interval in minutes
+<p/>
+The one time update is a flag which, when set, allows for one revalidation only whereby no more validity updates are issued.
+The interval in minutes specifies the validity extension issued to the key each time it is inserted into a remote PD.]]>
+    </xs:documentation>
+  </xs:annotation>
+       <xs:sequence>
+              <xs:element name="oneTimeUpdate" type="xs:boolean" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Mark whether only one revalidation is allowed.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="intervalInMinutes" type="xs:int" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The interval in minutes specifies the validity extension issued to the key each time it is inserted into a remote PD.
+<p>The interval must be at least 5 minutes and shorter than 2 years (2 * 365 * MINUTES_PER_DAY in minutes).</p>]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+        <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="schedule">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[Schedule represents a CLIQ Key schedule.
+<p/>
+Depending on configuration, a key supports a number of time period slots.
+Each slot consists of a time interval (from week day and time, to week day and time) when the key can be granted
+access. If no time periods are set, the key's existing time periods will be deleted.
+<p/>
+Only keys of type 'dynamic' and 'quartz' are applicable and valid.
+<p/>
+A fault is returned if the maximum number of slots is exceeded.]]>
+    </xs:documentation>
+  </xs:annotation>
+       <xs:sequence>
+              <xs:element name="period" type="data_v2:timePeriod" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+        <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tag">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[Represents a tag on a cylinder or key.]]>
+    </xs:documentation>
+  </xs:annotation>
+       <xs:attribute name="name" use="required" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[Tag name.
+<p/>
+Max length: 100]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:attribute>
+</xs:complexType>
+
+<xs:complexType name="tags">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[Represents a set of tags applied on an element.]]>
+    </xs:documentation>
+  </xs:annotation>
+       <xs:sequence>
+              <xs:element name="tag" type="data_v2:tag" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+        <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:simpleType name="temporaryAccessChangeType">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[Represents what type of update was done to a temporary access group]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:restriction base="xs:string">
+     
+    <xs:enumeration value="ACCESS_TIME_INTERVAL_UPDATE"/>
+ 
+    <xs:enumeration value="EXPLICIT_AUTHORISATION_UPDATE"/>
+ 
+    <xs:enumeration value="KEYS_AUTHORISATION_UPDATE"/>
+ 
+    <xs:enumeration value="ACCESS_PROFILES_AUTHORISATION_UPDATE"/>
+  </xs:restriction>
+</xs:simpleType>
+
+<xs:complexType name="temporaryAccessGroupChange">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[Represents a the content of an access profile change in the temporary access update]]>
+    </xs:documentation>
+  </xs:annotation>
+       <xs:sequence>
+              <xs:element name="identity" type="xs:string" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[A unique identity for this temporary access group.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="name" type="xs:string" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Name of the temporary access group.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="domainName" type="xs:string" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Temporary access group domain.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="changeType" type="data_v2:temporaryAccessChangeType" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The type of update that this update represents.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="changedBy" type="data_v2:administrator" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Who did the update.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="changeDate" type="xs:dateTime" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[When was the update made, ISO 8601 format for example 2014-09-05T16:15:30+02:00]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="intervalChange" type="data_v2:dateIntervalWithTimeZone" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The interval that the temporary access group is valid within.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="keyChanges" type="data_v2:keyChange" minOccurs="0" maxOccurs="unbounded">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[List of key changes]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="accessProfileAuthorisationChanges" type="data_v2:accessProfileAuthorisationChange" minOccurs="0" maxOccurs="unbounded">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[List of access profiles that was added or removed from the temporary access group]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="cylinderAccessChanges" type="data_v2:cylinderChange" minOccurs="0" maxOccurs="unbounded">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[List of cylinder access that was added or removed from the temporary access group]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="cylinderGroupAccessChanges" type="data_v2:cylinderGroupChange" minOccurs="0" maxOccurs="unbounded">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[List of cylinder group access that was added or removed from the temporary access group]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+        <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="temporaryAccessGroupKeyAssignment">
+       <xs:sequence>
+              <xs:element name="identity" type="xs:string" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[A unique identity for this temporary access group.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="accessTimeInterval" type="data_v2:dateIntervalWithTimeZone" minOccurs="1">
+              </xs:element>
+        <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="timePeriod">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[TimePeriod represents a schedule time interval slot. A time period contains a start date and and a start time,
+a stop date and a stop time. A period can never cross midnight between Saturday and Sunday.
+<p/>
+Optionally a <a href="xml_data_v2_cylinderPlug.html#identity">cylinder plug identity</a> can be supplied to define a time period slot only for a specific
+cylinder plug. If no cylinder plug identity is supplied the schedule applies to all cylinder plugs where the key has
+access.
+<p/>
+A fault is returned if periods crosses midnight between Saturday and Sunday.]]>
+    </xs:documentation>
+  </xs:annotation>
+       <xs:sequence>
+              <xs:element name="cylinderPlugIdentity" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Optional cylinder plug identity to limit time period to a single cylinder plug.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="startTime" type="xs:string" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Start time (inclusive). Minute precision: 00:00 - 23:59.
+<p/>
+Format: [HH]:[MM], e.g. 18:25]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="endTime" type="xs:string" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[End time (exclusive). Minute precision: 00:00 - 24:00.
+<p/>
+Format: [HH]:[MM], e.g. 18:25]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="startDay" type="data_v2:day" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Start day.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="endDay" type="data_v2:day" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[End day.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+        <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="validity">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[Class representing a CLIQ key validity. This is used to define the time period when the key is valid for access.
+<p/>
+Key validity can be defined as:
+<ul>
+<li><a href="xml_data_v2_keyValidityType.html#ALWAYS">ALWAYS</a></li>
+<li><a href="xml_data_v2_keyValidityType.html#NEVER">NEVER</a></li>
+<li><a href="xml_data_v2_keyValidityType.html#DATES">DATES</a></li>
+</ul>
+If defined as DATES, at least 'from' must be supplied. Leaving out the 'to' field creates a open-end validity.
+<p/>
+Optionally a revalidation configuration can be supplied.]]>
+    </xs:documentation>
+  </xs:annotation>
+       <xs:sequence>
+              <xs:element name="type" type="data_v2:keyValidityType" minOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[KeyValidityType. If this is set to DATES then 'from (string)' and/or 'to (sting)' must be supplied.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="revalidationConfig" type="data_v2:revalidation" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[Revalidation configuration. If included the validity should be considered as a re-validation with an active from and active to date
+rather than valid from and valid to dates.
+<p/>
+Note: Only applicable when key validity type is set to ALWAYS or DATES.]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="from" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The validity from time, inclusive. Minute precision. Mandatory if using key validity type DATES.
+<p/>
+Note: If a revalidation configuration is included, this field represents the active from time of the revalidation,
+this field is omitted for key validity types ALWAYS and NEVER.
+<p/>
+Format: [YYYY]-[MM]-[DD]T[hh]:[mm], e.g. 2011-06-16T18:25]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+              <xs:element name="to" type="xs:string" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <![CDATA[The validity to time, exclusive. Minute precision. Leave out for a open-end validity.
+<p/>
+Note: If a revalidation configuration is included, this field represents the active to time of the revalidation,
+this field is omitted for key validity types ALWAYS and NEVER.
+<p/>
+Format: [YYYY]-[MM]-[DD]T[hh]:[mm], e.g. 2011-06-16T18:25]]>
+                </xs:documentation>
+              </xs:annotation>
+              </xs:element>
+        <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:simpleType name="whereAt">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[Represents the possible statuses for a key.]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:restriction base="xs:string">
+     
+    <xs:enumeration value="IN_STOCK"/>
+ 
+    <xs:enumeration value="HANDED_OUT"/>
+ 
+    <xs:enumeration value="LOST"/>
+  </xs:restriction>
+</xs:simpleType>
+
+<xs:element name="identityNotFoundException" type="data_v2:identityNotFoundException"/>
+<xs:complexType name="identityNotFoundException">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[Thrown if the submitted identity could not be matched in CLIQ Web Manager.]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="errorCode" type="data_v2:errorCode" minOccurs="0">
+    </xs:element>
+    <xs:element name="failures" type="data_v2:failureDescription" minOccurs="0" maxOccurs="unbounded">
+    </xs:element>
+    <xs:element name="message" type="xs:string" minOccurs="0">
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="invalidDataException" type="data_v2:invalidDataException"/>
+<xs:complexType name="invalidDataException">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[Thrown if input data is invalid. See message and failure description for details.]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="errorCode" type="data_v2:errorCode" minOccurs="0">
+    </xs:element>
+    <xs:element name="failures" type="data_v2:failureDescription" minOccurs="0" maxOccurs="unbounded">
+    </xs:element>
+    <xs:element name="message" type="xs:string" minOccurs="0">
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="invalidStateException" type="data_v2:invalidStateException"/>
+<xs:complexType name="invalidStateException">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[InvalidStateException.]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="errorCode" type="data_v2:errorCode" minOccurs="0">
+    </xs:element>
+    <xs:element name="failures" type="data_v2:failureDescription" minOccurs="0" maxOccurs="unbounded">
+    </xs:element>
+    <xs:element name="message" type="xs:string" minOccurs="0">
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="systemException" type="data_v2:systemException"/>
+<xs:complexType name="systemException">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[Thrown if an unrecoverable error occurs. Error log should be available on server.]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="errorCode" type="data_v2:errorCode" minOccurs="0">
+    </xs:element>
+    <xs:element name="failures" type="data_v2:failureDescription" minOccurs="0" maxOccurs="unbounded">
+    </xs:element>
+    <xs:element name="message" type="xs:string" minOccurs="0">
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+</xs:schema>

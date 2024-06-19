@@ -1,0 +1,3613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+  <title>CLIQ Web Manager - Web Services: QueryServiceV2</title>
+
+  <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+  <!--custom css for these pages-->
+  <link rel="stylesheet" href="css/style.css">
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.css" type="text/css">
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+
+<body data-spy="scroll" data-target="#apinav">
+
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">CLIQ Web Manager - Web Services: QueryServiceV2</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="services.html">Services</a></li>
+          <li><a href="data.html">Data Types</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-3 col-md-2 sidebar" id="apinav">
+        <ul class="nav nav-sidebar">
+          <li><a href="#service_queryService_v2_QueryServiceV2_method_getPersons">getPersons</a></li>
+          <li><a href="#service_queryService_v2_QueryServiceV2_method_getDomains">getDomains</a></li>
+          <li><a href="#service_queryService_v2_QueryServiceV2_method_getModifiedPersons">getModifiedPersons</a></li>
+          <li><a href="#service_queryService_v2_QueryServiceV2_method_getPersonDetails">getPersonDetails</a></li>
+          <li><a href="#service_queryService_v2_QueryServiceV2_method_getPersonDetailsByImmutableIdentity"><abbr title="getPersonDetailsByImmutableIdentity">getPersonDetailsByImmutableIde...</abbr></a></li>
+          <li><a href="#service_queryService_v2_QueryServiceV2_method_getCylinders">getCylinders</a></li>
+          <li><a href="#service_queryService_v2_QueryServiceV2_method_getModifiedCylinders">getModifiedCylinders</a></li>
+          <li><a href="#service_queryService_v2_QueryServiceV2_method_searchCylinders">searchCylinders</a></li>
+          <li><a href="#service_queryService_v2_QueryServiceV2_method_getCylinderDetails">getCylinderDetails</a></li>
+          <li><a href="#service_queryService_v2_QueryServiceV2_method_getRemotePDs">getRemotePDs</a></li>
+          <li><a href="#service_queryService_v2_QueryServiceV2_method_getRemotePdDetails">getRemotePdDetails</a></li>
+          <li><a href="#service_queryService_v2_QueryServiceV2_method_getKeys">getKeys</a></li>
+          <li><a href="#service_queryService_v2_QueryServiceV2_method_searchKeys">searchKeys</a></li>
+          <li><a href="#service_queryService_v2_QueryServiceV2_method_getKeysForPerson">getKeysForPerson</a></li>
+          <li><a href="#service_queryService_v2_QueryServiceV2_method_getKeyDetails">getKeyDetails</a></li>
+          <li><a href="#service_queryService_v2_QueryServiceV2_method_getKeyActiveSchedule">getKeyActiveSchedule</a></li>
+          <li><a href="#service_queryService_v2_QueryServiceV2_method_getKeyPendingSchedule">getKeyPendingSchedule</a></li>
+          <li><a href="#service_queryService_v2_QueryServiceV2_method_getKeyPendingValidity">getKeyPendingValidity</a></li>
+          <li><a href="#service_queryService_v2_QueryServiceV2_method_getCylinderPlugAuditTrail">getCylinderPlugAuditTrail</a></li>
+          <li><a href="#service_queryService_v2_QueryServiceV2_method_getKeyAuditTrail">getKeyAuditTrail</a></li>
+          <li><a href="#service_queryService_v2_QueryServiceV2_method_getAuditTrails">getAuditTrails</a></li>
+          <li><a href="#service_queryService_v2_QueryServiceV2_method_getAccessProfiles">getAccessProfiles</a></li>
+          <li><a href="#service_queryService_v2_QueryServiceV2_method_getAccessProfileDetails">getAccessProfileDetails</a></li>
+          <li><a href="#service_queryService_v2_QueryServiceV2_method_getAccessProfilesForPerson">getAccessProfilesForPerson</a></li>
+          <li><a href="#service_queryService_v2_QueryServiceV2_method_getAccessProfilesForKey">getAccessProfilesForKey</a></li>
+          <li><a href="#service_queryService_v2_QueryServiceV2_method_getAccessProfilesContainingCylinderPlug"><abbr title="getAccessProfilesContainingCylinderPlug">getAccessProfilesContainingCyl...</abbr></a></li>
+          <li><a href="#service_queryService_v2_QueryServiceV2_method_getAccessProfilesContainingCylinderGroup"><abbr title="getAccessProfilesContainingCylinderGroup">getAccessProfilesContainingCyl...</abbr></a></li>
+          <li><a href="#service_queryService_v2_QueryServiceV2_method_searchAccessProfiles">searchAccessProfiles</a></li>
+          <li><a href="#service_queryService_v2_QueryServiceV2_method_searchAccessProfileUpdates">searchAccessProfileUpdates</a></li>
+          <li><a href="#service_queryService_v2_QueryServiceV2_method_searchAccessProfileDomainChanges"><abbr title="searchAccessProfileDomainChanges">searchAccessProfileDomainChang...</abbr></a></li>
+          <li><a href="#service_queryService_v2_QueryServiceV2_method_searchKeyAccessProfileChange">searchKeyAccessProfileChange</a></li>
+          <li><a href="#service_queryService_v2_QueryServiceV2_method_searchExplicitKeyAuthorisationChanges"><abbr title="searchExplicitKeyAuthorisationChanges">searchExplicitKeyAuthorisation...</abbr></a></li>
+          <li><a href="#service_queryService_v2_QueryServiceV2_method_searchTemporaryAccessGroupChanges"><abbr title="searchTemporaryAccessGroupChanges">searchTemporaryAccessGroupChan...</abbr></a></li>
+          <li><a href="#service_queryService_v2_QueryServiceV2_method_searchCylinderDomainChanges">searchCylinderDomainChanges</a></li>
+          <li><a href="#service_queryService_v2_QueryServiceV2_method_searchCylindersImported">searchCylindersImported</a></li>
+          <li><a href="#service_queryService_v2_QueryServiceV2_method_searchPersons">searchPersons</a></li>
+          <li><a href="#service_queryService_v2_QueryServiceV2_method_getAccessibleCylinders">getAccessibleCylinders</a></li>
+          <li><a href="#service_queryService_v2_QueryServiceV2_method_getPendingAccessibleCylinders">getPendingAccessibleCylinders</a></li>
+          <li><a href="#service_queryService_v2_QueryServiceV2_method_searchCylinderGroups">searchCylinderGroups</a></li>
+          <li><a href="#service_queryService_v2_QueryServiceV2_method_searchPersonsWithKeys">searchPersonsWithKeys</a></li>
+          <li><a href="#service_queryService_v2_QueryServiceV2_method_getKeysWithAccessToCylinderPlug"><abbr title="getKeysWithAccessToCylinderPlug">getKeysWithAccessToCylinderPlu...</abbr></a></li>
+          <li><a href="#service_queryService_v2_QueryServiceV2_method_getKeysWithPendingAccessToCylinderPlug"><abbr title="getKeysWithPendingAccessToCylinderPlug">getKeysWithPendingAccessToCyli...</abbr></a></li>
+          <li><a href="#service_queryService_v2_QueryServiceV2_method_getExplicitCylinderAuthorisationsForKey"><abbr title="getExplicitCylinderAuthorisationsForKey">getExplicitCylinderAuthorisati...</abbr></a></li>
+          <li><a href="#service_queryService_v2_QueryServiceV2_method_getExplicitCylinderGroupAuthorisationsForKey"><abbr title="getExplicitCylinderGroupAuthorisationsForKey">getExplicitCylinderGroupAuthor...</abbr></a></li>
+          <li><a href="#service_queryService_v2_QueryServiceV2_method_getModifiedKeys">getModifiedKeys</a></li>
+          <li><a href="#service_queryService_v2_QueryServiceV2_method_getAccessListForAccessProfile">getAccessListForAccessProfile</a></li>
+          <li><a href="#service_queryService_v2_QueryServiceV2_method_getModifiedRemotePDs">getModifiedRemotePDs</a></li>
+          <li><a href="#service_queryService_v2_QueryServiceV2_method_getPersonsWithModifiedListOfAccessProfiles"><abbr title="getPersonsWithModifiedListOfAccessProfiles">getPersonsWithModifiedListOfAc...</abbr></a></li>
+          <li class="divider"></li>
+          <li class="text-right"><a href="#top"><small>Back to Top</small></a></li>
+        </ul>
+      </div>
+
+      <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        <ol class="breadcrumb" id="top">
+          <li class="active dropdown"><a href="index.html">Home</a></li>
+          <li class="dropdown"><a href="service_queryService_v2_QueryServiceV2.html">QueryServiceV2</a></li>
+        </ol>
+
+      <h1 class="page-header">QueryServiceV2 <small>Service</small></h1>
+
+      <p>Query service for finding information about CLIQ key system elements, including cylinders, keys and
+remote programming devices.</p>
+
+      <dl class="dl-horizontal">
+        <dt>Namespace</dt>
+        <dd>http://cliq.shared.assaabloy.com/ws/query/v2/</dd>
+        <dt>WSDL</dt>
+        <dd><a href="queryService_v2.wsdl">queryService_v2.wsdl</a></dd>
+        <dt>Path</dt>
+        <dd><a href=".//QueryServiceV2">/QueryServiceV2</a></dd>
+      </dl>
+
+      <h2 id="service_queryService_v2_QueryServiceV2_method_getPersons">getPersons <small>Operation</small></h2>
+
+        <p>Query for all persons in the key system.</p>
+
+      <table class="table">
+        <caption>Return Value</caption>
+        <thead>
+        <tr>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td><a href="xml_data_v2_person.html">person</a></td>
+          <td>All persons in the key system.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Faults</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>conditions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>SystemException</td>
+          <td>SystemException
+</td>
+          <td>Thrown if an unrecoverable error occurs.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <h2 id="service_queryService_v2_QueryServiceV2_method_getDomains">getDomains <small>Operation</small></h2>
+
+        <p>Query for all domains in the key system.</p>
+
+      <table class="table">
+        <caption>Return Value</caption>
+        <thead>
+        <tr>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td><a href="xml_data_v2_domain.html">domain</a></td>
+          <td>All domains in the key system.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Faults</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>conditions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>SystemException</td>
+          <td>SystemException
+</td>
+          <td>Thrown if an unrecoverable error occurs.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <h2 id="service_queryService_v2_QueryServiceV2_method_getModifiedPersons">getModifiedPersons <small>Operation</small></h2>
+
+        <p>Search for persons that have been created, deleted or have data updated within given period</p>
+
+      <table class="table">
+        <caption>Input Parameters</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>dateInterval</td>
+          <td><a href="xml_data_v2_dateIntervalWithTimeZone.html">dateIntervalWithTimeZone</a>
+</td>
+          <td>date interval for which person' data change or creating new person events should be searched  for returning affected person' identifier (find events within this interval).  The date interval is exclusive for the 'from' date and inclusive for the 'to' date.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Return Value</caption>
+        <thead>
+        <tr>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td><a href="xml_data_v2_identifierDTO.html">identifierDTO</a></td>
+          <td>A list of persons' identifiers that have create/update/delete events on them
+in the time frame defined by the @dateInterval.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Faults</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>conditions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>SystemException</td>
+          <td>SystemException
+</td>
+          <td>thrown if an unrecoverable error occurs.</td>
+        </tr>
+        <tr>
+          <td>InvalidDataException</td>
+          <td>InvalidDataException
+</td>
+          <td>&nbsp;</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <h2 id="service_queryService_v2_QueryServiceV2_method_getPersonDetails">getPersonDetails <small>Operation</small></h2>
+
+        <p>Gets the detailed information about a specific person.
+The information will include both static and dynamic data.</p>
+
+      <table class="table">
+        <caption>Input Parameters</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>personIdentity</td>
+          <td>string
+</td>
+          <td>Identity of person to retrieve detailed information from.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Return Value</caption>
+        <thead>
+        <tr>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td><a href="xml_data_v2_personDetails.html">personDetails</a></td>
+          <td>Details for given person, including static and dynamic info.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Faults</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>conditions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>SystemException</td>
+          <td>SystemException
+</td>
+          <td>Thrown if an unrecoverable error occurs.</td>
+        </tr>
+        <tr>
+          <td>IdentityNotFoundException</td>
+          <td>IdentityNotFoundException
+</td>
+          <td>Thrown if no person exists with the given identity.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <h2 id="service_queryService_v2_QueryServiceV2_method_getPersonDetailsByImmutableIdentity">getPersonDetailsByImmutableIdentity <small>Operation</small></h2>
+
+        <p>Gets the detailed information about a specific person.
+The information is retrieved by immutable identity of the person.
+The information will include both static and dynamic data.</p>
+
+      <table class="table">
+        <caption>Input Parameters</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>immutableIdentity</td>
+          <td>string
+</td>
+          <td>immutable Identity of person to retrieve detailed information from.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Return Value</caption>
+        <thead>
+        <tr>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td><a href="xml_data_v2_personDetails.html">personDetails</a></td>
+          <td>Details for given person, including static and dynamic info.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Faults</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>conditions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>IdentityNotFoundException</td>
+          <td>IdentityNotFoundException
+</td>
+          <td>Thrown if no person exists with the given identity.</td>
+        </tr>
+        <tr>
+          <td>IdentityDeactivatedException</td>
+          <td>IdentityDeactivatedException
+</td>
+          <td>Thrown if a person with the given identity is deactivated.</td>
+        </tr>
+        <tr>
+          <td>SystemException</td>
+          <td>SystemException
+</td>
+          <td>Thrown if an unrecoverable error occurs.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <h2 id="service_queryService_v2_QueryServiceV2_method_getCylinders">getCylinders <small>Operation</small></h2>
+
+        <p>Query for all available cylinders in the key system.
+Each cylinder will be returned as a separate entry.
+E.g for double-sided cylinders two cylinder plug items will be returned.</p>
+
+      <table class="table">
+        <caption>Return Value</caption>
+        <thead>
+        <tr>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td><a href="xml_data_v2_cylinder.html">cylinder</a></td>
+          <td>All cylinder plugs in the key system.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Faults</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>conditions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>SystemException</td>
+          <td>SystemException
+</td>
+          <td>Thrown if an unrecoverable error occurs.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <h2 id="service_queryService_v2_QueryServiceV2_method_getModifiedCylinders">getModifiedCylinders <small>Operation</small></h2>
+
+        <p>Search for cylinders that have been created, deleted or have data updated within given period</p>
+
+      <table class="table">
+        <caption>Input Parameters</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>dateInterval</td>
+          <td><a href="xml_data_v2_dateIntervalWithTimeZone.html">dateIntervalWithTimeZone</a>
+</td>
+          <td>date interval for which cylinders' data change or creating new cylinder events should be searched  for returning affected cylinders' identifier (find events within this interval).  The date interval is exclusive for the 'from' date and inclusive for the 'to' date.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Return Value</caption>
+        <thead>
+        <tr>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>string</td>
+          <td>A list of cylinders' identifiers that have create/update/delete events on them
+in the time frame defined by the @dateInterval.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Faults</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>conditions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>SystemException</td>
+          <td>SystemException
+</td>
+          <td>thrown if an unrecoverable error occurs.</td>
+        </tr>
+        <tr>
+          <td>InvalidDataException</td>
+          <td>InvalidDataException
+</td>
+          <td>&nbsp;</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <h2 id="service_queryService_v2_QueryServiceV2_method_searchCylinders">searchCylinders <small>Operation</small></h2>
+
+        <p>Search for cylinders with search arguments.</p>
+
+      <table class="table">
+        <caption>Input Parameters</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>cylinderSearchArguments</td>
+          <td><a href="xml_data_v2_cylinderSearchArguments.html">cylinderSearchArguments</a>
+</td>
+          <td>Cylinder search arguments.</td>
+        </tr>
+        <tr>
+          <td>pagination</td>
+          <td><a href="xml_data_v2_pagination.html">pagination</a>
+</td>
+          <td>used to specify the starting row and maximum amount of rows to return, allowing for iteration through large result sets.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Return Value</caption>
+        <thead>
+        <tr>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td><a href="xml_data_v2_cylinder.html">cylinder</a></td>
+          <td>Keys matching the specified search arguments.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Faults</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>conditions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>SystemException</td>
+          <td>SystemException
+</td>
+          <td>Thrown if an unrecoverable error occurs.</td>
+        </tr>
+        <tr>
+          <td>InvalidDataException</td>
+          <td>InvalidDataException
+</td>
+          <td>Thrown if search arguments or pagination are missing or invalid.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <h2 id="service_queryService_v2_QueryServiceV2_method_getCylinderDetails">getCylinderDetails <small>Operation</small></h2>
+
+        <p>Gets the detailed information about a specific cylinder.
+The information will include both static and dynamic data.</p>
+
+      <table class="table">
+        <caption>Input Parameters</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>cylinderIdentity</td>
+          <td>string
+</td>
+          <td>Identity of cylinder to retrieve detailed information from.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Return Value</caption>
+        <thead>
+        <tr>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td><a href="xml_data_v2_cylinderDetails.html">cylinderDetails</a></td>
+          <td>Details for given cylinder, including static and dynamic info.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Faults</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>conditions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>SystemException</td>
+          <td>SystemException
+</td>
+          <td>Thrown if an unrecoverable error occurs.</td>
+        </tr>
+        <tr>
+          <td>IdentityNotFoundException</td>
+          <td>IdentityNotFoundException
+</td>
+          <td>Thrown if no cylinder exists with the given identity.</td>
+        </tr>
+        <tr>
+          <td>InvalidDataException</td>
+          <td>InvalidDataException
+</td>
+          <td>Thrown if cylinder is deleted.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <h2 id="service_queryService_v2_QueryServiceV2_method_getRemotePDs">getRemotePDs <small>Operation</small></h2>
+
+        <p>Query for all available Remote Programming Devices in the key system.</p>
+
+      <table class="table">
+        <caption>Return Value</caption>
+        <thead>
+        <tr>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td><a href="xml_data_v2_remotePD.html">remotePD</a></td>
+          <td>All Remote PDs in the key system.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Faults</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>conditions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>SystemException</td>
+          <td>SystemException
+</td>
+          <td>Thrown if an unrecoverable error occurs.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <h2 id="service_queryService_v2_QueryServiceV2_method_getRemotePdDetails">getRemotePdDetails <small>Operation</small></h2>
+
+        <p>Gets the detailed information about a specific remote PD.
+The information will include both static and dynamic data.</p>
+
+      <table class="table">
+        <caption>Input Parameters</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>remotePdIdentity</td>
+          <td>string
+</td>
+          <td>Identity of remote PD to retrieve detailed information from.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Return Value</caption>
+        <thead>
+        <tr>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td><a href="xml_data_v2_remotePdDetails.html">remotePdDetails</a></td>
+          <td>Details for given remote PD, including static and dynamic info.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Faults</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>conditions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>SystemException</td>
+          <td>SystemException
+</td>
+          <td>- Thrown if an unrecoverable error occurs.</td>
+        </tr>
+        <tr>
+          <td>IdentityNotFoundException</td>
+          <td>IdentityNotFoundException
+</td>
+          <td>- Thrown if no remote PD exists with the given identity.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <h2 id="service_queryService_v2_QueryServiceV2_method_getKeys">getKeys <small>Operation</small></h2>
+
+        <p>Query for all available keys in the key system.</p>
+
+      <table class="table">
+        <caption>Return Value</caption>
+        <thead>
+        <tr>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td><a href="xml_data_v2_key.html">key</a></td>
+          <td>All keys in the key system.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Faults</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>conditions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>SystemException</td>
+          <td>SystemException
+</td>
+          <td>Thrown if an unrecoverable error occurs.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <h2 id="service_queryService_v2_QueryServiceV2_method_searchKeys">searchKeys <small>Operation</small></h2>
+
+        <p>Query for all keys that match the search arguments.</p>
+
+      <table class="table">
+        <caption>Input Parameters</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>keySearchArguments</td>
+          <td><a href="xml_data_v2_keySearchArguments.html">keySearchArguments</a>
+</td>
+          <td>Key search arguments.</td>
+        </tr>
+        <tr>
+          <td>pagination</td>
+          <td><a href="xml_data_v2_pagination.html">pagination</a>
+</td>
+          <td>used to specify the starting row and maximum amount of rows to return, allowing for iteration through large result sets.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Return Value</caption>
+        <thead>
+        <tr>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td><a href="xml_data_v2_key.html">key</a></td>
+          <td>All keys matching the search arguments.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Faults</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>conditions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>SystemException</td>
+          <td>SystemException
+</td>
+          <td>Thrown if an unrecoverable error occurs.</td>
+        </tr>
+        <tr>
+          <td>InvalidDataException</td>
+          <td>InvalidDataException
+</td>
+          <td>Thrown if search arguments or pagination data is missing.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <h2 id="service_queryService_v2_QueryServiceV2_method_getKeysForPerson">getKeysForPerson <small>Operation</small></h2>
+
+        <p>Query for all keys that belong to a person.
+<p>
+Only user keys will be returned.</p>
+
+      <table class="table">
+        <caption>Input Parameters</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>personIdentity</td>
+          <td>string
+</td>
+          <td>Unique identity of the person for which we should get the keys.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Return Value</caption>
+        <thead>
+        <tr>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td><a href="xml_data_v2_key.html">key</a></td>
+          <td>All keys that belong to a person.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Faults</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>conditions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>SystemException</td>
+          <td>SystemException
+</td>
+          <td>Thrown if an unrecoverable error occurs.</td>
+        </tr>
+        <tr>
+          <td>IdentityNotFoundException</td>
+          <td>IdentityNotFoundException
+</td>
+          <td>Thrown if the person could not be found.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <h2 id="service_queryService_v2_QueryServiceV2_method_getKeyDetails">getKeyDetails <small>Operation</small></h2>
+
+        <p>Gets the detailed information about a specific key.
+The information will include both static and dynamic data.</p>
+
+      <table class="table">
+        <caption>Input Parameters</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>keyIdentity</td>
+          <td>string
+</td>
+          <td>Identity of key to retrieve detailed information from.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Return Value</caption>
+        <thead>
+        <tr>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td><a href="xml_data_v2_keyDetails.html">keyDetails</a></td>
+          <td>Details for given key, including static and dynamic info.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Faults</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>conditions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>SystemException</td>
+          <td>SystemException
+</td>
+          <td>Thrown if an unrecoverable error occurs.</td>
+        </tr>
+        <tr>
+          <td>IdentityNotFoundException</td>
+          <td>IdentityNotFoundException
+</td>
+          <td>Thrown if no key exists with the given identity.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <h2 id="service_queryService_v2_QueryServiceV2_method_getKeyActiveSchedule">getKeyActiveSchedule <small>Operation</small></h2>
+
+        <p>Gets active schedule for a specific key.</p>
+
+      <table class="table">
+        <caption>Input Parameters</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>keyIdentity</td>
+          <td>string
+</td>
+          <td>Identity of key to retrieve active schedule information from.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Return Value</caption>
+        <thead>
+        <tr>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td><a href="xml_data_v2_schedule.html">schedule</a></td>
+          <td>Details for given key, including static and dynamic info.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Faults</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>conditions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>SystemException</td>
+          <td>SystemException
+</td>
+          <td>Thrown if an unrecoverable error occurs.</td>
+        </tr>
+        <tr>
+          <td>IdentityNotFoundException</td>
+          <td>IdentityNotFoundException
+</td>
+          <td>Thrown if no key exists with the given identity.</td>
+        </tr>
+        <tr>
+          <td>InvalidDataException</td>
+          <td>InvalidDataException
+</td>
+          <td>Thrown if asking schedule for key without quartz.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <h2 id="service_queryService_v2_QueryServiceV2_method_getKeyPendingSchedule">getKeyPendingSchedule <small>Operation</small></h2>
+
+        <p>Gets pending schedule for a specific key</p>
+
+      <table class="table">
+        <caption>Input Parameters</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>keyIdentity</td>
+          <td>string
+</td>
+          <td>Identity of key to retrieve pending schedule information from.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Return Value</caption>
+        <thead>
+        <tr>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td><a href="xml_data_v2_schedule.html">schedule</a></td>
+          <td>Pending schedules to be programmed on key</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Faults</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>conditions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>SystemException</td>
+          <td>SystemException
+</td>
+          <td>Thrown if an unrecoverable error occurs.</td>
+        </tr>
+        <tr>
+          <td>IdentityNotFoundException</td>
+          <td>IdentityNotFoundException
+</td>
+          <td>Thrown if no key exists with the given identity.</td>
+        </tr>
+        <tr>
+          <td>InvalidDataException</td>
+          <td>InvalidDataException
+</td>
+          <td>&nbsp;</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <h2 id="service_queryService_v2_QueryServiceV2_method_getKeyPendingValidity">getKeyPendingValidity <small>Operation</small></h2>
+
+        <p>Gets pending validity for a specific key</p>
+
+      <table class="table">
+        <caption>Input Parameters</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>keyIdentity</td>
+          <td>string
+</td>
+          <td>Identity of key to retrieve pending validity information from.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Return Value</caption>
+        <thead>
+        <tr>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td><a href="xml_data_v2_validity.html">validity</a></td>
+          <td>Pending validity to be programmed on key</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Faults</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>conditions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>SystemException</td>
+          <td>SystemException
+</td>
+          <td>Thrown if an unrecoverable error occurs.</td>
+        </tr>
+        <tr>
+          <td>IdentityNotFoundException</td>
+          <td>IdentityNotFoundException
+</td>
+          <td>Thrown if no key exists with the given identity.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <h2 id="service_queryService_v2_QueryServiceV2_method_getCylinderPlugAuditTrail">getCylinderPlugAuditTrail <small>Operation</small></h2>
+
+        <p>Query for audit trail entries.
+The dates in a query are creation dates that are assumed to be in MKS time zone.
+<p>
+See the explanations of creation dates usage at the documentation of getKeyAuditTrail.
+</p></p>
+
+      <table class="table">
+        <caption>Input Parameters</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>cylinderPlugIdentity</td>
+          <td>string
+</td>
+          <td>Identity of cylinder plug to retrieve audit trial from.</td>
+        </tr>
+        <tr>
+          <td>includePartiallyProcessed</td>
+          <td>boolean
+</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td>excludeEntriesFromKeysWithoutTimeSupport</td>
+          <td>boolean
+</td>
+          <td>If specified as true, then only entries where key supports time are returned.</td>
+        </tr>
+        <tr>
+          <td>dateInterval</td>
+          <td><a href="xml_data_v2_dateInterval.html">dateInterval</a>
+</td>
+          <td>Audit trail entry date interval (find audit trails within this interval).  The date interval is exclusive for the 'from' date and inclusive for the 'to' date.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Return Value</caption>
+        <thead>
+        <tr>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td><a href="xml_data_v2_auditTrail.html">auditTrail</a></td>
+          <td>Audit trail items matching the given plug identity and date interval.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Faults</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>conditions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>SystemException</td>
+          <td>SystemException
+</td>
+          <td>Thrown if an unrecoverable error occurs.</td>
+        </tr>
+        <tr>
+          <td>IdentityNotFoundException</td>
+          <td>IdentityNotFoundException
+</td>
+          <td>Thrown if no cylinder plug exists with the given identity.</td>
+        </tr>
+        <tr>
+          <td>InvalidDataException</td>
+          <td>InvalidDataException
+</td>
+          <td>Thrown if date interval missing or invalid.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <h2 id="service_queryService_v2_QueryServiceV2_method_getKeyAuditTrail">getKeyAuditTrail <small>Operation</small></h2>
+
+        <p><p>
+Query for audit trail entries.
+The dates in a query are creation dates that are assumed to be in MKS time zone.
+</p>
+
+<p>
+getKeyAuditTrail method returns correct creation dates provided that CWM server time zone (Windows time zone) was the same at the audit trail import time and the time when the web service is used.
+</p>
+
+<p>
+If CWM server time zones are different then there will be several hours discrepancies.
+We have decided that the discrepancies will remain due to the fact that fixing it will require running a sql script on all production databases.
+Otherwise the web service won't be consistent for all users.
+</p>
+
+<p>
+The following table shows an example of discrepancies.
+</p>
+
+<p>
+<b>CWM import 1st time zone</b> - CWM server time zone during the first import of audit trail and save to the database
+</p>
+
+<p>
+<b>CWM read 2nd time zone</b> - after restarting CWM server with a different time zone
+</p>
+
+<p>
+The event happened at 23:02 Asia/Shanghai (MKS local time)
+</p>
+
+<table>
+
+<tr>
+<th><b>MKS time zone</b></th>
+<th><b>MKS local time</b></th>
+<th><b>CWM import 1st time zone</b></th>
+<th><b>DB record time = MKS + (CWM import 1st time zone - UTC)</b></th>
+<th><b>CWM import 1st time</b></th>
+<th><b>CWM read 2nd time zone</b></th>
+<th><b>CWM read 2nd time = DB record time - (CWM read 2nd time zone - UTC)</b></th>
+</tr>
+
+<tr>
+<td>Asia/Shanghai</td>
+<td>23:02 28 Feb</td>
+<td>Europe/Kaliningrad UTC+02</td>
+<td>01:02 1st March</td>
+<td>23:02 28 Feb</td>
+<td>Asia/Baku UTC+04</td>
+<td>21:02 28 Feb</td>
+</tr>
+
+<tr>
+<td>Asia/Shanghai</td>
+<td>23:02 28 Feb</td>
+<td>Europe/Kaliningrad UTC+02</td>
+<td>01:02 1st March</td>
+<td>23:02 28 Feb</td>
+<td>America/Los Angeles UTC-08</td>
+<td>09:02 1st March</td>
+</tr>
+
+</table></p>
+
+      <table class="table">
+        <caption>Input Parameters</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>keyIdentity</td>
+          <td>string
+</td>
+          <td>Identity of key to retrieve audit trail from.</td>
+        </tr>
+        <tr>
+          <td>includePartiallyProcessed</td>
+          <td>boolean
+</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td>excludeEntriesFromKeysWithoutTimeSupport</td>
+          <td>boolean
+</td>
+          <td>If specified as true, then only entries where key supports time are returned.</td>
+        </tr>
+        <tr>
+          <td>dateInterval</td>
+          <td><a href="xml_data_v2_dateInterval.html">dateInterval</a>
+</td>
+          <td>Audit trail entry date interval in MKS time zone (find audit trails within this interval). The entry date is a creation date.  The date interval is exclusive for the 'from' date and inclusive for the 'to' date.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Return Value</caption>
+        <thead>
+        <tr>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td><a href="xml_data_v2_auditTrail.html">auditTrail</a></td>
+          <td>Audit trail items matching the given key identity and date interval.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Faults</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>conditions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>SystemException</td>
+          <td>SystemException
+</td>
+          <td>Thrown if an unrecoverable error occurs.</td>
+        </tr>
+        <tr>
+          <td>IdentityNotFoundException</td>
+          <td>IdentityNotFoundException
+</td>
+          <td>Thrown if no key exists with the given identity.</td>
+        </tr>
+        <tr>
+          <td>InvalidDataException</td>
+          <td>InvalidDataException
+</td>
+          <td>Thrown if date interval missing or invalid.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <h2 id="service_queryService_v2_QueryServiceV2_method_getAuditTrails">getAuditTrails <small>Operation</small></h2>
+
+        <p><p>
+Query for all audit trails entries (key and cylinder) that were imported within the given date interval. The date
+interval is exclusive for the 'from' date and inclusive for the 'to' date. If the 'to' date is omitted, the current
+date and time in the system-specific timezone will be used.
+<p/>
+An example of usage would be to query for all events between 2001-01-01T00:01 and 2001-06-01T00:01. This will
+return all events that were imported after the 'from' date and before or on the 'to' date. If the pagination maximum is set to 1000 and
+more than 1000 events are found, only the first 1000 events will be returned.
+<p>
+The import date is defined as the date when the audit trails were collected (imported) into the system in CWM server time zone, as opposed to the creation date which specifies when they were originally created in MKS time zone.
+</p></p>
+
+      <table class="table">
+        <caption>Input Parameters</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>importDateInterval</td>
+          <td><a href="xml_data_v2_dateIntervalWithTimeZone.html">dateIntervalWithTimeZone</a>
+</td>
+          <td>Audit trail import date interval. The date interval is exclusive for the 'from' date and inclusive for the  'to' date. If the 'to' date is omitted, the current date and time in the system-specific timezone will be used.</td>
+        </tr>
+        <tr>
+          <td>includePartiallyProcessed</td>
+          <td>boolean
+</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td>excludeEntriesFromKeysWithoutTimeSupport</td>
+          <td>boolean
+</td>
+          <td>If specified as true, then only entries where key supports time are returned.</td>
+        </tr>
+        <tr>
+          <td>pagination</td>
+          <td><a href="xml_data_v2_pagination.html">pagination</a>
+</td>
+          <td>used to specify the starting row and maximum amount of rows to return, allowing for iteration through large result sets. The maximum allowed value is 10000.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Return Value</caption>
+        <thead>
+        <tr>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td><a href="xml_data_v2_auditTrailDetails.html">auditTrailDetails</a></td>
+          <td>Audit trail items matching the given import date interval, sorted by oldest to newest import date.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Faults</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>conditions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>SystemException</td>
+          <td>SystemException
+</td>
+          <td>Thrown if an unrecoverable error occurs.</td>
+        </tr>
+        <tr>
+          <td>InvalidDataException</td>
+          <td>InvalidDataException
+</td>
+          <td>Thrown if date interval or pagination is missing or invalid or if pagination maximum results exceeds 10000.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <h2 id="service_queryService_v2_QueryServiceV2_method_getAccessProfiles">getAccessProfiles <small>Operation</small></h2>
+
+        <p>Query for all access profiles in the key system except deleted.</p>
+
+      <table class="table">
+        <caption>Return Value</caption>
+        <thead>
+        <tr>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td><a href="xml_data_v2_accessProfile.html">accessProfile</a></td>
+          <td>All access profiles in the key system.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Faults</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>conditions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>SystemException</td>
+          <td>SystemException
+</td>
+          <td>Thrown if an unrecoverable error occurs.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <h2 id="service_queryService_v2_QueryServiceV2_method_getAccessProfileDetails">getAccessProfileDetails <small>Operation</small></h2>
+
+        <p>Gets the detailed information about a specific access profile.</p>
+
+      <table class="table">
+        <caption>Input Parameters</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>accessProfileIdentity</td>
+          <td>string
+</td>
+          <td>&nbsp;</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Return Value</caption>
+        <thead>
+        <tr>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td><a href="xml_data_v2_accessProfileProperties.html">accessProfileProperties</a></td>
+          <td>Following attributes from access profile:
+<ul>
+<li>identity</li>
+<li>name</li>
+<li>domainName - returned even if system is not licensed for domains. In this case you can expect 'Default' here</li>
+<li>description</li>
+<li>revalidationInterval - value in minutes. Value 0 means revalidation is disabled</li>
+<li>tags</li>
+<li>externalLinks</li>
+</ul></td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Faults</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>conditions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>SystemException</td>
+          <td>SystemException
+</td>
+          <td>Thrown if an unrecoverable error occurs.</td>
+        </tr>
+        <tr>
+          <td>InvalidDataException</td>
+          <td>InvalidDataException
+</td>
+          <td>Throws if given access profile is marked as deleted.</td>
+        </tr>
+        <tr>
+          <td>IdentityNotFoundException</td>
+          <td>IdentityNotFoundException
+</td>
+          <td>Thrown if no access profile with the given identity.
+<p>
+<p/>
+System must meet the following requirements:
+<ul>
+<li>It has a license for Remote</li>
+<li>It has a license for Access Profiles</li>
+</ul>
+<p/>
+The WebService user needs the following permission:
+<ul>
+<li>Access Profiles: View</li>
+</ul>
+<p/></td>
+        </tr>
+        </tbody>
+      </table>
+
+      <h2 id="service_queryService_v2_QueryServiceV2_method_getAccessProfilesForPerson">getAccessProfilesForPerson <small>Operation</small></h2>
+
+        <p>Query for all access profiles that belong to a person.</p>
+
+      <table class="table">
+        <caption>Input Parameters</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>personIdentity</td>
+          <td>string
+</td>
+          <td>Identity of the person for which we should get the access profiles.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Return Value</caption>
+        <thead>
+        <tr>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td><a href="xml_data_v2_accessProfile.html">accessProfile</a></td>
+          <td>All access profiles that belong to a person.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Faults</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>conditions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>SystemException</td>
+          <td>SystemException
+</td>
+          <td>Thrown if an unrecoverable error occurs.</td>
+        </tr>
+        <tr>
+          <td>IdentityNotFoundException</td>
+          <td>IdentityNotFoundException
+</td>
+          <td>Thrown if the person could not be found.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <h2 id="service_queryService_v2_QueryServiceV2_method_getAccessProfilesForKey">getAccessProfilesForKey <small>Operation</small></h2>
+
+        <p>A query for all access profiles associated with a specific key.
+A key can be associated with an access profile directly (hasPermanentAssignment = true).
+'Directly' means that there is an explicit association between an access profile and a key
+for an indefinite period of time. 'Indefinite' means until an access profile is unassociated from a key by a user.
+A key can be associated with an access profile indirectly via a temporary access group (hasPermanentAssignment = false).
+A temporary access group is a set of multiple keys and multiple access profiles associated together
+for a period of time (accessTimeInterval in the response)
+A key or an access profile can be included in multiple temporary access groups.
+If a key is associated to an access profile both directly and indirectly
+then it manifests as (hasPermanentAssignment = true).</p>
+
+      <table class="table">
+        <caption>Input Parameters</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>keyIdentity</td>
+          <td>string
+</td>
+          <td>unique identity (uuid) of a key.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Return Value</caption>
+        <thead>
+        <tr>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td><a href="xml_data_v2_assignedAccessProfile.html">assignedAccessProfile</a></td>
+          <td>all access profiles associated to a key</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Faults</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>conditions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>SystemException</td>
+          <td>SystemException
+</td>
+          <td>Thrown if an unrecoverable error occurs.</td>
+        </tr>
+        <tr>
+          <td>IdentityNotFoundException</td>
+          <td>IdentityNotFoundException
+</td>
+          <td>Thrown if no key exists with the given identity.</td>
+        </tr>
+        <tr>
+          <td>InvalidDataException</td>
+          <td>InvalidDataException
+</td>
+          <td>&nbsp;</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <h2 id="service_queryService_v2_QueryServiceV2_method_getAccessProfilesContainingCylinderPlug">getAccessProfilesContainingCylinderPlug <small>Operation</small></h2>
+
+        <p>Query for all access profiles that contain the cylinder plug.</p>
+
+      <table class="table">
+        <caption>Input Parameters</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>cylinderPlugIdentity</td>
+          <td>string
+</td>
+          <td>Identity of the cylinder plug for which access profiles are retrieved.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Return Value</caption>
+        <thead>
+        <tr>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td><a href="xml_data_v2_accessProfile.html">accessProfile</a></td>
+          <td>A list of access profiles that contain the cylinder plug.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Faults</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>conditions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>SystemException</td>
+          <td>SystemException
+</td>
+          <td>Thrown if an unrecoverable error occurs.</td>
+        </tr>
+        <tr>
+          <td>IdentityNotFoundException</td>
+          <td>IdentityNotFoundException
+</td>
+          <td>Thrown if the cylinder plug could not be found.</td>
+        </tr>
+        <tr>
+          <td>InvalidDataException</td>
+          <td>InvalidDataException
+</td>
+          <td>Thrown if the cylinder plug identity is missing.</td>
+        </tr>
+        <tr>
+          <td>InvalidStateException</td>
+          <td>InvalidStateException
+</td>
+          <td>Thrown if the cylinder plug or it's cylinder is deleted.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <h2 id="service_queryService_v2_QueryServiceV2_method_getAccessProfilesContainingCylinderGroup">getAccessProfilesContainingCylinderGroup <small>Operation</small></h2>
+
+        <p>Query for all access profiles that contain the cylinder group.</p>
+
+      <table class="table">
+        <caption>Input Parameters</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>cylinderGroupIdentity</td>
+          <td>string
+</td>
+          <td>Identity of the cylinder group for which access profiles are retrieved.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Return Value</caption>
+        <thead>
+        <tr>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td><a href="xml_data_v2_accessProfile.html">accessProfile</a></td>
+          <td>All access profiles that contain the cylinder group.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Faults</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>conditions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>SystemException</td>
+          <td>SystemException
+</td>
+          <td>Thrown if an unrecoverable error occurs.</td>
+        </tr>
+        <tr>
+          <td>IdentityNotFoundException</td>
+          <td>IdentityNotFoundException
+</td>
+          <td>Thrown if the cylinder group could not be found.</td>
+        </tr>
+        <tr>
+          <td>InvalidDataException</td>
+          <td>InvalidDataException
+</td>
+          <td>Thrown if the cylinder group identity is missing.</td>
+        </tr>
+        <tr>
+          <td>InvalidStateException</td>
+          <td>InvalidStateException
+</td>
+          <td>Thrown if the cylinder group is not operational.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <h2 id="service_queryService_v2_QueryServiceV2_method_searchAccessProfiles">searchAccessProfiles <small>Operation</small></h2>
+
+        <p>Search for access profiles with search arguments.</p>
+
+      <table class="table">
+        <caption>Input Parameters</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>accessProfileSearchArguments</td>
+          <td><a href="xml_data_v2_accessProfileSearchArguments.html">accessProfileSearchArguments</a>
+</td>
+          <td>access profile search arguments.</td>
+        </tr>
+        <tr>
+          <td>pagination</td>
+          <td><a href="xml_data_v2_pagination.html">pagination</a>
+</td>
+          <td>used to specify the starting row and maximum amount of rows to return, allowing for iteration through large result sets.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Return Value</caption>
+        <thead>
+        <tr>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td><a href="xml_data_v2_accessProfile.html">accessProfile</a></td>
+          <td>a list of access profiles matching the search arguments sorted by name in ascending order.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Faults</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>conditions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>SystemException</td>
+          <td>SystemException
+</td>
+          <td>Thrown if an unrecoverable error occurs.</td>
+        </tr>
+        <tr>
+          <td>InvalidDataException</td>
+          <td>InvalidDataException
+</td>
+          <td>Thrown if the search argument or pagination data is null.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <h2 id="service_queryService_v2_QueryServiceV2_method_searchAccessProfileUpdates">searchAccessProfileUpdates <small>Operation</small></h2>
+
+        <p>Find which access profiles updates have been made in the domain.</p>
+
+      <table class="table">
+        <caption>Input Parameters</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>domainName</td>
+          <td>string
+</td>
+          <td>The domain name of the access profiles that will be searched. Value is case in-sensitive and wildcard is not accepted.</td>
+        </tr>
+        <tr>
+          <td>dateInterval</td>
+          <td><a href="xml_data_v2_dateIntervalWithTimeZone.html">dateIntervalWithTimeZone</a>
+</td>
+          <td>The date interval within which to search for access profile updates. The date interval is exclusive for the 'from' date and inclusive for the  'to' date. If the 'to' date is omitted, the current date and time in the system-specific timezone will be used.</td>
+        </tr>
+        <tr>
+          <td>pagination</td>
+          <td><a href="xml_data_v2_pagination.html">pagination</a>
+</td>
+          <td>Used to specify the starting row and maximum amount of rows to return, allowing for iteration through large result sets. The maximum allowed value is 1000.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Return Value</caption>
+        <thead>
+        <tr>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td><a href="xml_data_v2_accessProfileUpdate.html">accessProfileUpdate</a></td>
+          <td>A list of access profile updates matching the specified domain and date interval.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Faults</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>conditions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>SystemException</td>
+          <td>SystemException
+</td>
+          <td>Thrown if an unrecoverable error occurs.</td>
+        </tr>
+        <tr>
+          <td>InvalidDataException</td>
+          <td>InvalidDataException
+</td>
+          <td>Thrown if the search argument, dateInterval or the pagination data is invalid or not set or if pagination maximum results exceeds 1000.</td>
+        </tr>
+        <tr>
+          <td>IdentityNotFoundException</td>
+          <td>IdentityNotFoundException
+</td>
+          <td>Thrown if the domain specified by the domain name could not be found.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <h2 id="service_queryService_v2_QueryServiceV2_method_searchAccessProfileDomainChanges">searchAccessProfileDomainChanges <small>Operation</small></h2>
+
+        <p>Find which access profiles have entered or left the domain.</p>
+
+      <table class="table">
+        <caption>Input Parameters</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>domainName</td>
+          <td>string
+</td>
+          <td>The name of the domain the profile was moved into or out of. Value is case in-sensitive and wildcard is not accepted.</td>
+        </tr>
+        <tr>
+          <td>dateInterval</td>
+          <td><a href="xml_data_v2_dateIntervalWithTimeZone.html">dateIntervalWithTimeZone</a>
+</td>
+          <td>The date interval within which to search for access profile domain changes. The date interval is exclusive for the 'from' date and inclusive for the  'to' date. If the 'to' date is omitted, the current date and time in the system-specific timezone will be used.</td>
+        </tr>
+        <tr>
+          <td>pagination</td>
+          <td><a href="xml_data_v2_pagination.html">pagination</a>
+</td>
+          <td>Used to specify the starting row and maximum amount of rows to return, allowing for iteration through large result sets.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Return Value</caption>
+        <thead>
+        <tr>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td><a href="xml_data_v2_accessProfileDomainChange.html">accessProfileDomainChange</a></td>
+          <td>A list of access profiles with their previous and new domains.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Faults</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>conditions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>SystemException</td>
+          <td>SystemException
+</td>
+          <td>Thrown if an unrecoverable error occurs.</td>
+        </tr>
+        <tr>
+          <td>InvalidDataException</td>
+          <td>InvalidDataException
+</td>
+          <td>Thrown if the search argument, dateInterval or the pagination data is invalid or not set.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <h2 id="service_queryService_v2_QueryServiceV2_method_searchKeyAccessProfileChange">searchKeyAccessProfileChange <small>Operation</small></h2>
+
+        <p>Find changes in direct associations between keys and access profiles in the domain within the specified time interval.</p>
+
+      <table class="table">
+        <caption>Input Parameters</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>domainName</td>
+          <td>string
+</td>
+          <td>The domain name of the access profiles that will be searched. Value is case insensitive and wildcard is not accepted.</td>
+        </tr>
+        <tr>
+          <td>dateInterval</td>
+          <td><a href="xml_data_v2_dateIntervalWithTimeZone.html">dateIntervalWithTimeZone</a>
+</td>
+          <td>The date interval within which to search for access profile changes for keys. The date interval is exclusive for the 'from' date and inclusive for the  'to' date. If the 'to' date is omitted, the current date and time in the system-specific timezone will be used.</td>
+        </tr>
+        <tr>
+          <td>pagination</td>
+          <td><a href="xml_data_v2_pagination.html">pagination</a>
+</td>
+          <td>Used to specify the starting row and maximum amount of rows to return, allowing for iteration through large result sets.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Return Value</caption>
+        <thead>
+        <tr>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td><a href="xml_data_v2_keyAccessProfileChange.html">keyAccessProfileChange</a></td>
+          <td>A list of keys and which access profiles were associated or disassociated to them.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Faults</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>conditions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>SystemException</td>
+          <td>SystemException
+</td>
+          <td>Thrown if an unrecoverable error occurs.</td>
+        </tr>
+        <tr>
+          <td>InvalidDataException</td>
+          <td>InvalidDataException
+</td>
+          <td>Thrown if the search argument, dateInterval or the pagination data is invalid or not set.</td>
+        </tr>
+        <tr>
+          <td>IdentityNotFoundException</td>
+          <td>IdentityNotFoundException
+</td>
+          <td>Thrown if the domain specified by the domain name could not be found.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <h2 id="service_queryService_v2_QueryServiceV2_method_searchExplicitKeyAuthorisationChanges">searchExplicitKeyAuthorisationChanges <small>Operation</small></h2>
+
+        <p>Find all explicit key authorisation changes involving cylinders and cylinder groups in the specified domain and during the specified time interval.</p>
+
+      <table class="table">
+        <caption>Input Parameters</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>domainName</td>
+          <td>string
+</td>
+          <td>The domain name of cylinders and cylinder groups involved in explicit key authorisation changes.</td>
+        </tr>
+        <tr>
+          <td>dateInterval</td>
+          <td><a href="xml_data_v2_dateIntervalWithTimeZone.html">dateIntervalWithTimeZone</a>
+</td>
+          <td>The date time interval in which explicit key authorisation changes will be searched for. The date interval is exclusive for the 'from' date and inclusive for the  'to' date. If the 'to' date is omitted, the current date and time in the system-specific timezone will be used.</td>
+        </tr>
+        <tr>
+          <td>pagination</td>
+          <td><a href="xml_data_v2_pagination.html">pagination</a>
+</td>
+          <td>Used to specify the starting row and maximum amount of rows to return, allowing for iteration through large result sets. The maximum allowed value is 1000.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Return Value</caption>
+        <thead>
+        <tr>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td><a href="xml_data_v2_keyAccessChange.html">keyAccessChange</a></td>
+          <td>A list of the changes made during the specified time interval to keys belonging to the specified domain.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Faults</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>conditions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>SystemException</td>
+          <td>SystemException
+</td>
+          <td>Thrown if an unrecoverable error occurs.</td>
+        </tr>
+        <tr>
+          <td>InvalidDataException</td>
+          <td>InvalidDataException
+</td>
+          <td>Thrown if domain name, date interval or pagination data is missing or invalid or if pagination maximum results exceeds 1000.</td>
+        </tr>
+        <tr>
+          <td>IdentityNotFoundException</td>
+          <td>IdentityNotFoundException
+</td>
+          <td>Thrown if the domain specified by the domain name could not be found.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <h2 id="service_queryService_v2_QueryServiceV2_method_searchTemporaryAccessGroupChanges">searchTemporaryAccessGroupChanges <small>Operation</small></h2>
+
+        <p>Find all temporary access group changes in the specified domain and during the specified time interval.</p>
+
+      <table class="table">
+        <caption>Input Parameters</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>domainName</td>
+          <td>string
+</td>
+          <td>The domain name of temporary access groups that will be searched for changes.</td>
+        </tr>
+        <tr>
+          <td>dateInterval</td>
+          <td><a href="xml_data_v2_dateIntervalWithTimeZone.html">dateIntervalWithTimeZone</a>
+</td>
+          <td>The date time interval in which temporary access group changes will be searched for. The date interval is exclusive for the 'from' date and inclusive for the  'to' date. If the 'to' date is omitted, the current date and time in the system-specific timezone will be used.</td>
+        </tr>
+        <tr>
+          <td>pagination</td>
+          <td><a href="xml_data_v2_pagination.html">pagination</a>
+</td>
+          <td>Used to specify the starting row and maximum amount of rows to return, allowing for iteration through large result sets. The maximum allowed value is 1000.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Return Value</caption>
+        <thead>
+        <tr>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td><a href="xml_data_v2_temporaryAccessGroupChange.html">temporaryAccessGroupChange</a></td>
+          <td>A list of the changes made during the specified time interval to keys belonging to the specified domain.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Faults</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>conditions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>SystemException</td>
+          <td>SystemException
+</td>
+          <td>Thrown if an unrecoverable error occurs.</td>
+        </tr>
+        <tr>
+          <td>InvalidDataException</td>
+          <td>InvalidDataException
+</td>
+          <td>Thrown if the domain name, dateInterval or the pagination data is invalid or not set or if pagination maximum results exceeds 1000.</td>
+        </tr>
+        <tr>
+          <td>IdentityNotFoundException</td>
+          <td>IdentityNotFoundException
+</td>
+          <td>Thrown if the domain specified by the domain name could not be found.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <h2 id="service_queryService_v2_QueryServiceV2_method_searchCylinderDomainChanges">searchCylinderDomainChanges <small>Operation</small></h2>
+
+        <p>Find all cylinders or cylinder groups that have changed domains to or from the specified domain.</p>
+
+      <table class="table">
+        <caption>Input Parameters</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>domainName</td>
+          <td>string
+</td>
+          <td>The old or new domain name of the cylinders or cylinder groups that have changed domains.</td>
+        </tr>
+        <tr>
+          <td>dateInterval</td>
+          <td><a href="xml_data_v2_dateIntervalWithTimeZone.html">dateIntervalWithTimeZone</a>
+</td>
+          <td>The date interval within which to search for cylinders or cylinder groups that have changed domain. The date interval is exclusive for the 'from' date and inclusive for the  'to' date. If the 'to' date is omitted, the current date and time in the system-specific timezone will be used.</td>
+        </tr>
+        <tr>
+          <td>pagination</td>
+          <td><a href="xml_data_v2_pagination.html">pagination</a>
+</td>
+          <td>Used to specify the starting row and maximum amount of rows to return, allowing for iteration through large result sets.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Return Value</caption>
+        <thead>
+        <tr>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td><a href="xml_data_v2_cylinderDomainChange.html">cylinderDomainChange</a></td>
+          <td>A list of cylinders and cylinder groups with their previous and new domains.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Faults</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>conditions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>SystemException</td>
+          <td>SystemException
+</td>
+          <td>Thrown if an unrecoverable error occurs.</td>
+        </tr>
+        <tr>
+          <td>InvalidDataException</td>
+          <td>InvalidDataException
+</td>
+          <td>Thrown if the domain name, date interval or pagination data is missing. Also thrown if the date interval is invalid.</td>
+        </tr>
+        <tr>
+          <td>IdentityNotFoundException</td>
+          <td>IdentityNotFoundException
+</td>
+          <td>Thrown if the domain specified by the domain name could not be found.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <h2 id="service_queryService_v2_QueryServiceV2_method_searchCylindersImported">searchCylindersImported <small>Operation</small></h2>
+
+        <p>Find all cylinders that have been imported into the domain during the specified time interval.
+<p/>
+NOTE: This search will only find cylinders that were imported using the .CWS file format. Cylinders that were imported without an import date will not be found.</p>
+
+      <table class="table">
+        <caption>Input Parameters</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>domainName</td>
+          <td>string
+</td>
+          <td>The name of the domain in which to search for imported cylinders.</td>
+        </tr>
+        <tr>
+          <td>dateInterval</td>
+          <td><a href="xml_data_v2_dateIntervalWithTimeZone.html">dateIntervalWithTimeZone</a>
+</td>
+          <td>The date interval within which to search for imported cylinders.</td>
+        </tr>
+        <tr>
+          <td>pagination</td>
+          <td><a href="xml_data_v2_pagination.html">pagination</a>
+</td>
+          <td>Used to specify the starting row and maximum amount of rows to return, allowing for iteration through large result sets.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Return Value</caption>
+        <thead>
+        <tr>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td><a href="xml_data_v2_cylinder.html">cylinder</a></td>
+          <td>A list of cylinders, including time of import.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Faults</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>conditions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>SystemException</td>
+          <td>SystemException
+</td>
+          <td>Thrown if an unrecoverable error occurs.</td>
+        </tr>
+        <tr>
+          <td>InvalidDataException</td>
+          <td>InvalidDataException
+</td>
+          <td>Thrown if the domain name, date interval or pagination data is missing. Also thrown if the date interval is invalid.</td>
+        </tr>
+        <tr>
+          <td>IdentityNotFoundException</td>
+          <td>IdentityNotFoundException
+</td>
+          <td>Thrown if the domain specified by the domain name could not be found.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <h2 id="service_queryService_v2_QueryServiceV2_method_searchPersons">searchPersons <small>Operation</small></h2>
+
+        <p>Search for persons with search arguments.</p>
+
+      <table class="table">
+        <caption>Input Parameters</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>personSearchArguments</td>
+          <td><a href="xml_data_v2_personSearchArguments.html">personSearchArguments</a>
+</td>
+          <td>Person search arguments.</td>
+        </tr>
+        <tr>
+          <td>pagination</td>
+          <td><a href="xml_data_v2_pagination.html">pagination</a>
+</td>
+          <td>used to specify the starting row and maximum amount of rows to return, allowing for iteration through large result sets.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Return Value</caption>
+        <thead>
+        <tr>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td><a href="xml_data_v2_person.html">person</a></td>
+          <td>A list of persons matching the search arguments.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Faults</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>conditions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>SystemException</td>
+          <td>SystemException
+</td>
+          <td>Thrown if an unrecoverable error occurs.</td>
+        </tr>
+        <tr>
+          <td>InvalidDataException</td>
+          <td>InvalidDataException
+</td>
+          <td>Thrown if search arguments or pagination data are missing or invalid.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <h2 id="service_queryService_v2_QueryServiceV2_method_getAccessibleCylinders">getAccessibleCylinders <small>Operation</small></h2>
+
+        <p>Find the currently accessible cylinders for a key, based on key cuttings, explicit authorisations, cylinder groups and access profiles.</p>
+
+      <table class="table">
+        <caption>Input Parameters</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>keyIdentity</td>
+          <td>string
+</td>
+          <td>the identity of the key.</td>
+        </tr>
+        <tr>
+          <td>pagination</td>
+          <td><a href="xml_data_v2_pagination.html">pagination</a>
+</td>
+          <td>used to specify the starting row and maximum amount of rows to return, allowing for iteration through large result sets.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Return Value</caption>
+        <thead>
+        <tr>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td><a href="xml_data_v2_keyAccess.html">keyAccess</a></td>
+          <td>the accessible cylinder plugs and their access origins.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Faults</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>conditions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>SystemException</td>
+          <td>SystemException
+</td>
+          <td>Unexpected errors.</td>
+        </tr>
+        <tr>
+          <td>InvalidDataException</td>
+          <td>InvalidDataException
+</td>
+          <td>Thrown if arguments is missing.</td>
+        </tr>
+        <tr>
+          <td>InvalidStateException</td>
+          <td>InvalidStateException
+</td>
+          <td>Thrown if key is in an invalid state.</td>
+        </tr>
+        <tr>
+          <td>IdentityNotFoundException</td>
+          <td>IdentityNotFoundException
+</td>
+          <td>Thrown if keyIdentity is invalid.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <h2 id="service_queryService_v2_QueryServiceV2_method_getPendingAccessibleCylinders">getPendingAccessibleCylinders <small>Operation</small></h2>
+
+        <p>Find the cylinders for a key that will be accessible after the key has been updated with all pending authorisations, based on key cuttings, explicit authorisations, cylinder groups and access profiles.</p>
+
+      <table class="table">
+        <caption>Input Parameters</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>keyIdentity</td>
+          <td>string
+</td>
+          <td>the identity (UUID) of the key.</td>
+        </tr>
+        <tr>
+          <td>pagination</td>
+          <td><a href="xml_data_v2_pagination.html">pagination</a>
+</td>
+          <td>used to specify the starting row and maximum amount of rows to return, allowing for iteration through large result sets.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Return Value</caption>
+        <thead>
+        <tr>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td><a href="xml_data_v2_keyAccess.html">keyAccess</a></td>
+          <td>the accessible cylinder plugs and their origins.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Faults</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>conditions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>SystemException</td>
+          <td>SystemException
+</td>
+          <td>Unexpected errors.</td>
+        </tr>
+        <tr>
+          <td>InvalidDataException</td>
+          <td>InvalidDataException
+</td>
+          <td>Thrown if arguments is missing.</td>
+        </tr>
+        <tr>
+          <td>InvalidStateException</td>
+          <td>InvalidStateException
+</td>
+          <td>Thrown if key is in an invalid state.</td>
+        </tr>
+        <tr>
+          <td>IdentityNotFoundException</td>
+          <td>IdentityNotFoundException
+</td>
+          <td>Thrown if keyIdentity is invalid.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <h2 id="service_queryService_v2_QueryServiceV2_method_searchCylinderGroups">searchCylinderGroups <small>Operation</small></h2>
+
+        <p>Search for cylinder groups with search arguments.</p>
+
+      <table class="table">
+        <caption>Input Parameters</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>cylinderGroupSearchArguments</td>
+          <td><a href="xml_data_v2_cylinderGroupSearchArguments.html">cylinderGroupSearchArguments</a>
+</td>
+          <td>Cylinder group search arguments.</td>
+        </tr>
+        <tr>
+          <td>pagination</td>
+          <td><a href="xml_data_v2_pagination.html">pagination</a>
+</td>
+          <td>used to specify the starting row and maximum amount of rows to return, allowing for iteration through large result sets.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Return Value</caption>
+        <thead>
+        <tr>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td><a href="xml_data_v2_cylinderGroup.html">cylinderGroup</a></td>
+          <td>A list of cylinder groups matching the search arguments sorted by name in ascending order.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Faults</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>conditions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>SystemException</td>
+          <td>SystemException
+</td>
+          <td>Thrown if an unrecoverable error occurs.</td>
+        </tr>
+        <tr>
+          <td>InvalidDataException</td>
+          <td>InvalidDataException
+</td>
+          <td>Thrown if search arguments or pagination data are missing or invalid.</td>
+        </tr>
+        <tr>
+          <td>InvalidStateException</td>
+          <td>InvalidStateException
+</td>
+          <td>&nbsp;</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <h2 id="service_queryService_v2_QueryServiceV2_method_searchPersonsWithKeys">searchPersonsWithKeys <small>Operation</small></h2>
+
+        <p>Search for persons with handed out user keys using search arguments.
+Only persons with user keys are considered.
+C-Keys will not be returned if person has any, also persons with only C-Keys will not be returned.</p>
+
+      <table class="table">
+        <caption>Input Parameters</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>personSearchArguments</td>
+          <td><a href="xml_data_v2_personSearchArguments.html">personSearchArguments</a>
+</td>
+          <td>Person search arguments.</td>
+        </tr>
+        <tr>
+          <td>pagination</td>
+          <td><a href="xml_data_v2_pagination.html">pagination</a>
+</td>
+          <td>used to specify the starting row and maximum amount of rows to return, allowing for iteration through large result sets.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Return Value</caption>
+        <thead>
+        <tr>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td><a href="xml_data_v2_personWithKeys.html">personWithKeys</a></td>
+          <td>A list of persons matching the search arguments and having handed out user keys.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Faults</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>conditions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>SystemException</td>
+          <td>SystemException
+</td>
+          <td>Thrown if an unrecoverable error occurs.</td>
+        </tr>
+        <tr>
+          <td>InvalidDataException</td>
+          <td>InvalidDataException
+</td>
+          <td>Thrown if search arguments or pagination data are missing or invalid.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <h2 id="service_queryService_v2_QueryServiceV2_method_getKeysWithAccessToCylinderPlug">getKeysWithAccessToCylinderPlug <small>Operation</small></h2>
+
+        <p>Find the keys that currently have access to a cylinder, based on key cuttings, explicit authorisations, key groups, cylinder groups and access profiles.</p>
+
+      <table class="table">
+        <caption>Input Parameters</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>cylinderPlugIdentity</td>
+          <td>string
+</td>
+          <td>The identity of the cylinder plug.</td>
+        </tr>
+        <tr>
+          <td>pagination</td>
+          <td><a href="xml_data_v2_pagination.html">pagination</a>
+</td>
+          <td>used to specify the starting row and maximum amount of rows to return, allowing for iteration through large result sets.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Return Value</caption>
+        <thead>
+        <tr>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td><a href="xml_data_v2_keyAndKeyHolder.html">keyAndKeyHolder</a></td>
+          <td>the authorized keys and their key holders.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Faults</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>conditions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>SystemException</td>
+          <td>SystemException
+</td>
+          <td>Thrown if an unrecoverable error occurs.</td>
+        </tr>
+        <tr>
+          <td>InvalidDataException</td>
+          <td>InvalidDataException
+</td>
+          <td>Thrown if arguments are missing.</td>
+        </tr>
+        <tr>
+          <td>InvalidStateException</td>
+          <td>InvalidStateException
+</td>
+          <td>Thrown if cylinder is invalid, might be marked as deleted.</td>
+        </tr>
+        <tr>
+          <td>IdentityNotFoundException</td>
+          <td>IdentityNotFoundException
+</td>
+          <td>Thrown if cylinderIdentity is invalid.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <h2 id="service_queryService_v2_QueryServiceV2_method_getKeysWithPendingAccessToCylinderPlug">getKeysWithPendingAccessToCylinderPlug <small>Operation</small></h2>
+
+        <p>Find the keys that will have access to a cylinder after they have been updated with all pending authorisations, based on key cuttings, explicit authorisations, key groups, cylinder groups and access profiles.</p>
+
+      <table class="table">
+        <caption>Input Parameters</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>cylinderPlugIdentity</td>
+          <td>string
+</td>
+          <td>The identity of the cylinder plug.</td>
+        </tr>
+        <tr>
+          <td>pagination</td>
+          <td><a href="xml_data_v2_pagination.html">pagination</a>
+</td>
+          <td>used to specify the starting row and maximum amount of rows to return, allowing for iteration through large result sets.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Return Value</caption>
+        <thead>
+        <tr>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td><a href="xml_data_v2_keyAndKeyHolder.html">keyAndKeyHolder</a></td>
+          <td>the authorized keys and their key holders.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Faults</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>conditions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>SystemException</td>
+          <td>SystemException
+</td>
+          <td>Thrown if an unrecoverable error occurs.</td>
+        </tr>
+        <tr>
+          <td>InvalidDataException</td>
+          <td>InvalidDataException
+</td>
+          <td>Thrown if arguments are missing.</td>
+        </tr>
+        <tr>
+          <td>InvalidStateException</td>
+          <td>InvalidStateException
+</td>
+          <td>Thrown if cylinder is invalid, might be marked as deleted.</td>
+        </tr>
+        <tr>
+          <td>IdentityNotFoundException</td>
+          <td>IdentityNotFoundException
+</td>
+          <td>Thrown if cylinderIdentity is invalid.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <h2 id="service_queryService_v2_QueryServiceV2_method_getExplicitCylinderAuthorisationsForKey">getExplicitCylinderAuthorisationsForKey <small>Operation</small></h2>
+
+        <p>Find the cylinders that the specified dynamic key has explicit access to.</p>
+
+      <table class="table">
+        <caption>Input Parameters</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>keyIdentity</td>
+          <td>string
+</td>
+          <td>The identity of the key for which to retrieve accessible cylinders.</td>
+        </tr>
+        <tr>
+          <td>pagination</td>
+          <td><a href="xml_data_v2_pagination.html">pagination</a>
+</td>
+          <td>used to specify the starting row and maximum amount of rows to return, allowing for iteration through large result sets.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Return Value</caption>
+        <thead>
+        <tr>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td><a href="xml_data_v2_plugWithCylinder.html">plugWithCylinder</a></td>
+          <td>A list of cylinders with plugs that are authorised in the key.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Faults</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>conditions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>SystemException</td>
+          <td>SystemException
+</td>
+          <td>Thrown if an unrecoverable error occurs.</td>
+        </tr>
+        <tr>
+          <td>IdentityNotFoundException</td>
+          <td>IdentityNotFoundException
+</td>
+          <td>Thrown if the key is not found.</td>
+        </tr>
+        <tr>
+          <td>InvalidDataException</td>
+          <td>InvalidDataException
+</td>
+          <td>Thrown if the key identity is null or empty or if the pagination is null.</td>
+        </tr>
+        <tr>
+          <td>InvalidStateException</td>
+          <td>InvalidStateException
+</td>
+          <td>Thrown if the key is not a dynamic key or is deleted.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <h2 id="service_queryService_v2_QueryServiceV2_method_getExplicitCylinderGroupAuthorisationsForKey">getExplicitCylinderGroupAuthorisationsForKey <small>Operation</small></h2>
+
+        <p>Find the cylinder groups that the specified dynamic key has explicit access to.</p>
+
+      <table class="table">
+        <caption>Input Parameters</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>keyIdentity</td>
+          <td>string
+</td>
+          <td>The identity of the key for which to retrieve accessible cylinder groups.</td>
+        </tr>
+        <tr>
+          <td>pagination</td>
+          <td><a href="xml_data_v2_pagination.html">pagination</a>
+</td>
+          <td>used to specify the starting row and maximum amount of rows to return, allowing for iteration through large result sets.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Return Value</caption>
+        <thead>
+        <tr>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td><a href="xml_data_v2_cylinderGroup.html">cylinderGroup</a></td>
+          <td>A list of the cylinder groups authorised in the key.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Faults</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>conditions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>SystemException</td>
+          <td>SystemException
+</td>
+          <td>Thrown if an unrecoverable error occurs.</td>
+        </tr>
+        <tr>
+          <td>IdentityNotFoundException</td>
+          <td>IdentityNotFoundException
+</td>
+          <td>Thrown if the key is not found.</td>
+        </tr>
+        <tr>
+          <td>InvalidDataException</td>
+          <td>InvalidDataException
+</td>
+          <td>Thrown if the key identity is null or empty or if the pagination is null.</td>
+        </tr>
+        <tr>
+          <td>InvalidStateException</td>
+          <td>InvalidStateException
+</td>
+          <td>Thrown if the key is not a dynamic key.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <h2 id="service_queryService_v2_QueryServiceV2_method_getModifiedKeys">getModifiedKeys <small>Operation</small></h2>
+
+        <p>Find new or updated keys.</p>
+
+      <table class="table">
+        <caption>Input Parameters</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>dateInterval</td>
+          <td><a href="xml_data_v2_dateIntervalWithTimeZone.html">dateIntervalWithTimeZone</a>
+</td>
+          <td>The date time interval in which key changes will be searched for. The date interval is exclusive for the 'from' date and inclusive for the  'to' date. If the 'to' date is omitted, the current date and time in the system-specific timezone will be used.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Return Value</caption>
+        <thead>
+        <tr>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>string</td>
+          <td>A list of updated or new keys identities done during the specified time interval</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Faults</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>conditions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>SystemException</td>
+          <td>SystemException
+</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td>InvalidDataException</td>
+          <td>InvalidDataException
+</td>
+          <td>&nbsp;</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <h2 id="service_queryService_v2_QueryServiceV2_method_getAccessListForAccessProfile">getAccessListForAccessProfile <small>Operation</small></h2>
+
+        <p>Get <i>Cylinders</i> and <i>Cylinder Groups</i> linked to <i>Access Profile</i></p>
+
+      <table class="table">
+        <caption>Input Parameters</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>accessProfileIdentity</td>
+          <td>string
+</td>
+          <td><i>Access Profile</i> UUID attribute</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Return Value</caption>
+        <thead>
+        <tr>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td><a href="xml_data_v2_accessProfileBasic.html">accessProfileBasic</a></td>
+          <td><i>Access Profile</i> details</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Faults</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>conditions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>SystemException</td>
+          <td>SystemException
+</td>
+          <td>Thrown if an unrecoverable error occurs.</td>
+        </tr>
+        <tr>
+          <td>InvalidDataException</td>
+          <td>InvalidDataException
+</td>
+          <td>Thrown if the <i>accessProfileIdentity</i> is not set.</td>
+        </tr>
+        <tr>
+          <td>IdentityNotFoundException</td>
+          <td>IdentityNotFoundException
+</td>
+          <td>Thrown if the <i>Access Profile</i> cannot be found.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <h2 id="service_queryService_v2_QueryServiceV2_method_getModifiedRemotePDs">getModifiedRemotePDs <small>Operation</small></h2>
+
+        <p>Find new or updated PDs.</p>
+
+      <table class="table">
+        <caption>Input Parameters</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>dateInterval</td>
+          <td><a href="xml_data_v2_dateIntervalWithTimeZone.html">dateIntervalWithTimeZone</a>
+</td>
+          <td>The date time interval in which PD changes will be searched for. The date interval is exclusive for the 'from' date and inclusive for the  'to' date. If the 'to' date is omitted, the current date and time in the system-specific timezone will be used.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Return Value</caption>
+        <thead>
+        <tr>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>string</td>
+          <td>A list of updated or new PDs identities done during the specified time interval</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Faults</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>conditions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>SystemException</td>
+          <td>SystemException
+</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td>InvalidDataException</td>
+          <td>InvalidDataException
+</td>
+          <td>&nbsp;</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <h2 id="service_queryService_v2_QueryServiceV2_method_getPersonsWithModifiedListOfAccessProfiles">getPersonsWithModifiedListOfAccessProfiles <small>Operation</small></h2>
+
+        <p>Search for persons with modified list of access profiles.</p>
+
+      <table class="table">
+        <caption>Input Parameters</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>dateInterval</td>
+          <td><a href="xml_data_v2_dateIntervalWithTimeZone.html">dateIntervalWithTimeZone</a>
+</td>
+          <td>The date interval within which to search for persons with modified access profiles.</td>
+        </tr>
+        <tr>
+          <td>pagination</td>
+          <td><a href="xml_data_v2_pagination.html">pagination</a>
+</td>
+          <td>Used to specify the starting person and maximum amount of persons to return,  allowing for iteration through large result sets.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Return Value</caption>
+        <thead>
+        <tr>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td><a href="xml_data_v2_personWithAccessProfiles.html">personWithAccessProfiles</a></td>
+          <td>a list of persons with modified access profiles sorted by last modification time in ascending order.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Faults</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>conditions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>SystemException</td>
+          <td>SystemException
+</td>
+          <td>Thrown if an unrecoverable error occurs.</td>
+        </tr>
+        <tr>
+          <td>InvalidDataException</td>
+          <td>InvalidDataException
+</td>
+          <td>Thrown if the search argument or pagination data is null.</td>
+        </tr>
+        </tbody>
+      </table>
+
+        <footer class="footer">
+          <div class="container">
+            <p class="text-muted">Generated by <a href="http://enunciate.webcohesion.com">Enunciate</a>.</p>
+          </div>
+        </footer>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- JavaScript placed at the end of the document so the pages load faster. -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+  <!-- prettify code blocks. see http://code.google.com/p/google-code-prettify/ -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/run_prettify.js" type="text/javascript"></script>
+  <script>
+    $(function() {
+      $(".clickable-row").click(function() {
+        window.document.location = $(this).data("href");
+      });
+
+      $('[data-toggle="tooltip"]').tooltip()
+    });
+  </script>
+
+</body>
+</html>

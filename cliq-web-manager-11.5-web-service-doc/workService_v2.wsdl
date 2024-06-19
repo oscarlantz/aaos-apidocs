@@ -1,0 +1,2022 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?enunciate-assumed-base-uri http://localhost:8080/?>
+<wsdl:definitions targetNamespace="http://cliq.shared.assaabloy.com/ws/work/v2/"
+   xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+   xmlns:data_v2="http://cliq.shared.assaabloy.com/ws/data/v2/"
+   xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+   xmlns:dataExtra_r9_0_v2="http://cliq.shared.assaabloy.com/ws/data/extra_r9_0/v2/"
+   xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/"
+   xmlns:xs="http://www.w3.org/2001/XMLSchema"
+   xmlns:http="http://schemas.xmlsoap.org/wsdl/http/"
+   xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+   xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+   xmlns:workService_v2="http://cliq.shared.assaabloy.com/ws/work/v2/"
+   >
+
+  <wsdl:types>
+  <xs:schema targetNamespace="http://cliq.shared.assaabloy.com/ws/work/v2/">
+    <xs:import namespace="http://cliq.shared.assaabloy.com/ws/data/v2/" schemaLocation="data_v2.xsd"/>
+    <xs:import namespace="http://cliq.shared.assaabloy.com/ws/data/extra_r9_0/v2/" schemaLocation="dataExtra_r9_0_v2.xsd"/>
+      <xs:include schemaLocation="workService_v2.xsd"/>
+  </xs:schema>
+  </wsdl:types>
+
+  <wsdl:message name="WorkService.resetKey">
+    <wsdl:documentation>
+      <![CDATA[request message for operation "resetKey". (Reset a remote enabled key, creates remote updates to reset the key.
+<p/>
+This method is normally used in conjunction with the handInKey(String keyIdentity) method
+in order to ensure that the key is return without any authorisation and also inactivated.
+<p/>
+<p/>Note, depending on the current load of the system, creation of a remote programming job might take one to several minutes.
+<p/>
+These operations will be performed depending on key type:
+<ul>
+<li>Dynamic key: removes any access profiles and explicit authorisations, disables schedule and validity.</li>
+<li>Quartz key: disables schedule and validity.</li>
+<li>Normal key: disables validity.</li>
+</ul>
+<p/>Note, if the key is CLIQ Connect Dynamic or Quartz key and has support for PIN validation also PIN validation will be disabled.
+<p/>
+Key system requirements:
+<ul>
+<li>Key system must be remote enabled.</li>
+</ul>
+<p/>
+Key requirements:
+<ul>
+<li>Key must have support for remote updates.</li>
+</ul>
+<p/>)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="workService_v2:resetKey">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="WorkService.resetKeyResponse">
+    <wsdl:documentation>
+      <![CDATA[response message for operation "resetKey". (Reset a remote enabled key, creates remote updates to reset the key.
+<p/>
+This method is normally used in conjunction with the handInKey(String keyIdentity) method
+in order to ensure that the key is return without any authorisation and also inactivated.
+<p/>
+<p/>Note, depending on the current load of the system, creation of a remote programming job might take one to several minutes.
+<p/>
+These operations will be performed depending on key type:
+<ul>
+<li>Dynamic key: removes any access profiles and explicit authorisations, disables schedule and validity.</li>
+<li>Quartz key: disables schedule and validity.</li>
+<li>Normal key: disables validity.</li>
+</ul>
+<p/>Note, if the key is CLIQ Connect Dynamic or Quartz key and has support for PIN validation also PIN validation will be disabled.
+<p/>
+Key system requirements:
+<ul>
+<li>Key system must be remote enabled.</li>
+</ul>
+<p/>
+Key requirements:
+<ul>
+<li>Key must have support for remote updates.</li>
+</ul>
+<p/>)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="workService_v2:resetKeyResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="SystemException">
+    <wsdl:documentation>
+      <![CDATA[Thrown if an unrecoverable error occurs. Error log should be available on server.]]>
+    </wsdl:documentation>
+    <wsdl:part name="SystemException" element="data_v2:systemException">
+      <wsdl:documentation>
+        <![CDATA[Thrown if the system was configured incorrectly or other unexpected errors occurred.]]>
+      </wsdl:documentation>
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="IdentityNotFoundException">
+    <wsdl:documentation>
+      <![CDATA[Thrown if the submitted identity could not be matched in CLIQ Web Manager.]]>
+    </wsdl:documentation>
+    <wsdl:part name="IdentityNotFoundException" element="data_v2:identityNotFoundException">
+      <wsdl:documentation>
+        <![CDATA[Thrown if the given key identity could not be found.]]>
+      </wsdl:documentation>
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="InvalidDataException">
+    <wsdl:documentation>
+      <![CDATA[Thrown if input data is invalid. See message and failure description for details.]]>
+    </wsdl:documentation>
+    <wsdl:part name="InvalidDataException" element="data_v2:invalidDataException">
+      <wsdl:documentation>
+        <![CDATA[Thrown if the key is a c-key or key has been deleted.]]>
+      </wsdl:documentation>
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="WorkService.updateKeyCylinderAuthorisations">
+    <wsdl:documentation>
+      <![CDATA[request message for operation "updateKeyCylinderAuthorisations". (Update cylinder authorisations(access rights) for a dynamic key.
+This operation will put "wanted" cylinder authorisations for the key and if required a remote programming
+job will be created.
+<p/>Note, depending on the current load of the system, creation of a remote programming job might take one to several minutes.
+<p/>
+Key system requirements:
+<ul>
+<li>Key system must be remote enabled.</li>
+</ul>
+<p/>
+Key requirements:
+<ul>
+<li>Only keys of type 'dynamic' (programmable) are valid.</li>
+<li>Key must have support for remote updates.</li>
+</ul>
+<p/>
+Plug requirements:
+<ul>
+<li>Key must have mechanical and as well as electronic access in all supplied plugs</li>
+<li>Plug must be operational.</li>
+<li>Plug's cylinder must be installed.</li>
+</ul>
+<p/>)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="workService_v2:updateKeyCylinderAuthorisations">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="WorkService.updateKeyCylinderAuthorisationsResponse">
+    <wsdl:documentation>
+      <![CDATA[response message for operation "updateKeyCylinderAuthorisations". (Update cylinder authorisations(access rights) for a dynamic key.
+This operation will put "wanted" cylinder authorisations for the key and if required a remote programming
+job will be created.
+<p/>Note, depending on the current load of the system, creation of a remote programming job might take one to several minutes.
+<p/>
+Key system requirements:
+<ul>
+<li>Key system must be remote enabled.</li>
+</ul>
+<p/>
+Key requirements:
+<ul>
+<li>Only keys of type 'dynamic' (programmable) are valid.</li>
+<li>Key must have support for remote updates.</li>
+</ul>
+<p/>
+Plug requirements:
+<ul>
+<li>Key must have mechanical and as well as electronic access in all supplied plugs</li>
+<li>Plug must be operational.</li>
+<li>Plug's cylinder must be installed.</li>
+</ul>
+<p/>)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="workService_v2:updateKeyCylinderAuthorisationsResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="WorkService.updateKeyCylinderGroupAuthorisations">
+    <wsdl:documentation>
+      <![CDATA[request message for operation "updateKeyCylinderGroupAuthorisations". (Update cylinder group authorisations(access rights) for a dynamic key.
+This operation will put "wanted" cylinder group authorisations on the key and if required a remote programming
+job will be created. These cylinder group authorisations will replace the current cylinder group authorisations on the key.
+<p/>Note, depending on the current load of the system, creation of a remote programming job might take one to several minutes.
+<p/>
+Locking system requirements:
+<ul>
+<li>Locking system must be remote enabled.</li>
+<li>Locking system must support cylinder groups.</li>
+</ul>
+<p/>
+Key requirements:
+<ul>
+<li>Only keys of type 'dynamic' (programmable) are valid.</li>
+<li>Key must have support for remote updates.</li>
+<li>Key must have support for cylinder groups.</li>
+</ul>
+<p/>
+Cylinder group requirements:
+<ul>
+<li>Key must have mechanical access in all supplied groups</li>
+</ul>
+<p/>)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="workService_v2:updateKeyCylinderGroupAuthorisations">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="WorkService.updateKeyCylinderGroupAuthorisationsResponse">
+    <wsdl:documentation>
+      <![CDATA[response message for operation "updateKeyCylinderGroupAuthorisations". (Update cylinder group authorisations(access rights) for a dynamic key.
+This operation will put "wanted" cylinder group authorisations on the key and if required a remote programming
+job will be created. These cylinder group authorisations will replace the current cylinder group authorisations on the key.
+<p/>Note, depending on the current load of the system, creation of a remote programming job might take one to several minutes.
+<p/>
+Locking system requirements:
+<ul>
+<li>Locking system must be remote enabled.</li>
+<li>Locking system must support cylinder groups.</li>
+</ul>
+<p/>
+Key requirements:
+<ul>
+<li>Only keys of type 'dynamic' (programmable) are valid.</li>
+<li>Key must have support for remote updates.</li>
+<li>Key must have support for cylinder groups.</li>
+</ul>
+<p/>
+Cylinder group requirements:
+<ul>
+<li>Key must have mechanical access in all supplied groups</li>
+</ul>
+<p/>)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="workService_v2:updateKeyCylinderGroupAuthorisationsResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="InvalidStateException">
+    <wsdl:documentation>
+      <![CDATA[InvalidStateException.]]>
+    </wsdl:documentation>
+    <wsdl:part name="InvalidStateException" element="data_v2:invalidStateException">
+      <wsdl:documentation>
+        <![CDATA[Thrown if the system or the specified key does not support cylinder groups.]]>
+      </wsdl:documentation>
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="WorkService.updateKeyValidity">
+    <wsdl:documentation>
+      <![CDATA[request message for operation "updateKeyValidity". (Update validity of a key to a new validity, the operation is accepted regardless if the newValidity period already is enabled or not.
+<p/>
+<p/>This operation will put "wanted" newValidity on the key, already pending key newValidity updates will be replaced.
+<p/>
+<p/>Note, depending on the current load of the system, creation of a remote programming job might take a number of minutes.
+<p/>
+<p/>
+Key system requirements:
+<ul>
+<li>Key system must be remote enabled.</li>
+</ul>
+<p/>
+Key requirements:
+<ul>
+<li>Only keys of type 'dynamic' ,'quartz' and 'normal' are valid.</li>
+<li>Key must have support for remote updates.</li>
+</ul>
+<p/>
+Note, If revalidation configuration is not supplied in the new validity it implies that any existing revalidation configuration on the key
+is to be removed.
+<p/>
+<p/>)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="workService_v2:updateKeyValidity">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="WorkService.updateKeyValidityResponse">
+    <wsdl:documentation>
+      <![CDATA[response message for operation "updateKeyValidity". (Update validity of a key to a new validity, the operation is accepted regardless if the newValidity period already is enabled or not.
+<p/>
+<p/>This operation will put "wanted" newValidity on the key, already pending key newValidity updates will be replaced.
+<p/>
+<p/>Note, depending on the current load of the system, creation of a remote programming job might take a number of minutes.
+<p/>
+<p/>
+Key system requirements:
+<ul>
+<li>Key system must be remote enabled.</li>
+</ul>
+<p/>
+Key requirements:
+<ul>
+<li>Only keys of type 'dynamic' ,'quartz' and 'normal' are valid.</li>
+<li>Key must have support for remote updates.</li>
+</ul>
+<p/>
+Note, If revalidation configuration is not supplied in the new validity it implies that any existing revalidation configuration on the key
+is to be removed.
+<p/>
+<p/>)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="workService_v2:updateKeyValidityResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="WorkService.updateKeySchedule">
+    <wsdl:documentation>
+      <![CDATA[request message for operation "updateKeySchedule". (Update the schedule of a key.
+<p/>
+<p/>This operation will put "wanted" schedule on the key, already pending key schedule updates will be replaced.
+<p/>
+<p/>Note, depending on the current load of the system, creation of a remote programming job might take a number of minutes.
+<p/>
+Key system requirements:
+<ul>
+<li>Key system must be remote enabled.</li>
+</ul>
+<p/>
+Key requirements:
+<ul>
+<li>Only keys of type 'dynamic' and 'quartz' are valid.</li>
+<li>Key must have support for remote updates.</li>
+</ul>
+<p/>)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="workService_v2:updateKeySchedule">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="WorkService.updateKeyScheduleResponse">
+    <wsdl:documentation>
+      <![CDATA[response message for operation "updateKeySchedule". (Update the schedule of a key.
+<p/>
+<p/>This operation will put "wanted" schedule on the key, already pending key schedule updates will be replaced.
+<p/>
+<p/>Note, depending on the current load of the system, creation of a remote programming job might take a number of minutes.
+<p/>
+Key system requirements:
+<ul>
+<li>Key system must be remote enabled.</li>
+</ul>
+<p/>
+Key requirements:
+<ul>
+<li>Only keys of type 'dynamic' and 'quartz' are valid.</li>
+<li>Key must have support for remote updates.</li>
+</ul>
+<p/>)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="workService_v2:updateKeyScheduleResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="WorkService.addAccessProfileToPerson">
+    <wsdl:documentation>
+      <![CDATA[request message for operation "addAccessProfileToPerson". (Add an access profile to a person.
+<p/>This operation will put "wanted" cylinder authorisations that applies to the added profile, this will be done for all keys owned by the person.
+Furthermore for each key and if required, a remote programming job will be created that reflects authorisations of the newly added profile.
+<p/>
+<p/>Note, depending on the current load of the system, creation of a remote programming job might take one to several minutes.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="workService_v2:addAccessProfileToPerson">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="WorkService.addAccessProfileToPersonResponse">
+    <wsdl:documentation>
+      <![CDATA[response message for operation "addAccessProfileToPerson". (Add an access profile to a person.
+<p/>This operation will put "wanted" cylinder authorisations that applies to the added profile, this will be done for all keys owned by the person.
+Furthermore for each key and if required, a remote programming job will be created that reflects authorisations of the newly added profile.
+<p/>
+<p/>Note, depending on the current load of the system, creation of a remote programming job might take one to several minutes.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="workService_v2:addAccessProfileToPersonResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="WorkService.removeAccessProfileFromPerson">
+    <wsdl:documentation>
+      <![CDATA[request message for operation "removeAccessProfileFromPerson". (Remove an access profile from a person.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="workService_v2:removeAccessProfileFromPerson">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="WorkService.removeAccessProfileFromPersonResponse">
+    <wsdl:documentation>
+      <![CDATA[response message for operation "removeAccessProfileFromPerson". (Remove an access profile from a person.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="workService_v2:removeAccessProfileFromPersonResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="WorkService.addAccessProfileToKey">
+    <wsdl:documentation>
+      <![CDATA[request message for operation "addAccessProfileToKey". (Add an access profile to a key.
+<p/>This operation will put "wanted" cylinder authorisations that applies to the added profile, this will be done for specified key.
+<p/>
+<p/>Note, depending on the current load of the system, creation of a remote programming job might take one to several minutes.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="workService_v2:addAccessProfileToKey">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="WorkService.addAccessProfileToKeyResponse">
+    <wsdl:documentation>
+      <![CDATA[response message for operation "addAccessProfileToKey". (Add an access profile to a key.
+<p/>This operation will put "wanted" cylinder authorisations that applies to the added profile, this will be done for specified key.
+<p/>
+<p/>Note, depending on the current load of the system, creation of a remote programming job might take one to several minutes.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="workService_v2:addAccessProfileToKeyResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ConcurrentDataModificationException">
+    <wsdl:part name="ConcurrentDataModificationException" element="dataExtra_r9_0_v2:concurrentDataModificationException">
+      <wsdl:documentation>
+        <![CDATA[Thrown if cannot lock Access Profile to perform operation.]]>
+      </wsdl:documentation>
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="WorkService.removeAccessProfileFromKey">
+    <wsdl:documentation>
+      <![CDATA[request message for operation "removeAccessProfileFromKey". (Remove an access profile from a key.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="workService_v2:removeAccessProfileFromKey">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="WorkService.removeAccessProfileFromKeyResponse">
+    <wsdl:documentation>
+      <![CDATA[response message for operation "removeAccessProfileFromKey". (Remove an access profile from a key.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="workService_v2:removeAccessProfileFromKeyResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="WorkService.deleteAccessProfile">
+    <wsdl:documentation>
+      <![CDATA[request message for operation "deleteAccessProfile". (Delete an access profile.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="workService_v2:deleteAccessProfile">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="WorkService.deleteAccessProfileResponse">
+    <wsdl:documentation>
+      <![CDATA[response message for operation "deleteAccessProfile". (Delete an access profile.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="workService_v2:deleteAccessProfileResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="WorkService.handOutKey">
+    <wsdl:documentation>
+      <![CDATA[request message for operation "handOutKey". (Hand out a key to a person. For dynamic keys, this method also implies that access profiles will be copied from the person to the key.
+<p/>
+Note, this operation is only supported for user keys.
+<p/>
+Dates must be on the format yyyy-MM-ddTHH:MMZ (UTC time),
+yyyy-MM-ddTHH:MM+01:00 or yyyy-MM-ddTHH:MM+01 which is a subset of ISO 8601 (the latter two examples represent
+1 hour offset from UTC). See the specification for more information.
+<p/>
+A complete hand-out procedure does normal implies that authorisations-, validity-, PIN validation-, schedule-updates and also that audittrail are requested,
+se further the description of methods listed below to add any of these operation to your hand-out procedure:
+<ul>
+<li>updateKeyCylinderAuthorisations(String, AuthorisationUpdateDTO)</li>
+<li>updateKeyValidity(String keyIdentity, ValidityDTO)</li>
+<li>updateKeyPinValidation(String keyIdentity, PinValidationDTO)</li>
+<li>updateKeySchedule(String keyIdentity, ScheduleDTO)</li>
+<li>requestKeyAuditTrail(String keyIdentity)</li>
+</ul>
+<p/>)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="workService_v2:handOutKey">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="WorkService.handOutKeyResponse">
+    <wsdl:documentation>
+      <![CDATA[response message for operation "handOutKey". (Hand out a key to a person. For dynamic keys, this method also implies that access profiles will be copied from the person to the key.
+<p/>
+Note, this operation is only supported for user keys.
+<p/>
+Dates must be on the format yyyy-MM-ddTHH:MMZ (UTC time),
+yyyy-MM-ddTHH:MM+01:00 or yyyy-MM-ddTHH:MM+01 which is a subset of ISO 8601 (the latter two examples represent
+1 hour offset from UTC). See the specification for more information.
+<p/>
+A complete hand-out procedure does normal implies that authorisations-, validity-, PIN validation-, schedule-updates and also that audittrail are requested,
+se further the description of methods listed below to add any of these operation to your hand-out procedure:
+<ul>
+<li>updateKeyCylinderAuthorisations(String, AuthorisationUpdateDTO)</li>
+<li>updateKeyValidity(String keyIdentity, ValidityDTO)</li>
+<li>updateKeyPinValidation(String keyIdentity, PinValidationDTO)</li>
+<li>updateKeySchedule(String keyIdentity, ScheduleDTO)</li>
+<li>requestKeyAuditTrail(String keyIdentity)</li>
+</ul>
+<p/>)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="workService_v2:handOutKeyResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="WorkService.handInKey">
+    <wsdl:documentation>
+      <![CDATA[request message for operation "handInKey". (Hand in a key.
+<p/>
+Note, this operation is only supported for user keys.
+<p/>
+A hand-in procedure does normal implies that authorisations-, validity-, schedule are reset and optionally that audittrail request is cancelled,
+see further the description of methods listed below to add any of these operation to your hand-in procedure:
+<ul>
+<li>resetKey(String keyIdentity)</li>
+<li>cancelKeyAuditTrail(String keyIdentity)</li>
+</ul>
+<p/>)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="workService_v2:handInKey">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="WorkService.handInKeyResponse">
+    <wsdl:documentation>
+      <![CDATA[response message for operation "handInKey". (Hand in a key.
+<p/>
+Note, this operation is only supported for user keys.
+<p/>
+A hand-in procedure does normal implies that authorisations-, validity-, schedule are reset and optionally that audittrail request is cancelled,
+see further the description of methods listed below to add any of these operation to your hand-in procedure:
+<ul>
+<li>resetKey(String keyIdentity)</li>
+<li>cancelKeyAuditTrail(String keyIdentity)</li>
+</ul>
+<p/>)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="workService_v2:handInKeyResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="WorkService.requestKeyAuditTrail">
+    <wsdl:documentation>
+      <![CDATA[request message for operation "requestKeyAuditTrail". (Request for retrieving audit trails of a key.
+<p/>
+Note, only quartz or dynamic remote enabled key types are supported, also system must be remote enabled.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="workService_v2:requestKeyAuditTrail">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="WorkService.requestKeyAuditTrailResponse">
+    <wsdl:documentation>
+      <![CDATA[response message for operation "requestKeyAuditTrail". (Request for retrieving audit trails of a key.
+<p/>
+Note, only quartz or dynamic remote enabled key types are supported, also system must be remote enabled.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="workService_v2:requestKeyAuditTrailResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="WorkService.cancelKeyAuditTrail">
+    <wsdl:documentation>
+      <![CDATA[request message for operation "cancelKeyAuditTrail". (Cancel audit trail request of a key.
+<p/>
+Note, only quartz or dynamic remote enabled key types are supported, also system must be remote enabled.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="workService_v2:cancelKeyAuditTrail">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="WorkService.cancelKeyAuditTrailResponse">
+    <wsdl:documentation>
+      <![CDATA[response message for operation "cancelKeyAuditTrail". (Cancel audit trail request of a key.
+<p/>
+Note, only quartz or dynamic remote enabled key types are supported, also system must be remote enabled.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="workService_v2:cancelKeyAuditTrailResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="WorkService.declareKeyLost">
+    <wsdl:documentation>
+      <![CDATA[request message for operation "declareKeyLost". (Declare a key as lost.
+<p/>
+If the key was handed out before declared lost, it will no longer be considered handed out.
+<p/>
+For remote enabled keys, all pending jobs will be cancelled except for audit trail requests and
+a remote job to invalidate the key will be issued.
+</p>
+<p/>
+The key will be black-listed in all affected cylinders.
+<p/>
+This operation is only supported for user keys.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="workService_v2:declareKeyLost">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="WorkService.declareKeyLostResponse">
+    <wsdl:documentation>
+      <![CDATA[response message for operation "declareKeyLost". (Declare a key as lost.
+<p/>
+If the key was handed out before declared lost, it will no longer be considered handed out.
+<p/>
+For remote enabled keys, all pending jobs will be cancelled except for audit trail requests and
+a remote job to invalidate the key will be issued.
+</p>
+<p/>
+The key will be black-listed in all affected cylinders.
+<p/>
+This operation is only supported for user keys.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="workService_v2:declareKeyLostResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="WorkService.declareKeyFound">
+    <wsdl:documentation>
+      <![CDATA[request message for operation "declareKeyFound". (Declare a key as found (and back in stock).
+<p/>
+All pending (not yet started) black-listing jobs will be cancelled.
+<p/>
+This operation is only supported for user keys.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="workService_v2:declareKeyFound">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="WorkService.declareKeyFoundResponse">
+    <wsdl:documentation>
+      <![CDATA[response message for operation "declareKeyFound". (Declare a key as found (and back in stock).
+<p/>
+All pending (not yet started) black-listing jobs will be cancelled.
+<p/>
+This operation is only supported for user keys.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="workService_v2:declareKeyFoundResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="WorkService.declareKeyBroken">
+    <wsdl:documentation>
+      <![CDATA[request message for operation "declareKeyBroken". (Declare a key as broken.
+<p/>
+If the key was handed out before declared broken, it will no longer be considered handed out.
+<p/>
+For remote enabled keys, all pending remote updates will be cancelled.
+<p/>
+This operation is only supported for user keys.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="workService_v2:declareKeyBroken">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="WorkService.declareKeyBrokenResponse">
+    <wsdl:documentation>
+      <![CDATA[response message for operation "declareKeyBroken". (Declare a key as broken.
+<p/>
+If the key was handed out before declared broken, it will no longer be considered handed out.
+<p/>
+For remote enabled keys, all pending remote updates will be cancelled.
+<p/>
+This operation is only supported for user keys.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="workService_v2:declareKeyBrokenResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="WorkService.declareKeyOperational">
+    <wsdl:documentation>
+      <![CDATA[request message for operation "declareKeyOperational". (Declare a key as operational.
+<p/>
+This operation is only supported for user keys.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="workService_v2:declareKeyOperational">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="WorkService.declareKeyOperationalResponse">
+    <wsdl:documentation>
+      <![CDATA[response message for operation "declareKeyOperational". (Declare a key as operational.
+<p/>
+This operation is only supported for user keys.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="workService_v2:declareKeyOperationalResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="WorkService.declareCylinderBroken">
+    <wsdl:documentation>
+      <![CDATA[request message for operation "declareCylinderBroken". (Declare a cylinder as broken.
+<p/>
+Both sides of the cylinder will be declared broken if the cylinder is double-sided.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="workService_v2:declareCylinderBroken">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="WorkService.declareCylinderBrokenResponse">
+    <wsdl:documentation>
+      <![CDATA[response message for operation "declareCylinderBroken". (Declare a cylinder as broken.
+<p/>
+Both sides of the cylinder will be declared broken if the cylinder is double-sided.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="workService_v2:declareCylinderBrokenResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="WorkService.declareCylinderOperational">
+    <wsdl:documentation>
+      <![CDATA[request message for operation "declareCylinderOperational". (Declare a cylinder as operational.
+<p/>
+Both sides of the cylinder will be declared operational if the cylinder is double-sided.
+<p/>
+Corresponding cylinder reprogramming jobs will be created.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="workService_v2:declareCylinderOperational">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="WorkService.declareCylinderOperationalResponse">
+    <wsdl:documentation>
+      <![CDATA[response message for operation "declareCylinderOperational". (Declare a cylinder as operational.
+<p/>
+Both sides of the cylinder will be declared operational if the cylinder is double-sided.
+<p/>
+Corresponding cylinder reprogramming jobs will be created.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="workService_v2:declareCylinderOperationalResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="WorkService.updateCylinder">
+    <wsdl:documentation>
+      <![CDATA[request message for operation "updateCylinder". (Updates cylinder information.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="workService_v2:updateCylinder">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="WorkService.updateCylinderResponse">
+    <wsdl:documentation>
+      <![CDATA[response message for operation "updateCylinder". (Updates cylinder information.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="workService_v2:updateCylinderResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="WorkService.changeCylinderGroup">
+    <wsdl:documentation>
+      <![CDATA[request message for operation "changeCylinderGroup". (Changes cylinder group for specific cylinder.
+<p/>
+This method creates cylinder group change job which should be programmed to the cylinder.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="workService_v2:changeCylinderGroup">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="WorkService.changeCylinderGroupResponse">
+    <wsdl:documentation>
+      <![CDATA[response message for operation "changeCylinderGroup". (Changes cylinder group for specific cylinder.
+<p/>
+This method creates cylinder group change job which should be programmed to the cylinder.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="workService_v2:changeCylinderGroupResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="WorkService.assignCylinderJobsToCKey">
+    <wsdl:documentation>
+      <![CDATA[request message for operation "assignCylinderJobsToCKey". (Assigns cylinder jobs to a particular c-key.
+<p/>
+Only the jobs that are applicable will be assigned.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="workService_v2:assignCylinderJobsToCKey">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="WorkService.assignCylinderJobsToCKeyResponse">
+    <wsdl:documentation>
+      <![CDATA[response message for operation "assignCylinderJobsToCKey". (Assigns cylinder jobs to a particular c-key.
+<p/>
+Only the jobs that are applicable will be assigned.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="workService_v2:assignCylinderJobsToCKeyResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="WorkService.updateKeyPinValidation">
+    <wsdl:documentation>
+      <![CDATA[request message for operation "updateKeyPinValidation". (Update PIN validation configuration of a key.
+<p/>
+<p/>This operation will put "wanted" PIN validation on the key, already pending key PIN validation updates will be replaced.
+<p/>
+<p/>Note, depending on the current load of the system, creation of a remote programming job might take a number of minutes.
+<p/>
+Key system requirements:
+<ul>
+<li>Key system must be remote enabled.</li>
+</ul>
+<p/>
+Key requirements:
+<ul>
+<li>Key must be a CLIQ Connect key.</li>
+<li>Only keys of type 'dynamic' and 'quartz' are valid.</li>
+<li>Key must have support for remote updates.</li>
+<li>Key must have support for PIN validation.</li>
+</ul>
+<p/>)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="workService_v2:updateKeyPinValidation">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="WorkService.updateKeyPinValidationResponse">
+    <wsdl:documentation>
+      <![CDATA[response message for operation "updateKeyPinValidation". (Update PIN validation configuration of a key.
+<p/>
+<p/>This operation will put "wanted" PIN validation on the key, already pending key PIN validation updates will be replaced.
+<p/>
+<p/>Note, depending on the current load of the system, creation of a remote programming job might take a number of minutes.
+<p/>
+Key system requirements:
+<ul>
+<li>Key system must be remote enabled.</li>
+</ul>
+<p/>
+Key requirements:
+<ul>
+<li>Key must be a CLIQ Connect key.</li>
+<li>Only keys of type 'dynamic' and 'quartz' are valid.</li>
+<li>Key must have support for remote updates.</li>
+<li>Key must have support for PIN validation.</li>
+</ul>
+<p/>)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="workService_v2:updateKeyPinValidationResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="WorkService.createAccessProfile">
+    <wsdl:documentation>
+      <![CDATA[request message for operation "createAccessProfile". (Create an access profile
+<p/>)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="workService_v2:createAccessProfile">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="WorkService.createAccessProfileResponse">
+    <wsdl:documentation>
+      <![CDATA[response message for operation "createAccessProfile". (Create an access profile
+<p/>)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="workService_v2:createAccessProfileResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="WorkService.updateAccessProfile">
+    <wsdl:documentation>
+      <![CDATA[request message for operation "updateAccessProfile". (Update an access profile.
+Only those properties which are present in the input data will be changed
+<p/>)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="workService_v2:updateAccessProfile">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="WorkService.updateAccessProfileResponse">
+    <wsdl:documentation>
+      <![CDATA[response message for operation "updateAccessProfile". (Update an access profile.
+Only those properties which are present in the input data will be changed
+<p/>)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="workService_v2:updateAccessProfileResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="WorkService.addCylinderPlugsToAccessProfile">
+    <wsdl:documentation>
+      <![CDATA[request message for operation "addCylinderPlugsToAccessProfile". (Add cylinder plugs to access profile.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="workService_v2:addCylinderPlugsToAccessProfile">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="WorkService.addCylinderPlugsToAccessProfileResponse">
+    <wsdl:documentation>
+      <![CDATA[response message for operation "addCylinderPlugsToAccessProfile". (Add cylinder plugs to access profile.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="workService_v2:addCylinderPlugsToAccessProfileResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="WorkService.removeCylinderPlugsFromAccessProfile">
+    <wsdl:documentation>
+      <![CDATA[request message for operation "removeCylinderPlugsFromAccessProfile". (Remove one or more cylinder plugs from access profile.
+Requesting to remove cylinder plugs which are not present on the access profile will not generate any error.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="workService_v2:removeCylinderPlugsFromAccessProfile">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="WorkService.removeCylinderPlugsFromAccessProfileResponse">
+    <wsdl:documentation>
+      <![CDATA[response message for operation "removeCylinderPlugsFromAccessProfile". (Remove one or more cylinder plugs from access profile.
+Requesting to remove cylinder plugs which are not present on the access profile will not generate any error.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="workService_v2:removeCylinderPlugsFromAccessProfileResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="WorkService.addCylinderGroupsToAccessProfile">
+    <wsdl:documentation>
+      <![CDATA[request message for operation "addCylinderGroupsToAccessProfile". (Add cylinder groups to access profile.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="workService_v2:addCylinderGroupsToAccessProfile">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="WorkService.addCylinderGroupsToAccessProfileResponse">
+    <wsdl:documentation>
+      <![CDATA[response message for operation "addCylinderGroupsToAccessProfile". (Add cylinder groups to access profile.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="workService_v2:addCylinderGroupsToAccessProfileResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="WorkService.removeCylinderGroupsFromAccessProfile">
+    <wsdl:documentation>
+      <![CDATA[request message for operation "removeCylinderGroupsFromAccessProfile". (Remove one or more cylinder groups from access profile.
+<p/>
+Note, if the method is called for some cylinder groups present on the access profile' list and some of
+cylinder groups which are not assigned to the access profile only authorised groups plugs are removed
+from the access profile' access list and nothing happens for remaining cylinder groups.
+<p/>
+Note, if the method is called twice for the same cylinder groups nothing happens since cylinder groups are no
+longer on the access profile' access list.
+<p/>
+Note, if the method is called for cylinder groups which are not on the access profile' access list nothing
+happens since cylinder groups are not on access list already.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="workService_v2:removeCylinderGroupsFromAccessProfile">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="WorkService.removeCylinderGroupsFromAccessProfileResponse">
+    <wsdl:documentation>
+      <![CDATA[response message for operation "removeCylinderGroupsFromAccessProfile". (Remove one or more cylinder groups from access profile.
+<p/>
+Note, if the method is called for some cylinder groups present on the access profile' list and some of
+cylinder groups which are not assigned to the access profile only authorised groups plugs are removed
+from the access profile' access list and nothing happens for remaining cylinder groups.
+<p/>
+Note, if the method is called twice for the same cylinder groups nothing happens since cylinder groups are no
+longer on the access profile' access list.
+<p/>
+Note, if the method is called for cylinder groups which are not on the access profile' access list nothing
+happens since cylinder groups are not on access list already.)]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="workService_v2:removeCylinderGroupsFromAccessProfileResponse">
+    </wsdl:part>
+  </wsdl:message>
+
+  <wsdl:portType name="WorkService">
+    <wsdl:documentation>
+      <![CDATA[Service for performing different programming jobs on keys.
+<p>Replaces the old version: v1 of work service.</p>]]>
+    </wsdl:documentation>
+  <wsdl:operation name="resetKey">
+    <wsdl:documentation>
+      <![CDATA[Reset a remote enabled key, creates remote updates to reset the key.
+<p/>
+This method is normally used in conjunction with the handInKey(String keyIdentity) method
+in order to ensure that the key is return without any authorisation and also inactivated.
+<p/>
+<p/>Note, depending on the current load of the system, creation of a remote programming job might take one to several minutes.
+<p/>
+These operations will be performed depending on key type:
+<ul>
+<li>Dynamic key: removes any access profiles and explicit authorisations, disables schedule and validity.</li>
+<li>Quartz key: disables schedule and validity.</li>
+<li>Normal key: disables validity.</li>
+</ul>
+<p/>Note, if the key is CLIQ Connect Dynamic or Quartz key and has support for PIN validation also PIN validation will be disabled.
+<p/>
+Key system requirements:
+<ul>
+<li>Key system must be remote enabled.</li>
+</ul>
+<p/>
+Key requirements:
+<ul>
+<li>Key must have support for remote updates.</li>
+</ul>
+<p/>]]>
+    </wsdl:documentation>
+    <wsdl:input message="workService_v2:WorkService.resetKey"/>
+    <wsdl:output message="workService_v2:WorkService.resetKeyResponse"/>
+    <wsdl:fault name="SystemException" message="workService_v2:SystemException"/>
+    <wsdl:fault name="IdentityNotFoundException" message="workService_v2:IdentityNotFoundException"/>
+    <wsdl:fault name="InvalidDataException" message="workService_v2:InvalidDataException"/>
+  </wsdl:operation>
+  <wsdl:operation name="updateKeyCylinderAuthorisations">
+    <wsdl:documentation>
+      <![CDATA[Update cylinder authorisations(access rights) for a dynamic key.
+This operation will put "wanted" cylinder authorisations for the key and if required a remote programming
+job will be created.
+<p/>Note, depending on the current load of the system, creation of a remote programming job might take one to several minutes.
+<p/>
+Key system requirements:
+<ul>
+<li>Key system must be remote enabled.</li>
+</ul>
+<p/>
+Key requirements:
+<ul>
+<li>Only keys of type 'dynamic' (programmable) are valid.</li>
+<li>Key must have support for remote updates.</li>
+</ul>
+<p/>
+Plug requirements:
+<ul>
+<li>Key must have mechanical and as well as electronic access in all supplied plugs</li>
+<li>Plug must be operational.</li>
+<li>Plug's cylinder must be installed.</li>
+</ul>
+<p/>]]>
+    </wsdl:documentation>
+    <wsdl:input message="workService_v2:WorkService.updateKeyCylinderAuthorisations"/>
+    <wsdl:output message="workService_v2:WorkService.updateKeyCylinderAuthorisationsResponse"/>
+    <wsdl:fault name="InvalidDataException" message="workService_v2:InvalidDataException"/>
+    <wsdl:fault name="SystemException" message="workService_v2:SystemException"/>
+    <wsdl:fault name="IdentityNotFoundException" message="workService_v2:IdentityNotFoundException"/>
+  </wsdl:operation>
+  <wsdl:operation name="updateKeyCylinderGroupAuthorisations">
+    <wsdl:documentation>
+      <![CDATA[Update cylinder group authorisations(access rights) for a dynamic key.
+This operation will put "wanted" cylinder group authorisations on the key and if required a remote programming
+job will be created. These cylinder group authorisations will replace the current cylinder group authorisations on the key.
+<p/>Note, depending on the current load of the system, creation of a remote programming job might take one to several minutes.
+<p/>
+Locking system requirements:
+<ul>
+<li>Locking system must be remote enabled.</li>
+<li>Locking system must support cylinder groups.</li>
+</ul>
+<p/>
+Key requirements:
+<ul>
+<li>Only keys of type 'dynamic' (programmable) are valid.</li>
+<li>Key must have support for remote updates.</li>
+<li>Key must have support for cylinder groups.</li>
+</ul>
+<p/>
+Cylinder group requirements:
+<ul>
+<li>Key must have mechanical access in all supplied groups</li>
+</ul>
+<p/>]]>
+    </wsdl:documentation>
+    <wsdl:input message="workService_v2:WorkService.updateKeyCylinderGroupAuthorisations"/>
+    <wsdl:output message="workService_v2:WorkService.updateKeyCylinderGroupAuthorisationsResponse"/>
+    <wsdl:fault name="InvalidDataException" message="workService_v2:InvalidDataException"/>
+    <wsdl:fault name="SystemException" message="workService_v2:SystemException"/>
+    <wsdl:fault name="IdentityNotFoundException" message="workService_v2:IdentityNotFoundException"/>
+    <wsdl:fault name="InvalidStateException" message="workService_v2:InvalidStateException"/>
+  </wsdl:operation>
+  <wsdl:operation name="updateKeyValidity">
+    <wsdl:documentation>
+      <![CDATA[Update validity of a key to a new validity, the operation is accepted regardless if the newValidity period already is enabled or not.
+<p/>
+<p/>This operation will put "wanted" newValidity on the key, already pending key newValidity updates will be replaced.
+<p/>
+<p/>Note, depending on the current load of the system, creation of a remote programming job might take a number of minutes.
+<p/>
+<p/>
+Key system requirements:
+<ul>
+<li>Key system must be remote enabled.</li>
+</ul>
+<p/>
+Key requirements:
+<ul>
+<li>Only keys of type 'dynamic' ,'quartz' and 'normal' are valid.</li>
+<li>Key must have support for remote updates.</li>
+</ul>
+<p/>
+Note, If revalidation configuration is not supplied in the new validity it implies that any existing revalidation configuration on the key
+is to be removed.
+<p/>
+<p/>]]>
+    </wsdl:documentation>
+    <wsdl:input message="workService_v2:WorkService.updateKeyValidity"/>
+    <wsdl:output message="workService_v2:WorkService.updateKeyValidityResponse"/>
+    <wsdl:fault name="InvalidDataException" message="workService_v2:InvalidDataException"/>
+    <wsdl:fault name="SystemException" message="workService_v2:SystemException"/>
+    <wsdl:fault name="IdentityNotFoundException" message="workService_v2:IdentityNotFoundException"/>
+  </wsdl:operation>
+  <wsdl:operation name="updateKeySchedule">
+    <wsdl:documentation>
+      <![CDATA[Update the schedule of a key.
+<p/>
+<p/>This operation will put "wanted" schedule on the key, already pending key schedule updates will be replaced.
+<p/>
+<p/>Note, depending on the current load of the system, creation of a remote programming job might take a number of minutes.
+<p/>
+Key system requirements:
+<ul>
+<li>Key system must be remote enabled.</li>
+</ul>
+<p/>
+Key requirements:
+<ul>
+<li>Only keys of type 'dynamic' and 'quartz' are valid.</li>
+<li>Key must have support for remote updates.</li>
+</ul>
+<p/>]]>
+    </wsdl:documentation>
+    <wsdl:input message="workService_v2:WorkService.updateKeySchedule"/>
+    <wsdl:output message="workService_v2:WorkService.updateKeyScheduleResponse"/>
+    <wsdl:fault name="InvalidDataException" message="workService_v2:InvalidDataException"/>
+    <wsdl:fault name="SystemException" message="workService_v2:SystemException"/>
+    <wsdl:fault name="IdentityNotFoundException" message="workService_v2:IdentityNotFoundException"/>
+  </wsdl:operation>
+  <wsdl:operation name="addAccessProfileToPerson">
+    <wsdl:documentation>
+      <![CDATA[Add an access profile to a person.
+<p/>This operation will put "wanted" cylinder authorisations that applies to the added profile, this will be done for all keys owned by the person.
+Furthermore for each key and if required, a remote programming job will be created that reflects authorisations of the newly added profile.
+<p/>
+<p/>Note, depending on the current load of the system, creation of a remote programming job might take one to several minutes.]]>
+    </wsdl:documentation>
+    <wsdl:input message="workService_v2:WorkService.addAccessProfileToPerson"/>
+    <wsdl:output message="workService_v2:WorkService.addAccessProfileToPersonResponse"/>
+    <wsdl:fault name="SystemException" message="workService_v2:SystemException"/>
+    <wsdl:fault name="InvalidDataException" message="workService_v2:InvalidDataException"/>
+    <wsdl:fault name="IdentityNotFoundException" message="workService_v2:IdentityNotFoundException"/>
+  </wsdl:operation>
+  <wsdl:operation name="removeAccessProfileFromPerson">
+    <wsdl:documentation>
+      <![CDATA[Remove an access profile from a person.]]>
+    </wsdl:documentation>
+    <wsdl:input message="workService_v2:WorkService.removeAccessProfileFromPerson"/>
+    <wsdl:output message="workService_v2:WorkService.removeAccessProfileFromPersonResponse"/>
+    <wsdl:fault name="SystemException" message="workService_v2:SystemException"/>
+    <wsdl:fault name="IdentityNotFoundException" message="workService_v2:IdentityNotFoundException"/>
+    <wsdl:fault name="InvalidDataException" message="workService_v2:InvalidDataException"/>
+  </wsdl:operation>
+  <wsdl:operation name="addAccessProfileToKey">
+    <wsdl:documentation>
+      <![CDATA[Add an access profile to a key.
+<p/>This operation will put "wanted" cylinder authorisations that applies to the added profile, this will be done for specified key.
+<p/>
+<p/>Note, depending on the current load of the system, creation of a remote programming job might take one to several minutes.]]>
+    </wsdl:documentation>
+    <wsdl:input message="workService_v2:WorkService.addAccessProfileToKey"/>
+    <wsdl:output message="workService_v2:WorkService.addAccessProfileToKeyResponse"/>
+    <wsdl:fault name="SystemException" message="workService_v2:SystemException"/>
+    <wsdl:fault name="InvalidDataException" message="workService_v2:InvalidDataException"/>
+    <wsdl:fault name="IdentityNotFoundException" message="workService_v2:IdentityNotFoundException"/>
+    <wsdl:fault name="InvalidStateException" message="workService_v2:InvalidStateException"/>
+    <wsdl:fault name="ConcurrentDataModificationException" message="workService_v2:ConcurrentDataModificationException"/>
+  </wsdl:operation>
+  <wsdl:operation name="removeAccessProfileFromKey">
+    <wsdl:documentation>
+      <![CDATA[Remove an access profile from a key.]]>
+    </wsdl:documentation>
+    <wsdl:input message="workService_v2:WorkService.removeAccessProfileFromKey"/>
+    <wsdl:output message="workService_v2:WorkService.removeAccessProfileFromKeyResponse"/>
+    <wsdl:fault name="SystemException" message="workService_v2:SystemException"/>
+    <wsdl:fault name="IdentityNotFoundException" message="workService_v2:IdentityNotFoundException"/>
+    <wsdl:fault name="InvalidDataException" message="workService_v2:InvalidDataException"/>
+    <wsdl:fault name="InvalidStateException" message="workService_v2:InvalidStateException"/>
+    <wsdl:fault name="ConcurrentDataModificationException" message="workService_v2:ConcurrentDataModificationException"/>
+  </wsdl:operation>
+  <wsdl:operation name="deleteAccessProfile">
+    <wsdl:documentation>
+      <![CDATA[Delete an access profile.]]>
+    </wsdl:documentation>
+    <wsdl:input message="workService_v2:WorkService.deleteAccessProfile"/>
+    <wsdl:output message="workService_v2:WorkService.deleteAccessProfileResponse"/>
+    <wsdl:fault name="SystemException" message="workService_v2:SystemException"/>
+    <wsdl:fault name="IdentityNotFoundException" message="workService_v2:IdentityNotFoundException"/>
+    <wsdl:fault name="InvalidDataException" message="workService_v2:InvalidDataException"/>
+  </wsdl:operation>
+  <wsdl:operation name="handOutKey">
+    <wsdl:documentation>
+      <![CDATA[Hand out a key to a person. For dynamic keys, this method also implies that access profiles will be copied from the person to the key.
+<p/>
+Note, this operation is only supported for user keys.
+<p/>
+Dates must be on the format yyyy-MM-ddTHH:MMZ (UTC time),
+yyyy-MM-ddTHH:MM+01:00 or yyyy-MM-ddTHH:MM+01 which is a subset of ISO 8601 (the latter two examples represent
+1 hour offset from UTC). See the specification for more information.
+<p/>
+A complete hand-out procedure does normal implies that authorisations-, validity-, PIN validation-, schedule-updates and also that audittrail are requested,
+se further the description of methods listed below to add any of these operation to your hand-out procedure:
+<ul>
+<li>updateKeyCylinderAuthorisations(String, AuthorisationUpdateDTO)</li>
+<li>updateKeyValidity(String keyIdentity, ValidityDTO)</li>
+<li>updateKeyPinValidation(String keyIdentity, PinValidationDTO)</li>
+<li>updateKeySchedule(String keyIdentity, ScheduleDTO)</li>
+<li>requestKeyAuditTrail(String keyIdentity)</li>
+</ul>
+<p/>]]>
+    </wsdl:documentation>
+    <wsdl:input message="workService_v2:WorkService.handOutKey"/>
+    <wsdl:output message="workService_v2:WorkService.handOutKeyResponse"/>
+    <wsdl:fault name="SystemException" message="workService_v2:SystemException"/>
+    <wsdl:fault name="InvalidStateException" message="workService_v2:InvalidStateException"/>
+    <wsdl:fault name="InvalidDataException" message="workService_v2:InvalidDataException"/>
+    <wsdl:fault name="IdentityNotFoundException" message="workService_v2:IdentityNotFoundException"/>
+  </wsdl:operation>
+  <wsdl:operation name="handInKey">
+    <wsdl:documentation>
+      <![CDATA[Hand in a key.
+<p/>
+Note, this operation is only supported for user keys.
+<p/>
+A hand-in procedure does normal implies that authorisations-, validity-, schedule are reset and optionally that audittrail request is cancelled,
+see further the description of methods listed below to add any of these operation to your hand-in procedure:
+<ul>
+<li>resetKey(String keyIdentity)</li>
+<li>cancelKeyAuditTrail(String keyIdentity)</li>
+</ul>
+<p/>]]>
+    </wsdl:documentation>
+    <wsdl:input message="workService_v2:WorkService.handInKey"/>
+    <wsdl:output message="workService_v2:WorkService.handInKeyResponse"/>
+    <wsdl:fault name="SystemException" message="workService_v2:SystemException"/>
+    <wsdl:fault name="InvalidStateException" message="workService_v2:InvalidStateException"/>
+    <wsdl:fault name="IdentityNotFoundException" message="workService_v2:IdentityNotFoundException"/>
+    <wsdl:fault name="InvalidDataException" message="workService_v2:InvalidDataException"/>
+  </wsdl:operation>
+  <wsdl:operation name="requestKeyAuditTrail">
+    <wsdl:documentation>
+      <![CDATA[Request for retrieving audit trails of a key.
+<p/>
+Note, only quartz or dynamic remote enabled key types are supported, also system must be remote enabled.]]>
+    </wsdl:documentation>
+    <wsdl:input message="workService_v2:WorkService.requestKeyAuditTrail"/>
+    <wsdl:output message="workService_v2:WorkService.requestKeyAuditTrailResponse"/>
+    <wsdl:fault name="InvalidDataException" message="workService_v2:InvalidDataException"/>
+    <wsdl:fault name="SystemException" message="workService_v2:SystemException"/>
+    <wsdl:fault name="IdentityNotFoundException" message="workService_v2:IdentityNotFoundException"/>
+    <wsdl:fault name="InvalidStateException" message="workService_v2:InvalidStateException"/>
+  </wsdl:operation>
+  <wsdl:operation name="cancelKeyAuditTrail">
+    <wsdl:documentation>
+      <![CDATA[Cancel audit trail request of a key.
+<p/>
+Note, only quartz or dynamic remote enabled key types are supported, also system must be remote enabled.]]>
+    </wsdl:documentation>
+    <wsdl:input message="workService_v2:WorkService.cancelKeyAuditTrail"/>
+    <wsdl:output message="workService_v2:WorkService.cancelKeyAuditTrailResponse"/>
+    <wsdl:fault name="InvalidDataException" message="workService_v2:InvalidDataException"/>
+    <wsdl:fault name="SystemException" message="workService_v2:SystemException"/>
+    <wsdl:fault name="IdentityNotFoundException" message="workService_v2:IdentityNotFoundException"/>
+    <wsdl:fault name="InvalidStateException" message="workService_v2:InvalidStateException"/>
+  </wsdl:operation>
+  <wsdl:operation name="declareKeyLost">
+    <wsdl:documentation>
+      <![CDATA[Declare a key as lost.
+<p/>
+If the key was handed out before declared lost, it will no longer be considered handed out.
+<p/>
+For remote enabled keys, all pending jobs will be cancelled except for audit trail requests and
+a remote job to invalidate the key will be issued.
+</p>
+<p/>
+The key will be black-listed in all affected cylinders.
+<p/>
+This operation is only supported for user keys.]]>
+    </wsdl:documentation>
+    <wsdl:input message="workService_v2:WorkService.declareKeyLost"/>
+    <wsdl:output message="workService_v2:WorkService.declareKeyLostResponse"/>
+    <wsdl:fault name="SystemException" message="workService_v2:SystemException"/>
+    <wsdl:fault name="IdentityNotFoundException" message="workService_v2:IdentityNotFoundException"/>
+    <wsdl:fault name="InvalidDataException" message="workService_v2:InvalidDataException"/>
+  </wsdl:operation>
+  <wsdl:operation name="declareKeyFound">
+    <wsdl:documentation>
+      <![CDATA[Declare a key as found (and back in stock).
+<p/>
+All pending (not yet started) black-listing jobs will be cancelled.
+<p/>
+This operation is only supported for user keys.]]>
+    </wsdl:documentation>
+    <wsdl:input message="workService_v2:WorkService.declareKeyFound"/>
+    <wsdl:output message="workService_v2:WorkService.declareKeyFoundResponse"/>
+    <wsdl:fault name="SystemException" message="workService_v2:SystemException"/>
+    <wsdl:fault name="IdentityNotFoundException" message="workService_v2:IdentityNotFoundException"/>
+    <wsdl:fault name="InvalidDataException" message="workService_v2:InvalidDataException"/>
+  </wsdl:operation>
+  <wsdl:operation name="declareKeyBroken">
+    <wsdl:documentation>
+      <![CDATA[Declare a key as broken.
+<p/>
+If the key was handed out before declared broken, it will no longer be considered handed out.
+<p/>
+For remote enabled keys, all pending remote updates will be cancelled.
+<p/>
+This operation is only supported for user keys.]]>
+    </wsdl:documentation>
+    <wsdl:input message="workService_v2:WorkService.declareKeyBroken"/>
+    <wsdl:output message="workService_v2:WorkService.declareKeyBrokenResponse"/>
+    <wsdl:fault name="SystemException" message="workService_v2:SystemException"/>
+    <wsdl:fault name="IdentityNotFoundException" message="workService_v2:IdentityNotFoundException"/>
+    <wsdl:fault name="InvalidDataException" message="workService_v2:InvalidDataException"/>
+  </wsdl:operation>
+  <wsdl:operation name="declareKeyOperational">
+    <wsdl:documentation>
+      <![CDATA[Declare a key as operational.
+<p/>
+This operation is only supported for user keys.]]>
+    </wsdl:documentation>
+    <wsdl:input message="workService_v2:WorkService.declareKeyOperational"/>
+    <wsdl:output message="workService_v2:WorkService.declareKeyOperationalResponse"/>
+    <wsdl:fault name="SystemException" message="workService_v2:SystemException"/>
+    <wsdl:fault name="IdentityNotFoundException" message="workService_v2:IdentityNotFoundException"/>
+    <wsdl:fault name="InvalidStateException" message="workService_v2:InvalidStateException"/>
+    <wsdl:fault name="InvalidDataException" message="workService_v2:InvalidDataException"/>
+  </wsdl:operation>
+  <wsdl:operation name="declareCylinderBroken">
+    <wsdl:documentation>
+      <![CDATA[Declare a cylinder as broken.
+<p/>
+Both sides of the cylinder will be declared broken if the cylinder is double-sided.]]>
+    </wsdl:documentation>
+    <wsdl:input message="workService_v2:WorkService.declareCylinderBroken"/>
+    <wsdl:output message="workService_v2:WorkService.declareCylinderBrokenResponse"/>
+    <wsdl:fault name="SystemException" message="workService_v2:SystemException"/>
+    <wsdl:fault name="IdentityNotFoundException" message="workService_v2:IdentityNotFoundException"/>
+    <wsdl:fault name="InvalidDataException" message="workService_v2:InvalidDataException"/>
+  </wsdl:operation>
+  <wsdl:operation name="declareCylinderOperational">
+    <wsdl:documentation>
+      <![CDATA[Declare a cylinder as operational.
+<p/>
+Both sides of the cylinder will be declared operational if the cylinder is double-sided.
+<p/>
+Corresponding cylinder reprogramming jobs will be created.]]>
+    </wsdl:documentation>
+    <wsdl:input message="workService_v2:WorkService.declareCylinderOperational"/>
+    <wsdl:output message="workService_v2:WorkService.declareCylinderOperationalResponse"/>
+    <wsdl:fault name="SystemException" message="workService_v2:SystemException"/>
+    <wsdl:fault name="IdentityNotFoundException" message="workService_v2:IdentityNotFoundException"/>
+    <wsdl:fault name="InvalidDataException" message="workService_v2:InvalidDataException"/>
+  </wsdl:operation>
+  <wsdl:operation name="updateCylinder">
+    <wsdl:documentation>
+      <![CDATA[Updates cylinder information.]]>
+    </wsdl:documentation>
+    <wsdl:input message="workService_v2:WorkService.updateCylinder"/>
+    <wsdl:output message="workService_v2:WorkService.updateCylinderResponse"/>
+    <wsdl:fault name="SystemException" message="workService_v2:SystemException"/>
+    <wsdl:fault name="InvalidDataException" message="workService_v2:InvalidDataException"/>
+    <wsdl:fault name="IdentityNotFoundException" message="workService_v2:IdentityNotFoundException"/>
+    <wsdl:fault name="InvalidStateException" message="workService_v2:InvalidStateException"/>
+  </wsdl:operation>
+  <wsdl:operation name="changeCylinderGroup">
+    <wsdl:documentation>
+      <![CDATA[Changes cylinder group for specific cylinder.
+<p/>
+This method creates cylinder group change job which should be programmed to the cylinder.]]>
+    </wsdl:documentation>
+    <wsdl:input message="workService_v2:WorkService.changeCylinderGroup"/>
+    <wsdl:output message="workService_v2:WorkService.changeCylinderGroupResponse"/>
+    <wsdl:fault name="SystemException" message="workService_v2:SystemException"/>
+    <wsdl:fault name="IdentityNotFoundException" message="workService_v2:IdentityNotFoundException"/>
+    <wsdl:fault name="InvalidDataException" message="workService_v2:InvalidDataException"/>
+  </wsdl:operation>
+  <wsdl:operation name="assignCylinderJobsToCKey">
+    <wsdl:documentation>
+      <![CDATA[Assigns cylinder jobs to a particular c-key.
+<p/>
+Only the jobs that are applicable will be assigned.]]>
+    </wsdl:documentation>
+    <wsdl:input message="workService_v2:WorkService.assignCylinderJobsToCKey"/>
+    <wsdl:output message="workService_v2:WorkService.assignCylinderJobsToCKeyResponse"/>
+    <wsdl:fault name="SystemException" message="workService_v2:SystemException"/>
+    <wsdl:fault name="IdentityNotFoundException" message="workService_v2:IdentityNotFoundException"/>
+    <wsdl:fault name="InvalidDataException" message="workService_v2:InvalidDataException"/>
+    <wsdl:fault name="InvalidStateException" message="workService_v2:InvalidStateException"/>
+  </wsdl:operation>
+  <wsdl:operation name="updateKeyPinValidation">
+    <wsdl:documentation>
+      <![CDATA[Update PIN validation configuration of a key.
+<p/>
+<p/>This operation will put "wanted" PIN validation on the key, already pending key PIN validation updates will be replaced.
+<p/>
+<p/>Note, depending on the current load of the system, creation of a remote programming job might take a number of minutes.
+<p/>
+Key system requirements:
+<ul>
+<li>Key system must be remote enabled.</li>
+</ul>
+<p/>
+Key requirements:
+<ul>
+<li>Key must be a CLIQ Connect key.</li>
+<li>Only keys of type 'dynamic' and 'quartz' are valid.</li>
+<li>Key must have support for remote updates.</li>
+<li>Key must have support for PIN validation.</li>
+</ul>
+<p/>]]>
+    </wsdl:documentation>
+    <wsdl:input message="workService_v2:WorkService.updateKeyPinValidation"/>
+    <wsdl:output message="workService_v2:WorkService.updateKeyPinValidationResponse"/>
+    <wsdl:fault name="InvalidDataException" message="workService_v2:InvalidDataException"/>
+    <wsdl:fault name="SystemException" message="workService_v2:SystemException"/>
+    <wsdl:fault name="IdentityNotFoundException" message="workService_v2:IdentityNotFoundException"/>
+    <wsdl:fault name="InvalidStateException" message="workService_v2:InvalidStateException"/>
+  </wsdl:operation>
+  <wsdl:operation name="createAccessProfile">
+    <wsdl:documentation>
+      <![CDATA[Create an access profile
+<p/>]]>
+    </wsdl:documentation>
+    <wsdl:input message="workService_v2:WorkService.createAccessProfile"/>
+    <wsdl:output message="workService_v2:WorkService.createAccessProfileResponse"/>
+    <wsdl:fault name="InvalidDataException" message="workService_v2:InvalidDataException"/>
+    <wsdl:fault name="SystemException" message="workService_v2:SystemException"/>
+  </wsdl:operation>
+  <wsdl:operation name="updateAccessProfile">
+    <wsdl:documentation>
+      <![CDATA[Update an access profile.
+Only those properties which are present in the input data will be changed
+<p/>]]>
+    </wsdl:documentation>
+    <wsdl:input message="workService_v2:WorkService.updateAccessProfile"/>
+    <wsdl:output message="workService_v2:WorkService.updateAccessProfileResponse"/>
+    <wsdl:fault name="InvalidDataException" message="workService_v2:InvalidDataException"/>
+    <wsdl:fault name="SystemException" message="workService_v2:SystemException"/>
+    <wsdl:fault name="IdentityNotFoundException" message="workService_v2:IdentityNotFoundException"/>
+  </wsdl:operation>
+  <wsdl:operation name="addCylinderPlugsToAccessProfile">
+    <wsdl:documentation>
+      <![CDATA[Add cylinder plugs to access profile.]]>
+    </wsdl:documentation>
+    <wsdl:input message="workService_v2:WorkService.addCylinderPlugsToAccessProfile"/>
+    <wsdl:output message="workService_v2:WorkService.addCylinderPlugsToAccessProfileResponse"/>
+    <wsdl:fault name="SystemException" message="workService_v2:SystemException"/>
+    <wsdl:fault name="InvalidDataException" message="workService_v2:InvalidDataException"/>
+    <wsdl:fault name="IdentityNotFoundException" message="workService_v2:IdentityNotFoundException"/>
+  </wsdl:operation>
+  <wsdl:operation name="removeCylinderPlugsFromAccessProfile">
+    <wsdl:documentation>
+      <![CDATA[Remove one or more cylinder plugs from access profile.
+Requesting to remove cylinder plugs which are not present on the access profile will not generate any error.]]>
+    </wsdl:documentation>
+    <wsdl:input message="workService_v2:WorkService.removeCylinderPlugsFromAccessProfile"/>
+    <wsdl:output message="workService_v2:WorkService.removeCylinderPlugsFromAccessProfileResponse"/>
+    <wsdl:fault name="SystemException" message="workService_v2:SystemException"/>
+    <wsdl:fault name="InvalidDataException" message="workService_v2:InvalidDataException"/>
+    <wsdl:fault name="IdentityNotFoundException" message="workService_v2:IdentityNotFoundException"/>
+  </wsdl:operation>
+  <wsdl:operation name="addCylinderGroupsToAccessProfile">
+    <wsdl:documentation>
+      <![CDATA[Add cylinder groups to access profile.]]>
+    </wsdl:documentation>
+    <wsdl:input message="workService_v2:WorkService.addCylinderGroupsToAccessProfile"/>
+    <wsdl:output message="workService_v2:WorkService.addCylinderGroupsToAccessProfileResponse"/>
+    <wsdl:fault name="SystemException" message="workService_v2:SystemException"/>
+    <wsdl:fault name="InvalidDataException" message="workService_v2:InvalidDataException"/>
+    <wsdl:fault name="IdentityNotFoundException" message="workService_v2:IdentityNotFoundException"/>
+  </wsdl:operation>
+  <wsdl:operation name="removeCylinderGroupsFromAccessProfile">
+    <wsdl:documentation>
+      <![CDATA[Remove one or more cylinder groups from access profile.
+<p/>
+Note, if the method is called for some cylinder groups present on the access profile' list and some of
+cylinder groups which are not assigned to the access profile only authorised groups plugs are removed
+from the access profile' access list and nothing happens for remaining cylinder groups.
+<p/>
+Note, if the method is called twice for the same cylinder groups nothing happens since cylinder groups are no
+longer on the access profile' access list.
+<p/>
+Note, if the method is called for cylinder groups which are not on the access profile' access list nothing
+happens since cylinder groups are not on access list already.]]>
+    </wsdl:documentation>
+    <wsdl:input message="workService_v2:WorkService.removeCylinderGroupsFromAccessProfile"/>
+    <wsdl:output message="workService_v2:WorkService.removeCylinderGroupsFromAccessProfileResponse"/>
+    <wsdl:fault name="SystemException" message="workService_v2:SystemException"/>
+    <wsdl:fault name="InvalidDataException" message="workService_v2:InvalidDataException"/>
+    <wsdl:fault name="IdentityNotFoundException" message="workService_v2:IdentityNotFoundException"/>
+  </wsdl:operation>
+  </wsdl:portType>
+
+
+  <wsdl:binding name="WorkServicePortBinding" type="workService_v2:WorkService">
+    <wsdl:documentation>
+      <![CDATA[SOAP Binding for WorkService]]>
+    </wsdl:documentation>
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="resetKey">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SystemException">
+        <soap:fault name="SystemException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IdentityNotFoundException">
+        <soap:fault name="IdentityNotFoundException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="InvalidDataException">
+        <soap:fault name="InvalidDataException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="updateKeyCylinderAuthorisations">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="InvalidDataException">
+        <soap:fault name="InvalidDataException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="SystemException">
+        <soap:fault name="SystemException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IdentityNotFoundException">
+        <soap:fault name="IdentityNotFoundException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="updateKeyCylinderGroupAuthorisations">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="InvalidDataException">
+        <soap:fault name="InvalidDataException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="SystemException">
+        <soap:fault name="SystemException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IdentityNotFoundException">
+        <soap:fault name="IdentityNotFoundException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="InvalidStateException">
+        <soap:fault name="InvalidStateException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="updateKeyValidity">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="InvalidDataException">
+        <soap:fault name="InvalidDataException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="SystemException">
+        <soap:fault name="SystemException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IdentityNotFoundException">
+        <soap:fault name="IdentityNotFoundException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="updateKeySchedule">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="InvalidDataException">
+        <soap:fault name="InvalidDataException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="SystemException">
+        <soap:fault name="SystemException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IdentityNotFoundException">
+        <soap:fault name="IdentityNotFoundException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="addAccessProfileToPerson">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SystemException">
+        <soap:fault name="SystemException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="InvalidDataException">
+        <soap:fault name="InvalidDataException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IdentityNotFoundException">
+        <soap:fault name="IdentityNotFoundException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="removeAccessProfileFromPerson">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SystemException">
+        <soap:fault name="SystemException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IdentityNotFoundException">
+        <soap:fault name="IdentityNotFoundException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="InvalidDataException">
+        <soap:fault name="InvalidDataException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="addAccessProfileToKey">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SystemException">
+        <soap:fault name="SystemException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="InvalidDataException">
+        <soap:fault name="InvalidDataException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IdentityNotFoundException">
+        <soap:fault name="IdentityNotFoundException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="InvalidStateException">
+        <soap:fault name="InvalidStateException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ConcurrentDataModificationException">
+        <soap:fault name="ConcurrentDataModificationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="removeAccessProfileFromKey">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SystemException">
+        <soap:fault name="SystemException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IdentityNotFoundException">
+        <soap:fault name="IdentityNotFoundException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="InvalidDataException">
+        <soap:fault name="InvalidDataException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="InvalidStateException">
+        <soap:fault name="InvalidStateException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ConcurrentDataModificationException">
+        <soap:fault name="ConcurrentDataModificationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="deleteAccessProfile">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SystemException">
+        <soap:fault name="SystemException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IdentityNotFoundException">
+        <soap:fault name="IdentityNotFoundException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="InvalidDataException">
+        <soap:fault name="InvalidDataException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="handOutKey">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SystemException">
+        <soap:fault name="SystemException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="InvalidStateException">
+        <soap:fault name="InvalidStateException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="InvalidDataException">
+        <soap:fault name="InvalidDataException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IdentityNotFoundException">
+        <soap:fault name="IdentityNotFoundException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="handInKey">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SystemException">
+        <soap:fault name="SystemException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="InvalidStateException">
+        <soap:fault name="InvalidStateException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IdentityNotFoundException">
+        <soap:fault name="IdentityNotFoundException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="InvalidDataException">
+        <soap:fault name="InvalidDataException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="requestKeyAuditTrail">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="InvalidDataException">
+        <soap:fault name="InvalidDataException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="SystemException">
+        <soap:fault name="SystemException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IdentityNotFoundException">
+        <soap:fault name="IdentityNotFoundException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="InvalidStateException">
+        <soap:fault name="InvalidStateException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="cancelKeyAuditTrail">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="InvalidDataException">
+        <soap:fault name="InvalidDataException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="SystemException">
+        <soap:fault name="SystemException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IdentityNotFoundException">
+        <soap:fault name="IdentityNotFoundException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="InvalidStateException">
+        <soap:fault name="InvalidStateException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="declareKeyLost">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SystemException">
+        <soap:fault name="SystemException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IdentityNotFoundException">
+        <soap:fault name="IdentityNotFoundException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="InvalidDataException">
+        <soap:fault name="InvalidDataException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="declareKeyFound">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SystemException">
+        <soap:fault name="SystemException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IdentityNotFoundException">
+        <soap:fault name="IdentityNotFoundException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="InvalidDataException">
+        <soap:fault name="InvalidDataException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="declareKeyBroken">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SystemException">
+        <soap:fault name="SystemException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IdentityNotFoundException">
+        <soap:fault name="IdentityNotFoundException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="InvalidDataException">
+        <soap:fault name="InvalidDataException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="declareKeyOperational">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SystemException">
+        <soap:fault name="SystemException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IdentityNotFoundException">
+        <soap:fault name="IdentityNotFoundException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="InvalidStateException">
+        <soap:fault name="InvalidStateException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="InvalidDataException">
+        <soap:fault name="InvalidDataException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="declareCylinderBroken">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SystemException">
+        <soap:fault name="SystemException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IdentityNotFoundException">
+        <soap:fault name="IdentityNotFoundException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="InvalidDataException">
+        <soap:fault name="InvalidDataException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="declareCylinderOperational">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SystemException">
+        <soap:fault name="SystemException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IdentityNotFoundException">
+        <soap:fault name="IdentityNotFoundException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="InvalidDataException">
+        <soap:fault name="InvalidDataException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="updateCylinder">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SystemException">
+        <soap:fault name="SystemException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="InvalidDataException">
+        <soap:fault name="InvalidDataException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IdentityNotFoundException">
+        <soap:fault name="IdentityNotFoundException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="InvalidStateException">
+        <soap:fault name="InvalidStateException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="changeCylinderGroup">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SystemException">
+        <soap:fault name="SystemException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IdentityNotFoundException">
+        <soap:fault name="IdentityNotFoundException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="InvalidDataException">
+        <soap:fault name="InvalidDataException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="assignCylinderJobsToCKey">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SystemException">
+        <soap:fault name="SystemException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IdentityNotFoundException">
+        <soap:fault name="IdentityNotFoundException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="InvalidDataException">
+        <soap:fault name="InvalidDataException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="InvalidStateException">
+        <soap:fault name="InvalidStateException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="updateKeyPinValidation">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="InvalidDataException">
+        <soap:fault name="InvalidDataException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="SystemException">
+        <soap:fault name="SystemException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IdentityNotFoundException">
+        <soap:fault name="IdentityNotFoundException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="InvalidStateException">
+        <soap:fault name="InvalidStateException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="createAccessProfile">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="InvalidDataException">
+        <soap:fault name="InvalidDataException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="SystemException">
+        <soap:fault name="SystemException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="updateAccessProfile">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="InvalidDataException">
+        <soap:fault name="InvalidDataException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="SystemException">
+        <soap:fault name="SystemException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IdentityNotFoundException">
+        <soap:fault name="IdentityNotFoundException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="addCylinderPlugsToAccessProfile">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SystemException">
+        <soap:fault name="SystemException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="InvalidDataException">
+        <soap:fault name="InvalidDataException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IdentityNotFoundException">
+        <soap:fault name="IdentityNotFoundException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="removeCylinderPlugsFromAccessProfile">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SystemException">
+        <soap:fault name="SystemException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="InvalidDataException">
+        <soap:fault name="InvalidDataException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IdentityNotFoundException">
+        <soap:fault name="IdentityNotFoundException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="addCylinderGroupsToAccessProfile">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SystemException">
+        <soap:fault name="SystemException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="InvalidDataException">
+        <soap:fault name="InvalidDataException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IdentityNotFoundException">
+        <soap:fault name="IdentityNotFoundException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="removeCylinderGroupsFromAccessProfile">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SystemException">
+        <soap:fault name="SystemException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="InvalidDataException">
+        <soap:fault name="InvalidDataException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="IdentityNotFoundException">
+        <soap:fault name="IdentityNotFoundException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+
+  <wsdl:service name="WorkServiceV2">
+    <wsdl:port name="WorkServicePort" binding="workService_v2:WorkServicePortBinding">
+      <soap:address location="http://localhost:8080/WorkServiceV2"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
+

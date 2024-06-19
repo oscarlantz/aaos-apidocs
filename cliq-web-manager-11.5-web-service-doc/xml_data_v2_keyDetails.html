@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+  <title>CLIQ Web Manager - Web Services: keyDetails</title>
+
+  <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+  <!--custom css for these pages-->
+  <link rel="stylesheet" href="css/style.css">
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.css" type="text/css">
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+
+<body data-spy="scroll" data-target="#apinav">
+
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">CLIQ Web Manager - Web Services: keyDetails</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="services.html">Services</a></li>
+          <li><a href="data.html">Data Types</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-3 col-md-2 sidebar" id="apinav">
+        <ul class="nav nav-sidebar">
+          <li class="text-right"><a href="#top"><small>Back to Top</small></a></li>
+        </ul>
+      </div>
+
+      <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        <ol class="breadcrumb" id="top">
+          <li class="active dropdown"><a href="index.html">Home</a></li>
+          <li class="active dropdown"><a href="syntax_xml.html">XML</a></li>
+          <li class="dropdown"><a href="xml_data_v2_keyDetails.html">keyDetails</a></li>
+        </ol>
+
+      <h1 class="page-header">keyDetails <small>Data Type</small></h1>
+
+      <p>Represents a detailed representation of a CLIQ or mechanical key, including static and dynamic info.</p>
+
+      <dl class="dl-horizontal">
+        <dt>Namespace</dt>
+        <dd><code>http://cliq.shared.assaabloy.com/ws/data/v2/</code></dd>
+        <dt>Schema</dt>
+        <dd><a href="data_v2.xsd">data_v2.xsd</a></dd>
+      </dl>
+
+      <table class="table">
+        <caption>Properties</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>data type</th>
+          <th>type</th>
+          <th>namespace</th>
+          <th>min/max occurs</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>  bluetoothSupport
+</td>
+          <td>  <a href="xml_data_v2_bluetoothSupport.html">bluetoothSupport</a>
+
+</td>
+          <td>  element
+
+</td>
+          <td>  <abbr title="http://cliq.shared.assaabloy.com/ws/data/extra_r7_0/v2/">dataExtra_r7_0_v2</abbr>
+
+</td>
+          <td>  0/1
+
+</td>
+          <td>  Indicates if key does support bluetooth communication.
+</td>
+        </tr>
+        <tr>
+          <td>  deleted
+</td>
+          <td>  boolean
+
+</td>
+          <td>  element
+
+</td>
+          <td>  
+
+</td>
+          <td>  1/1
+
+</td>
+          <td>  Set to true to mark a key as deleted. A deleted key is still in the system for reference, but can not be used.
+</td>
+        </tr>
+        <tr>
+          <td>  domainName
+</td>
+          <td>  string
+
+</td>
+          <td>  element
+
+</td>
+          <td>  <abbr title="http://cliq.shared.assaabloy.com/ws/data/extra/v2/">dataExtra_v2</abbr>
+
+</td>
+          <td>  0/1
+
+</td>
+          <td>  Key domain.
+</td>
+        </tr>
+        <tr>
+          <td>  handinDate
+</td>
+          <td>  string
+
+</td>
+          <td>  element
+
+</td>
+          <td>  
+
+</td>
+          <td>  0/1
+
+</td>
+          <td>  Handin date.
+<p/>
+Format: [YYYY]-[MM]-[DD]T[hh]:[mm]+01:00, e.g. 2011-06-16T18:25+01:00
+</td>
+        </tr>
+        <tr>
+          <td>  handoutDate
+</td>
+          <td>  string
+
+</td>
+          <td>  element
+
+</td>
+          <td>  
+
+</td>
+          <td>  0/1
+
+</td>
+          <td>  Handout date.
+<p/>
+Format: [YYYY]-[MM]-[DD]T[hh]:[mm]+01:00, e.g. 2011-06-16T18:25+01:00
+</td>
+        </tr>
+        <tr>
+          <td>  identity
+</td>
+          <td>  string
+
+</td>
+          <td>  element
+
+</td>
+          <td>  
+
+</td>
+          <td>  1/1
+
+</td>
+          <td>  Key Identity.
+<p/>
+Min length: 1<br/>
+Max length: 36
+</td>
+        </tr>
+        <tr>
+          <td>  keyHolderIdentity
+</td>
+          <td>  string
+
+</td>
+          <td>  element
+
+</td>
+          <td>  
+
+</td>
+          <td>  0/1
+
+</td>
+          <td>  Unique identification of the key holder. Will be null if key is not handed out.
+<p/>
+Min length: 1<br/>
+Max length: 256
+</td>
+        </tr>
+        <tr>
+          <td>  lastRemoteUpdate
+</td>
+          <td>  string
+
+</td>
+          <td>  element
+
+</td>
+          <td>  
+
+</td>
+          <td>  0/1
+
+</td>
+          <td>  Timestamp when the key was last updated in a remote PD.
+</td>
+        </tr>
+        <tr>
+          <td>  marking
+</td>
+          <td>  string
+
+</td>
+          <td>  element
+
+</td>
+          <td>  
+
+</td>
+          <td>  1/1
+
+</td>
+          <td>  Key marking.
+</td>
+        </tr>
+        <tr>
+          <td>  name
+</td>
+          <td>  string
+
+</td>
+          <td>  element
+
+</td>
+          <td>  
+
+</td>
+          <td>  0/1
+
+</td>
+          <td>  Key name.
+<p/>
+Max length: 100
+</td>
+        </tr>
+        <tr>
+          <td>  operationalStatus
+</td>
+          <td>  <a href="xml_data_v2_operationalStatus.html">operationalStatus</a>
+
+</td>
+          <td>  element
+
+</td>
+          <td>  
+
+</td>
+          <td>  1/1
+
+</td>
+          <td>  Describes the key's current operational status.
+</td>
+        </tr>
+        <tr>
+          <td>  pendingUpdates
+</td>
+          <td>  <a href="xml_data_v2_pendingUpdates.html">pendingUpdates</a>
+
+</td>
+          <td>  element
+
+</td>
+          <td>  
+
+</td>
+          <td>  1/1
+
+</td>
+          <td>  Represents the current pending updates for this key.
+</td>
+        </tr>
+        <tr>
+          <td>  pinValidationIntervalInMinutes
+</td>
+          <td>  int
+
+</td>
+          <td>  element
+
+</td>
+          <td>  <abbr title="http://cliq.shared.assaabloy.com/ws/data/extra_r7_0/v2/">dataExtra_r7_0_v2</abbr>
+
+</td>
+          <td>  0/1
+
+</td>
+          <td>  PIN Validation interval in minutes.
+<p/>
+The maximum value of PIN Validation interval is 45 days (64800 in minutes). 0 means PIN Validation is disabled for this key.
+</td>
+        </tr>
+        <tr>
+          <td>  remoteEnabled
+</td>
+          <td>  boolean
+
+</td>
+          <td>  element
+
+</td>
+          <td>  
+
+</td>
+          <td>  1/1
+
+</td>
+          <td>  Indicates if the key is remote enabled.
+</td>
+        </tr>
+        <tr>
+          <td>  secondMarking
+</td>
+          <td>  string
+
+</td>
+          <td>  element
+
+</td>
+          <td>  
+
+</td>
+          <td>  0/1
+
+</td>
+          <td>  Second marking.
+</td>
+        </tr>
+        <tr>
+          <td>  tags
+</td>
+          <td>  <a href="xml_data_v2_tags.html">tags</a>
+
+</td>
+          <td>  element
+
+</td>
+          <td>  
+
+</td>
+          <td>  0/1
+
+</td>
+          <td>  Represents the set of tags applied to this key.
+</td>
+        </tr>
+        <tr>
+          <td>  type
+</td>
+          <td>  <a href="xml_data_v2_elementType.html">elementType</a>
+
+</td>
+          <td>  element
+
+</td>
+          <td>  
+
+</td>
+          <td>  1/1
+
+</td>
+          <td>  CLIQ key type.
+</td>
+        </tr>
+        <tr>
+          <td>  validity
+</td>
+          <td>  <a href="xml_data_v2_validity.html">validity</a>
+
+</td>
+          <td>  element
+
+</td>
+          <td>  
+
+</td>
+          <td>  0/1
+
+</td>
+          <td>  Represents the validity of this key.
+</td>
+        </tr>
+        <tr>
+          <td>  whereAt
+</td>
+          <td>  <a href="xml_data_v2_whereAt.html">whereAt</a>
+
+</td>
+          <td>  element
+
+</td>
+          <td>  
+
+</td>
+          <td>  1/1
+
+</td>
+          <td>  Describes where the key currently is.
+</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <p class="lead">Example</p>
+
+      <pre class="prettyprint lang-xml">&lt;keyDetails xmlns=&quot;http://cliq.shared.assaabloy.com/ws/data/v2/&quot;&gt;
+  &lt;identity xmlns=&quot;&quot;&gt;...&lt;/identity&gt;
+  &lt;type xmlns=&quot;&quot;&gt;...&lt;/type&gt;
+  &lt;name xmlns=&quot;&quot;&gt;...&lt;/name&gt;
+  &lt;marking xmlns=&quot;&quot;&gt;...&lt;/marking&gt;
+  &lt;secondMarking xmlns=&quot;&quot;&gt;...&lt;/secondMarking&gt;
+  &lt;deleted xmlns=&quot;&quot;&gt;...&lt;/deleted&gt;
+  &lt;keyHolderIdentity xmlns=&quot;&quot;&gt;...&lt;/keyHolderIdentity&gt;
+  &lt;lastRemoteUpdate xmlns=&quot;&quot;&gt;...&lt;/lastRemoteUpdate&gt;
+  &lt;whereAt xmlns=&quot;&quot;&gt;...&lt;/whereAt&gt;
+  &lt;operationalStatus xmlns=&quot;&quot;&gt;...&lt;/operationalStatus&gt;
+  &lt;pendingUpdates xmlns=&quot;&quot;&gt;
+    &lt;update&gt;
+      &lt;keyUpdateType&gt;...&lt;/keyUpdateType&gt;
+      &lt;overflowed&gt;...&lt;/overflowed&gt;
+      &lt;extension1&gt;...&lt;/extension1&gt;
+      &lt;extension2&gt;...&lt;/extension2&gt;
+    &lt;/update&gt;
+    &lt;extension1&gt;...&lt;/extension1&gt;
+    &lt;extension2&gt;...&lt;/extension2&gt;
+  &lt;/pendingUpdates&gt;
+  &lt;handoutDate xmlns=&quot;&quot;&gt;...&lt;/handoutDate&gt;
+  &lt;handinDate xmlns=&quot;&quot;&gt;...&lt;/handinDate&gt;
+  &lt;tags xmlns=&quot;&quot;&gt;
+    &lt;tag name=&quot;...&quot;&gt;
+      &lt;extension1&gt;...&lt;/extension1&gt;
+      &lt;extension2&gt;...&lt;/extension2&gt;
+    &lt;/tag&gt;
+    &lt;extension1&gt;...&lt;/extension1&gt;
+    &lt;extension2&gt;...&lt;/extension2&gt;
+  &lt;/tags&gt;
+  &lt;validity xmlns=&quot;&quot;&gt;
+    &lt;type&gt;...&lt;/type&gt;
+    &lt;revalidationConfig&gt;
+      &lt;oneTimeUpdate&gt;...&lt;/oneTimeUpdate&gt;
+      &lt;intervalInMinutes&gt;...&lt;/intervalInMinutes&gt;
+      &lt;extension1&gt;...&lt;/extension1&gt;
+      &lt;extension2&gt;...&lt;/extension2&gt;
+    &lt;/revalidationConfig&gt;
+    &lt;from&gt;...&lt;/from&gt;
+    &lt;to&gt;...&lt;/to&gt;
+    &lt;extension1&gt;...&lt;/extension1&gt;
+    &lt;extension2&gt;...&lt;/extension2&gt;
+  &lt;/validity&gt;
+  &lt;remoteEnabled xmlns=&quot;&quot;&gt;...&lt;/remoteEnabled&gt;
+  &lt;domainName xmlns=&quot;http://cliq.shared.assaabloy.com/ws/data/extra/v2/&quot;&gt;...&lt;/domainName&gt;
+  &lt;bluetoothSupport xmlns=&quot;http://cliq.shared.assaabloy.com/ws/data/extra_r7_0/v2/&quot;&gt;...&lt;/bluetoothSupport&gt;
+  &lt;pinValidationIntervalInMinutes xmlns=&quot;http://cliq.shared.assaabloy.com/ws/data/extra_r7_0/v2/&quot;&gt;...&lt;/pinValidationIntervalInMinutes&gt;
+  &lt;extension1 xmlns=&quot;&quot;&gt;...&lt;/extension1&gt;
+  &lt;extension2 xmlns=&quot;&quot;&gt;...&lt;/extension2&gt;
+&lt;/keyDetails&gt;
+</pre>
+
+        <footer class="footer">
+          <div class="container">
+            <p class="text-muted">Generated by <a href="http://enunciate.webcohesion.com">Enunciate</a>.</p>
+          </div>
+        </footer>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- JavaScript placed at the end of the document so the pages load faster. -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+  <!-- prettify code blocks. see http://code.google.com/p/google-code-prettify/ -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/run_prettify.js" type="text/javascript"></script>
+  <script>
+    $(function() {
+      $(".clickable-row").click(function() {
+        window.document.location = $(this).data("href");
+      });
+
+      $('[data-toggle="tooltip"]').tooltip()
+    });
+  </script>
+
+</body>
+</html>

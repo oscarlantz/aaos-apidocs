@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema version="1.0" targetNamespace="http://cliq.shared.assaabloy.com/ws/data/extra/v2/"
+  xmlns:dataExtra_v2="http://cliq.shared.assaabloy.com/ws/data/extra/v2/"
+  
+  xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<xs:element name="company" type="xs:string">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[]]>
+    </xs:documentation>
+  </xs:annotation>
+</xs:element>
+<xs:element name="deleted" type="xs:boolean">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[A deleted access profile is still in the system for reference, but can not be used.]]>
+    </xs:documentation>
+  </xs:annotation>
+</xs:element>
+<xs:element name="department" type="xs:string">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[]]>
+    </xs:documentation>
+  </xs:annotation>
+</xs:element>
+<xs:element name="domain" type="xs:string">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[The domain name that this access profile belongs to.]]>
+    </xs:documentation>
+  </xs:annotation>
+</xs:element>
+<xs:element name="domainName" type="xs:string">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[The domain this person belongs to.
+If domain is not defined it remains unchanged, unless person does not have domain assigned then the initial domain configured in system settings is assigned.]]>
+    </xs:documentation>
+  </xs:annotation>
+</xs:element>
+<xs:element name="importDate" type="xs:dateTime">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[Date and time when the cylinder data was imported using the CWX import format with CWM 5.0 or later, NULL for cylinders imported using other file formats or with CWM versions prior to 5.0.
+<p>CWX import format is an import format for supporting background import of extension files, supported since CWM 4.0</p>]]>
+    </xs:documentation>
+  </xs:annotation>
+</xs:element>
+<xs:element name="orderOfAppearance" type="xs:long">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[The natural order of audit trail entries from the audited device.]]>
+    </xs:documentation>
+  </xs:annotation>
+</xs:element>
+</xs:schema>

@@ -1,0 +1,2244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+  <title>CLIQ Web Manager - Web Services: WorkServiceV2</title>
+
+  <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+  <!--custom css for these pages-->
+  <link rel="stylesheet" href="css/style.css">
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.css" type="text/css">
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+
+<body data-spy="scroll" data-target="#apinav">
+
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">CLIQ Web Manager - Web Services: WorkServiceV2</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="services.html">Services</a></li>
+          <li><a href="data.html">Data Types</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-3 col-md-2 sidebar" id="apinav">
+        <ul class="nav nav-sidebar">
+          <li><a href="#service_workService_v2_WorkServiceV2_method_resetKey">resetKey</a></li>
+          <li><a href="#service_workService_v2_WorkServiceV2_method_updateKeyCylinderAuthorisations"><abbr title="updateKeyCylinderAuthorisations">updateKeyCylinderAuthorisation...</abbr></a></li>
+          <li><a href="#service_workService_v2_WorkServiceV2_method_updateKeyCylinderGroupAuthorisations"><abbr title="updateKeyCylinderGroupAuthorisations">updateKeyCylinderGroupAuthoris...</abbr></a></li>
+          <li><a href="#service_workService_v2_WorkServiceV2_method_updateKeyValidity">updateKeyValidity</a></li>
+          <li><a href="#service_workService_v2_WorkServiceV2_method_updateKeySchedule">updateKeySchedule</a></li>
+          <li><a href="#service_workService_v2_WorkServiceV2_method_addAccessProfileToPerson">addAccessProfileToPerson</a></li>
+          <li><a href="#service_workService_v2_WorkServiceV2_method_removeAccessProfileFromPerson">removeAccessProfileFromPerson</a></li>
+          <li><a href="#service_workService_v2_WorkServiceV2_method_addAccessProfileToKey">addAccessProfileToKey</a></li>
+          <li><a href="#service_workService_v2_WorkServiceV2_method_removeAccessProfileFromKey">removeAccessProfileFromKey</a></li>
+          <li><a href="#service_workService_v2_WorkServiceV2_method_deleteAccessProfile">deleteAccessProfile</a></li>
+          <li><a href="#service_workService_v2_WorkServiceV2_method_handOutKey">handOutKey</a></li>
+          <li><a href="#service_workService_v2_WorkServiceV2_method_handInKey">handInKey</a></li>
+          <li><a href="#service_workService_v2_WorkServiceV2_method_requestKeyAuditTrail">requestKeyAuditTrail</a></li>
+          <li><a href="#service_workService_v2_WorkServiceV2_method_cancelKeyAuditTrail">cancelKeyAuditTrail</a></li>
+          <li><a href="#service_workService_v2_WorkServiceV2_method_declareKeyLost">declareKeyLost</a></li>
+          <li><a href="#service_workService_v2_WorkServiceV2_method_declareKeyFound">declareKeyFound</a></li>
+          <li><a href="#service_workService_v2_WorkServiceV2_method_declareKeyBroken">declareKeyBroken</a></li>
+          <li><a href="#service_workService_v2_WorkServiceV2_method_declareKeyOperational">declareKeyOperational</a></li>
+          <li><a href="#service_workService_v2_WorkServiceV2_method_declareCylinderBroken">declareCylinderBroken</a></li>
+          <li><a href="#service_workService_v2_WorkServiceV2_method_declareCylinderOperational">declareCylinderOperational</a></li>
+          <li><a href="#service_workService_v2_WorkServiceV2_method_updateCylinder">updateCylinder</a></li>
+          <li><a href="#service_workService_v2_WorkServiceV2_method_changeCylinderGroup">changeCylinderGroup</a></li>
+          <li><a href="#service_workService_v2_WorkServiceV2_method_assignCylinderJobsToCKey">assignCylinderJobsToCKey</a></li>
+          <li><a href="#service_workService_v2_WorkServiceV2_method_updateKeyPinValidation">updateKeyPinValidation</a></li>
+          <li><a href="#service_workService_v2_WorkServiceV2_method_createAccessProfile">createAccessProfile</a></li>
+          <li><a href="#service_workService_v2_WorkServiceV2_method_updateAccessProfile">updateAccessProfile</a></li>
+          <li><a href="#service_workService_v2_WorkServiceV2_method_addCylinderPlugsToAccessProfile"><abbr title="addCylinderPlugsToAccessProfile">addCylinderPlugsToAccessProfil...</abbr></a></li>
+          <li><a href="#service_workService_v2_WorkServiceV2_method_removeCylinderPlugsFromAccessProfile"><abbr title="removeCylinderPlugsFromAccessProfile">removeCylinderPlugsFromAccessP...</abbr></a></li>
+          <li><a href="#service_workService_v2_WorkServiceV2_method_addCylinderGroupsToAccessProfile"><abbr title="addCylinderGroupsToAccessProfile">addCylinderGroupsToAccessProfi...</abbr></a></li>
+          <li><a href="#service_workService_v2_WorkServiceV2_method_removeCylinderGroupsFromAccessProfile"><abbr title="removeCylinderGroupsFromAccessProfile">removeCylinderGroupsFromAccess...</abbr></a></li>
+          <li class="divider"></li>
+          <li class="text-right"><a href="#top"><small>Back to Top</small></a></li>
+        </ul>
+      </div>
+
+      <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        <ol class="breadcrumb" id="top">
+          <li class="active dropdown"><a href="index.html">Home</a></li>
+          <li class="dropdown"><a href="service_workService_v2_WorkServiceV2.html">WorkServiceV2</a></li>
+        </ol>
+
+      <h1 class="page-header">WorkServiceV2 <small>Service</small></h1>
+
+      <p>Service for performing different programming jobs on keys.
+<p>Replaces the old version: v1 of work service.</p></p>
+
+      <dl class="dl-horizontal">
+        <dt>Namespace</dt>
+        <dd>http://cliq.shared.assaabloy.com/ws/work/v2/</dd>
+        <dt>WSDL</dt>
+        <dd><a href="workService_v2.wsdl">workService_v2.wsdl</a></dd>
+        <dt>Path</dt>
+        <dd><a href=".//WorkServiceV2">/WorkServiceV2</a></dd>
+      </dl>
+
+      <h2 id="service_workService_v2_WorkServiceV2_method_resetKey">resetKey <small>Operation</small></h2>
+
+        <p>Reset a remote enabled key, creates remote updates to reset the key.
+<p/>
+This method is normally used in conjunction with the handInKey(String keyIdentity) method
+in order to ensure that the key is return without any authorisation and also inactivated.
+<p/>
+<p/>Note, depending on the current load of the system, creation of a remote programming job might take one to several minutes.
+<p/>
+These operations will be performed depending on key type:
+<ul>
+<li>Dynamic key: removes any access profiles and explicit authorisations, disables schedule and validity.</li>
+<li>Quartz key: disables schedule and validity.</li>
+<li>Normal key: disables validity.</li>
+</ul>
+<p/>Note, if the key is CLIQ Connect Dynamic or Quartz key and has support for PIN validation also PIN validation will be disabled.
+<p/>
+Key system requirements:
+<ul>
+<li>Key system must be remote enabled.</li>
+</ul>
+<p/>
+Key requirements:
+<ul>
+<li>Key must have support for remote updates.</li>
+</ul>
+<p/></p>
+
+      <table class="table">
+        <caption>Input Parameters</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>keyIdentity</td>
+          <td>string
+</td>
+          <td>Identity of the key that should be reset.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Faults</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>conditions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>SystemException</td>
+          <td>SystemException
+</td>
+          <td>Thrown if the system was configured incorrectly or other unexpected errors occurred.</td>
+        </tr>
+        <tr>
+          <td>IdentityNotFoundException</td>
+          <td>IdentityNotFoundException
+</td>
+          <td>Thrown if the given key identity could not be found.</td>
+        </tr>
+        <tr>
+          <td>InvalidDataException</td>
+          <td>InvalidDataException
+</td>
+          <td>Thrown if the key is a c-key or key has been deleted.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <h2 id="service_workService_v2_WorkServiceV2_method_updateKeyCylinderAuthorisations">updateKeyCylinderAuthorisations <small>Operation</small></h2>
+
+        <p>Update cylinder authorisations(access rights) for a dynamic key.
+This operation will put "wanted" cylinder authorisations for the key and if required a remote programming
+job will be created.
+<p/>Note, depending on the current load of the system, creation of a remote programming job might take one to several minutes.
+<p/>
+Key system requirements:
+<ul>
+<li>Key system must be remote enabled.</li>
+</ul>
+<p/>
+Key requirements:
+<ul>
+<li>Only keys of type 'dynamic' (programmable) are valid.</li>
+<li>Key must have support for remote updates.</li>
+</ul>
+<p/>
+Plug requirements:
+<ul>
+<li>Key must have mechanical and as well as electronic access in all supplied plugs</li>
+<li>Plug must be operational.</li>
+<li>Plug's cylinder must be installed.</li>
+</ul>
+<p/></p>
+
+      <table class="table">
+        <caption>Input Parameters</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>keyIdentity</td>
+          <td>string
+</td>
+          <td>Identity of the key that should receive the update.</td>
+        </tr>
+        <tr>
+          <td>cylinderPlugIdentities</td>
+          <td><a href="xml_data_v2_authorisationUpdate.html">authorisationUpdate</a>
+</td>
+          <td>Authorisation update containing a list of plug ids where the key should have access.  If the list of authorised cylinder plugs is empty, all existing cylinder plug authorisations on the key will be deleted.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Faults</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>conditions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>InvalidDataException</td>
+          <td>InvalidDataException
+</td>
+          <td>Thrown if the input data is invalid or the list of authorised cylinder plugs contains identities that does not exist.</td>
+        </tr>
+        <tr>
+          <td>SystemException</td>
+          <td>SystemException
+</td>
+          <td>Thrown if the system was configured incorrectly or other unexpected errors occurred.</td>
+        </tr>
+        <tr>
+          <td>IdentityNotFoundException</td>
+          <td>IdentityNotFoundException
+</td>
+          <td>Thrown if the given key identity could not be found.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <h2 id="service_workService_v2_WorkServiceV2_method_updateKeyCylinderGroupAuthorisations">updateKeyCylinderGroupAuthorisations <small>Operation</small></h2>
+
+        <p>Update cylinder group authorisations(access rights) for a dynamic key.
+This operation will put "wanted" cylinder group authorisations on the key and if required a remote programming
+job will be created. These cylinder group authorisations will replace the current cylinder group authorisations on the key.
+<p/>Note, depending on the current load of the system, creation of a remote programming job might take one to several minutes.
+<p/>
+Locking system requirements:
+<ul>
+<li>Locking system must be remote enabled.</li>
+<li>Locking system must support cylinder groups.</li>
+</ul>
+<p/>
+Key requirements:
+<ul>
+<li>Only keys of type 'dynamic' (programmable) are valid.</li>
+<li>Key must have support for remote updates.</li>
+<li>Key must have support for cylinder groups.</li>
+</ul>
+<p/>
+Cylinder group requirements:
+<ul>
+<li>Key must have mechanical access in all supplied groups</li>
+</ul>
+<p/></p>
+
+      <table class="table">
+        <caption>Input Parameters</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>keyIdentity</td>
+          <td>string
+</td>
+          <td>Identity of the key that should receive the update.</td>
+        </tr>
+        <tr>
+          <td>cylinderGroupIdentities</td>
+          <td><a href="xml_data_v2_authorisationCylinderGroupUpdate.html">authorisationCylinderGroupUpdate</a>
+</td>
+          <td>Authorisation update containing a list of cylinder group ids where the key should have access.  If the list of authorised cylinder groups is empty, all existing cylinder group authorisations on the key will be deleted.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Faults</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>conditions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>InvalidDataException</td>
+          <td>InvalidDataException
+</td>
+          <td>Thrown if the input data is invalid or the list of authorised cylinder groups contains identities that does not exist.</td>
+        </tr>
+        <tr>
+          <td>SystemException</td>
+          <td>SystemException
+</td>
+          <td>Thrown if the system was configured incorrectly or other unexpected errors occurred.</td>
+        </tr>
+        <tr>
+          <td>IdentityNotFoundException</td>
+          <td>IdentityNotFoundException
+</td>
+          <td>Thrown if the given key identity could not be found.</td>
+        </tr>
+        <tr>
+          <td>InvalidStateException</td>
+          <td>InvalidStateException
+</td>
+          <td>Thrown if the system or the specified key does not support cylinder groups.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <h2 id="service_workService_v2_WorkServiceV2_method_updateKeyValidity">updateKeyValidity <small>Operation</small></h2>
+
+        <p>Update validity of a key to a new validity, the operation is accepted regardless if the newValidity period already is enabled or not.
+<p/>
+<p/>This operation will put "wanted" newValidity on the key, already pending key newValidity updates will be replaced.
+<p/>
+<p/>Note, depending on the current load of the system, creation of a remote programming job might take a number of minutes.
+<p/>
+<p/>
+Key system requirements:
+<ul>
+<li>Key system must be remote enabled.</li>
+</ul>
+<p/>
+Key requirements:
+<ul>
+<li>Only keys of type 'dynamic' ,'quartz' and 'normal' are valid.</li>
+<li>Key must have support for remote updates.</li>
+</ul>
+<p/>
+Note, If revalidation configuration is not supplied in the new validity it implies that any existing revalidation configuration on the key
+is to be removed.
+<p/>
+<p/></p>
+
+      <table class="table">
+        <caption>Input Parameters</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>keyIdentity</td>
+          <td>string
+</td>
+          <td>Identity of the key that should receive the update.</td>
+        </tr>
+        <tr>
+          <td>newValidity</td>
+          <td><a href="xml_data_v2_validity.html">validity</a>
+</td>
+          <td>Validity settings to be updated in key.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Faults</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>conditions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>InvalidDataException</td>
+          <td>InvalidDataException
+</td>
+          <td>Thrown if the input data is invalid.</td>
+        </tr>
+        <tr>
+          <td>SystemException</td>
+          <td>SystemException
+</td>
+          <td>Thrown if the system was configured incorrectly or other unexpected errors occurred.</td>
+        </tr>
+        <tr>
+          <td>IdentityNotFoundException</td>
+          <td>IdentityNotFoundException
+</td>
+          <td>Thrown if no key with the given identity could be found.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <h2 id="service_workService_v2_WorkServiceV2_method_updateKeySchedule">updateKeySchedule <small>Operation</small></h2>
+
+        <p>Update the schedule of a key.
+<p/>
+<p/>This operation will put "wanted" schedule on the key, already pending key schedule updates will be replaced.
+<p/>
+<p/>Note, depending on the current load of the system, creation of a remote programming job might take a number of minutes.
+<p/>
+Key system requirements:
+<ul>
+<li>Key system must be remote enabled.</li>
+</ul>
+<p/>
+Key requirements:
+<ul>
+<li>Only keys of type 'dynamic' and 'quartz' are valid.</li>
+<li>Key must have support for remote updates.</li>
+</ul>
+<p/></p>
+
+      <table class="table">
+        <caption>Input Parameters</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>keyIdentity</td>
+          <td>string
+</td>
+          <td>Identity of the key that should receive the update.</td>
+        </tr>
+        <tr>
+          <td>schedule</td>
+          <td><a href="xml_data_v2_schedule.html">schedule</a>
+</td>
+          <td>Schedule to be uploaded to key.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Faults</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>conditions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>InvalidDataException</td>
+          <td>InvalidDataException
+</td>
+          <td>Thrown if the input data is invalid.</td>
+        </tr>
+        <tr>
+          <td>SystemException</td>
+          <td>SystemException
+</td>
+          <td>Thrown if the system was configured incorrectly or other unexpected errors occurred.</td>
+        </tr>
+        <tr>
+          <td>IdentityNotFoundException</td>
+          <td>IdentityNotFoundException
+</td>
+          <td>Thrown if no key with the given identity could be found.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <h2 id="service_workService_v2_WorkServiceV2_method_addAccessProfileToPerson">addAccessProfileToPerson <small>Operation</small></h2>
+
+        <p>Add an access profile to a person.
+<p/>This operation will put "wanted" cylinder authorisations that applies to the added profile, this will be done for all keys owned by the person.
+Furthermore for each key and if required, a remote programming job will be created that reflects authorisations of the newly added profile.
+<p/>
+<p/>Note, depending on the current load of the system, creation of a remote programming job might take one to several minutes.</p>
+
+      <table class="table">
+        <caption>Input Parameters</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>personIdentity</td>
+          <td>string
+</td>
+          <td>Identity of the person that should get an access profile.</td>
+        </tr>
+        <tr>
+          <td>accessProfileIdentity</td>
+          <td>string
+</td>
+          <td>Identity of the access profile to be added to the person.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Faults</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>conditions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>SystemException</td>
+          <td>SystemException
+</td>
+          <td>Thrown if the system was configured incorrectly or other unexpected errors occurred.</td>
+        </tr>
+        <tr>
+          <td>InvalidDataException</td>
+          <td>InvalidDataException
+</td>
+          <td>Thrown if either the person or the access profile is deleted.</td>
+        </tr>
+        <tr>
+          <td>IdentityNotFoundException</td>
+          <td>IdentityNotFoundException
+</td>
+          <td>Thrown if either the person or the access profile could not be found.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <h2 id="service_workService_v2_WorkServiceV2_method_removeAccessProfileFromPerson">removeAccessProfileFromPerson <small>Operation</small></h2>
+
+        <p>Remove an access profile from a person.</p>
+
+      <table class="table">
+        <caption>Input Parameters</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>personIdentity</td>
+          <td>string
+</td>
+          <td>Identity of the person from whom we will remove the access profile.</td>
+        </tr>
+        <tr>
+          <td>accessProfileIdentity</td>
+          <td>string
+</td>
+          <td>Identity of the access profile that should be removed from the person.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Faults</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>conditions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>SystemException</td>
+          <td>SystemException
+</td>
+          <td>Thrown if the system was configured incorrectly or other unexpected errors occurred.</td>
+        </tr>
+        <tr>
+          <td>IdentityNotFoundException</td>
+          <td>IdentityNotFoundException
+</td>
+          <td>Thrown if either the person or the access profile could not be found.</td>
+        </tr>
+        <tr>
+          <td>InvalidDataException</td>
+          <td>InvalidDataException
+</td>
+          <td>Thrown if either the person is marked as deleted or the access profile is deleted.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <h2 id="service_workService_v2_WorkServiceV2_method_addAccessProfileToKey">addAccessProfileToKey <small>Operation</small></h2>
+
+        <p>Add an access profile to a key.
+<p/>This operation will put "wanted" cylinder authorisations that applies to the added profile, this will be done for specified key.
+<p/>
+<p/>Note, depending on the current load of the system, creation of a remote programming job might take one to several minutes.</p>
+
+      <table class="table">
+        <caption>Input Parameters</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>keyIdentity</td>
+          <td>string
+</td>
+          <td>Identity of the key that should get an access profile.</td>
+        </tr>
+        <tr>
+          <td>accessProfileIdentity</td>
+          <td>string
+</td>
+          <td>Identity of the access profile to be added to the key.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Faults</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>conditions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>SystemException</td>
+          <td>SystemException
+</td>
+          <td>Thrown if the system was configured incorrectly or other unexpected errors occurred.</td>
+        </tr>
+        <tr>
+          <td>InvalidDataException</td>
+          <td>InvalidDataException
+</td>
+          <td>Thrown if either the key is not dynamic or the access profile is deleted or not applicable for a key.</td>
+        </tr>
+        <tr>
+          <td>IdentityNotFoundException</td>
+          <td>IdentityNotFoundException
+</td>
+          <td>Thrown if either the key or the access profile could not be found.</td>
+        </tr>
+        <tr>
+          <td>InvalidStateException</td>
+          <td>InvalidStateException
+</td>
+          <td>Thrown if either the key is deleted, lost, broken or not operational.</td>
+        </tr>
+        <tr>
+          <td>ConcurrentDataModificationException</td>
+          <td>ConcurrentDataModificationException
+</td>
+          <td>Thrown if cannot lock Access Profile to perform operation.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <h2 id="service_workService_v2_WorkServiceV2_method_removeAccessProfileFromKey">removeAccessProfileFromKey <small>Operation</small></h2>
+
+        <p>Remove an access profile from a key.</p>
+
+      <table class="table">
+        <caption>Input Parameters</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>keyIdentity</td>
+          <td>string
+</td>
+          <td>Identity of the key from whom we will remove the access profile.</td>
+        </tr>
+        <tr>
+          <td>accessProfileIdentity</td>
+          <td>string
+</td>
+          <td>Identity of the access profile that should be removed from the key.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Faults</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>conditions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>SystemException</td>
+          <td>SystemException
+</td>
+          <td>Thrown if the system was configured incorrectly or other unexpected errors occurred.</td>
+        </tr>
+        <tr>
+          <td>IdentityNotFoundException</td>
+          <td>IdentityNotFoundException
+</td>
+          <td>Thrown if either the person or the access profile could not be found.</td>
+        </tr>
+        <tr>
+          <td>InvalidDataException</td>
+          <td>InvalidDataException
+</td>
+          <td>Thrown if either the key or the access profile is marked as deleted.</td>
+        </tr>
+        <tr>
+          <td>InvalidStateException</td>
+          <td>InvalidStateException
+</td>
+          <td>Thrown if either the key is deleted, lost, broken or not operational.</td>
+        </tr>
+        <tr>
+          <td>ConcurrentDataModificationException</td>
+          <td>ConcurrentDataModificationException
+</td>
+          <td>Thrown if cannot lock Access Profile to perform operation.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <h2 id="service_workService_v2_WorkServiceV2_method_deleteAccessProfile">deleteAccessProfile <small>Operation</small></h2>
+
+        <p>Delete an access profile.</p>
+
+      <table class="table">
+        <caption>Input Parameters</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>accessProfileIdentity</td>
+          <td>string
+</td>
+          <td>Identity of the access profile that should be deleted.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Faults</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>conditions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>SystemException</td>
+          <td>SystemException
+</td>
+          <td>Thrown if the system was configured incorrectly or other unexpected errors occurred.</td>
+        </tr>
+        <tr>
+          <td>IdentityNotFoundException</td>
+          <td>IdentityNotFoundException
+</td>
+          <td>Thrown if access profile could not be found.</td>
+        </tr>
+        <tr>
+          <td>InvalidDataException</td>
+          <td>InvalidDataException
+</td>
+          <td>Thrown if access profile is already marked as deleted,
+or is associated to any keys and the WebService user does not have Full Key authorisations permission</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <h2 id="service_workService_v2_WorkServiceV2_method_handOutKey">handOutKey <small>Operation</small></h2>
+
+        <p>Hand out a key to a person. For dynamic keys, this method also implies that access profiles will be copied from the person to the key.
+<p/>
+Note, this operation is only supported for user keys.
+<p/>
+Dates must be on the format yyyy-MM-ddTHH:MMZ (UTC time),
+yyyy-MM-ddTHH:MM+01:00 or yyyy-MM-ddTHH:MM+01 which is a subset of ISO 8601 (the latter two examples represent
+1 hour offset from UTC). See the specification for more information.
+<p/>
+A complete hand-out procedure does normal implies that authorisations-, validity-, PIN validation-, schedule-updates and also that audittrail are requested,
+se further the description of methods listed below to add any of these operation to your hand-out procedure:
+<ul>
+<li>updateKeyCylinderAuthorisations(String, AuthorisationUpdateDTO)</li>
+<li>updateKeyValidity(String keyIdentity, ValidityDTO)</li>
+<li>updateKeyPinValidation(String keyIdentity, PinValidationDTO)</li>
+<li>updateKeySchedule(String keyIdentity, ScheduleDTO)</li>
+<li>requestKeyAuditTrail(String keyIdentity)</li>
+</ul>
+<p/></p>
+
+      <table class="table">
+        <caption>Input Parameters</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>personIdentity</td>
+          <td>string
+</td>
+          <td>The identity of the person that will receive the key.</td>
+        </tr>
+        <tr>
+          <td>keyIdentity</td>
+          <td>string
+</td>
+          <td>The identity of the key to hand out.</td>
+        </tr>
+        <tr>
+          <td>handOutDate</td>
+          <td>string
+</td>
+          <td>The date when the key was handed out.</td>
+        </tr>
+        <tr>
+          <td>handInDate</td>
+          <td>string
+</td>
+          <td>The date when the key should be handed in, parameter is optional. Both null (no XML element in the SOAP request)  and the empty string (empty XML element in the SOAP request) are accepted.</td>
+        </tr>
+        <tr>
+          <td>copyAccessProfiles</td>
+          <td>boolean
+</td>
+          <td>Defines that the access profile should be copied from person to key , parameter is optional and default true.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Faults</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>conditions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>SystemException</td>
+          <td>SystemException
+</td>
+          <td>Thrown if the system was configured incorrectly or other unexpected errors occurred</td>
+        </tr>
+        <tr>
+          <td>InvalidStateException</td>
+          <td>InvalidStateException
+</td>
+          <td>If the key has already been handed out.</td>
+        </tr>
+        <tr>
+          <td>InvalidDataException</td>
+          <td>InvalidDataException
+</td>
+          <td>If any of the input dates are invalid or given key is a C-Key.</td>
+        </tr>
+        <tr>
+          <td>IdentityNotFoundException</td>
+          <td>IdentityNotFoundException
+</td>
+          <td>If either the person or the key could not be found.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <h2 id="service_workService_v2_WorkServiceV2_method_handInKey">handInKey <small>Operation</small></h2>
+
+        <p>Hand in a key.
+<p/>
+Note, this operation is only supported for user keys.
+<p/>
+A hand-in procedure does normal implies that authorisations-, validity-, schedule are reset and optionally that audittrail request is cancelled,
+see further the description of methods listed below to add any of these operation to your hand-in procedure:
+<ul>
+<li>resetKey(String keyIdentity)</li>
+<li>cancelKeyAuditTrail(String keyIdentity)</li>
+</ul>
+<p/></p>
+
+      <table class="table">
+        <caption>Input Parameters</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>keyIdentity</td>
+          <td>string
+</td>
+          <td>The identity of the key to hand in.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Faults</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>conditions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>SystemException</td>
+          <td>SystemException
+</td>
+          <td>Thrown if the system was configured incorrectly or other unexpected errors occurred.</td>
+        </tr>
+        <tr>
+          <td>InvalidStateException</td>
+          <td>InvalidStateException
+</td>
+          <td>Thrown if the key already was handed in.</td>
+        </tr>
+        <tr>
+          <td>IdentityNotFoundException</td>
+          <td>IdentityNotFoundException
+</td>
+          <td>Thrown if the key could not be found.</td>
+        </tr>
+        <tr>
+          <td>InvalidDataException</td>
+          <td>InvalidDataException
+</td>
+          <td>Thrown if the given key is a C-Key.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <h2 id="service_workService_v2_WorkServiceV2_method_requestKeyAuditTrail">requestKeyAuditTrail <small>Operation</small></h2>
+
+        <p>Request for retrieving audit trails of a key.
+<p/>
+Note, only quartz or dynamic remote enabled key types are supported, also system must be remote enabled.</p>
+
+      <table class="table">
+        <caption>Input Parameters</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>keyIdentity</td>
+          <td>string
+</td>
+          <td>Identity of the key</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Faults</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>conditions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>InvalidDataException</td>
+          <td>InvalidDataException
+</td>
+          <td>- Thrown if incoming data contains invalid combinations.</td>
+        </tr>
+        <tr>
+          <td>SystemException</td>
+          <td>SystemException
+</td>
+          <td>- Thrown if an unrecoverable error occurs. Error log should be available on server.</td>
+        </tr>
+        <tr>
+          <td>IdentityNotFoundException</td>
+          <td>IdentityNotFoundException
+</td>
+          <td>- Thrown if no quartz or dynamic key exists with the given identity.</td>
+        </tr>
+        <tr>
+          <td>InvalidStateException</td>
+          <td>InvalidStateException
+</td>
+          <td>&nbsp;</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <h2 id="service_workService_v2_WorkServiceV2_method_cancelKeyAuditTrail">cancelKeyAuditTrail <small>Operation</small></h2>
+
+        <p>Cancel audit trail request of a key.
+<p/>
+Note, only quartz or dynamic remote enabled key types are supported, also system must be remote enabled.</p>
+
+      <table class="table">
+        <caption>Input Parameters</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>keyIdentity</td>
+          <td>string
+</td>
+          <td>Identity of the key</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Faults</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>conditions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>InvalidDataException</td>
+          <td>InvalidDataException
+</td>
+          <td>- Thrown if incoming data contains invalid combinations.</td>
+        </tr>
+        <tr>
+          <td>SystemException</td>
+          <td>SystemException
+</td>
+          <td>- Thrown if an unrecoverable error occurs. Error log should be available on server.</td>
+        </tr>
+        <tr>
+          <td>IdentityNotFoundException</td>
+          <td>IdentityNotFoundException
+</td>
+          <td>- Thrown if no quartz or dynamic exists with the given identity.</td>
+        </tr>
+        <tr>
+          <td>InvalidStateException</td>
+          <td>InvalidStateException
+</td>
+          <td>&nbsp;</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <h2 id="service_workService_v2_WorkServiceV2_method_declareKeyLost">declareKeyLost <small>Operation</small></h2>
+
+        <p>Declare a key as lost.
+<p/>
+If the key was handed out before declared lost, it will no longer be considered handed out.
+<p/>
+For remote enabled keys, all pending jobs will be cancelled except for audit trail requests and
+a remote job to invalidate the key will be issued.
+</p>
+<p/>
+The key will be black-listed in all affected cylinders.
+<p/>
+This operation is only supported for user keys.</p>
+
+      <table class="table">
+        <caption>Input Parameters</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>keyIdentity</td>
+          <td>string
+</td>
+          <td>Identity of the key that is lost.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Faults</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>conditions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>SystemException</td>
+          <td>SystemException
+</td>
+          <td>Thrown if the system was configured incorrectly or other unexpected errors occurred.</td>
+        </tr>
+        <tr>
+          <td>IdentityNotFoundException</td>
+          <td>IdentityNotFoundException
+</td>
+          <td>Thrown if the given key identity could not be found.</td>
+        </tr>
+        <tr>
+          <td>InvalidDataException</td>
+          <td>InvalidDataException
+</td>
+          <td>Thrown if the given key is a C-Key or is broken.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <h2 id="service_workService_v2_WorkServiceV2_method_declareKeyFound">declareKeyFound <small>Operation</small></h2>
+
+        <p>Declare a key as found (and back in stock).
+<p/>
+All pending (not yet started) black-listing jobs will be cancelled.
+<p/>
+This operation is only supported for user keys.</p>
+
+      <table class="table">
+        <caption>Input Parameters</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>keyIdentity</td>
+          <td>string
+</td>
+          <td>Identity of the key that is found.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Faults</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>conditions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>SystemException</td>
+          <td>SystemException
+</td>
+          <td>Thrown if the system was configured incorrectly or other unexpected errors occurred.</td>
+        </tr>
+        <tr>
+          <td>IdentityNotFoundException</td>
+          <td>IdentityNotFoundException
+</td>
+          <td>Thrown if the given key identity could not be found.</td>
+        </tr>
+        <tr>
+          <td>InvalidDataException</td>
+          <td>InvalidDataException
+</td>
+          <td>Thrown if the given key is a C-Key.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <h2 id="service_workService_v2_WorkServiceV2_method_declareKeyBroken">declareKeyBroken <small>Operation</small></h2>
+
+        <p>Declare a key as broken.
+<p/>
+If the key was handed out before declared broken, it will no longer be considered handed out.
+<p/>
+For remote enabled keys, all pending remote updates will be cancelled.
+<p/>
+This operation is only supported for user keys.</p>
+
+      <table class="table">
+        <caption>Input Parameters</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>keyIdentity</td>
+          <td>string
+</td>
+          <td>Identity of the key that is broken.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Faults</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>conditions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>SystemException</td>
+          <td>SystemException
+</td>
+          <td>Thrown if the system was configured incorrectly or other unexpected errors occurred.</td>
+        </tr>
+        <tr>
+          <td>IdentityNotFoundException</td>
+          <td>IdentityNotFoundException
+</td>
+          <td>Thrown if the given key identity could not be found.</td>
+        </tr>
+        <tr>
+          <td>InvalidDataException</td>
+          <td>InvalidDataException
+</td>
+          <td>Thrown if the given key is a C-Key or key is lost.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <h2 id="service_workService_v2_WorkServiceV2_method_declareKeyOperational">declareKeyOperational <small>Operation</small></h2>
+
+        <p>Declare a key as operational.
+<p/>
+This operation is only supported for user keys.</p>
+
+      <table class="table">
+        <caption>Input Parameters</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>keyIdentity</td>
+          <td>string
+</td>
+          <td>Identity of the key that is operational.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Faults</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>conditions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>SystemException</td>
+          <td>SystemException
+</td>
+          <td>Thrown if the system was configured incorrectly or other unexpected errors occurred.</td>
+        </tr>
+        <tr>
+          <td>IdentityNotFoundException</td>
+          <td>IdentityNotFoundException
+</td>
+          <td>Thrown if the given key identity could not be found.</td>
+        </tr>
+        <tr>
+          <td>InvalidStateException</td>
+          <td>InvalidStateException
+</td>
+          <td>Thrown if the key is not broken.</td>
+        </tr>
+        <tr>
+          <td>InvalidDataException</td>
+          <td>InvalidDataException
+</td>
+          <td>Thrown if the given key is a C-Key.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <h2 id="service_workService_v2_WorkServiceV2_method_declareCylinderBroken">declareCylinderBroken <small>Operation</small></h2>
+
+        <p>Declare a cylinder as broken.
+<p/>
+Both sides of the cylinder will be declared broken if the cylinder is double-sided.</p>
+
+      <table class="table">
+        <caption>Input Parameters</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>cylinderIdentity</td>
+          <td>string
+</td>
+          <td>Identity of the cylinder that is broken.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Faults</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>conditions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>SystemException</td>
+          <td>SystemException
+</td>
+          <td>Thrown if the system was configured incorrectly or other unexpected errors occurred.</td>
+        </tr>
+        <tr>
+          <td>IdentityNotFoundException</td>
+          <td>IdentityNotFoundException
+</td>
+          <td>Thrown if the given cylinder identity could not be found.</td>
+        </tr>
+        <tr>
+          <td>InvalidDataException</td>
+          <td>InvalidDataException
+</td>
+          <td>Thrown if cylinder is deleted.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <h2 id="service_workService_v2_WorkServiceV2_method_declareCylinderOperational">declareCylinderOperational <small>Operation</small></h2>
+
+        <p>Declare a cylinder as operational.
+<p/>
+Both sides of the cylinder will be declared operational if the cylinder is double-sided.
+<p/>
+Corresponding cylinder reprogramming jobs will be created.</p>
+
+      <table class="table">
+        <caption>Input Parameters</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>cylinderIdentity</td>
+          <td>string
+</td>
+          <td>Identity of the cylinder that is operational.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Faults</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>conditions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>SystemException</td>
+          <td>SystemException
+</td>
+          <td>Thrown if the system was configured incorrectly or other unexpected errors occurred.</td>
+        </tr>
+        <tr>
+          <td>IdentityNotFoundException</td>
+          <td>IdentityNotFoundException
+</td>
+          <td>Thrown if the given cylinder identity could not be found.</td>
+        </tr>
+        <tr>
+          <td>InvalidDataException</td>
+          <td>InvalidDataException
+</td>
+          <td>Thrown if cylinder is deleted.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <h2 id="service_workService_v2_WorkServiceV2_method_updateCylinder">updateCylinder <small>Operation</small></h2>
+
+        <p>Updates cylinder information.</p>
+
+      <table class="table">
+        <caption>Input Parameters</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>cylinderUpdate</td>
+          <td><a href="xml_data_v2_cylinderUpdate.html">cylinderUpdate</a>
+</td>
+          <td>Cylinder identity to lookup and information to be updated.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Faults</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>conditions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>SystemException</td>
+          <td>SystemException
+</td>
+          <td>Thrown if the system was configured incorrectly or other unexpected errors occurred.</td>
+        </tr>
+        <tr>
+          <td>InvalidDataException</td>
+          <td>InvalidDataException
+</td>
+          <td>Thrown if cylinder identity is missing or if the input values are invalid.</td>
+        </tr>
+        <tr>
+          <td>IdentityNotFoundException</td>
+          <td>IdentityNotFoundException
+</td>
+          <td>Thrown if cylinder identity could not be found.</td>
+        </tr>
+        <tr>
+          <td>InvalidStateException</td>
+          <td>InvalidStateException
+</td>
+          <td>Thrown if cylinder is deleted.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <h2 id="service_workService_v2_WorkServiceV2_method_changeCylinderGroup">changeCylinderGroup <small>Operation</small></h2>
+
+        <p>Changes cylinder group for specific cylinder.
+<p/>
+This method creates cylinder group change job which should be programmed to the cylinder.</p>
+
+      <table class="table">
+        <caption>Input Parameters</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>cylinderIdentity</td>
+          <td>string
+</td>
+          <td>Identity of the cylinder which group will be changed.</td>
+        </tr>
+        <tr>
+          <td>cylinderGroupIdentity</td>
+          <td>string
+</td>
+          <td>Identity of the new cylinder group for specific cylinder.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Faults</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>conditions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>SystemException</td>
+          <td>SystemException
+</td>
+          <td>Thrown if the system was configured incorrectly or other unexpected errors occurred.</td>
+        </tr>
+        <tr>
+          <td>IdentityNotFoundException</td>
+          <td>IdentityNotFoundException
+</td>
+          <td>Thrown if either the cylinder or the cylinder group could not be found.</td>
+        </tr>
+        <tr>
+          <td>InvalidDataException</td>
+          <td>InvalidDataException
+</td>
+          <td>Thrown if state of either cylinder or cylinder group does not allow the operation. Possible failure codes:
+<ul>
+<li>CYLINDER_IS_NOT_GROUP_ENABLED</li> - all cylinder plugs are mechanical or not group enabled electronic
+<li>NOT_COMPATIBLE_KEY_CUTTINGS</li> - cylinder group is initialized and cylinder group has different key cuttings than electronic cylinder plug
+</ul></td>
+        </tr>
+        </tbody>
+      </table>
+
+      <h2 id="service_workService_v2_WorkServiceV2_method_assignCylinderJobsToCKey">assignCylinderJobsToCKey <small>Operation</small></h2>
+
+        <p>Assigns cylinder jobs to a particular c-key.
+<p/>
+Only the jobs that are applicable will be assigned.</p>
+
+      <table class="table">
+        <caption>Input Parameters</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>cylinderIdentity</td>
+          <td>string
+</td>
+          <td>Identity of the cylinder with jobs to assign.</td>
+        </tr>
+        <tr>
+          <td>keyIdentity</td>
+          <td>string
+</td>
+          <td>Identity of the c-key that should receive the jobs.</td>
+        </tr>
+        <tr>
+          <td>notifyKeyHolder</td>
+          <td>boolean
+</td>
+          <td>Determines if email to c-key holder should be sent. The parameter is optional and the default value is false.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Faults</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>conditions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>SystemException</td>
+          <td>SystemException
+</td>
+          <td>Thrown if an unrecoverable error occurs.</td>
+        </tr>
+        <tr>
+          <td>IdentityNotFoundException</td>
+          <td>IdentityNotFoundException
+</td>
+          <td>Thrown if the given cylinder or key identity could not be found.</td>
+        </tr>
+        <tr>
+          <td>InvalidDataException</td>
+          <td>InvalidDataException
+</td>
+          <td>Thrown in case of data inconsistency. Possible failure codes:
+<ul>
+<li><b>CKEY_REQUIRED</b> - given key must be a c-key. </li>
+</ul></td>
+        </tr>
+        <tr>
+          <td>InvalidStateException</td>
+          <td>InvalidStateException
+</td>
+          <td>Thrown if current c-key or cylinder state doesn't allow to assign new jobs. Possible failure codes:
+<ul>
+<li><b>CKEY_BROKEN</b> - c-key is marked as a broken and cannot be programmed. </li>
+<li><b>CKEY_LOST</b> -  c-key is marked as a lost and cannot be programmed. </li>
+<li><b>CKEY_BLOCKED</b> - c-key is marked as a blocked and cannot be programmed.  </li>
+<li><b>CKEY_PROGRAMMING_NOT_ALLOWED</b> - c-key does not have programming permission to assign job. </li>
+<li><b>CYLINDER_BROKEN</b> - not possible to assign jobs to the broken cylinder. </li>
+<li><b>CYLINDER_DELETED</b> - specified cylinder is deleted. </li>
+<li><b>CYLINDER_JOB_ALREADY_ON_CKEY</b> - cylinder plug is already assigned to the c-key. </li>
+<li><b>CYLINDER_PLUG_LOCKED</b> - one of the cylinder plug is locked for programming. Job could not be assigned to the c-key. </li>
+<li><b>CKEY_HAS_AUTO_AUDIT_TRAIL</b> - automatic audit trail retrieval for selected c-key is  activated. It is not possible to to assign audit trail job. </li>
+<li><b>NO_CYLINDER_JOBS_TO_ASSIGN</b> - there are no cylinder jobs that can be assigned to the selected c-key. </li>
+</ul></td>
+        </tr>
+        </tbody>
+      </table>
+
+      <h2 id="service_workService_v2_WorkServiceV2_method_updateKeyPinValidation">updateKeyPinValidation <small>Operation</small></h2>
+
+        <p>Update PIN validation configuration of a key.
+<p/>
+<p/>This operation will put "wanted" PIN validation on the key, already pending key PIN validation updates will be replaced.
+<p/>
+<p/>Note, depending on the current load of the system, creation of a remote programming job might take a number of minutes.
+<p/>
+Key system requirements:
+<ul>
+<li>Key system must be remote enabled.</li>
+</ul>
+<p/>
+Key requirements:
+<ul>
+<li>Key must be a CLIQ Connect key.</li>
+<li>Only keys of type 'dynamic' and 'quartz' are valid.</li>
+<li>Key must have support for remote updates.</li>
+<li>Key must have support for PIN validation.</li>
+</ul>
+<p/></p>
+
+      <table class="table">
+        <caption>Input Parameters</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>keyIdentity</td>
+          <td>string
+</td>
+          <td>Identity of a key that should receive the update.</td>
+        </tr>
+        <tr>
+          <td>pinValidation</td>
+          <td><a href="xml_data_v2_pinValidation.html">pinValidation</a>
+</td>
+          <td>PIN validation configuration to be applied to the key.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Faults</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>conditions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>InvalidDataException</td>
+          <td>InvalidDataException
+</td>
+          <td>Thrown if the input data is invalid.
+<ul>
+<li>PIN_VALIDATION_INVALID_ARGUMENTS</li> - Request data invalid
+</ul></td>
+        </tr>
+        <tr>
+          <td>SystemException</td>
+          <td>SystemException
+</td>
+          <td>Thrown if the system was configured incorrectly or other unexpected errors occurred.</td>
+        </tr>
+        <tr>
+          <td>IdentityNotFoundException</td>
+          <td>IdentityNotFoundException
+</td>
+          <td>Thrown if no key with the given identity could be found.</td>
+        </tr>
+        <tr>
+          <td>InvalidStateException</td>
+          <td>InvalidStateException
+</td>
+          <td>Thrown in case of invalid business state for requested action.
+<ul>
+<li>PIN_VALIDATION_NOT_QUARTZ_KEY</li> - Selected key is not a Quartz Key
+<li>PIN_VALIDATION_NOT_SUPPORTED</li> - Key must be a CLIQ Connect key with PIN validation support
+<li>PIN_VALIDATION_KEY_VALIDITY_NEVER</li> - Selected key has validity set to NEVER on updating pin validity
+<li>PIN_VALIDATION_KEY_LOST</li> - Selected key is lost
+<li>PIN_VALIDATION_KEY_BROKEN</li> - Selected key is broken
+<li>PIN_VALIDATION_DISABLING_KEY_VALIDITY_SCHEDULED</li> - Attempt to update the Pin Validation parameters of key with scheduled disabling of Key Validity.
+</ul></td>
+        </tr>
+        </tbody>
+      </table>
+
+      <h2 id="service_workService_v2_WorkServiceV2_method_createAccessProfile">createAccessProfile <small>Operation</small></h2>
+
+        <p>Create an access profile
+<p/></p>
+
+      <table class="table">
+        <caption>Input Parameters</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>accessProfile</td>
+          <td><a href="xml_data_v2_accessProfileCreate.html">accessProfileCreate</a>
+</td>
+          <td>Input data for a new access profile</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Return Value</caption>
+        <thead>
+        <tr>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>string</td>
+          <td>accessProfileIdentity    Identity of a created access profile</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Faults</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>conditions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>InvalidDataException</td>
+          <td>InvalidDataException
+</td>
+          <td>Thrown if any of the input data is invalid</td>
+        </tr>
+        <tr>
+          <td>SystemException</td>
+          <td>SystemException
+</td>
+          <td>Thrown if the system was configured incorrectly
+or system lacks required license
+or other unexpected errors occurred
+<p>
+<p/>
+System must meet the following requirements:
+<ul>
+<li>It has a license for Remote</li>
+<li>It has a license for Access Profiles</li>
+<li>It has a license for Domains - if setting the domain</li>
+<li>It has a license for Flexible Revalidation feature and it is enabled in System Settings - if setting the revalidation interval</li>
+</ul>
+<p/>
+The WebService user needs the following permissions
+<ul>
+<li>Access Profiles: Full</li>
+<li>Flexible Revalidation: Full - if setting revalidation interval</li>
+</ul>
+<p/></td>
+        </tr>
+        </tbody>
+      </table>
+
+      <h2 id="service_workService_v2_WorkServiceV2_method_updateAccessProfile">updateAccessProfile <small>Operation</small></h2>
+
+        <p>Update an access profile.
+Only those properties which are present in the input data will be changed
+<p/></p>
+
+      <table class="table">
+        <caption>Input Parameters</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>accessProfileUpdate</td>
+          <td><a href="xml_data_v2_accessProfileProperties.html">accessProfileProperties</a>
+</td>
+          <td>Input data containing access profile properties to be change</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Faults</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>conditions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>InvalidDataException</td>
+          <td>InvalidDataException
+</td>
+          <td>Thrown if any of the input data is invalid</td>
+        </tr>
+        <tr>
+          <td>SystemException</td>
+          <td>SystemException
+</td>
+          <td>Thrown if the system was configured incorrectly
+or system lacks required license
+or other unexpected errors occurred
+<p>
+<p/>
+System must meet the following requirements:
+<ul>
+<li>It has a license for Remote</li>
+<li>It has a license for Access Profiles</li>
+<li>It has a license for Domains - if setting the domain</li>
+<li>It has a license for Flexible Revalidation feature and it is enabled in System Settings - if setting the revalidation interval</li>
+</ul>
+<p/>
+The WebService user needs the following permissions
+<ul>
+<li>Access Profiles: Full</li>
+<li>Flexible Revalidation: Full - if setting revalidation interval</li>
+</ul>
+<p/></td>
+        </tr>
+        <tr>
+          <td>IdentityNotFoundException</td>
+          <td>IdentityNotFoundException
+</td>
+          <td>&nbsp;</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <h2 id="service_workService_v2_WorkServiceV2_method_addCylinderPlugsToAccessProfile">addCylinderPlugsToAccessProfile <small>Operation</small></h2>
+
+        <p>Add cylinder plugs to access profile.</p>
+
+      <table class="table">
+        <caption>Input Parameters</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>accessProfileIdentity</td>
+          <td>string
+</td>
+          <td>Identity of the access profile that should get cylinder plugs.</td>
+        </tr>
+        <tr>
+          <td>cylinderPlugIdentities</td>
+          <td><a href="xml_data_v2_authorisationUpdate.html">authorisationUpdate</a>
+</td>
+          <td>Identities of the cylinder plugs that should be added to the access profile.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Faults</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>conditions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>SystemException</td>
+          <td>SystemException
+</td>
+          <td>Thrown if the system was configured incorrectly or other unexpected errors occurred.</td>
+        </tr>
+        <tr>
+          <td>InvalidDataException</td>
+          <td>InvalidDataException
+</td>
+          <td>Thrown if either the cylinder plug or the access profile is null or deleted.</td>
+        </tr>
+        <tr>
+          <td>IdentityNotFoundException</td>
+          <td>IdentityNotFoundException
+</td>
+          <td>Thrown if either the cylinder plug or the access profile could not be found.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <h2 id="service_workService_v2_WorkServiceV2_method_removeCylinderPlugsFromAccessProfile">removeCylinderPlugsFromAccessProfile <small>Operation</small></h2>
+
+        <p>Remove one or more cylinder plugs from access profile.
+Requesting to remove cylinder plugs which are not present on the access profile will not generate any error.</p>
+
+      <table class="table">
+        <caption>Input Parameters</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>accessProfileIdentity</td>
+          <td>string
+</td>
+          <td>Identity of the access profile  for which cylinder plugs should be removed from its access list.</td>
+        </tr>
+        <tr>
+          <td>cylinderPlugIdentities</td>
+          <td><a href="xml_data_v2_authorisationUpdate.html">authorisationUpdate</a>
+</td>
+          <td>Identities of the cylinder plugs that should be removed from the access profile.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Faults</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>conditions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>SystemException</td>
+          <td>SystemException
+</td>
+          <td>Thrown if the system was configured incorrectly
+or other unexpected errors occurred.</td>
+        </tr>
+        <tr>
+          <td>InvalidDataException</td>
+          <td>InvalidDataException
+</td>
+          <td>Thrown if either the cylinder plug or the access profile is null or deleted.</td>
+        </tr>
+        <tr>
+          <td>IdentityNotFoundException</td>
+          <td>IdentityNotFoundException
+</td>
+          <td>Thrown if either the cylinder plug or the access profile could not be found.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <h2 id="service_workService_v2_WorkServiceV2_method_addCylinderGroupsToAccessProfile">addCylinderGroupsToAccessProfile <small>Operation</small></h2>
+
+        <p>Add cylinder groups to access profile.</p>
+
+      <table class="table">
+        <caption>Input Parameters</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>accessProfileIdentity</td>
+          <td>string
+</td>
+          <td>Identity of the access profile</td>
+        </tr>
+        <tr>
+          <td>cylinderGroupIdentities</td>
+          <td><a href="xml_data_v2_authorisationCylinderGroupUpdate.html">authorisationCylinderGroupUpdate</a>
+</td>
+          <td>Identities of the cylinder groups that should be added to the access profile</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Faults</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>conditions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>SystemException</td>
+          <td>SystemException
+</td>
+          <td>Thrown if the system was configured incorrectly or other unexpected errors occurred</td>
+        </tr>
+        <tr>
+          <td>InvalidDataException</td>
+          <td>InvalidDataException
+</td>
+          <td>Thrown if at least one cylinder group cannot be added to the access profile</td>
+        </tr>
+        <tr>
+          <td>IdentityNotFoundException</td>
+          <td>IdentityNotFoundException
+</td>
+          <td>Thrown if at least one cylinder group or the access profile could not be found</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <h2 id="service_workService_v2_WorkServiceV2_method_removeCylinderGroupsFromAccessProfile">removeCylinderGroupsFromAccessProfile <small>Operation</small></h2>
+
+        <p>Remove one or more cylinder groups from access profile.
+<p/>
+Note, if the method is called for some cylinder groups present on the access profile' list and some of
+cylinder groups which are not assigned to the access profile only authorised groups plugs are removed
+from the access profile' access list and nothing happens for remaining cylinder groups.
+<p/>
+Note, if the method is called twice for the same cylinder groups nothing happens since cylinder groups are no
+longer on the access profile' access list.
+<p/>
+Note, if the method is called for cylinder groups which are not on the access profile' access list nothing
+happens since cylinder groups are not on access list already.</p>
+
+      <table class="table">
+        <caption>Input Parameters</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>accessProfileIdentity</td>
+          <td>string
+</td>
+          <td>Identity of the access profile  for which cylinder plugs should be removed from its access list.</td>
+        </tr>
+        <tr>
+          <td>cylinderGroupIdentities</td>
+          <td><a href="xml_data_v2_authorisationCylinderGroupUpdate.html">authorisationCylinderGroupUpdate</a>
+</td>
+          <td>Identities of the cylinder groups that should be removed from the access profile.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Faults</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>type</th>
+          <th>conditions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>SystemException</td>
+          <td>SystemException
+</td>
+          <td>Thrown if the system was configured incorrectly or other unexpected errors occurred.</td>
+        </tr>
+        <tr>
+          <td>InvalidDataException</td>
+          <td>InvalidDataException
+</td>
+          <td>Thrown if either the cylinder group or the access profile is null or deleted.</td>
+        </tr>
+        <tr>
+          <td>IdentityNotFoundException</td>
+          <td>IdentityNotFoundException
+</td>
+          <td>Thrown if either the cylinder group or the access profile could not be found.</td>
+        </tr>
+        </tbody>
+      </table>
+
+        <footer class="footer">
+          <div class="container">
+            <p class="text-muted">Generated by <a href="http://enunciate.webcohesion.com">Enunciate</a>.</p>
+          </div>
+        </footer>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- JavaScript placed at the end of the document so the pages load faster. -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+  <!-- prettify code blocks. see http://code.google.com/p/google-code-prettify/ -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/run_prettify.js" type="text/javascript"></script>
+  <script>
+    $(function() {
+      $(".clickable-row").click(function() {
+        window.document.location = $(this).data("href");
+      });
+
+      $('[data-toggle="tooltip"]').tooltip()
+    });
+  </script>
+
+</body>
+</html>

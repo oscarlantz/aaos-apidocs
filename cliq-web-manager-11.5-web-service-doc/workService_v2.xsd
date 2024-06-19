@@ -1,0 +1,1382 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema version="1.0" targetNamespace="http://cliq.shared.assaabloy.com/ws/work/v2/"
+  xmlns:dataExtra_r6_1_v2="http://cliq.shared.assaabloy.com/ws/data/extra_r6_1/v2/"
+  xmlns:data_v2="http://cliq.shared.assaabloy.com/ws/data/v2/"
+  xmlns:workService_v2="http://cliq.shared.assaabloy.com/ws/work/v2/"
+  
+  xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://cliq.shared.assaabloy.com/ws/data/extra_r6_1/v2/" schemaLocation="dataExtra_r6_1_v2.xsd"/>
+  <xs:import namespace="http://cliq.shared.assaabloy.com/ws/data/v2/" schemaLocation="data_v2.xsd"/>
+
+<xs:element name="addAccessProfileToKey" type="workService_v2:addAccessProfileToKey"/>
+<xs:complexType name="addAccessProfileToKey">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit request wrapper for operation "addAccessProfileToKey". (Add an access profile to a key.
+<p/>This operation will put "wanted" cylinder authorisations that applies to the added profile, this will be done for specified key.
+<p/>
+<p/>Note, depending on the current load of the system, creation of a remote programming job might take one to several minutes.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="keyIdentity" type="xs:string" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[Identity of the key that should get an access profile.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+    <xs:element name="accessProfileIdentity" type="xs:string" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[Identity of the access profile to be added to the key.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="addAccessProfileToKeyResponse" type="workService_v2:addAccessProfileToKeyResponse"/>
+<xs:complexType name="addAccessProfileToKeyResponse">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit response wrapper for operation "addAccessProfileToKey". (Add an access profile to a key.
+<p/>This operation will put "wanted" cylinder authorisations that applies to the added profile, this will be done for specified key.
+<p/>
+<p/>Note, depending on the current load of the system, creation of a remote programming job might take one to several minutes.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="addAccessProfileToPerson" type="workService_v2:addAccessProfileToPerson"/>
+<xs:complexType name="addAccessProfileToPerson">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit request wrapper for operation "addAccessProfileToPerson". (Add an access profile to a person.
+<p/>This operation will put "wanted" cylinder authorisations that applies to the added profile, this will be done for all keys owned by the person.
+Furthermore for each key and if required, a remote programming job will be created that reflects authorisations of the newly added profile.
+<p/>
+<p/>Note, depending on the current load of the system, creation of a remote programming job might take one to several minutes.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="personIdentity" type="xs:string" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[Identity of the person that should get an access profile.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+    <xs:element name="accessProfileIdentity" type="xs:string" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[Identity of the access profile to be added to the person.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="addAccessProfileToPersonResponse" type="workService_v2:addAccessProfileToPersonResponse"/>
+<xs:complexType name="addAccessProfileToPersonResponse">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit response wrapper for operation "addAccessProfileToPerson". (Add an access profile to a person.
+<p/>This operation will put "wanted" cylinder authorisations that applies to the added profile, this will be done for all keys owned by the person.
+Furthermore for each key and if required, a remote programming job will be created that reflects authorisations of the newly added profile.
+<p/>
+<p/>Note, depending on the current load of the system, creation of a remote programming job might take one to several minutes.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="addCylinderGroupsToAccessProfile" type="workService_v2:addCylinderGroupsToAccessProfile"/>
+<xs:complexType name="addCylinderGroupsToAccessProfile">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit request wrapper for operation "addCylinderGroupsToAccessProfile". (Add cylinder groups to access profile.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="accessProfileIdentity" type="xs:string" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[Identity of the access profile]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+    <xs:element name="cylinderGroupIdentities" type="data_v2:authorisationCylinderGroupUpdate" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[Identities of the cylinder groups that should be added to the access profile]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="addCylinderGroupsToAccessProfileResponse" type="workService_v2:addCylinderGroupsToAccessProfileResponse"/>
+<xs:complexType name="addCylinderGroupsToAccessProfileResponse">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit response wrapper for operation "addCylinderGroupsToAccessProfile". (Add cylinder groups to access profile.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="addCylinderPlugsToAccessProfile" type="workService_v2:addCylinderPlugsToAccessProfile"/>
+<xs:complexType name="addCylinderPlugsToAccessProfile">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit request wrapper for operation "addCylinderPlugsToAccessProfile". (Add cylinder plugs to access profile.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="accessProfileIdentity" type="xs:string" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[Identity of the access profile that should get cylinder plugs.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+    <xs:element name="cylinderPlugIdentities" type="data_v2:authorisationUpdate" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[Identities of the cylinder plugs that should be added to the access profile.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="addCylinderPlugsToAccessProfileResponse" type="workService_v2:addCylinderPlugsToAccessProfileResponse"/>
+<xs:complexType name="addCylinderPlugsToAccessProfileResponse">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit response wrapper for operation "addCylinderPlugsToAccessProfile". (Add cylinder plugs to access profile.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="assignCylinderJobsToCKey" type="workService_v2:assignCylinderJobsToCKey"/>
+<xs:complexType name="assignCylinderJobsToCKey">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit request wrapper for operation "assignCylinderJobsToCKey". (Assigns cylinder jobs to a particular c-key.
+<p/>
+Only the jobs that are applicable will be assigned.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="cylinderIdentity" type="xs:string" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[Identity of the cylinder with jobs to assign.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+    <xs:element name="keyIdentity" type="xs:string" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[Identity of the c-key that should receive the jobs.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+    <xs:element name="notifyKeyHolder" type="xs:boolean" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[Determines if email to c-key holder should be sent. The parameter is optional and the default value is false.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="assignCylinderJobsToCKeyResponse" type="workService_v2:assignCylinderJobsToCKeyResponse"/>
+<xs:complexType name="assignCylinderJobsToCKeyResponse">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit response wrapper for operation "assignCylinderJobsToCKey". (Assigns cylinder jobs to a particular c-key.
+<p/>
+Only the jobs that are applicable will be assigned.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="cancelKeyAuditTrail" type="workService_v2:cancelKeyAuditTrail"/>
+<xs:complexType name="cancelKeyAuditTrail">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit request wrapper for operation "cancelKeyAuditTrail". (Cancel audit trail request of a key.
+<p/>
+Note, only quartz or dynamic remote enabled key types are supported, also system must be remote enabled.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="keyIdentity" type="xs:string" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[Identity of the key]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="cancelKeyAuditTrailResponse" type="workService_v2:cancelKeyAuditTrailResponse"/>
+<xs:complexType name="cancelKeyAuditTrailResponse">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit response wrapper for operation "cancelKeyAuditTrail". (Cancel audit trail request of a key.
+<p/>
+Note, only quartz or dynamic remote enabled key types are supported, also system must be remote enabled.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="changeCylinderGroup" type="workService_v2:changeCylinderGroup"/>
+<xs:complexType name="changeCylinderGroup">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit request wrapper for operation "changeCylinderGroup". (Changes cylinder group for specific cylinder.
+<p/>
+This method creates cylinder group change job which should be programmed to the cylinder.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="cylinderIdentity" type="xs:string" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[Identity of the cylinder which group will be changed.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+    <xs:element name="cylinderGroupIdentity" type="xs:string" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[Identity of the new cylinder group for specific cylinder.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="changeCylinderGroupResponse" type="workService_v2:changeCylinderGroupResponse"/>
+<xs:complexType name="changeCylinderGroupResponse">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit response wrapper for operation "changeCylinderGroup". (Changes cylinder group for specific cylinder.
+<p/>
+This method creates cylinder group change job which should be programmed to the cylinder.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="createAccessProfile" type="workService_v2:createAccessProfile"/>
+<xs:complexType name="createAccessProfile">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit request wrapper for operation "createAccessProfile". (Create an access profile
+<p/>)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="accessProfile" type="data_v2:accessProfileCreate" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[Input data for a new access profile]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="createAccessProfileResponse" type="workService_v2:createAccessProfileResponse"/>
+<xs:complexType name="createAccessProfileResponse">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit response wrapper for operation "createAccessProfile". (Create an access profile
+<p/>)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="accessProfileIdentity" type="xs:string" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="declareCylinderBroken" type="workService_v2:declareCylinderBroken"/>
+<xs:complexType name="declareCylinderBroken">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit request wrapper for operation "declareCylinderBroken". (Declare a cylinder as broken.
+<p/>
+Both sides of the cylinder will be declared broken if the cylinder is double-sided.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="cylinderIdentity" type="xs:string" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[Identity of the cylinder that is broken.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="declareCylinderBrokenResponse" type="workService_v2:declareCylinderBrokenResponse"/>
+<xs:complexType name="declareCylinderBrokenResponse">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit response wrapper for operation "declareCylinderBroken". (Declare a cylinder as broken.
+<p/>
+Both sides of the cylinder will be declared broken if the cylinder is double-sided.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="declareCylinderOperational" type="workService_v2:declareCylinderOperational"/>
+<xs:complexType name="declareCylinderOperational">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit request wrapper for operation "declareCylinderOperational". (Declare a cylinder as operational.
+<p/>
+Both sides of the cylinder will be declared operational if the cylinder is double-sided.
+<p/>
+Corresponding cylinder reprogramming jobs will be created.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="cylinderIdentity" type="xs:string" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[Identity of the cylinder that is operational.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="declareCylinderOperationalResponse" type="workService_v2:declareCylinderOperationalResponse"/>
+<xs:complexType name="declareCylinderOperationalResponse">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit response wrapper for operation "declareCylinderOperational". (Declare a cylinder as operational.
+<p/>
+Both sides of the cylinder will be declared operational if the cylinder is double-sided.
+<p/>
+Corresponding cylinder reprogramming jobs will be created.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="declareKeyBroken" type="workService_v2:declareKeyBroken"/>
+<xs:complexType name="declareKeyBroken">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit request wrapper for operation "declareKeyBroken". (Declare a key as broken.
+<p/>
+If the key was handed out before declared broken, it will no longer be considered handed out.
+<p/>
+For remote enabled keys, all pending remote updates will be cancelled.
+<p/>
+This operation is only supported for user keys.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="keyIdentity" type="xs:string" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[Identity of the key that is broken.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="declareKeyBrokenResponse" type="workService_v2:declareKeyBrokenResponse"/>
+<xs:complexType name="declareKeyBrokenResponse">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit response wrapper for operation "declareKeyBroken". (Declare a key as broken.
+<p/>
+If the key was handed out before declared broken, it will no longer be considered handed out.
+<p/>
+For remote enabled keys, all pending remote updates will be cancelled.
+<p/>
+This operation is only supported for user keys.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="declareKeyFound" type="workService_v2:declareKeyFound"/>
+<xs:complexType name="declareKeyFound">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit request wrapper for operation "declareKeyFound". (Declare a key as found (and back in stock).
+<p/>
+All pending (not yet started) black-listing jobs will be cancelled.
+<p/>
+This operation is only supported for user keys.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="keyIdentity" type="xs:string" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[Identity of the key that is found.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="declareKeyFoundResponse" type="workService_v2:declareKeyFoundResponse"/>
+<xs:complexType name="declareKeyFoundResponse">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit response wrapper for operation "declareKeyFound". (Declare a key as found (and back in stock).
+<p/>
+All pending (not yet started) black-listing jobs will be cancelled.
+<p/>
+This operation is only supported for user keys.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="declareKeyLost" type="workService_v2:declareKeyLost"/>
+<xs:complexType name="declareKeyLost">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit request wrapper for operation "declareKeyLost". (Declare a key as lost.
+<p/>
+If the key was handed out before declared lost, it will no longer be considered handed out.
+<p/>
+For remote enabled keys, all pending jobs will be cancelled except for audit trail requests and
+a remote job to invalidate the key will be issued.
+</p>
+<p/>
+The key will be black-listed in all affected cylinders.
+<p/>
+This operation is only supported for user keys.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="keyIdentity" type="xs:string" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[Identity of the key that is lost.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="declareKeyLostResponse" type="workService_v2:declareKeyLostResponse"/>
+<xs:complexType name="declareKeyLostResponse">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit response wrapper for operation "declareKeyLost". (Declare a key as lost.
+<p/>
+If the key was handed out before declared lost, it will no longer be considered handed out.
+<p/>
+For remote enabled keys, all pending jobs will be cancelled except for audit trail requests and
+a remote job to invalidate the key will be issued.
+</p>
+<p/>
+The key will be black-listed in all affected cylinders.
+<p/>
+This operation is only supported for user keys.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="declareKeyOperational" type="workService_v2:declareKeyOperational"/>
+<xs:complexType name="declareKeyOperational">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit request wrapper for operation "declareKeyOperational". (Declare a key as operational.
+<p/>
+This operation is only supported for user keys.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="keyIdentity" type="xs:string" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[Identity of the key that is operational.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="declareKeyOperationalResponse" type="workService_v2:declareKeyOperationalResponse"/>
+<xs:complexType name="declareKeyOperationalResponse">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit response wrapper for operation "declareKeyOperational". (Declare a key as operational.
+<p/>
+This operation is only supported for user keys.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="deleteAccessProfile" type="workService_v2:deleteAccessProfile"/>
+<xs:complexType name="deleteAccessProfile">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit request wrapper for operation "deleteAccessProfile". (Delete an access profile.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="accessProfileIdentity" type="xs:string" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[Identity of the access profile that should be deleted.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="deleteAccessProfileResponse" type="workService_v2:deleteAccessProfileResponse"/>
+<xs:complexType name="deleteAccessProfileResponse">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit response wrapper for operation "deleteAccessProfile". (Delete an access profile.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="handInKey" type="workService_v2:handInKey"/>
+<xs:complexType name="handInKey">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit request wrapper for operation "handInKey". (Hand in a key.
+<p/>
+Note, this operation is only supported for user keys.
+<p/>
+A hand-in procedure does normal implies that authorisations-, validity-, schedule are reset and optionally that audittrail request is cancelled,
+see further the description of methods listed below to add any of these operation to your hand-in procedure:
+<ul>
+<li>resetKey(String keyIdentity)</li>
+<li>cancelKeyAuditTrail(String keyIdentity)</li>
+</ul>
+<p/>)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="keyIdentity" type="xs:string" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[The identity of the key to hand in.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="handInKeyResponse" type="workService_v2:handInKeyResponse"/>
+<xs:complexType name="handInKeyResponse">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit response wrapper for operation "handInKey". (Hand in a key.
+<p/>
+Note, this operation is only supported for user keys.
+<p/>
+A hand-in procedure does normal implies that authorisations-, validity-, schedule are reset and optionally that audittrail request is cancelled,
+see further the description of methods listed below to add any of these operation to your hand-in procedure:
+<ul>
+<li>resetKey(String keyIdentity)</li>
+<li>cancelKeyAuditTrail(String keyIdentity)</li>
+</ul>
+<p/>)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="handOutKey" type="workService_v2:handOutKey"/>
+<xs:complexType name="handOutKey">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit request wrapper for operation "handOutKey". (Hand out a key to a person. For dynamic keys, this method also implies that access profiles will be copied from the person to the key.
+<p/>
+Note, this operation is only supported for user keys.
+<p/>
+Dates must be on the format yyyy-MM-ddTHH:MMZ (UTC time),
+yyyy-MM-ddTHH:MM+01:00 or yyyy-MM-ddTHH:MM+01 which is a subset of ISO 8601 (the latter two examples represent
+1 hour offset from UTC). See the specification for more information.
+<p/>
+A complete hand-out procedure does normal implies that authorisations-, validity-, PIN validation-, schedule-updates and also that audittrail are requested,
+se further the description of methods listed below to add any of these operation to your hand-out procedure:
+<ul>
+<li>updateKeyCylinderAuthorisations(String, AuthorisationUpdateDTO)</li>
+<li>updateKeyValidity(String keyIdentity, ValidityDTO)</li>
+<li>updateKeyPinValidation(String keyIdentity, PinValidationDTO)</li>
+<li>updateKeySchedule(String keyIdentity, ScheduleDTO)</li>
+<li>requestKeyAuditTrail(String keyIdentity)</li>
+</ul>
+<p/>)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="personIdentity" type="xs:string" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[The identity of the person that will receive the key.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+    <xs:element name="keyIdentity" type="xs:string" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[The identity of the key to hand out.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+    <xs:element name="handOutDate" type="xs:string" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[The date when the key was handed out.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+    <xs:element name="handInDate" type="xs:string" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[The date when the key should be handed in, parameter is optional. Both null (no XML element in the SOAP request)  and the empty string (empty XML element in the SOAP request) are accepted.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+    <xs:element name="copyAccessProfiles" type="xs:boolean" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[Defines that the access profile should be copied from person to key , parameter is optional and default true.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="handOutKeyResponse" type="workService_v2:handOutKeyResponse"/>
+<xs:complexType name="handOutKeyResponse">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit response wrapper for operation "handOutKey". (Hand out a key to a person. For dynamic keys, this method also implies that access profiles will be copied from the person to the key.
+<p/>
+Note, this operation is only supported for user keys.
+<p/>
+Dates must be on the format yyyy-MM-ddTHH:MMZ (UTC time),
+yyyy-MM-ddTHH:MM+01:00 or yyyy-MM-ddTHH:MM+01 which is a subset of ISO 8601 (the latter two examples represent
+1 hour offset from UTC). See the specification for more information.
+<p/>
+A complete hand-out procedure does normal implies that authorisations-, validity-, PIN validation-, schedule-updates and also that audittrail are requested,
+se further the description of methods listed below to add any of these operation to your hand-out procedure:
+<ul>
+<li>updateKeyCylinderAuthorisations(String, AuthorisationUpdateDTO)</li>
+<li>updateKeyValidity(String keyIdentity, ValidityDTO)</li>
+<li>updateKeyPinValidation(String keyIdentity, PinValidationDTO)</li>
+<li>updateKeySchedule(String keyIdentity, ScheduleDTO)</li>
+<li>requestKeyAuditTrail(String keyIdentity)</li>
+</ul>
+<p/>)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="removeAccessProfileFromKey" type="workService_v2:removeAccessProfileFromKey"/>
+<xs:complexType name="removeAccessProfileFromKey">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit request wrapper for operation "removeAccessProfileFromKey". (Remove an access profile from a key.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="keyIdentity" type="xs:string" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[Identity of the key from whom we will remove the access profile.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+    <xs:element name="accessProfileIdentity" type="xs:string" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[Identity of the access profile that should be removed from the key.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="removeAccessProfileFromKeyResponse" type="workService_v2:removeAccessProfileFromKeyResponse"/>
+<xs:complexType name="removeAccessProfileFromKeyResponse">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit response wrapper for operation "removeAccessProfileFromKey". (Remove an access profile from a key.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="removeAccessProfileFromPerson" type="workService_v2:removeAccessProfileFromPerson"/>
+<xs:complexType name="removeAccessProfileFromPerson">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit request wrapper for operation "removeAccessProfileFromPerson". (Remove an access profile from a person.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="personIdentity" type="xs:string" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[Identity of the person from whom we will remove the access profile.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+    <xs:element name="accessProfileIdentity" type="xs:string" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[Identity of the access profile that should be removed from the person.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="removeAccessProfileFromPersonResponse" type="workService_v2:removeAccessProfileFromPersonResponse"/>
+<xs:complexType name="removeAccessProfileFromPersonResponse">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit response wrapper for operation "removeAccessProfileFromPerson". (Remove an access profile from a person.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="removeCylinderGroupsFromAccessProfile" type="workService_v2:removeCylinderGroupsFromAccessProfile"/>
+<xs:complexType name="removeCylinderGroupsFromAccessProfile">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit request wrapper for operation "removeCylinderGroupsFromAccessProfile". (Remove one or more cylinder groups from access profile.
+<p/>
+Note, if the method is called for some cylinder groups present on the access profile' list and some of
+cylinder groups which are not assigned to the access profile only authorised groups plugs are removed
+from the access profile' access list and nothing happens for remaining cylinder groups.
+<p/>
+Note, if the method is called twice for the same cylinder groups nothing happens since cylinder groups are no
+longer on the access profile' access list.
+<p/>
+Note, if the method is called for cylinder groups which are not on the access profile' access list nothing
+happens since cylinder groups are not on access list already.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="accessProfileIdentity" type="xs:string" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[Identity of the access profile  for which cylinder plugs should be removed from its access list.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+    <xs:element name="cylinderGroupIdentities" type="data_v2:authorisationCylinderGroupUpdate" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[Identities of the cylinder groups that should be removed from the access profile.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="removeCylinderGroupsFromAccessProfileResponse" type="workService_v2:removeCylinderGroupsFromAccessProfileResponse"/>
+<xs:complexType name="removeCylinderGroupsFromAccessProfileResponse">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit response wrapper for operation "removeCylinderGroupsFromAccessProfile". (Remove one or more cylinder groups from access profile.
+<p/>
+Note, if the method is called for some cylinder groups present on the access profile' list and some of
+cylinder groups which are not assigned to the access profile only authorised groups plugs are removed
+from the access profile' access list and nothing happens for remaining cylinder groups.
+<p/>
+Note, if the method is called twice for the same cylinder groups nothing happens since cylinder groups are no
+longer on the access profile' access list.
+<p/>
+Note, if the method is called for cylinder groups which are not on the access profile' access list nothing
+happens since cylinder groups are not on access list already.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="removeCylinderPlugsFromAccessProfile" type="workService_v2:removeCylinderPlugsFromAccessProfile"/>
+<xs:complexType name="removeCylinderPlugsFromAccessProfile">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit request wrapper for operation "removeCylinderPlugsFromAccessProfile". (Remove one or more cylinder plugs from access profile.
+Requesting to remove cylinder plugs which are not present on the access profile will not generate any error.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="accessProfileIdentity" type="xs:string" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[Identity of the access profile  for which cylinder plugs should be removed from its access list.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+    <xs:element name="cylinderPlugIdentities" type="data_v2:authorisationUpdate" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[Identities of the cylinder plugs that should be removed from the access profile.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="removeCylinderPlugsFromAccessProfileResponse" type="workService_v2:removeCylinderPlugsFromAccessProfileResponse"/>
+<xs:complexType name="removeCylinderPlugsFromAccessProfileResponse">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit response wrapper for operation "removeCylinderPlugsFromAccessProfile". (Remove one or more cylinder plugs from access profile.
+Requesting to remove cylinder plugs which are not present on the access profile will not generate any error.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="requestKeyAuditTrail" type="workService_v2:requestKeyAuditTrail"/>
+<xs:complexType name="requestKeyAuditTrail">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit request wrapper for operation "requestKeyAuditTrail". (Request for retrieving audit trails of a key.
+<p/>
+Note, only quartz or dynamic remote enabled key types are supported, also system must be remote enabled.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="keyIdentity" type="xs:string" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[Identity of the key]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="requestKeyAuditTrailResponse" type="workService_v2:requestKeyAuditTrailResponse"/>
+<xs:complexType name="requestKeyAuditTrailResponse">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit response wrapper for operation "requestKeyAuditTrail". (Request for retrieving audit trails of a key.
+<p/>
+Note, only quartz or dynamic remote enabled key types are supported, also system must be remote enabled.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="resetKey" type="workService_v2:resetKey"/>
+<xs:complexType name="resetKey">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit request wrapper for operation "resetKey". (Reset a remote enabled key, creates remote updates to reset the key.
+<p/>
+This method is normally used in conjunction with the handInKey(String keyIdentity) method
+in order to ensure that the key is return without any authorisation and also inactivated.
+<p/>
+<p/>Note, depending on the current load of the system, creation of a remote programming job might take one to several minutes.
+<p/>
+These operations will be performed depending on key type:
+<ul>
+<li>Dynamic key: removes any access profiles and explicit authorisations, disables schedule and validity.</li>
+<li>Quartz key: disables schedule and validity.</li>
+<li>Normal key: disables validity.</li>
+</ul>
+<p/>Note, if the key is CLIQ Connect Dynamic or Quartz key and has support for PIN validation also PIN validation will be disabled.
+<p/>
+Key system requirements:
+<ul>
+<li>Key system must be remote enabled.</li>
+</ul>
+<p/>
+Key requirements:
+<ul>
+<li>Key must have support for remote updates.</li>
+</ul>
+<p/>)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="keyIdentity" type="xs:string" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[Identity of the key that should be reset.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="resetKeyResponse" type="workService_v2:resetKeyResponse"/>
+<xs:complexType name="resetKeyResponse">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit response wrapper for operation "resetKey". (Reset a remote enabled key, creates remote updates to reset the key.
+<p/>
+This method is normally used in conjunction with the handInKey(String keyIdentity) method
+in order to ensure that the key is return without any authorisation and also inactivated.
+<p/>
+<p/>Note, depending on the current load of the system, creation of a remote programming job might take one to several minutes.
+<p/>
+These operations will be performed depending on key type:
+<ul>
+<li>Dynamic key: removes any access profiles and explicit authorisations, disables schedule and validity.</li>
+<li>Quartz key: disables schedule and validity.</li>
+<li>Normal key: disables validity.</li>
+</ul>
+<p/>Note, if the key is CLIQ Connect Dynamic or Quartz key and has support for PIN validation also PIN validation will be disabled.
+<p/>
+Key system requirements:
+<ul>
+<li>Key system must be remote enabled.</li>
+</ul>
+<p/>
+Key requirements:
+<ul>
+<li>Key must have support for remote updates.</li>
+</ul>
+<p/>)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="updateAccessProfile" type="workService_v2:updateAccessProfile"/>
+<xs:complexType name="updateAccessProfile">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit request wrapper for operation "updateAccessProfile". (Update an access profile.
+Only those properties which are present in the input data will be changed
+<p/>)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="accessProfileUpdate" type="data_v2:accessProfileProperties" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[Input data containing access profile properties to be change]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="updateAccessProfileResponse" type="workService_v2:updateAccessProfileResponse"/>
+<xs:complexType name="updateAccessProfileResponse">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit response wrapper for operation "updateAccessProfile". (Update an access profile.
+Only those properties which are present in the input data will be changed
+<p/>)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="updateCylinder" type="workService_v2:updateCylinder"/>
+<xs:complexType name="updateCylinder">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit request wrapper for operation "updateCylinder". (Updates cylinder information.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="cylinderUpdate" type="data_v2:cylinderUpdate" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[Cylinder identity to lookup and information to be updated.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="updateCylinderResponse" type="workService_v2:updateCylinderResponse"/>
+<xs:complexType name="updateCylinderResponse">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit response wrapper for operation "updateCylinder". (Updates cylinder information.)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="updateKeyCylinderAuthorisations" type="workService_v2:updateKeyCylinderAuthorisations"/>
+<xs:complexType name="updateKeyCylinderAuthorisations">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit request wrapper for operation "updateKeyCylinderAuthorisations". (Update cylinder authorisations(access rights) for a dynamic key.
+This operation will put "wanted" cylinder authorisations for the key and if required a remote programming
+job will be created.
+<p/>Note, depending on the current load of the system, creation of a remote programming job might take one to several minutes.
+<p/>
+Key system requirements:
+<ul>
+<li>Key system must be remote enabled.</li>
+</ul>
+<p/>
+Key requirements:
+<ul>
+<li>Only keys of type 'dynamic' (programmable) are valid.</li>
+<li>Key must have support for remote updates.</li>
+</ul>
+<p/>
+Plug requirements:
+<ul>
+<li>Key must have mechanical and as well as electronic access in all supplied plugs</li>
+<li>Plug must be operational.</li>
+<li>Plug's cylinder must be installed.</li>
+</ul>
+<p/>)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="keyIdentity" type="xs:string" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[Identity of the key that should receive the update.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+    <xs:element name="cylinderPlugIdentities" type="data_v2:authorisationUpdate" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[Authorisation update containing a list of plug ids where the key should have access.  If the list of authorised cylinder plugs is empty, all existing cylinder plug authorisations on the key will be deleted.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="updateKeyCylinderAuthorisationsResponse" type="workService_v2:updateKeyCylinderAuthorisationsResponse"/>
+<xs:complexType name="updateKeyCylinderAuthorisationsResponse">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit response wrapper for operation "updateKeyCylinderAuthorisations". (Update cylinder authorisations(access rights) for a dynamic key.
+This operation will put "wanted" cylinder authorisations for the key and if required a remote programming
+job will be created.
+<p/>Note, depending on the current load of the system, creation of a remote programming job might take one to several minutes.
+<p/>
+Key system requirements:
+<ul>
+<li>Key system must be remote enabled.</li>
+</ul>
+<p/>
+Key requirements:
+<ul>
+<li>Only keys of type 'dynamic' (programmable) are valid.</li>
+<li>Key must have support for remote updates.</li>
+</ul>
+<p/>
+Plug requirements:
+<ul>
+<li>Key must have mechanical and as well as electronic access in all supplied plugs</li>
+<li>Plug must be operational.</li>
+<li>Plug's cylinder must be installed.</li>
+</ul>
+<p/>)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="updateKeyCylinderGroupAuthorisations" type="workService_v2:updateKeyCylinderGroupAuthorisations"/>
+<xs:complexType name="updateKeyCylinderGroupAuthorisations">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit request wrapper for operation "updateKeyCylinderGroupAuthorisations". (Update cylinder group authorisations(access rights) for a dynamic key.
+This operation will put "wanted" cylinder group authorisations on the key and if required a remote programming
+job will be created. These cylinder group authorisations will replace the current cylinder group authorisations on the key.
+<p/>Note, depending on the current load of the system, creation of a remote programming job might take one to several minutes.
+<p/>
+Locking system requirements:
+<ul>
+<li>Locking system must be remote enabled.</li>
+<li>Locking system must support cylinder groups.</li>
+</ul>
+<p/>
+Key requirements:
+<ul>
+<li>Only keys of type 'dynamic' (programmable) are valid.</li>
+<li>Key must have support for remote updates.</li>
+<li>Key must have support for cylinder groups.</li>
+</ul>
+<p/>
+Cylinder group requirements:
+<ul>
+<li>Key must have mechanical access in all supplied groups</li>
+</ul>
+<p/>)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="keyIdentity" type="xs:string" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[Identity of the key that should receive the update.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+    <xs:element name="cylinderGroupIdentities" type="data_v2:authorisationCylinderGroupUpdate" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[Authorisation update containing a list of cylinder group ids where the key should have access.  If the list of authorised cylinder groups is empty, all existing cylinder group authorisations on the key will be deleted.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="updateKeyCylinderGroupAuthorisationsResponse" type="workService_v2:updateKeyCylinderGroupAuthorisationsResponse"/>
+<xs:complexType name="updateKeyCylinderGroupAuthorisationsResponse">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit response wrapper for operation "updateKeyCylinderGroupAuthorisations". (Update cylinder group authorisations(access rights) for a dynamic key.
+This operation will put "wanted" cylinder group authorisations on the key and if required a remote programming
+job will be created. These cylinder group authorisations will replace the current cylinder group authorisations on the key.
+<p/>Note, depending on the current load of the system, creation of a remote programming job might take one to several minutes.
+<p/>
+Locking system requirements:
+<ul>
+<li>Locking system must be remote enabled.</li>
+<li>Locking system must support cylinder groups.</li>
+</ul>
+<p/>
+Key requirements:
+<ul>
+<li>Only keys of type 'dynamic' (programmable) are valid.</li>
+<li>Key must have support for remote updates.</li>
+<li>Key must have support for cylinder groups.</li>
+</ul>
+<p/>
+Cylinder group requirements:
+<ul>
+<li>Key must have mechanical access in all supplied groups</li>
+</ul>
+<p/>)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="updateKeyPinValidation" type="workService_v2:updateKeyPinValidation"/>
+<xs:complexType name="updateKeyPinValidation">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit request wrapper for operation "updateKeyPinValidation". (Update PIN validation configuration of a key.
+<p/>
+<p/>This operation will put "wanted" PIN validation on the key, already pending key PIN validation updates will be replaced.
+<p/>
+<p/>Note, depending on the current load of the system, creation of a remote programming job might take a number of minutes.
+<p/>
+Key system requirements:
+<ul>
+<li>Key system must be remote enabled.</li>
+</ul>
+<p/>
+Key requirements:
+<ul>
+<li>Key must be a CLIQ Connect key.</li>
+<li>Only keys of type 'dynamic' and 'quartz' are valid.</li>
+<li>Key must have support for remote updates.</li>
+<li>Key must have support for PIN validation.</li>
+</ul>
+<p/>)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="keyIdentity" type="xs:string" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[Identity of a key that should receive the update.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+    <xs:element name="pinValidation" type="data_v2:pinValidation" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[PIN validation configuration to be applied to the key.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="updateKeyPinValidationResponse" type="workService_v2:updateKeyPinValidationResponse"/>
+<xs:complexType name="updateKeyPinValidationResponse">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit response wrapper for operation "updateKeyPinValidation". (Update PIN validation configuration of a key.
+<p/>
+<p/>This operation will put "wanted" PIN validation on the key, already pending key PIN validation updates will be replaced.
+<p/>
+<p/>Note, depending on the current load of the system, creation of a remote programming job might take a number of minutes.
+<p/>
+Key system requirements:
+<ul>
+<li>Key system must be remote enabled.</li>
+</ul>
+<p/>
+Key requirements:
+<ul>
+<li>Key must be a CLIQ Connect key.</li>
+<li>Only keys of type 'dynamic' and 'quartz' are valid.</li>
+<li>Key must have support for remote updates.</li>
+<li>Key must have support for PIN validation.</li>
+</ul>
+<p/>)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="updateKeySchedule" type="workService_v2:updateKeySchedule"/>
+<xs:complexType name="updateKeySchedule">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit request wrapper for operation "updateKeySchedule". (Update the schedule of a key.
+<p/>
+<p/>This operation will put "wanted" schedule on the key, already pending key schedule updates will be replaced.
+<p/>
+<p/>Note, depending on the current load of the system, creation of a remote programming job might take a number of minutes.
+<p/>
+Key system requirements:
+<ul>
+<li>Key system must be remote enabled.</li>
+</ul>
+<p/>
+Key requirements:
+<ul>
+<li>Only keys of type 'dynamic' and 'quartz' are valid.</li>
+<li>Key must have support for remote updates.</li>
+</ul>
+<p/>)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="keyIdentity" type="xs:string" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[Identity of the key that should receive the update.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+    <xs:element name="schedule" type="data_v2:schedule" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[Schedule to be uploaded to key.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="updateKeyScheduleResponse" type="workService_v2:updateKeyScheduleResponse"/>
+<xs:complexType name="updateKeyScheduleResponse">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit response wrapper for operation "updateKeySchedule". (Update the schedule of a key.
+<p/>
+<p/>This operation will put "wanted" schedule on the key, already pending key schedule updates will be replaced.
+<p/>
+<p/>Note, depending on the current load of the system, creation of a remote programming job might take a number of minutes.
+<p/>
+Key system requirements:
+<ul>
+<li>Key system must be remote enabled.</li>
+</ul>
+<p/>
+Key requirements:
+<ul>
+<li>Only keys of type 'dynamic' and 'quartz' are valid.</li>
+<li>Key must have support for remote updates.</li>
+</ul>
+<p/>)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="updateKeyValidity" type="workService_v2:updateKeyValidity"/>
+<xs:complexType name="updateKeyValidity">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit request wrapper for operation "updateKeyValidity". (Update validity of a key to a new validity, the operation is accepted regardless if the newValidity period already is enabled or not.
+<p/>
+<p/>This operation will put "wanted" newValidity on the key, already pending key newValidity updates will be replaced.
+<p/>
+<p/>Note, depending on the current load of the system, creation of a remote programming job might take a number of minutes.
+<p/>
+<p/>
+Key system requirements:
+<ul>
+<li>Key system must be remote enabled.</li>
+</ul>
+<p/>
+Key requirements:
+<ul>
+<li>Only keys of type 'dynamic' ,'quartz' and 'normal' are valid.</li>
+<li>Key must have support for remote updates.</li>
+</ul>
+<p/>
+Note, If revalidation configuration is not supplied in the new validity it implies that any existing revalidation configuration on the key
+is to be removed.
+<p/>
+<p/>)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="keyIdentity" type="xs:string" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[Identity of the key that should receive the update.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+    <xs:element name="newValidity" type="data_v2:validity" minOccurs="0">
+      <xs:annotation>
+        <xs:documentation>
+          <![CDATA[Validity settings to be updated in key.]]>
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+</xs:complexType>
+<xs:element name="updateKeyValidityResponse" type="workService_v2:updateKeyValidityResponse"/>
+<xs:complexType name="updateKeyValidityResponse">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[doc/lit response wrapper for operation "updateKeyValidity". (Update validity of a key to a new validity, the operation is accepted regardless if the newValidity period already is enabled or not.
+<p/>
+<p/>This operation will put "wanted" newValidity on the key, already pending key newValidity updates will be replaced.
+<p/>
+<p/>Note, depending on the current load of the system, creation of a remote programming job might take a number of minutes.
+<p/>
+<p/>
+Key system requirements:
+<ul>
+<li>Key system must be remote enabled.</li>
+</ul>
+<p/>
+Key requirements:
+<ul>
+<li>Only keys of type 'dynamic' ,'quartz' and 'normal' are valid.</li>
+<li>Key must have support for remote updates.</li>
+</ul>
+<p/>
+Note, If revalidation configuration is not supplied in the new validity it implies that any existing revalidation configuration on the key
+is to be removed.
+<p/>
+<p/>)]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+  </xs:sequence>
+</xs:complexType>
+</xs:schema>

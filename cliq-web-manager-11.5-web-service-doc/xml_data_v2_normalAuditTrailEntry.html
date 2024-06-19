@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+  <title>CLIQ Web Manager - Web Services: normalAuditTrailEntry</title>
+
+  <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+  <!--custom css for these pages-->
+  <link rel="stylesheet" href="css/style.css">
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.css" type="text/css">
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+
+<body data-spy="scroll" data-target="#apinav">
+
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">CLIQ Web Manager - Web Services: normalAuditTrailEntry</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="services.html">Services</a></li>
+          <li><a href="data.html">Data Types</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-3 col-md-2 sidebar" id="apinav">
+        <ul class="nav nav-sidebar">
+          <li class="text-right"><a href="#top"><small>Back to Top</small></a></li>
+        </ul>
+      </div>
+
+      <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        <ol class="breadcrumb" id="top">
+          <li class="active dropdown"><a href="index.html">Home</a></li>
+          <li class="active dropdown"><a href="syntax_xml.html">XML</a></li>
+          <li class="dropdown"><a href="xml_data_v2_normalAuditTrailEntry.html">normalAuditTrailEntry</a></li>
+        </ol>
+
+      <h1 class="page-header">normalAuditTrailEntry <small>Data Type</small></h1>
+
+      <p>NormalAuditTrailEntry is an audit trail entry that is the result of interacting with another CLIQ element in the same
+MKS.
+<p/>
+Note that fields such as name, cylinder planned location etc are set at the time when the audit trail is imported to
+CLIQ Web Manager. Since some of these fields can be changed in CLIQ Web Manager, this data may have changed from the
+time the audit trail entry was created in the element till it was imported into CLIQ Web Manager.</p>
+
+      <dl class="dl-horizontal">
+        <dt>Namespace</dt>
+        <dd><code>http://cliq.shared.assaabloy.com/ws/data/v2/</code></dd>
+        <dt>Schema</dt>
+        <dd><a href="data_v2.xsd">data_v2.xsd</a></dd>
+      </dl>
+
+      <table class="table">
+        <caption>Properties</caption>
+        <thead>
+        <tr>
+          <th>name</th>
+          <th>data type</th>
+          <th>type</th>
+          <th>namespace</th>
+          <th>min/max occurs</th>
+          <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>  commandCode
+</td>
+          <td>  <a href="xml_data_v2_commandCode.html">commandCode</a>
+
+</td>
+          <td>  element
+
+</td>
+          <td>  
+
+</td>
+          <td>  1/1
+
+</td>
+          <td>  Code of command performed.
+</td>
+        </tr>
+        <tr>
+          <td>  domainIdentity
+</td>
+          <td>  string
+
+</td>
+          <td>  element
+
+</td>
+          <td>  <abbr title="http://cliq.shared.assaabloy.com/ws/data/extra_r9_0/v2/">dataExtra_r9_0_v2</abbr>
+
+</td>
+          <td>  0/1
+
+</td>
+          <td>  Identity of domain to which the element was assigned out while audit trail event happened.
+</td>
+        </tr>
+        <tr>
+          <td>  elementType
+</td>
+          <td>  <a href="xml_data_v2_elementType.html">elementType</a>
+
+</td>
+          <td>  element
+
+</td>
+          <td>  
+
+</td>
+          <td>  0/1
+
+</td>
+          <td>  Element type.
+</td>
+        </tr>
+        <tr>
+          <td>  keyHolderIdentity
+</td>
+          <td>  string
+
+</td>
+          <td>  element
+
+</td>
+          <td>  <abbr title="http://cliq.shared.assaabloy.com/ws/data/extra_r6/v2/">dataExtra_r6_v2</abbr>
+
+</td>
+          <td>  0/1
+
+</td>
+          <td>  Identity of historical key holder to who the key was handed out while audit trail event happened.
+If historical key holder data is unavailable (because of, for example, deactivation),
+'N/A' string will be returned
+</td>
+        </tr>
+        <tr>
+          <td>  marking
+</td>
+          <td>  string
+
+</td>
+          <td>  element
+
+</td>
+          <td>  
+
+</td>
+          <td>  0/1
+
+</td>
+          <td>  Marking.
+<p/>
+Max length: 255
+</td>
+        </tr>
+        <tr>
+          <td>  name
+</td>
+          <td>  string
+
+</td>
+          <td>  element
+
+</td>
+          <td>  
+
+</td>
+          <td>  0/1
+
+</td>
+          <td>  Element name.
+<p/>
+Max length: 255
+</td>
+        </tr>
+        <tr>
+          <td>  orderOfAppearance
+</td>
+          <td>  long
+
+</td>
+          <td>  element
+
+</td>
+          <td>  <abbr title="http://cliq.shared.assaabloy.com/ws/data/extra/v2/">dataExtra_v2</abbr>
+
+</td>
+          <td>  0/1
+
+</td>
+          <td>  The natural order of audit trail entries from the audited device.
+</td>
+        </tr>
+        <tr>
+          <td>  partiallyProcessed
+</td>
+          <td>  boolean
+
+</td>
+          <td>  element
+
+</td>
+          <td>  <abbr title="http://cliq.shared.assaabloy.com/ws/data/extra_r9_2/v2/">dataExtra_r9_2_v2</abbr>
+
+</td>
+          <td>  0/1
+
+</td>
+          <td>  Specifies if the audit trail data was fully processed or only partially,
+returned only if the requests specified the include partially processed option.
+</td>
+        </tr>
+        <tr>
+          <td>  resultCode
+</td>
+          <td>  <a href="xml_data_v2_resultCode.html">resultCode</a>
+
+</td>
+          <td>  element
+
+</td>
+          <td>  
+
+</td>
+          <td>  0/1
+
+</td>
+          <td>  Result code of command performed.
+</td>
+        </tr>
+        </tbody>
+        <tr>
+          <td colspan="6"><h5 class="text-muted">Properties inherited from <a href="xml_data_v2_auditTrailEntry.html">auditTrailEntry</a></h5></td>
+        </tr>
+        <tbody>
+        <tr>
+          <td>creationDate</td>
+          <td>string
+</td>
+          <td>element
+</td>
+          <td>
+</td>
+          <td>1/1
+</td>
+          <td>Creation entry creation date.
+If creation date was not defined then this field is set to the start of the epoch: 1970-01-01
+<p/>
+Format: [YYYY]-[MM]-[DD]T[hh]:[mm]+01:00, e.g. 2011-06-16T18:25+01:00</td>
+        </tr>
+        <tr>
+          <td>entryIdentity</td>
+          <td>string
+</td>
+          <td>element
+</td>
+          <td>
+</td>
+          <td>1/1
+</td>
+          <td>Audit Trail Entry Identity.
+<p/>
+Min length: 1<br/>
+Max length: 36</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <p class="lead">Example</p>
+
+      <pre class="prettyprint lang-xml">&lt;normalAuditTrailEntry xmlns=&quot;http://cliq.shared.assaabloy.com/ws/data/v2/&quot;&gt;
+  &lt;elementType xmlns=&quot;&quot;&gt;...&lt;/elementType&gt;
+  &lt;name xmlns=&quot;&quot;&gt;...&lt;/name&gt;
+  &lt;marking xmlns=&quot;&quot;&gt;...&lt;/marking&gt;
+  &lt;commandCode xmlns=&quot;&quot;&gt;...&lt;/commandCode&gt;
+  &lt;resultCode xmlns=&quot;&quot;&gt;...&lt;/resultCode&gt;
+  &lt;orderOfAppearance xmlns=&quot;http://cliq.shared.assaabloy.com/ws/data/extra/v2/&quot;&gt;...&lt;/orderOfAppearance&gt;
+  &lt;keyHolderIdentity xmlns=&quot;http://cliq.shared.assaabloy.com/ws/data/extra_r6/v2/&quot;&gt;...&lt;/keyHolderIdentity&gt;
+  &lt;domainIdentity xmlns=&quot;http://cliq.shared.assaabloy.com/ws/data/extra_r9_0/v2/&quot;&gt;...&lt;/domainIdentity&gt;
+  &lt;partiallyProcessed xmlns=&quot;http://cliq.shared.assaabloy.com/ws/data/extra_r9_2/v2/&quot;&gt;...&lt;/partiallyProcessed&gt;
+  &lt;entryIdentity xmlns=&quot;&quot;&gt;...&lt;/entryIdentity&gt;
+  &lt;creationDate xmlns=&quot;&quot;&gt;...&lt;/creationDate&gt;
+  &lt;extension1 xmlns=&quot;&quot;&gt;...&lt;/extension1&gt;
+  &lt;extension2 xmlns=&quot;&quot;&gt;...&lt;/extension2&gt;
+&lt;/normalAuditTrailEntry&gt;
+</pre>
+
+        <footer class="footer">
+          <div class="container">
+            <p class="text-muted">Generated by <a href="http://enunciate.webcohesion.com">Enunciate</a>.</p>
+          </div>
+        </footer>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- JavaScript placed at the end of the document so the pages load faster. -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+  <!-- prettify code blocks. see http://code.google.com/p/google-code-prettify/ -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/run_prettify.js" type="text/javascript"></script>
+  <script>
+    $(function() {
+      $(".clickable-row").click(function() {
+        window.document.location = $(this).data("href");
+      });
+
+      $('[data-toggle="tooltip"]').tooltip()
+    });
+  </script>
+
+</body>
+</html>
